@@ -1,6 +1,8 @@
 import stateJson from '../data/city-state.json';
 import eventsJson from '../data/events.json';
 import categoryJson from '../data/categories.json';
+import demoStateJson from '../data/demo-city-state.json';
+import demoEventsJson from '../data/demo-events.json';
 export type Locale = 'he' | 'en';
 export type Text = {he:string;en:string};
 export type Category = {id:string;he:string;en:string;color:string;icon:string;styleHe:string;styleEn:string;form:string};
@@ -12,6 +14,8 @@ export type State = {schemaVersion:number;mode:string;revision:number;foundedAt:
 export type CityEvent = {id:string;kind:string;category:string;subcategory:string;complexity:number;importance:number;occurredAt:string;summary:Text;demo?:boolean};
 export const state:State=stateJson;
 export const events:CityEvent[]=eventsJson.events;
+export const demoState:State=demoStateJson;
+export const demoEvents:CityEvent[]=demoEventsJson.events;
 export const categories:Category[]=categoryJson;
 export const milestones=[100,250,500,1000,2500,5000,10000,25000,50000];
 export const category=(id:string)=>categories.find(c=>c.id===id) ?? categories[categories.length-1];
