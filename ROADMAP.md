@@ -13,6 +13,7 @@ Pilot scope: one street joining founding and creative hexes, one glass-roof sect
 
 Underground expansion master vision (owner, September 30, 2026; living roadmap item, roll out gradually):
 - Realistic connections with passages; overhead glass spots; connections to buildings and lifts.
+- Glass connections between buildings must read as one clean seam: today's stepped glass levels become a single even glass line.
 - Underground areas with seating, a garden, cafes, restaurants and shops, added slowly over time.
 - Phase 1: connect the Layers Junction lift shaft to the pilot network. Plan properly before building; quality over speed.
 
