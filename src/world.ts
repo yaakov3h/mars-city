@@ -65,15 +65,20 @@ export class World {
  }const light=new THREE.PointLight(c.color,0,16,2);light.position.set(x,y+h*.8,z);this.scene.add(light);this.cityLights.push(light);group.scale.setScalar(.86+seed*.22);return group}
 
  civicCitadel(group:THREE.Group,b:Building,color:string,part:(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh,stone:THREE.Material,base:THREE.Material){
-  // A civic banking hall: columned portico, triangular pediment and broad vault body.
+  // A civic banking hall: columned portico, stepped asymmetric roofs and broad vault body.
   const glow=new THREE.MeshStandardMaterial({color,emissive:color,emissiveIntensity:.25,metalness:.35,roughness:.4});glow.userData.dayGlow=.15;glow.userData.nightGlow=.8;this.cityMaterials.push(glow);
   for(let j=0;j<3;j++)part(new THREE.BoxGeometry(8-j*.55,.28,6-j*.45),base,0,.14+j*.28,0);
   part(new THREE.BoxGeometry(6.8,3.85,4.1),stone,0,2.8,-.45);
   for(const side of [-1,1])for(let j=0;j<4;j++){const x=-2.65+j*1.76,z=side*2.12;part(new THREE.CylinderGeometry(.23,.29,3.7,12),stone,x,2.72,z);part(new THREE.CylinderGeometry(.41,.35,.23,12),base,x,.94,z);part(new THREE.BoxGeometry(.75,.26,.68),base,x,4.64,z);for(let k=0;k<8;k++){const a=k*Math.PI/4;part(new THREE.CylinderGeometry(.025,.025,3.3,5),base,x+Math.sin(a)*.24,2.7,z+Math.cos(a)*.24);}}
   part(new THREE.BoxGeometry(7.55,.42,5.35),base,0,4.95,0);
-  const roof=new THREE.Shape();roof.moveTo(-3.95,0);roof.lineTo(0,1.5);roof.lineTo(3.95,0);roof.closePath();part(new THREE.ExtrudeGeometry(roof,{depth:5.5,bevelEnabled:false}),stone,0,5.15,-2.75);
+  // Civic proportions, not a literal temple icon: offset stepped copper roofs and annex.
+  const copper=warmBody('#a7714c',color,.5);this.cityMaterials.push(copper);
+  part(new THREE.BoxGeometry(4.65,.48,5.45),copper,-1.25,5.26,-.18);part(new THREE.BoxGeometry(3.5,.26,4.35),stone,1.9,5.05,.3);
+  part(new THREE.BoxGeometry(2.15,2.7,3.05),stone,3.75,2.23,-.9);part(new THREE.BoxGeometry(2.6,.25,3.55),copper,3.75,3.72,-.9);
+  for(let j=0;j<7;j++){const slat=part(new THREE.BoxGeometry(.14,.085,4.35),base,-3.1+j*.54,5.54,-.18);slat.rotation.y=.08;}
+  for(let j=0;j<4;j++)part(new THREE.BoxGeometry(.65,.7,.065),glow,2.85+j*.43,2.5,.66);
   part(new THREE.BoxGeometry(1.15,2.05,.08),glow,0,1.9,1.66);for(const side of [-1,1])for(let j=0;j<3;j++)part(new THREE.BoxGeometry(.1,.7,.67),glow,side*3.43,2.8,-1.4+j*1.25);
-  const seal=part(new THREE.CylinderGeometry(.43,.43,.07,24),glow,0,5.55,2.81);seal.rotation.x=Math.PI/2;
+  const seal=part(new THREE.CylinderGeometry(.43,.43,.07,24),glow,0,4.98,2.76);seal.rotation.x=Math.PI/2;
   // A patterned public forecourt and reflecting basin, not another greenhouse.
   const colors=['#ad8e6b','#725744','#d2bb91','#887957'];
   for(let row=0;row<5;row++)for(let col=0;col<9;col++){const x=(col-4)*1.45,z=3.6+row*.83;if(padDistance(x,z)<8.35){const tile=part(new THREE.BoxGeometry(1.37,.055,.75),warmBody(colors[Math.floor(random(b.id+'pave'+row+col)*4)]),x,.03,z);tile.rotation.y=(row%2)*.03;}}
