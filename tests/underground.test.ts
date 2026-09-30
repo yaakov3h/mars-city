@@ -7,3 +7,5 @@ it('cuts exact aperture boundaries and restores intact geometry',()=>{const g=ne
 import {PILOT,movementVector} from '../src/underground';
 it('puts glass symmetrically across the shared hex edge, not over building centers',()=>{expect((PILOT.glass.x0+PILOT.glass.x1)/2).toBeCloseTo(-15*Math.sqrt(3),5);expect(pilotOpening(-15*Math.sqrt(3),0)).toBe(true);expect(pilotOpening(-10*Math.sqrt(3),0)).toBe(false)});
 it('keeps directional movement relative to the current look orientation',()=>{expect(movementVector(Math.PI/2,0,1).x).toBeCloseTo(-1);expect(movementVector(Math.PI/2,1,0).z).toBeCloseTo(-1);expect(movementVector(0,0,1).z).toBeCloseTo(-1);expect(movementVector(0,1,0).x).toBeCloseTo(1)});
+import {cutRoofWindows} from '../src/underground';
+it('opens actual hex skylights while retaining the surrounding roof',()=>{const g=new THREE.PlaneGeometry(24,24,8,8);g.rotateX(-Math.PI/2);cutRoofWindows(g,[{x:0,z:0,radius:2.95}]);const p=g.attributes.position,idx=g.index!;for(let i=0;i<idx.count;i+=3){let x=0,z=0;for(let j=0;j<3;j++){x+=p.getX(idx.getX(i+j))/3;z+=p.getZ(idx.getX(i+j))/3;}expect(Math.hypot(x,z)).toBeGreaterThan(2.5);}expect(idx.count).toBeGreaterThan(0);});
