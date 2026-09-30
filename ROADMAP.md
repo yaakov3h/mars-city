@@ -58,3 +58,10 @@ October 1 control feedback: mosaic chamber entry button is temporary until the u
 - District plots and building plot assignment preserve full-size hexes and reserve every occupied plot for future growth. One Creative control affects both buildings; building information remains individual.
 - Population base is per physical plot, not per logical district name, so this administrative merge does not remove residents.
 - Graphics preview remains pending clarification of the requested target.
+
+### Reversible catalog material preview (2026-10-01)
+- User chose architectural catalog for visual experiments, not the live city or cat house.
+- Added a catalog-only Before/After toggle. Original is the default; returning to Original rebuilds original materials. Live city always keeps original rendering.
+- First experiment uses deterministic procedural normal/roughness/ground detail and an environment-reflection probe. It is a material study, not photorealism or a claim of scanned Mars materials.
+- Buildings and plots retain geometry, identity, placement and counts in either mode. No full-city graphics upgrade approved.
+- Bottom map controls now use opaque dark backgrounds, light text and visible borders in daylight and both page themes.
