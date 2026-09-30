@@ -10,3 +10,8 @@ describe('visual contract',()=>{
  it('wraps basalt copper around all monolith faces and lights inner gaps',()=>{for(const token of ['basaltSurface()','basaltBody()','front, back, left and right','fill.userData.dayIntensity=18','fill.userData.nightIntensity=32','m.userData.nightGlow=.75'])expect(world).toContain(token)});
  it('provides settlement paths and reduced-motion-safe activity',()=>{expect(world).toContain('connectSettlement(state,centers)');expect(world).toContain('if(!this.reduced)for(const o of this.animated)');expect(world).toContain('userData.route')});
 });
+
+describe('independent full-size hexes',()=>{
+ it('places studio at its own hex center with a broad glazed garden',()=>{expect(world).toContain("'district-images-20260930'");expect(world).toContain('SphereGeometry(8.6,48,24');expect(world).not.toContain("b.id==='b-images-20260930'?7.7");});
+ it('uses full city zone geometry for mosaic floors and seven slots',()=>{expect(world).toContain("id:'mosaic-'+seg");expect(world).toContain('for(let t=0;t<7;t++)');expect(world).toContain('this.mosaicCells(state)');});
+});
