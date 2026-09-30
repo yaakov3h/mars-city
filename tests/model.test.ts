@@ -11,5 +11,10 @@ describe('city-state and events',()=>{
  it('counts population reproducibly',()=>{expect(population(state)).toBeGreaterThan(0);expect(districtPopulation(state,state.districts[0].id)).toBeGreaterThan(0)});
  it('detects future milestones',()=>{expect(nextMilestone(99)).toBe(100);expect(nextMilestone(100)).toBe(250)});
  it('avoids trivial acknowledgements',()=>{expect(shouldCount('תודה')).toBe(false);expect(shouldCount('I want to understand AI agents')).toBe(true)});
- it('preserves live history and separate demo history',()=>{const old=snapshot(state,events[0].occurredAt);expect(old.buildings.length).toBe(1);expect(old.landmarks.length).toBe(0);expect(demoState.buildings).toHaveLength(10);expect(state.buildings).toHaveLength(3)})
+ it('preserves live history and separate demo history',()=>{const old=snapshot(state,events[0].occurredAt);expect(old.buildings.length).toBe(1);expect(old.landmarks.length).toBe(0);expect(demoState.buildings).toHaveLength(15);expect(state.buildings).toHaveLength(3)})
+});
+
+describe('living category catalog',()=>{
+ it('contains one fictional example per category and keeps live data separate',()=>{expect(demoState.districts).toHaveLength(15);expect(new Set(demoState.districts.map(d=>d.category)).size).toBe(15);expect(demoState.totalQuestions).toBe(15);expect(demoEvents.every(e=>e.demo)).toBe(true);expect(state.buildings).toHaveLength(3)});
+ it('includes a marked voice-conversation example',()=>{expect(demoState.buildings.some(b=>b.sourceChannel==='voice')).toBe(true);expect(demoEvents.some(e=>e.sourceChannel==='voice')).toBe(true)});
 });
