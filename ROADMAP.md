@@ -52,3 +52,9 @@ October 1 control feedback: mosaic chamber entry button is temporary until the u
 - Pending decision: whether two Creative sites should become one logical district spanning separate full-size hexes. Do not merge until approved.
 - Pending graphics proposal: improve reusable physical materials, terrain detail and lighting without replacing architecture or city data. No full visual upgrade approved.
 - Unified underground remains a planning task: useful routes, elevation, building entrances, glass seams, service/activity spaces, and future capacity, not one indiscriminate hollow volume.
+
+### Approved logical Creative district merge (2026-10-01)
+- One Creative district now spans the existing Atelier and Imagery Studio plots. Buildings, geometry, dates and positions stay separate and unchanged.
+- District plots and building plot assignment preserve full-size hexes and reserve every occupied plot for future growth. One Creative control affects both buildings; building information remains individual.
+- Population base is per physical plot, not per logical district name, so this administrative merge does not remove residents.
+- Graphics preview remains pending clarification of the requested target.
