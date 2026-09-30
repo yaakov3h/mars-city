@@ -39,6 +39,37 @@
         "he": "ליבת בראשית",
         "en": "The Genesis Core"
       }
+    },
+    {
+      "id": "codesign-20260930-district",
+      "kind": "district_created",
+      "category": "CREATIVE",
+      "subcategory": "LIVING_3D_WORLD_DESIGN",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T09:50:43+03:00",
+      "summary": {
+        "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
+        "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
+      }
+    },
+    {
+      "id": "codesign-20260930",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "LIVING_3D_WORLD_DESIGN",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T09:50:43+03:00",
+      "summary": {
+        "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
+        "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
+      },
+      "relatedLandmarkId": "l-genesis-core-20260930",
+      "existingLandmarkTreatment": {
+        "material": "dark basalt with copper veins",
+        "lighting": "category edge glow and warm inner-gap fill"
+      }
     }
   ]
 }
