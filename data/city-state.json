@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 6,
+  "revision": 8,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-09-30T21:47:20+03:00",
-  "totalQuestions": 5,
+  "lastUpdated": "2026-09-30T22:25:05+03:00",
+  "totalQuestions": 7,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -142,6 +142,24 @@
       "questionCount": 1,
       "createdAt": "2026-09-30T21:47:20+03:00",
       "lastUpdated": "2026-09-30T21:47:20+03:00"
+    },
+    {
+      "id": "b-images-20260930",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "סדנת הדימויים",
+        "en": "The Imagery Studio"
+      },
+      "subcategory": "IMAGE_MAKING_EXPERIMENTS",
+      "q": 1,
+      "r": 0,
+      "height": 2.2,
+      "width": 2.6,
+      "complexity": 1,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T22:18:50+03:00",
+      "lastUpdated": "2026-09-30T22:18:50+03:00"
     }
   ],
   "creatures": [],
@@ -164,5 +182,9 @@
         "eventId": "codesign-20260930"
       }
     }
-  ]
+  ],
+  "mosaic": {
+    "tiles": 2,
+    "segmentCapacity": 7
+  }
 }
