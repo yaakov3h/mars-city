@@ -69,7 +69,7 @@ export class World {
  originRing(group:THREE.Group,x:number,y:number,z:number){
   const color=category('TECHNOLOGY').color,stone=material('#263646',.35),edge=material(color,.55,.65),silver=material('#71919f',.8),floor=material('#354560',.25);
   this.cityMaterials.push(edge);group.userData.monument='Origin Ring';
-  const slab=this.mesh(new THREE.CylinderGeometry(8.35,8.6,.55,6),floor,0,.12,0,group);slab.rotation.y=Math.PI/6;
+  const slab=this.mesh(new THREE.CylinderGeometry(HEX_SIZE-.06,HEX_SIZE-.06,.55,6),floor,0,.12,0,group);slab.rotation.y=0;
   // Engraved hex paving: alternating radial inlays, fine concentric traces and six glyph panels.
   for(let i=0;i<6;i++){const a=i*Math.PI/3;const panel=this.mesh(new THREE.BoxGeometry(2.8,.025,2),material(i%2?'#304454':'#38425e',.25),Math.sin(a)*6.45,.413,Math.cos(a)*6.45,group);panel.rotation.y=a;
    for(let j=0;j<4;j++){const line=this.mesh(new THREE.BoxGeometry(.035,.018,1.35-j*.17),edge,Math.sin(a)*6.45+Math.cos(a)*(j-1.5)*.32,.44,Math.cos(a)*6.45-Math.sin(a)*(j-1.5)*.32,group);line.rotation.y=a;}
