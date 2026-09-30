@@ -16,5 +16,5 @@ describe('city-state and events',()=>{
 
 describe('living category catalog',()=>{
  it('contains one fictional example per category and keeps live data separate',()=>{expect(demoState.districts).toHaveLength(15);expect(new Set(demoState.districts.map(d=>d.category)).size).toBe(15);expect(demoState.totalQuestions).toBe(15);expect(demoEvents.every(e=>e.demo)).toBe(true);expect(state.buildings).toHaveLength(3)});
- it('includes a marked voice-conversation example',()=>{expect(demoState.buildings.some(b=>b.sourceChannel==='voice')).toBe(true);expect(demoEvents.some(e=>e.sourceChannel==='voice')).toBe(true)});
+ it('includes a marked voice-conversation example',()=>{expect(demoState.buildings.filter(b=>b.sourceChannel==='voice')).toHaveLength(2);expect(demoEvents.filter(e=>e.sourceChannel==='voice')).toHaveLength(2)});
 });
