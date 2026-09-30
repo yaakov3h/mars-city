@@ -65,3 +65,9 @@ October 1 control feedback: mosaic chamber entry button is temporary until the u
 - First experiment uses deterministic procedural normal/roughness/ground detail and an environment-reflection probe. It is a material study, not photorealism or a claim of scanned Mars materials.
 - Buildings and plots retain geometry, identity, placement and counts in either mode. No full-city graphics upgrade approved.
 - Bottom map controls now use opaque dark backgrounds, light text and visible borders in daylight and both page themes.
+
+### UI performance and daylight navigation fix (2026-10-01)
+- UI tabs, language, theme, info and other interface-only changes do not regenerate scene geometry. Scene regeneration is keyed to view, timeline, revision, creature visibility and catalog experiment.
+- Quality changes resize the renderer only when the quality actually changes.
+- Light-theme bottom navigation now has dark text/icons for inactive tabs and a distinct outlined active state.
+- Catalog realism feedback: user wants physical plate joints, distinct material textures and differentiated trees, not simply brighter color. First preview remains reversible; deeper catalog-only work is pending next iteration.
