@@ -5,3 +5,5 @@ describe('permanent reserves and contiguous random-edge growth',()=>{
  it('replays the same event but uses varied free edges across seeds',()=>{const ds=[{q:-1,r:0}];expect(nextHex(ds,[],'same')).toEqual(nextHex(ds,[],'same'));expect(new Set(Array.from({length:40},(_,i)=>JSON.stringify(nextHex(ds,[],'seed'+i)))).size).toBeGreaterThan(2)});
  it('excludes the full hex footprint around every crater',()=>{for(let q=-9;q<9;q++)for(let r=-9;r<9;r++){const [x,z]=hexCenter(q,r);if(CRATERS.some(c=>Math.hypot(x-c.x,z-c.z)<=c.radius*1.22+10.8))expect(buildable(q,r)).toBe(false)}});
 });
+
+it('reserves every plot in a logical district during future edge growth',()=>{const ds=[{q:-2,r:0,plots:[{q:-2,r:0},{q:-2,r:-1}]}];for(let i=0;i<100;i++){const p=nextHex(ds,[],String(i));expect(p).not.toEqual({q:-2,r:0});expect(p).not.toEqual({q:-2,r:-1})}});
