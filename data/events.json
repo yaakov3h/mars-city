@@ -70,6 +70,32 @@
         "material": "dark basalt with copper veins",
         "lighting": "category edge glow and warm inner-gap fill"
       }
+    },
+    {
+      "id": "bank-regulation-20260930-district",
+      "kind": "district_created",
+      "category": "FINANCE",
+      "subcategory": "BANKING_REGULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T11:22:44+03:00",
+      "summary": {
+        "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
+        "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
+      }
+    },
+    {
+      "id": "bank-regulation-20260930",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "BANKING_REGULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T11:22:44+03:00",
+      "summary": {
+        "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
+        "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
+      }
     }
   ]
 }
