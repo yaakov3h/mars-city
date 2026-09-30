@@ -86,6 +86,13 @@ export class World {
   box(2.4,.17,2.4,0,.49,-.45,stone);for(const x of [-1.02,1.02])for(const z of [-1.47,.57])box(.12,4.5,.12,x,2.74,z,frame);
   box(2.02,4.0,.035,0,2.45,-1.47,glass);for(const x of [-1.02,1.02])box(.035,4,2.04,x,2.45,-.45,glass);
   box(1.78,.13,1.78,0,1.06,-.45,frame);box(2.42,.18,2.42,0,4.94,-.45,frame);box(.72,.06,.72,0,5.07,-.45,accent);
+  // Enclosed against the Martian environment: glazed window walls set between the exposed frames.
+  const wallPane=(cx:number,cy:number,cz:number,w:number,h:number,alongZ=false)=>{box(w,h,.045,cx,cy,cz,glass);if(alongZ)box(.06,h,w,cx,cy,cz,glass);const bars=Math.max(1,Math.round(w/.85));for(let i=1;i<bars;i++){const off=-w/2+i*w/bars;if(alongZ)box(.07,h,.05,cx,cy,cz+off,frame);else box(.05,h,.07,cx+off,cy,cz,frame);}if(alongZ)box(.07,.06,w,cx,cy,cz,frame);else box(w,.06,.07,cx,cy,cz,frame);};
+  for(const cx of [-4.15,0,4.15])wallPane(cx,2.5,-2.5,cx===0?5.5:2.2,4.1);
+  wallPane(-4.15,1.95,3.0,2.2,2.9);wallPane(4.15,1.95,3.0,2.2,2.9);
+  wallPane(-1.85,1.95,3.0,1.8,2.9);wallPane(1.85,1.95,3.0,1.8,2.9);
+  wallPane(-5.4,2.55,.25,5.1,4.2,true);wallPane(5.4,2.0,.25,5.1,3.0,true);
+  box(1.5,2.9,.05,0,1.95,3.0,glass);box(.08,2.9,.09,-.78,1.95,3.0,frame);box(.08,2.9,.09,.78,1.95,3.0,frame);box(1.6,.1,.09,0,3.42,3.0,frame);
   for(let j=0;j<5;j++)box(2.9,.15,1.45,-3.9,.48+j*.2,-2.8+j*.23,stone);
   for(const z of [.65,2.7]){box(4.4,.045,.06,-3.55,.44,z,accent);box(4.4,.045,.06,3.55,.44,z,accent);}
   for(const x of [-3.9,3.9]){box(1.9,.16,.55,x,.73,2.3,frame);for(const dx of [-.65,.65])box(.09,.4,.4,x+dx,.53,2.3,dark);}
