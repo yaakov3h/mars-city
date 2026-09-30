@@ -19,3 +19,5 @@ describe('independent full-size hexes',()=>{
 describe('compact district visibility controls',()=>{
  it('keeps independent hidden districts alongside legacy highlights',()=>{expect(world).toContain('setHiddenDistricts(ids:Set<string>)');expect(world).toContain('!this.hiddenDistricts.has(d)')});
 });
+
+it('keeps the reversible realism experiment catalog-only',()=>{expect(world).toContain("this.applyCatalogRealism(state.mode==='demo')");expect(world).toContain('const active=demo&&this.catalogRealism');expect(world).toContain('this.terrainMaterial.map=maps?.ground??null')});
