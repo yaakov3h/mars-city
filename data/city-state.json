@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 2,
+  "revision": 3,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-09-30T01:22:50+03:00",
-  "totalQuestions": 1,
+  "lastUpdated": "2026-09-30T09:50:43+03:00",
+  "totalQuestions": 2,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -14,6 +14,15 @@
       "demand": 2,
       "questionCount": 1,
       "foundedAt": "2026-09-30T01:22:49+03:00"
+    },
+    {
+      "id": "district-codesign-20260930",
+      "category": "CREATIVE",
+      "q": -2,
+      "r": 0,
+      "demand": 2,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T09:50:43+03:00"
     }
   ],
   "buildings": [
@@ -34,6 +43,24 @@
       "questionCount": 1,
       "createdAt": "2026-09-30T01:22:49+03:00",
       "lastUpdated": "2026-09-30T01:22:49+03:00"
+    },
+    {
+      "id": "b-codesign-20260930",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "אטלייה העולמות",
+        "en": "Worlds Atelier"
+      },
+      "subcategory": "LIVING_3D_WORLD_DESIGN",
+      "q": -1,
+      "r": 0,
+      "height": 11.3,
+      "width": 2.2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T09:50:43+03:00",
+      "lastUpdated": "2026-09-30T09:50:43+03:00"
     }
   ],
   "creatures": [],
@@ -48,7 +75,13 @@
       "q": 0,
       "r": -1,
       "createdAt": "2026-09-30T01:22:50+03:00",
-      "eventId": "genesis-core-20260930"
+      "eventId": "genesis-core-20260930",
+      "lastUpdated": "2026-09-30T09:50:43+03:00",
+      "surfaceTreatment": {
+        "material": "dark basalt with copper veins",
+        "lighting": "category edge glow and warm inner-gap fill",
+        "eventId": "codesign-20260930"
+      }
     }
   ]
 }
