@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import type {World} from './world';
+// Pilot v2: edge-centered skylight and camera-relative input.
 // Explicit pilot bounds, independent of decorative rendering geometry.
 export const PILOT={street:{x0:-39,x1:-13,z0:1,z1:7},room:{x0:-38,x1:-31,z0:7,z1:12},glass:{x0:-27.480762,x1:-24.480762,z0:2,z1:6},shaft:{x0:-20,x1:-18,z0:5,z1:7},floor:-9};
 export function inRect(x:number,z:number,r:{x0:number;x1:number;z0:number;z1:number},margin=0){return x>=r.x0+margin&&x<=r.x1-margin&&z>=r.z0+margin&&z<=r.z1-margin;}
