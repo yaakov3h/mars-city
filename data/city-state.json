@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 4,
+  "revision": 5,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-09-30T11:22:44+03:00",
-  "totalQuestions": 3,
+  "lastUpdated": "2026-09-30T21:15:58+03:00",
+  "totalQuestions": 4,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -32,6 +32,15 @@
       "demand": 2,
       "questionCount": 1,
       "foundedAt": "2026-09-30T11:22:44+03:00"
+    },
+    {
+      "id": "district-cat-rhythm-20260930",
+      "category": "ANIMALS",
+      "q": -1,
+      "r": 1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T21:15:58+03:00"
     }
   ],
   "buildings": [
@@ -88,6 +97,24 @@
       "questionCount": 1,
       "createdAt": "2026-09-30T11:22:44+03:00",
       "lastUpdated": "2026-09-30T11:22:44+03:00"
+    },
+    {
+      "id": "b-cat-rhythm-20260930",
+      "districtId": "district-cat-rhythm-20260930",
+      "name": {
+        "he": "בית החתולים",
+        "en": "The Cat House"
+      },
+      "subcategory": "DAILY_CARE_AND_CURIOSITY",
+      "q": 0,
+      "r": 0,
+      "height": 3.6,
+      "width": 4.0,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T21:15:58+03:00",
+      "lastUpdated": "2026-09-30T21:15:58+03:00"
     }
   ],
   "creatures": [],
