@@ -42,3 +42,5 @@ Owner steering, October 1, 00:37:
 - Possible future use of rocky ground: small planted spaces and glazed domes beside stones, not approved for construction yet.
 - Mosaic chamber: hollow underground room beneath the seven window slots, with upward viewing now. Connections to the wider underground network through glass passages are future work.
 - Next 20:00 calibration: discuss which topics justify buildings based on conversation amount and complexity, then define automation boundaries. No auto-build grant exists yet.
+
+October 1 control feedback: mosaic chamber entry button is temporary until the underground becomes one connected unit. Use the same direction pad and look joystick as the pilot, with camera-relative movement. Owner has another underground idea to share later; no implementation inferred.
