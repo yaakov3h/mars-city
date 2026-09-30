@@ -36,3 +36,8 @@ export function marsTime(utcMs=Date.now(),manualLMST?:number){
 }
 export type MarsTime=ReturnType<typeof marsTime>;
 export function clockText(hours:number){const seconds=Math.floor(mod(hours,24)*3600);return [Math.floor(seconds/3600),Math.floor(seconds/60)%60,seconds%60].map(n=>String(n).padStart(2,'0')).join(':');}
+
+// Lighting follows the viewer's device-local wall clock, without geolocation.
+// The scientific Ares clock above remains independent.
+export function viewerLocalHours(date=new Date()){return date.getHours()+date.getMinutes()/60+date.getSeconds()/3600+date.getMilliseconds()/3600000;}
+export function viewerLightTime(date=new Date()){const hours=viewerLocalHours(date),orbit=marsOrbit(date.getTime());return marsTime(date.getTime(),hours-orbit.eot/15);}
