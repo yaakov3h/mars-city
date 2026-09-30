@@ -71,3 +71,9 @@ October 1 control feedback: mosaic chamber entry button is temporary until the u
 - Quality changes resize the renderer only when the quality actually changes.
 - Light-theme bottom navigation now has dark text/icons for inactive tabs and a distinct outlined active state.
 - Catalog realism feedback: user wants physical plate joints, distinct material textures and differentiated trees, not simply brighter color. First preview remains reversible; deeper catalog-only work is pending next iteration.
+
+### Catalog material/detail iteration 2 (2026-10-01)
+- After mode adds visible geometric horizontal and vertical plate seams on box/cylinder bodies and instanced corner fasteners, without replacing the buildings.
+- Distinct granular mineral and brushed metal color/normal/roughness surfaces replace brightness-only changes; reflection intensity is reduced. Bark has a separate grain treatment.
+- Catalog garden plants become branched trees with three leaf forms, heights and colors, merged into two meshes per tree. Protected garden glass stays intact. Original mode restores original plants.
+- Still an art-directed procedural prototype, not photorealism or scanned materials. Live city remains untouched; request feedback before expanding.
