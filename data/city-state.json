@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 8,
+  "revision": 9,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-09-30T22:25:05+03:00",
+  "lastUpdated": "2026-10-01T00:24:53+03:00",
   "totalQuestions": 7,
   "districts": [
     {
@@ -50,6 +50,15 @@
       "demand": 2,
       "questionCount": 1,
       "foundedAt": "2026-09-30T21:47:20+03:00"
+    },
+    {
+      "id": "district-images-20260930",
+      "category": "CREATIVE",
+      "q": -2,
+      "r": -1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T22:18:50+03:00"
     }
   ],
   "buildings": [
@@ -145,13 +154,13 @@
     },
     {
       "id": "b-images-20260930",
-      "districtId": "district-codesign-20260930",
+      "districtId": "district-images-20260930",
       "name": {
         "he": "סדנת הדימויים",
         "en": "The Imagery Studio"
       },
       "subcategory": "IMAGE_MAKING_EXPERIMENTS",
-      "q": 1,
+      "q": 0,
       "r": 0,
       "height": 2.2,
       "width": 2.6,
@@ -185,6 +194,12 @@
   ],
   "mosaic": {
     "tiles": 2,
-    "segmentCapacity": 7
+    "segmentCapacity": 7,
+    "hexes": [
+      {
+        "q": 0,
+        "r": 1
+      }
+    ]
   }
 }
