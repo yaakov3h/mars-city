@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "mode": "demo",
-  "revision": 2,
+  "revision": 3,
   "foundedAt": "2026-09-30T00:00:00+03:00",
   "lastUpdated": "2026-09-30T00:14:00+03:00",
   "totalQuestions": 15,
@@ -288,7 +288,7 @@
         "he": "נמל הסיירים",
         "en": "Rover Port"
       },
-      "subcategory": "CATEGORY_EXAMPLE",
+      "subcategory": "VOICE_CONVERSATION",
       "q": 0,
       "r": 0,
       "height": 8,
@@ -298,7 +298,7 @@
       "questionCount": 1,
       "createdAt": "2026-09-30T00:06:00+03:00",
       "lastUpdated": "2026-09-30T00:06:00+03:00",
-      "sourceChannel": "text",
+      "sourceChannel": "voice",
       "catalogStyle": {
         "he": "רציפי סיירים, מגדל איתות ושערים",
         "en": "Rover pads, beacon and gates"
