@@ -12,6 +12,7 @@ Future idea preserved, not implemented or authorized for immediate construction:
 Pilot scope: one street joining founding and creative hexes, one glass-roof section, one vertical access lift and one experimental atelier room. Multi-floor interiors, a full road network, driving, NPC traffic, flight systems and multiplayer remain future work.
 
 Underground expansion master vision (owner, September 30, 2026; living roadmap item, roll out gradually):
+- Check ground elevations for each build and passage. Small local grading adjustments are allowed for construction; route around large craters and preserve their natural terrain.
 - Realistic connections with passages; overhead glass spots; connections to buildings and lifts.
 - Glass connections between buildings must read as one clean seam: today's stepped glass levels become a single even glass line.
 - Underground areas with seating, a garden, cafes, restaurants and shops, added slowly over time.
