@@ -95,16 +95,16 @@
       "id": "example-travel",
       "kind": "question",
       "category": "TRAVEL",
-      "subcategory": "CATEGORY_EXAMPLE",
+      "subcategory": "VOICE_CONVERSATION",
       "complexity": 3,
       "importance": 3,
       "occurredAt": "2026-09-30T00:06:00+03:00",
       "summary": {
-        "he": "דוגמה בדיונית: נמל הסיירים",
-        "en": "Fictional example: Rover Port"
+        "he": "דוגמה לשיחה קולית: נמל הסיירים",
+        "en": "Voice conversation example: Rover Port"
       },
       "demo": true,
-      "sourceChannel": "text"
+      "sourceChannel": "voice"
     },
     {
       "id": "example-creative",
