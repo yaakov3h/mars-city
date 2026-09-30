@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 9,
+  "revision": 10,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-01T00:24:53+03:00",
+  "lastUpdated": "2026-10-01T02:01:31+03:00",
   "totalQuestions": 7,
   "districts": [
     {
@@ -20,9 +20,21 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 2,
-      "questionCount": 1,
-      "foundedAt": "2026-09-30T09:50:43+03:00"
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-09-30T09:50:43+03:00",
+      "plots": [
+        {
+          "q": -2,
+          "r": 0,
+          "foundedAt": "2026-09-30T09:50:43+03:00"
+        },
+        {
+          "q": -2,
+          "r": -1,
+          "foundedAt": "2026-09-30T22:18:50+03:00"
+        }
+      ]
     },
     {
       "id": "district-bank-regulation-20260930",
@@ -50,15 +62,6 @@
       "demand": 2,
       "questionCount": 1,
       "foundedAt": "2026-09-30T21:47:20+03:00"
-    },
-    {
-      "id": "district-images-20260930",
-      "category": "CREATIVE",
-      "q": -2,
-      "r": -1,
-      "demand": 1,
-      "questionCount": 1,
-      "foundedAt": "2026-09-30T22:18:50+03:00"
     }
   ],
   "buildings": [
@@ -96,7 +99,11 @@
       "activity": 1,
       "questionCount": 1,
       "createdAt": "2026-09-30T09:50:43+03:00",
-      "lastUpdated": "2026-09-30T09:50:43+03:00"
+      "lastUpdated": "2026-09-30T09:50:43+03:00",
+      "plot": {
+        "q": -2,
+        "r": 0
+      }
     },
     {
       "id": "b-bank-regulation-20260930",
@@ -154,7 +161,7 @@
     },
     {
       "id": "b-images-20260930",
-      "districtId": "district-images-20260930",
+      "districtId": "district-codesign-20260930",
       "name": {
         "he": "סדנת הדימויים",
         "en": "The Imagery Studio"
@@ -168,7 +175,11 @@
       "activity": 1,
       "questionCount": 1,
       "createdAt": "2026-09-30T22:18:50+03:00",
-      "lastUpdated": "2026-09-30T22:18:50+03:00"
+      "lastUpdated": "2026-09-30T22:18:50+03:00",
+      "plot": {
+        "q": -2,
+        "r": -1
+      }
     }
   ],
   "creatures": [],
