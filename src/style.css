@@ -26,3 +26,4 @@
 #world-wrap.ug-active #labels,#world-wrap.ug-active #sol-controls,#world-wrap.ug-active .camera-tools,#world-wrap.ug-active .controls-hint{display:none!important}
 #world-wrap.ug-active .sol-control,#world-wrap.ug-active .world-controls,#world-wrap.ug-active .controls,#world-wrap.ug-active .labels{display:none!important}
 #world-wrap.ug-active #controls,#world-wrap.ug-active .reset-camera{display:none!important}
+.underground-ui[hidden]{display:none!important}
