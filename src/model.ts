@@ -10,7 +10,8 @@ export type District = {id:string;category:string;q:number;r:number;demand:numbe
 export type Building = {id:string;districtId:string;name:Text;subcategory:string;q:number;r:number;height:number;width:number;complexity:number;activity:number;questionCount:number;createdAt:string;lastUpdated:string;sourceChannel?:'voice'|'text';catalogStyle?:Text};
 export type Creature = {id:string;species:Text;rarity:string;districtId:string;size:number;habitat:string;movement:string;seed:number};
 export type Landmark = {id:string;kind:string;name:Text;q:number;r:number;createdAt:string;eventId:string};
-export type State = {schemaVersion:number;mode:string;revision:number;foundedAt:string;lastUpdated:string;totalQuestions:number;districts:District[];buildings:Building[];creatures:Creature[];landmarks:Landmark[]};
+export type Mosaic = {tiles:number;segmentCapacity:number};
+export type State = {schemaVersion:number;mode:string;revision:number;foundedAt:string;lastUpdated:string;totalQuestions:number;districts:District[];buildings:Building[];creatures:Creature[];landmarks:Landmark[];mosaic?:Mosaic};
 export type CityEvent = {id:string;kind:string;category:string;subcategory:string;complexity:number;importance:number;occurredAt:string;summary:Text;demo?:boolean;sourceChannel?:'voice'|'text'};
 export const state:State=stateJson;
 export const events:CityEvent[]=eventsJson.events;
@@ -22,6 +23,8 @@ export const category=(id:string)=>categories.find(c=>c.id===id) ?? categories[c
 export function hash(s:string):number {let h=2166136261; for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 export const random=(seed:string)=>hash(seed)/4294967296;
 export function hex(q:number,r:number,size=1):[number,number] {return [size*Math.sqrt(3)*(q+r/2),size*1.5*r]}
+export function mosaicSegments(m:Mosaic){return Math.floor(m.tiles/m.segmentCapacity)+1}
+export function mosaicTilesInSegment(m:Mosaic,segment:number){const done=segment*m.segmentCapacity;return Math.max(0,Math.min(m.segmentCapacity,m.tiles-done))}
 export function population(s:State){return s.buildings.reduce((n,b)=>n+Math.round((b.width*b.height)*(2+b.complexity/3)),0)+s.districts.length*12}
 export function districtPopulation(s:State,id:string){return s.buildings.filter(b=>b.districtId===id).reduce((n,b)=>n+Math.round((b.width*b.height)*(2+b.complexity/3)),12)}
 export function nextMilestone(count:number){return milestones.find(m=>m>count)}
