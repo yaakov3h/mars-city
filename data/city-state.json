@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 3,
+  "revision": 4,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-09-30T09:50:43+03:00",
-  "totalQuestions": 2,
+  "lastUpdated": "2026-09-30T11:22:44+03:00",
+  "totalQuestions": 3,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -23,6 +23,15 @@
       "demand": 2,
       "questionCount": 1,
       "foundedAt": "2026-09-30T09:50:43+03:00"
+    },
+    {
+      "id": "district-bank-regulation-20260930",
+      "category": "FINANCE",
+      "q": 0,
+      "r": 0,
+      "demand": 2,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T11:22:44+03:00"
     }
   ],
   "buildings": [
@@ -61,6 +70,24 @@
       "questionCount": 1,
       "createdAt": "2026-09-30T09:50:43+03:00",
       "lastUpdated": "2026-09-30T09:50:43+03:00"
+    },
+    {
+      "id": "b-bank-regulation-20260930",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "מצודת האסדרה",
+        "en": "Regulation Citadel"
+      },
+      "subcategory": "BANKING_REGULATION",
+      "q": -1,
+      "r": 0,
+      "height": 9.1,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T11:22:44+03:00",
+      "lastUpdated": "2026-09-30T11:22:44+03:00"
     }
   ],
   "creatures": [],
