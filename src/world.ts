@@ -85,7 +85,14 @@ export class World {
   part(new THREE.BoxGeometry(2.8,.25,2.15),base,-4.6,.2,3.9);const water=new THREE.MeshStandardMaterial({color:'#548e8d',metalness:.65,roughness:.19,emissive:'#32575b',emissiveIntensity:.18});part(new THREE.BoxGeometry(2.45,.035,1.8),water,-4.6,.35,3.9);
   const sculpture=part(new THREE.TorusGeometry(.55,.11,8,32),glow,-4.6,1.18,3.9);sculpture.rotation.y=Math.PI/6;part(new THREE.BoxGeometry(.5,.55,.5),stone,-4.6,.63,3.9);
   const leaves=['#556c34','#9db976','#2e6048'].map(gardenLeaf);
-  for(let j=0;j<7;j++){const side=j%2?1:-1,x=side*(4.7+random('citadel-planter'+j)*.8),z=-3.4+Math.floor(j/2)*2.05;part(new THREE.BoxGeometry(1.05,.4,.83),base,x,.3,z);const height=.5+random('citadel-shrub'+j)*.55;for(let k=0;k<4;k++){const leaf=part(new THREE.IcosahedronGeometry(.32,1),leaves[(j+k)%3],x+(k%2-.5)*.3,.65+height*(k/4),z+(Math.floor(k/2)-.5)*.3);leaf.scale.set(1.2,1.1,1);}}
+  // Sealed transparent growing sleeves keep vegetation inside a pressurized habitat.
+  const plantGlass=new THREE.MeshPhysicalMaterial({color:'#b6e5df',metalness:.05,roughness:.08,transparent:true,opacity:.22,clearcoat:1,side:THREE.DoubleSide,depthWrite:false});
+  const glassEdge=new THREE.MeshStandardMaterial({color:'#a6d6cd',metalness:.55,roughness:.24,emissive:color,emissiveIntensity:.16});
+  for(let j=0;j<7;j++){const side=j%2?1:-1,x=side*(4.7+random('citadel-planter'+j)*.8),z=-3.4+Math.floor(j/2)*2.05;part(new THREE.BoxGeometry(1.05,.4,.83),base,x,.3,z);const height=.5+random('citadel-shrub'+j)*.55;for(let k=0;k<4;k++){const leaf=part(new THREE.IcosahedronGeometry(.32,1),leaves[(j+k)%3],x+(k%2-.5)*.3,.65+height*(k/4),z+(Math.floor(k/2)-.5)*.3);leaf.scale.set(1.2,1.1,1);}
+   const sleeve=part(new THREE.CylinderGeometry(.83,.83,1.65,24,1,false),plantGlass,x,1.325,z);sleeve.scale.z=.8;
+   for(const y of [.52,2.15]){const rim=part(new THREE.TorusGeometry(.83,.027,5,24),glassEdge,x,y,z);rim.rotation.x=Math.PI/2;rim.scale.y=.8;}
+   for(const dx of [-.69,.69])part(new THREE.BoxGeometry(.022,1.6,.025),glassEdge,x+dx,1.33,z-.36);
+  }
   for(let j=0;j<3;j++){const x=1.7+j*1.65;part(new THREE.BoxGeometry(1.1,.17,.44),stone,x,.53,5.45);for(const dx of [-.36,.36])part(new THREE.BoxGeometry(.1,.45,.3),base,x+dx,.25,5.45);}
   const light=new THREE.PointLight(color,0,20,2);light.position.copy(group.position).add(new THREE.Vector3(0,3,3));this.scene.add(light);this.cityLights.push(light);
  }
