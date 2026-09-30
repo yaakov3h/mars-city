@@ -35,3 +35,10 @@ Owner correction, October 1, 2026:
 - Imagery Studio is independent, with a broad planted garden under glazing on its own full-size hex.
 - Mosaic floors use the same full city hex size, with 7 window/tile positions. Only 2 are colored so far. Each future share fills one, then growth continues to the next full hex; pair growth and crater avoidance remain.
 - Building information overlay is off by default; enable it using the dedicated viewport button.
+
+Owner steering, October 1, 00:37:
+- Keep the approved studio elevation and fit future underground passages to it.
+- One-time exception: clear natural stones only from the existing mosaic hex. Future building footprints must avoid natural stones as well as craters; do not relocate them. Inspect all 360 deterministic rock instances before any future placement, regardless of graphics quality.
+- Possible future use of rocky ground: small planted spaces and glazed domes beside stones, not approved for construction yet.
+- Mosaic chamber: hollow underground room beneath the seven window slots, with upward viewing now. Connections to the wider underground network through glass passages are future work.
+- Next 20:00 calibration: discuss which topics justify buildings based on conversation amount and complexity, then define automation boundaries. No auto-build grant exists yet.
