@@ -129,6 +129,33 @@ export class World {
   else if(['SCIENCE','HEALTH','ANIMALS'].includes(id)){const pod=add(new THREE.SphereGeometry(1.25,20,12,0,Math.PI*2,0,Math.PI/2),body,0,.1,0);pod.scale.y=1.2;add(new THREE.BoxGeometry(.5,.75,.12),accent,0,.5,1.1);add(new THREE.CylinderGeometry(.05,.08,1.8,6),copper,0,1.7,0);const orbit=add(new THREE.TorusGeometry(.55,.035,5,32),accent,0,2.5,0);orbit.userData.spin=true;this.animated.push(orbit);}
   else if(['ENGINEERING','PERSONAL_PROJECTS','TRAVEL'].includes(id)){for(const x of [-.9,.9])add(new THREE.BoxGeometry(.12,2.4,.12),copper,x,1.2,0);add(new THREE.BoxGeometry(2,.16,.6),body,0,2.4,0);add(new THREE.CylinderGeometry(.35,.45,1.2,8),body,0,.8,0);const sensor=add(new THREE.OctahedronGeometry(.42),accent,0,1.65,0);sensor.userData.spin=true;this.animated.push(sensor);for(let j=0;j<3;j++)add(new THREE.BoxGeometry(.35,.1,.8),base,-1+j, .12,1.5);}
   else{add(new THREE.CylinderGeometry(1.15,1.3,.25,12),base,0,.15,0);for(let j=0;j<3;j++){const art=add(new THREE.TorusGeometry(.5+j*.1,.07,6,28),j%2?accent:copper,0,.8+j*.8,0);art.rotation.x=j*.5;art.userData.spin=true;this.animated.push(art);}add(new THREE.BoxGeometry(1.3,.15,.4),body,0,.5,1.65);}
+  // Glazed workshops and echo canopy stay exclusive to the fictional catalog.
+  const gardenGlass=new THREE.MeshPhysicalMaterial({color:'#b9e3df',transparent:true,opacity:.24,roughness:.09,metalness:.1,side:THREE.DoubleSide,depthWrite:false});
+  if(id==='ENGINEERING'){
+   part(new THREE.BoxGeometry(5.8,3.55,.055),gardenGlass,0,3.65,-2.06);
+   for(const x of [-3.02,3.02]){part(new THREE.BoxGeometry(.055,3.55,3.7),gardenGlass,x,3.65,0);for(let j=0;j<3;j++)part(new THREE.BoxGeometry(.06,.065,3.75),copper,x,2+j*1.65,0);}
+   for(let j=0;j<5;j++)part(new THREE.BoxGeometry(.055,3.6,.07),copper,-2.4+j*1.2,3.65,-2.1);
+   part(new THREE.BoxGeometry(4.8,.07,2.8),gardenGlass,0,6.1,0);
+  }
+  if(id==='OTHER'){
+   const cover=part(new THREE.SphereGeometry(4.1,32,20,0,Math.PI*2,0,Math.PI/2),gardenGlass,0,.12,0);cover.scale.set(1.15,1,.42);
+   for(let j=0;j<5;j++){const x=-3+j*1.5;part(new THREE.BoxGeometry(.05,2.4,.05),copper,x,1.2,1.7);part(new THREE.BoxGeometry(.05,2.4,.05),copper,x,1.2,-1.7);}
+  }
+  // More complex or taller plots get more protected pocket gardens.
+  const gardenCount=Math.min(6,2+Math.floor(b.complexity/2)+(b.height>=15?1:0));
+  const gardenPositions=[[-3.8,2.8],[3.8,2.8],[-4.5,-1],[4.5,-1],[0,-4.3],[0,3.8]];
+  for(let j=0;j<gardenCount;j++){
+   const [x,z]=gardenPositions[j],r=.68+(b.complexity>=4?.12:0),bed=part(new THREE.CylinderGeometry(r,r+.1,.2,12),base,x,.2,z);
+   part(new THREE.CylinderGeometry(r*.85,r*.85,.055,12),material('#5a4533',0),x,.33,z);
+   const cover=part(new THREE.SphereGeometry(r+.13,20,12,0,Math.PI*2,0,Math.PI/2),gardenGlass,x,.31,z);cover.scale.y=1.25;
+   const rim=part(new THREE.TorusGeometry(r+.13,.028,5,28),copper,x,.32,z);rim.rotation.x=Math.PI/2;
+   for(let k=0;k<4;k++){const a=k*Math.PI/2,px=x+Math.cos(a)*r*.46,pz=z+Math.sin(a)*r*.46;part(new THREE.CylinderGeometry(.025,.04,.3,5),base,px,.48,pz);const leaf=part(new THREE.IcosahedronGeometry(.18+(k%2)*.05,1),gardenLeaf(k%2?'#658b49':'#376b50'),px,.72,pz);leaf.scale.y=1.3;}
+  }
+  // Upper-level gardens use actual flat terraces, never float above domes.
+  if(['WORK','LEARNING','HEALTH','PERSONAL_PROJECTS'].includes(id)&&b.complexity>=3){
+   const roofY=id==='WORK'?6.27:id==='LEARNING'?3.25:id==='HEALTH'?3.86:3.38;
+   for(const x of [-1,1]){part(new THREE.BoxGeometry(.75,.18,.65),base,x,roofY,-.7);for(let j=0;j<3;j++){const leaf=part(new THREE.IcosahedronGeometry(.17,1),gardenLeaf('#5a8847'),x+(j-1)*.22,roofY+.3,-.7);leaf.scale.y=1.3;}part(new THREE.BoxGeometry(.82,.65,.72),gardenGlass,x,roofY+.32,-.7);}
+  }
   if(id==='TRAVEL'){const rover=new THREE.Group();this.mesh(new THREE.BoxGeometry(.9,.35,.65),body,0,.35,0,rover);for(const x of [-.45,.45])for(const z of [-.36,.36]){const wheel=this.mesh(new THREE.CylinderGeometry(.22,.22,.12,10),base,x,.21,z,rover);wheel.rotation.z=Math.PI/2;}rover.userData={route:true,phase:0,radius:4.2};group.add(rover);this.animated.push(rover);}
  }
  catalogTextures(group:THREE.Group){const cache=new Map<THREE.Material,THREE.Material>();group.traverse(o=>{if(o instanceof THREE.Mesh&&!Array.isArray(o.material)){if(!cache.has(o.material)){const next=catalogTexture(o.material);cache.set(o.material,next);if(next instanceof THREE.MeshStandardMaterial)this.cityMaterials.push(next);}o.material=cache.get(o.material)!;}});}
