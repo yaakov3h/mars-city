@@ -29,3 +29,9 @@ Building calibration, September 30, 2026 (experimental, not a fixed automatic ru
 - Small image experiment: approved and built at 1/5 as the creative district's imagery studio.
 - Access/sharing administration: approved as a cumulative central-plaza mosaic (owner's pick over arch/bridge). Each granted file permission adds one abstract tile - no names or private details. A hex segment holds 7 translucent colored tiles (one center, six around); when full, a new segment spawns. Segments grow in adjacent pairs, and each new pair lands at a different free spot so mosaic placement never constrains building construction. Seeded with 2 tiles for the two existing shares. Future plan: restaurants and walkable entertainment areas beneath the designated mosaic hexes.
 - Continue comparing real topics with the owner to refine the scale; no blanket automatic construction permission follows from these examples.
+
+Owner correction, October 1, 2026:
+- Every independent building uses its own full-size city hex. Complexity changes the building, not the hex footprint.
+- Imagery Studio is independent, with a broad planted garden under glazing on its own full-size hex.
+- Mosaic floors use the same full city hex size, with 7 window/tile positions. Only 2 are colored so far. Each future share fills one, then growth continues to the next full hex; pair growth and crater avoidance remain.
+- Building information overlay is off by default; enable it using the dedicated viewport button.
