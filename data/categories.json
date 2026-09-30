@@ -1,17 +1,152 @@
 [
-{"id":"TECHNOLOGY","he":"טכנולוגיה","en":"Technology","color":"#70d8ef","icon":"⌘","styleHe":"צריחי גביש ואנרגיה","styleEn":"Crystal spires and energy","form":"crystal"},
-{"id":"ENGINEERING","he":"הנדסה","en":"Engineering","color":"#efa667","icon":"⚙","styleHe":"גשרים ומסגרות חשופות","styleEn":"Bridges and exposed frameworks","form":"frame"},
-{"id":"WORK","he":"עבודה","en":"Work","color":"#d5bc81","icon":"▤","styleHe":"מתחמים מדורגים","styleEn":"Layered working complexes","form":"stack"},
-{"id":"LEARNING","he":"למידה","en":"Learning","color":"#ae9af4","icon":"◉","styleHe":"מגדלי ידע ומצפים","styleEn":"Observatories and knowledge towers","form":"observatory"},
-{"id":"FINANCE","he":"כספים","en":"Finance","color":"#b7d59c","icon":"◈","styleHe":"מגדלי מתכת אלגנטיים","styleEn":"Elegant metallic towers","form":"stack"},
-{"id":"HOME","he":"בית","en":"Home","color":"#f4b893","icon":"⌂","styleHe":"כיפות ומגורים חמים","styleEn":"Warm residential domes","form":"habitat"},
-{"id":"TRAVEL","he":"נסיעות","en":"Travel","color":"#81c3d2","icon":"✦","styleHe":"מנחתים וקשתות ניווט","styleEn":"Landing pads and navigation arches","form":"pad"},
-{"id":"CREATIVE","he":"יצירה","en":"Creative","color":"#f3a7bc","icon":"✳","styleHe":"צורות אורגניות לא סימטריות","styleEn":"Asymmetric organic forms","form":"organic"},
-{"id":"ANIMALS","he":"בעלי חיים","en":"Animals","color":"#b6d798","icon":"❋","styleHe":"בתי גידול וכיפות","styleEn":"Habitats and biodomes","form":"habitat"},
-{"id":"FAMILY","he":"משפחה","en":"Family","color":"#efa99e","icon":"♡","styleHe":"אשכולות מגורים","styleEn":"Residential clusters","form":"habitat"},
-{"id":"HEALTH","he":"בריאות","en":"Health","color":"#8cd3c6","icon":"✚","styleHe":"כיפות טיפול","styleEn":"Healing domes","form":"habitat"},
-{"id":"ENTERTAINMENT","he":"בידור","en":"Entertainment","color":"#f4c983","icon":"♫","styleHe":"זירות ואורות","styleEn":"Arenas and lights","form":"organic"},
-{"id":"SCIENCE","he":"מדע","en":"Science","color":"#b3b7fa","icon":"☄","styleHe":"מעבדות ומצפים","styleEn":"Laboratories and observatories","form":"observatory"},
-{"id":"PERSONAL_PROJECTS","he":"פרויקטים אישיים","en":"Personal projects","color":"#ffcf83","icon":"✧","styleHe":"מבני חתימה ייחודיים","styleEn":"Signature structures","form":"crystal"},
-{"id":"OTHER","he":"אחר","en":"Other","color":"#b9ada5","icon":"◇","styleHe":"מבנים משתנים","styleEn":"Adaptive forms","form":"stack"}
+  {
+    "id": "TECHNOLOGY",
+    "he": "טכנולוגיה",
+    "en": "Technology",
+    "color": "#70d8ef",
+    "icon": "⌘",
+    "styleHe": "צריחי גביש ואנרגיה",
+    "styleEn": "Crystal spires and energy",
+    "form": "crystal"
+  },
+  {
+    "id": "ENGINEERING",
+    "he": "הנדסה",
+    "en": "Engineering",
+    "color": "#efa667",
+    "icon": "⚙",
+    "styleHe": "גשרים ומסגרות חשופות",
+    "styleEn": "Bridges and exposed frameworks",
+    "form": "frame"
+  },
+  {
+    "id": "WORK",
+    "he": "עבודה",
+    "en": "Work",
+    "color": "#d5bc81",
+    "icon": "▤",
+    "styleHe": "מתחמים מדורגים",
+    "styleEn": "Layered working complexes",
+    "form": "stack"
+  },
+  {
+    "id": "LEARNING",
+    "he": "למידה",
+    "en": "Learning",
+    "color": "#ae9af4",
+    "icon": "◉",
+    "styleHe": "מגדלי ידע ומצפים",
+    "styleEn": "Observatories and knowledge towers",
+    "form": "observatory"
+  },
+  {
+    "id": "FINANCE",
+    "he": "כלכלה ובירוקרטיה",
+    "en": "Economy and bureaucracy",
+    "color": "#b7d59c",
+    "icon": "◈",
+    "styleHe": "מגדלי מתכת אלגנטיים",
+    "styleEn": "Elegant metallic towers",
+    "form": "stack"
+  },
+  {
+    "id": "HOME",
+    "he": "בית",
+    "en": "Home",
+    "color": "#f4b893",
+    "icon": "⌂",
+    "styleHe": "כיפות ומגורים חמים",
+    "styleEn": "Warm residential domes",
+    "form": "habitat"
+  },
+  {
+    "id": "TRAVEL",
+    "he": "נסיעות",
+    "en": "Travel",
+    "color": "#81c3d2",
+    "icon": "✦",
+    "styleHe": "מנחתים וקשתות ניווט",
+    "styleEn": "Landing pads and navigation arches",
+    "form": "pad"
+  },
+  {
+    "id": "CREATIVE",
+    "he": "יצירה",
+    "en": "Creative",
+    "color": "#f3a7bc",
+    "icon": "✳",
+    "styleHe": "צורות אורגניות לא סימטריות",
+    "styleEn": "Asymmetric organic forms",
+    "form": "organic"
+  },
+  {
+    "id": "ANIMALS",
+    "he": "בעלי חיים",
+    "en": "Animals",
+    "color": "#b6d798",
+    "icon": "❋",
+    "styleHe": "בתי גידול וכיפות",
+    "styleEn": "Habitats and biodomes",
+    "form": "habitat"
+  },
+  {
+    "id": "FAMILY",
+    "he": "משפחה",
+    "en": "Family",
+    "color": "#efa99e",
+    "icon": "♡",
+    "styleHe": "אשכולות מגורים",
+    "styleEn": "Residential clusters",
+    "form": "habitat"
+  },
+  {
+    "id": "HEALTH",
+    "he": "בריאות",
+    "en": "Health",
+    "color": "#8cd3c6",
+    "icon": "✚",
+    "styleHe": "כיפות טיפול",
+    "styleEn": "Healing domes",
+    "form": "habitat"
+  },
+  {
+    "id": "ENTERTAINMENT",
+    "he": "בידור",
+    "en": "Entertainment",
+    "color": "#f4c983",
+    "icon": "♫",
+    "styleHe": "זירות ואורות",
+    "styleEn": "Arenas and lights",
+    "form": "organic"
+  },
+  {
+    "id": "SCIENCE",
+    "he": "מדע",
+    "en": "Science",
+    "color": "#b3b7fa",
+    "icon": "☄",
+    "styleHe": "מעבדות ומצפים",
+    "styleEn": "Laboratories and observatories",
+    "form": "observatory"
+  },
+  {
+    "id": "PERSONAL_PROJECTS",
+    "he": "פרויקטים אישיים",
+    "en": "Personal projects",
+    "color": "#ffcf83",
+    "icon": "✧",
+    "styleHe": "מבני חתימה ייחודיים",
+    "styleEn": "Signature structures",
+    "form": "crystal"
+  },
+  {
+    "id": "OTHER",
+    "he": "אחר",
+    "en": "Other",
+    "color": "#b9ada5",
+    "icon": "◇",
+    "styleHe": "מבנים משתנים",
+    "styleEn": "Adaptive forms",
+    "form": "stack"
+  }
 ]
