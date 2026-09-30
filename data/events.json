@@ -148,6 +148,32 @@
         "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
         "en": "A transit center linking the upper city and the streets below, with light through hex connections"
       }
+    },
+    {
+      "id": "images-20260930",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "IMAGE_MAKING_EXPERIMENTS",
+      "complexity": 1,
+      "importance": 1,
+      "occurredAt": "2026-09-30T22:18:50+03:00",
+      "summary": {
+        "he": "ניסוי יצירתי קטן בדימויים ממוחשבים",
+        "en": "A small creative experiment in generated imagery"
+      }
+    },
+    {
+      "id": "permissions-mosaic-20260930",
+      "kind": "question",
+      "category": "OTHER",
+      "subcategory": "ACCESS_AND_SHARING_ADMIN",
+      "complexity": 1,
+      "importance": 1,
+      "occurredAt": "2026-09-30T22:25:05+03:00",
+      "summary": {
+        "he": "מעקב מצטבר של שיתופי קבצים, נאסף כפסיפס בכיכר המרכזית",
+        "en": "A cumulative record of file sharing, collected as a mosaic in the central plaza"
+      }
     }
   ]
 }
