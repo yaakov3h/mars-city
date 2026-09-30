@@ -96,6 +96,32 @@
         "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
         "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
       }
+    },
+    {
+      "id": "cat-rhythm-20260930-district",
+      "kind": "district_created",
+      "category": "ANIMALS",
+      "subcategory": "DAILY_CARE_AND_CURIOSITY",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-09-30T21:15:58+03:00",
+      "summary": {
+        "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
+        "en": "A daily care routine paired with curiosity and learning"
+      }
+    },
+    {
+      "id": "cat-rhythm-20260930",
+      "kind": "question",
+      "category": "ANIMALS",
+      "subcategory": "DAILY_CARE_AND_CURIOSITY",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-09-30T21:15:58+03:00",
+      "summary": {
+        "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
+        "en": "A daily care routine paired with curiosity and learning"
+      }
     }
   ]
 }
