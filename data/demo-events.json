@@ -1,1 +1,230 @@
-{"schemaVersion":1,"events":[{"id":"demo-001","kind":"founding","category":"PERSONAL_PROJECTS","subcategory":"MARS_CITY","complexity":5,"importance":5,"occurredAt":"2026-09-30T00:00:00+03:00","summary":{"he":"הנחת אבן היסוד לעיר הדגמה","en":"Foundation of the demonstration city"},"demo":true},{"id":"demo-002","kind":"district_created","category":"TECHNOLOGY","subcategory":"AI","complexity":4,"importance":3,"occurredAt":"2026-09-30T00:01:00+03:00","summary":{"he":"רובע הטכנולוגיה קם","en":"Technology district established"},"demo":true},{"id":"demo-003","kind":"district_created","category":"LEARNING","subcategory":"KNOWLEDGE","complexity":3,"importance":3,"occurredAt":"2026-09-30T00:02:00+03:00","summary":{"he":"המצפה הראשון נפתח","en":"First observatory opened"},"demo":true},{"id":"demo-004","kind":"district_created","category":"HOME","subcategory":"HABITAT","complexity":2,"importance":2,"occurredAt":"2026-09-30T00:03:00+03:00","summary":{"he":"בתי הגידול הראשונים הופיעו","en":"First habitats appeared"},"demo":true},{"id":"demo-005","kind":"concept_milestone","category":"PERSONAL_PROJECTS","subcategory":"MARS_CITY","complexity":5,"importance":5,"occurredAt":"2026-09-30T00:04:00+03:00","summary":{"he":"מונומנט העיר הראשונה","en":"First city monument"},"demo":true}]}
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "id": "example-technology",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:00:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: צריח הנתונים",
+        "en": "Fictional example: Data Spire"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-engineering",
+      "kind": "question",
+      "category": "ENGINEERING",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:01:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: אולם המכונות",
+        "en": "Fictional example: Machine Hall"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-work",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:02:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: מרפסות העבודה",
+        "en": "Fictional example: Office Terraces"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-learning",
+      "kind": "question",
+      "category": "LEARNING",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:03:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: ספריית המדרגות",
+        "en": "Fictional example: Stepped Library"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-finance",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:04:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: מצודת האסדרה",
+        "en": "Fictional example: Regulation Citadel"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-home",
+      "kind": "question",
+      "category": "HOME",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:05:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: בתי האור",
+        "en": "Fictional example: Light Homes"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-travel",
+      "kind": "question",
+      "category": "TRAVEL",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:06:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: נמל הסיירים",
+        "en": "Fictional example: Rover Port"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-creative",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:07:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: אטלייה פתוח",
+        "en": "Fictional example: Open Atelier"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-animals",
+      "kind": "question",
+      "category": "ANIMALS",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:08:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: בית הגידול",
+        "en": "Fictional example: Habitat Biodome"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-family",
+      "kind": "question",
+      "category": "FAMILY",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:09:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: חצר המשפחה",
+        "en": "Fictional example: Family Courtyard"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-health",
+      "kind": "question",
+      "category": "HEALTH",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:10:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: מרפאת החממה",
+        "en": "Fictional example: Greenhouse Clinic"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-entertainment",
+      "kind": "question",
+      "category": "ENTERTAINMENT",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:11:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: במת הלילה",
+        "en": "Fictional example: Night Stage"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-science",
+      "kind": "question",
+      "category": "SCIENCE",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:12:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: מצפה המחקר",
+        "en": "Fictional example: Research Observatory"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-personal_projects",
+      "kind": "question",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "CATEGORY_EXAMPLE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:13:00+03:00",
+      "summary": {
+        "he": "דוגמה בדיונית: סדנת היוצר",
+        "en": "Fictional example: Maker Workshop"
+      },
+      "demo": true,
+      "sourceChannel": "text"
+    },
+    {
+      "id": "example-other",
+      "kind": "question",
+      "category": "OTHER",
+      "subcategory": "VOICE_CONVERSATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T00:14:00+03:00",
+      "summary": {
+        "he": "דוגמה לשיחה קולית: ביתן ההדים",
+        "en": "Voice conversation example: Echo Pavilion"
+      },
+      "demo": true,
+      "sourceChannel": "voice"
+    }
+  ]
+}
