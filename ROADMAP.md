@@ -44,3 +44,11 @@ Owner steering, October 1, 00:37:
 - Next 20:00 calibration: discuss which topics justify buildings based on conversation amount and complexity, then define automation boundaries. No auto-build grant exists yet.
 
 October 1 control feedback: mosaic chamber entry button is temporary until the underground becomes one connected unit. Use the same direction pad and look joystick as the pilot, with camera-relative movement. Owner has another underground idea to share later; no implementation inferred.
+
+### Compact interface and underground interim routing (2026-10-01)
+- One city clock outside the map; one compact surface entry labeled underground.
+- Both current underground areas expose the same two destination buttons. These are temporary jumps, not a built tunnel or a claim of one connected underground.
+- District buttons independently hide/show their buildings, with Show all. No counts or district identities changed.
+- Pending decision: whether two Creative sites should become one logical district spanning separate full-size hexes. Do not merge until approved.
+- Pending graphics proposal: improve reusable physical materials, terrain detail and lighting without replacing architecture or city data. No full visual upgrade approved.
+- Unified underground remains a planning task: useful routes, elevation, building entrances, glass seams, service/activity spaces, and future capacity, not one indiscriminate hollow volume.
