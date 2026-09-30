@@ -56,7 +56,7 @@ export class World {
   }
  }
  originRing(group:THREE.Group,x:number,y:number,z:number){
-  const color=category('TECHNOLOGY').color,stone=material('#263646',.75),edge=material(color,.55,.65),silver=material('#71919f',.8),floor=material('#293447',.7);
+  const color=category('TECHNOLOGY').color,stone=material('#263646',.75),edge=material(color,.55,.65),silver=material('#71919f',.8),floor=material('#354560',.7);
   this.cityMaterials.push(edge);group.userData.monument='Origin Ring';
   const slab=this.mesh(new THREE.CylinderGeometry(8.35,8.6,.55,6),floor,0,.12,0,group);slab.rotation.y=Math.PI/6;
   // Engraved hex paving: alternating radial inlays, fine concentric traces and six glyph panels.
@@ -73,14 +73,15 @@ export class World {
   // Tall, tapered monoliths form an open arc with a clear entry facing the viewer.
   for(let i=0;i<9;i++){const a=(i/10*2+.2)*Math.PI,h=13.5+Math.sin(i*.7)*1.2;
    const tower=new THREE.Group();tower.position.set(Math.sin(a)*5.35,.45,Math.cos(a)*5.35);tower.rotation.y=a;group.add(tower);
-   this.mesh(new THREE.BoxGeometry(1.15,h,1.05),stone,0,h/2,0,tower);
-   this.mesh(new THREE.BoxGeometry(.72,h-.55,1.10),silver,0,h/2,0,tower);
-   for(const side of [-1,1])this.mesh(new THREE.BoxGeometry(.065,h-.4,1.16),edge,side*.51,h/2,0,tower);
-   for(let j=0;j<5;j++)this.mesh(new THREE.BoxGeometry(.58,.08,1.14),edge,0,1.8+j*2.3,0,tower);
-   this.mesh(new THREE.BoxGeometry(1.42,.32,1.35),stone,0,h,0,tower);
+   this.mesh(new THREE.BoxGeometry(1.75,h,1.45),stone,0,h/2,0,tower);
+   this.mesh(new THREE.BoxGeometry(1.24,h-.55,1.50),silver,0,h/2,0,tower);
+   for(const side of [-1,1])this.mesh(new THREE.BoxGeometry(.075,h-.4,1.56),edge,side*.80,h/2,0,tower);
+   for(let j=0;j<5;j++)this.mesh(new THREE.BoxGeometry(1.08,.10,1.54),edge,0,1.8+j*2.3,0,tower);
+   this.mesh(new THREE.BoxGeometry(2.02,.32,1.75),stone,0,h,0,tower);
    this.mesh(new THREE.BoxGeometry(.82,.035,.82),edge,0,h+.19,0,tower);
   }
-  const sphere=this.mesh(new THREE.IcosahedronGeometry(1.8,3),material(color,.32,.9),0,8.6,0,group);sphere.userData.pulse=true;this.animated.push(sphere);
+  for(const i of [0,2,4,6]){const a=(i/10*2+.2)*Math.PI,b=((i+1)/10*2+.2)*Math.PI,mx=(Math.sin(a)+Math.sin(b))*2.675,mz=(Math.cos(a)+Math.cos(b))*2.675;const lintel=this.mesh(new THREE.BoxGeometry(3.65,.48,1.35),stone,mx,13.65,mz,group);lintel.rotation.y=-(a+b)/2;const trace=this.mesh(new THREE.BoxGeometry(3.35,.065,1.40),edge,mx,13.93,mz,group);trace.rotation.y=lintel.rotation.y;}
+  const sphere=this.mesh(new THREE.IcosahedronGeometry(1.8,3),material('#259bc8',.32,.38),0,8.6,0,group);sphere.userData.pulse=true;this.animated.push(sphere);
   const shell=this.mesh(new THREE.IcosahedronGeometry(2.05,1),new THREE.MeshBasicMaterial({color,wireframe:true,transparent:true,opacity:.42}),0,8.6,0,group);shell.userData.spin=true;this.animated.push(shell);
   for(let j=0;j<2;j++){const orbit=this.mesh(new THREE.TorusGeometry(2.55,.035,5,80),edge,0,8.6,0,group);orbit.rotation.x=Math.PI/2+j*.8;orbit.userData.spin=true;this.animated.push(orbit);}
   const light=new THREE.PointLight(color,0,30,2);light.position.set(x,y+8.5,z);this.scene.add(light);this.cityLights.push(light);
@@ -96,7 +97,7 @@ export class World {
  focusDistrict(id:string){const obj=this.root.children.find(o=>o.userData.districtId===id);if(obj)this.focus(obj)}
  setHighlight(id?:string){this.highlight=id;this.applyHighlight()}
  applyHighlight(){for(const o of this.root.children){const d=o.userData.districtId;o.visible=!this.highlight||!d||d===this.highlight||o.userData.buildingId===undefined}}
- setSolPhase(phase:number){this.solPhase=((phase%1)+1)%1;const a=this.solPhase*2*Math.PI-Math.PI/2,elevation=Math.sin(a),day=smooth((elevation+.17)/.49),dusk=Math.exp(-( ((this.solPhase-.75)/.075)**2 ));const sunDir=new THREE.Vector3(-.34,elevation*.82,.94*Math.cos(a)).normalize();this.sunlight.position.copy(sunDir).multiplyScalar(110);this.sunlight.target.position.set(0,0,0);this.sunlight.color.set(dusk>.3?'#b0bafa':'#ffe0b4');this.sunlight.intensity=.12+3.65*day;this.hemi.intensity=.26+2.05*day;this.hemi.color.set(dusk>.35?'#a9bbef':'#edddca');this.renderer.toneMappingExposure=1.7-.32*day;this.terrainMaterial.emissive.set('#793c2b');this.terrainMaterial.emissiveIntensity=.07+.1*day;this.scene.fog!.color.set(day>.35?'#986656':dusk>.35?'#555278':'#181c34');(this.scene.fog as THREE.FogExp2).density=.0055+(1-day)*.0015;this.skyMat.uniforms.uPhase.value=this.solPhase;this.skyMat.uniforms.uSun.value.copy(sunDir);this.sunOrb.position.copy(sunDir).multiplyScalar(170);this.sunHalo.position.copy(this.sunOrb.position);this.sunOrb.visible=elevation>-.13;this.sunHalo.visible=elevation>-.18;((this.starfield.material) as THREE.PointsMaterial).opacity=.78*(1-day);for(const m of this.cityMaterials)m.emissiveIntensity=.16+(1-day)*1.2;this.cityLights.forEach((light,i)=>{light.intensity=this.quality==='LOW'?0:(1-day)*(i===0?9:4.3)});this.onPhase(this.solPhase)}
+ setSolPhase(phase:number){this.solPhase=((phase%1)+1)%1;const a=this.solPhase*2*Math.PI-Math.PI/2,elevation=Math.sin(a),day=smooth((elevation+.17)/.49),dusk=Math.exp(-( ((this.solPhase-.75)/.075)**2 ));const sunDir=new THREE.Vector3(-.34,elevation*.82,.94*Math.cos(a)).normalize();this.sunlight.position.copy(sunDir).multiplyScalar(110);this.sunlight.target.position.set(0,0,0);this.sunlight.color.set(dusk>.3?'#b0bafa':'#ffe0b4');this.sunlight.intensity=.12+3.65*day;this.hemi.intensity=.26+2.05*day;this.hemi.color.set(dusk>.35?'#a9bbef':'#edddca');this.renderer.toneMappingExposure=1.7-.32*day;this.terrainMaterial.emissive.set('#793c2b');this.terrainMaterial.emissiveIntensity=.07+.1*day;this.scene.fog!.color.set(day>.35?'#986656':dusk>.35?'#555278':'#181c34');(this.scene.fog as THREE.FogExp2).density=.0055+(1-day)*.0015;this.skyMat.uniforms.uPhase.value=this.solPhase;this.skyMat.uniforms.uSun.value.copy(sunDir);this.sunOrb.position.copy(sunDir).multiplyScalar(170);this.sunHalo.position.copy(this.sunOrb.position);this.sunOrb.visible=elevation>-.13;this.sunHalo.visible=elevation>-.18;((this.starfield.material) as THREE.PointsMaterial).opacity=.78*(1-day);for(const m of this.cityMaterials)m.emissiveIntensity=.12+(1-day)*.62;this.cityLights.forEach((light,i)=>{light.intensity=this.quality==='LOW'?0:(1-day)*(i===0?9:4.3)});this.onPhase(this.solPhase)}
  setQuality(q:Quality){this.quality=q;this.renderer.shadowMap.enabled=q!=='LOW';this.resize()}
  private animate=()=>{if(!this.running)return;requestAnimationFrame(this.animate);const dt=this.clock.getDelta(),t=this.clock.elapsedTime;if(this.solPlaying&&!this.reduced)this.setSolPhase(this.solPhase+dt/180);this.sky.position.copy(this.camera.position);this.starfield.position.copy(this.camera.position);this.sunOrb.position.copy(this.camera.position).add(this.sunlight.position.clone().normalize().multiplyScalar(170));this.sunHalo.position.copy(this.sunOrb.position);this.controls.update();if(!this.reduced)for(const o of this.animated){if(o.userData.route){const a=t*.13+o.userData.phase;o.position.set(Math.cos(a)*o.userData.radius,.55,Math.sin(a)*o.userData.radius);o.rotation.y=-a;}else if(o.userData.pulse){o.scale.setScalar(1+Math.sin(t*.8)*.045);o.rotation.y+=dt*.06;}else if(o.userData.spin)o.rotation.y+=dt*.08;else if(o.userData.float)o.position.y=o.userData.originY+Math.sin(t*1.25+o.userData.phase)*.18;else o.rotation.z+=dt*.16}this.renderer.render(this.scene,this.camera)}
  dispose(){this.running=false;this.controls.dispose();this.renderer.dispose()}
