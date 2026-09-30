@@ -1,1 +1,494 @@
-{"schemaVersion":1,"mode":"demo","revision":1,"foundedAt":"2026-09-30T00:00:00+03:00","lastUpdated":"2026-09-30T00:04:00+03:00","totalQuestions":26,"districts":[{"id":"tech","category":"TECHNOLOGY","q":0,"r":0,"demand":8,"questionCount":8,"foundedAt":"2026-09-30T00:01:00+03:00"},{"id":"learning","category":"LEARNING","q":2,"r":-1,"demand":5,"questionCount":5,"foundedAt":"2026-09-30T00:02:00+03:00"},{"id":"home","category":"HOME","q":-2,"r":1,"demand":4,"questionCount":4,"foundedAt":"2026-09-30T00:03:00+03:00"},{"id":"creative","category":"CREATIVE","q":1,"r":2,"demand":3,"questionCount":3,"foundedAt":"2026-09-30T00:03:20+03:00"},{"id":"engineering","category":"ENGINEERING","q":-1,"r":-2,"demand":3,"questionCount":3,"foundedAt":"2026-09-30T00:03:40+03:00"},{"id":"projects","category":"PERSONAL_PROJECTS","q":3,"r":1,"demand":3,"questionCount":3,"foundedAt":"2026-09-30T00:00:00+03:00"}],"buildings":[{"id":"b-tech-1","districtId":"tech","name":{"he":"מגדל הסיגנל","en":"Signal Spire"},"subcategory":"AI","q":0,"r":0,"height":12,"width":2.1,"complexity":5,"activity":0.9,"questionCount":4,"createdAt":"2026-09-30T00:01:00+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-tech-2","districtId":"tech","name":{"he":"ליבת המחשבה","en":"Thought Core"},"subcategory":"SYSTEMS","q":1,"r":0,"height":7,"width":1.7,"complexity":4,"activity":0.8,"questionCount":3,"createdAt":"2026-09-30T00:01:30+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-tech-3","districtId":"tech","name":{"he":"תחנת אור","en":"Light Station"},"subcategory":"AI","q":-1,"r":1,"height":5,"width":1.5,"complexity":3,"activity":0.5,"questionCount":1,"createdAt":"2026-09-30T00:02:00+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-learn-1","districtId":"learning","name":{"he":"מצפה אופק","en":"Horizon Observatory"},"subcategory":"KNOWLEDGE","q":0,"r":0,"height":9,"width":2.1,"complexity":4,"activity":0.7,"questionCount":3,"createdAt":"2026-09-30T00:02:00+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-learn-2","districtId":"learning","name":{"he":"ארכיון הכוכבים","en":"Star Archive"},"subcategory":"LEARNING","q":1,"r":0,"height":5,"width":1.8,"complexity":3,"activity":0.6,"questionCount":2,"createdAt":"2026-09-30T00:02:30+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-home-1","districtId":"home","name":{"he":"בית השחר","en":"Dawn Habitat"},"subcategory":"HABITAT","q":0,"r":0,"height":4,"width":2.2,"complexity":2,"activity":0.6,"questionCount":3,"createdAt":"2026-09-30T00:03:00+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-home-2","districtId":"home","name":{"he":"חממת אדמה","en":"Terra Greenhouse"},"subcategory":"HABITAT","q":1,"r":0,"height":3,"width":1.7,"complexity":2,"activity":0.4,"questionCount":1,"createdAt":"2026-09-30T00:03:20+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-creative-1","districtId":"creative","name":{"he":"אטלייה זריחה","en":"Sunrise Atelier"},"subcategory":"DESIGN","q":0,"r":0,"height":7,"width":2,"complexity":4,"activity":0.7,"questionCount":3,"createdAt":"2026-09-30T00:03:20+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-engineering-1","districtId":"engineering","name":{"he":"גשר ארס","en":"Ares Bridge"},"subcategory":"STRUCTURES","q":0,"r":0,"height":6,"width":2.1,"complexity":4,"activity":0.6,"questionCount":3,"createdAt":"2026-09-30T00:03:40+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"},{"id":"b-projects-1","districtId":"projects","name":{"he":"צריח העיר החיה","en":"Living City Spire"},"subcategory":"MARS_CITY","q":0,"r":0,"height":13,"width":2.3,"complexity":5,"activity":1,"questionCount":3,"createdAt":"2026-09-30T00:00:00+03:00","lastUpdated":"2026-09-30T00:04:00+03:00"}],"creatures":[{"id":"c1","species":{"he":"זחל אבק","en":"Dust Glider"},"rarity":"common","districtId":"home","size":0.5,"habitat":"crater edge","movement":"roam","seed":11},{"id":"c2","species":{"he":"לומן","en":"Lumen"},"rarity":"uncommon","districtId":"tech","size":0.36,"habitat":"crystal field","movement":"float","seed":29},{"id":"c3","species":{"he":"נווד אבן","en":"Stone Wanderer"},"rarity":"rare","districtId":"projects","size":0.7,"habitat":"monument","movement":"roam","seed":47}],"landmarks":[{"id":"l1","kind":"concept","name":{"he":"אבן היסוד","en":"Foundation Beacon"},"q":1,"r":-1,"createdAt":"2026-09-30T00:04:00+03:00","eventId":"demo-005"}]}
+{
+  "schemaVersion": 1,
+  "mode": "demo",
+  "revision": 2,
+  "foundedAt": "2026-09-30T00:00:00+03:00",
+  "lastUpdated": "2026-09-30T00:14:00+03:00",
+  "totalQuestions": 15,
+  "districts": [
+    {
+      "id": "catalog-technology",
+      "category": "TECHNOLOGY",
+      "q": 0,
+      "r": 0,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:00:00+03:00"
+    },
+    {
+      "id": "catalog-engineering",
+      "category": "ENGINEERING",
+      "q": -1,
+      "r": 0,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:01:00+03:00"
+    },
+    {
+      "id": "catalog-work",
+      "category": "WORK",
+      "q": -2,
+      "r": 0,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:02:00+03:00"
+    },
+    {
+      "id": "catalog-learning",
+      "category": "LEARNING",
+      "q": 1,
+      "r": 0,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:03:00+03:00"
+    },
+    {
+      "id": "catalog-finance",
+      "category": "FINANCE",
+      "q": -2,
+      "r": -1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:04:00+03:00"
+    },
+    {
+      "id": "catalog-home",
+      "category": "HOME",
+      "q": -1,
+      "r": 1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:05:00+03:00"
+    },
+    {
+      "id": "catalog-travel",
+      "category": "TRAVEL",
+      "q": -3,
+      "r": 0,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:06:00+03:00"
+    },
+    {
+      "id": "catalog-creative",
+      "category": "CREATIVE",
+      "q": -2,
+      "r": -2,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:07:00+03:00"
+    },
+    {
+      "id": "catalog-animals",
+      "category": "ANIMALS",
+      "q": -2,
+      "r": 2,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:08:00+03:00"
+    },
+    {
+      "id": "catalog-family",
+      "category": "FAMILY",
+      "q": -2,
+      "r": 3,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:09:00+03:00"
+    },
+    {
+      "id": "catalog-health",
+      "category": "HEALTH",
+      "q": -4,
+      "r": 0,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:10:00+03:00"
+    },
+    {
+      "id": "catalog-entertainment",
+      "category": "ENTERTAINMENT",
+      "q": 1,
+      "r": 1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:11:00+03:00"
+    },
+    {
+      "id": "catalog-science",
+      "category": "SCIENCE",
+      "q": 0,
+      "r": 1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:12:00+03:00"
+    },
+    {
+      "id": "catalog-personal_projects",
+      "category": "PERSONAL_PROJECTS",
+      "q": -4,
+      "r": -1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:13:00+03:00"
+    },
+    {
+      "id": "catalog-other",
+      "category": "OTHER",
+      "q": -5,
+      "r": 1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T00:14:00+03:00"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "b-catalog-technology",
+      "districtId": "catalog-technology",
+      "name": {
+        "he": "צריח הנתונים",
+        "en": "Data Spire"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 13,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:00:00+03:00",
+      "lastUpdated": "2026-09-30T00:00:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "צריח נתונים, קווי מעגלים וטבעות הולוגרפיות",
+        "en": "Data spire, circuits and holographic rings"
+      }
+    },
+    {
+      "id": "b-catalog-engineering",
+      "districtId": "catalog-engineering",
+      "name": {
+        "he": "אולם המכונות",
+        "en": "Machine Hall"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:01:00+03:00",
+      "lastUpdated": "2026-09-30T00:01:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "שלד פתוח, מנוף ומערכת גלגלי שיניים",
+        "en": "Open frame, crane and gears"
+      }
+    },
+    {
+      "id": "b-catalog-work",
+      "districtId": "catalog-work",
+      "name": {
+        "he": "מרפסות העבודה",
+        "en": "Office Terraces"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:02:00+03:00",
+      "lastUpdated": "2026-09-30T00:02:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "משרדים מדורגים, מרפסות ופינת קפה",
+        "en": "Terraced offices, balconies and coffee corner"
+      }
+    },
+    {
+      "id": "b-catalog-learning",
+      "districtId": "catalog-learning",
+      "name": {
+        "he": "ספריית המדרגות",
+        "en": "Stepped Library"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:03:00+03:00",
+      "lastUpdated": "2026-09-30T00:03:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "ספרייה, מדרגות ידע ותאי לימוד",
+        "en": "Library, knowledge steps and study pods"
+      }
+    },
+    {
+      "id": "b-catalog-finance",
+      "districtId": "catalog-finance",
+      "name": {
+        "he": "מצודת האסדרה",
+        "en": "Regulation Citadel"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:04:00+03:00",
+      "lastUpdated": "2026-09-30T00:04:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "אדריכלות אזרחית וגגות נחושת מדורגים",
+        "en": "Civic architecture and stepped copper roofs"
+      }
+    },
+    {
+      "id": "b-catalog-home",
+      "districtId": "catalog-home",
+      "name": {
+        "he": "בתי האור",
+        "en": "Light Homes"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:05:00+03:00",
+      "lastUpdated": "2026-09-30T00:05:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "בתי כיפה, חלונות חמים וגינה מוגנת",
+        "en": "Dome homes, warm windows and protected garden"
+      }
+    },
+    {
+      "id": "b-catalog-travel",
+      "districtId": "catalog-travel",
+      "name": {
+        "he": "נמל הסיירים",
+        "en": "Rover Port"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:06:00+03:00",
+      "lastUpdated": "2026-09-30T00:06:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "רציפי סיירים, מגדל איתות ושערים",
+        "en": "Rover pads, beacon and gates"
+      }
+    },
+    {
+      "id": "b-catalog-creative",
+      "districtId": "catalog-creative",
+      "name": {
+        "he": "אטלייה פתוח",
+        "en": "Open Atelier"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 15,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:07:00+03:00",
+      "lastUpdated": "2026-09-30T00:07:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "סטודיו שלד פתוח וגן פסלים",
+        "en": "Open-frame studio and sculpture garden"
+      }
+    },
+    {
+      "id": "b-catalog-animals",
+      "districtId": "catalog-animals",
+      "name": {
+        "he": "בית הגידול",
+        "en": "Habitat Biodome"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:08:00+03:00",
+      "lastUpdated": "2026-09-30T00:08:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "כיפת בתי גידול, מסלולים ואגן שתייה",
+        "en": "Habitat dome, tracks and watering basin"
+      }
+    },
+    {
+      "id": "b-catalog-family",
+      "districtId": "catalog-family",
+      "name": {
+        "he": "חצר המשפחה",
+        "en": "Family Courtyard"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:09:00+03:00",
+      "lastUpdated": "2026-09-30T00:09:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "בתים מחוברים, חצר משותפת ומתקני משחק",
+        "en": "Connected homes, courtyard and playground"
+      }
+    },
+    {
+      "id": "b-catalog-health",
+      "districtId": "catalog-health",
+      "name": {
+        "he": "מרפאת החממה",
+        "en": "Greenhouse Clinic"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:10:00+03:00",
+      "lastUpdated": "2026-09-30T00:10:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "מרפאה, גן החלמה וחממה",
+        "en": "Clinic, healing garden and greenhouse"
+      }
+    },
+    {
+      "id": "b-catalog-entertainment",
+      "districtId": "catalog-entertainment",
+      "name": {
+        "he": "במת הלילה",
+        "en": "Night Stage"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:11:00+03:00",
+      "lastUpdated": "2026-09-30T00:11:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "כיפת במה ותאורת ניאון",
+        "en": "Stage dome and neon lighting"
+      }
+    },
+    {
+      "id": "b-catalog-science",
+      "districtId": "catalog-science",
+      "name": {
+        "he": "מצפה המחקר",
+        "en": "Research Observatory"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:12:00+03:00",
+      "lastUpdated": "2026-09-30T00:12:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "כיפת מצפה, מעבדות ושדה אנטנות",
+        "en": "Observatory, labs and antenna field"
+      }
+    },
+    {
+      "id": "b-catalog-personal_projects",
+      "districtId": "catalog-personal_projects",
+      "name": {
+        "he": "סדנת היוצר",
+        "en": "Maker Workshop"
+      },
+      "subcategory": "CATEGORY_EXAMPLE",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:13:00+03:00",
+      "lastUpdated": "2026-09-30T00:13:00+03:00",
+      "sourceChannel": "text",
+      "catalogStyle": {
+        "he": "סדנה, שולחנות עבודה ורמפת ניסוי",
+        "en": "Workshop, workbenches and test ramp"
+      }
+    },
+    {
+      "id": "b-catalog-other",
+      "districtId": "catalog-other",
+      "name": {
+        "he": "ביתן ההדים",
+        "en": "Echo Pavilion"
+      },
+      "subcategory": "VOICE_CONVERSATION",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 2.4,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T00:14:00+03:00",
+      "lastUpdated": "2026-09-30T00:14:00+03:00",
+      "sourceChannel": "voice",
+      "catalogStyle": {
+        "he": "ביתן פיסולי, גלי קול וצורות חד-פעמיות",
+        "en": "Sculpture pavilion, sound waves and one-off forms"
+      }
+    }
+  ],
+  "creatures": [],
+  "landmarks": []
+}
