@@ -122,6 +122,32 @@
         "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
         "en": "A daily care routine paired with curiosity and learning"
       }
+    },
+    {
+      "id": "transit-layers-20260930-district",
+      "kind": "district_created",
+      "category": "ENGINEERING",
+      "subcategory": "LAYERED_CITY_CIRCULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T21:47:20+03:00",
+      "summary": {
+        "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
+        "en": "A transit center linking the upper city and the streets below, with light through hex connections"
+      }
+    },
+    {
+      "id": "transit-layers-20260930",
+      "kind": "question",
+      "category": "ENGINEERING",
+      "subcategory": "LAYERED_CITY_CIRCULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T21:47:20+03:00",
+      "summary": {
+        "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
+        "en": "A transit center linking the upper city and the streets below, with light through hex connections"
+      }
     }
   ]
 }
