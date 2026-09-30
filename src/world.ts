@@ -361,6 +361,7 @@ export class World {
   for(let i=0;i<3;i++){const a=i*Math.PI*2/3,fill=new THREE.PointLight('#ebbc95',18,22,1.6);fill.position.set(x+Math.sin(a)*2.5,y+6+i*3,z+Math.cos(a)*2.5);fill.userData.dayIntensity=18;fill.userData.nightIntensity=32;this.scene.add(fill);this.cityLights.push(fill);}
 
  }
+ // Full-size mosaic floors use the same city hex footprint; colored windows fill gradually.
  mosaicCells(state:State){const m=state.mosaic!,cells=[...(m.hexes??[{q:0,r:1}])],occupied=()=>[...state.districts,...state.landmarks,...cells];while(cells.length<mosaicSegments(m)){const prev=cells[cells.length-1];const partner=cells.length%2===1?EDGES.map(([dq,dr])=>({q:prev.q+dq,r:prev.r+dr})).find(p=>buildable(p.q,p.r)&&!occupied().some(o=>o.q===p.q&&o.r===p.r)):undefined;cells.push(partner??nextHex(occupied(),[],'mosaic-pair-'+Math.floor(cells.length/2)));}return cells;}
  mosaicPlaza(state:State){const m=state.mosaic!,palette=['#e8c25a','#5a7bd9','#d97b5a','#7bc98a','#b98ad9','#e8e05a','#5ad9c9'];
   for(const [seg,cell] of this.mosaicCells(state).entries()){const [cx,cz]=hex(cell.q,cell.r,10),gy=groundY(cx,cz);this.zone({id:'mosaic-'+seg,category:'OTHER',q:cell.q,r:cell.r,demand:1,questionCount:0,foundedAt:state.foundedAt},cx,cz);const filled=mosaicTilesInSegment(m,seg);
