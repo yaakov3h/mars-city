@@ -85,15 +85,17 @@ export class World {
   part(new THREE.BoxGeometry(2.8,.25,2.15),base,-4.6,.2,3.9);const water=new THREE.MeshStandardMaterial({color:'#548e8d',metalness:.65,roughness:.19,emissive:'#32575b',emissiveIntensity:.18});part(new THREE.BoxGeometry(2.45,.035,1.8),water,-4.6,.35,3.9);
   const sculpture=part(new THREE.TorusGeometry(.55,.11,8,32),glow,-4.6,1.18,3.9);sculpture.rotation.y=Math.PI/6;part(new THREE.BoxGeometry(.5,.55,.5),stone,-4.6,.63,3.9);
   const leaves=['#556c34','#9db976','#2e6048'].map(gardenLeaf);
-  // Sealed transparent growing sleeves keep vegetation inside a pressurized habitat.
-  const plantGlass=new THREE.MeshPhysicalMaterial({color:'#b6e5df',metalness:.05,roughness:.08,transparent:true,opacity:.22,clearcoat:1,side:THREE.DoubleSide,depthWrite:false});
+  // One shared pressurized conservatory: plants, benches and an open walking aisle.
+  const plantGlass=new THREE.MeshPhysicalMaterial({color:'#b6e5df',metalness:.05,roughness:.08,transparent:true,opacity:.17,clearcoat:1,side:THREE.DoubleSide,depthWrite:false});
   const glassEdge=new THREE.MeshStandardMaterial({color:'#a6d6cd',metalness:.55,roughness:.24,emissive:color,emissiveIntensity:.16});
-  for(let j=0;j<7;j++){const side=j%2?1:-1,x=side*(4.7+random('citadel-planter'+j)*.8),z=-3.4+Math.floor(j/2)*2.05;part(new THREE.BoxGeometry(1.05,.4,.83),base,x,.3,z);const height=.5+random('citadel-shrub'+j)*.55;for(let k=0;k<4;k++){const leaf=part(new THREE.IcosahedronGeometry(.32,1),leaves[(j+k)%3],x+(k%2-.5)*.3,.65+height*(k/4),z+(Math.floor(k/2)-.5)*.3);leaf.scale.set(1.2,1.1,1);}
-   const sleeve=part(new THREE.CylinderGeometry(.83,.83,1.65,24,1,false),plantGlass,x,1.325,z);sleeve.scale.z=.8;
-   for(const y of [.52,2.15]){const rim=part(new THREE.TorusGeometry(.83,.027,5,24),glassEdge,x,y,z);rim.rotation.x=Math.PI/2;rim.scale.y=.8;}
-   for(const dx of [-.69,.69])part(new THREE.BoxGeometry(.022,1.6,.025),glassEdge,x+dx,1.33,z-.36);
-  }
-  for(let j=0;j<3;j++){const x=1.7+j*1.65;part(new THREE.BoxGeometry(1.1,.17,.44),stone,x,.53,5.45);for(const dx of [-.36,.36])part(new THREE.BoxGeometry(.1,.45,.3),base,x+dx,.25,5.45);}
+  const dome=part(new THREE.SphereGeometry(1,48,24,0,Math.PI*2,0,Math.PI/2),plantGlass,1,.1,5.55);dome.scale.set(4.2,2.9,1.9);
+  const domeRim=part(new THREE.TorusGeometry(1,.014,6,64),glassEdge,1,.12,5.55);domeRim.rotation.x=Math.PI/2;domeRim.scale.set(4.2,1.9,1);
+  for(let j=0;j<5;j++){const a=j*Math.PI/4,points=Array.from({length:33},(_,k)=>{const t=k/32*Math.PI;return new THREE.Vector3(Math.cos(t)*Math.cos(a)*4.2,Math.sin(t)*2.9+.1,Math.cos(t)*Math.sin(a)*1.9)});part(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points),32,.025,5,false),glassEdge,1,0,5.55);}
+  for(let j=0;j<7;j++){const a=j*Math.PI*2/7+.2,x=1+Math.cos(a)*3.15,z=5.55+Math.sin(a)*1.18;part(new THREE.CylinderGeometry(.4,.35,.32,12),base,x,.28,z);const height=.55+random('citadel-shrub'+j)*.45;part(new THREE.CylinderGeometry(.045,.065,.55,6),stone,x,.68,z);for(let k=0;k<4;k++){const leaf=part(new THREE.IcosahedronGeometry(.32,1),leaves[(j+k)%3],x+(k%2-.5)*.25,.85+height*(k/4),z+(Math.floor(k/2)-.5)*.22);leaf.scale.set(1.1,1.05,1);}}
+  for(let j=0;j<9;j++)part(new THREE.BoxGeometry(.7,.06,.72),stone,-2.1+j*.77,.09,5.5);
+  for(const x of [-.3,2.3]){part(new THREE.BoxGeometry(.95,.17,.38),stone,x,.53,5.0);for(const dx of [-.3,.3])part(new THREE.BoxGeometry(.1,.45,.3),base,x+dx,.25,5.0);}
+  // Small glazed airlock at the front connects the garden's common atmosphere.
+  part(new THREE.BoxGeometry(1.1,1.65,.85),plantGlass,1,.94,7.12);for(const dx of [-.56,.56])part(new THREE.BoxGeometry(.055,1.7,.9),glassEdge,1+dx,.94,7.12);part(new THREE.BoxGeometry(1.15,.055,.9),glassEdge,1,1.79,7.12);
   const light=new THREE.PointLight(color,0,20,2);light.position.copy(group.position).add(new THREE.Vector3(0,3,3));this.scene.add(light);this.cityLights.push(light);
  }
 
