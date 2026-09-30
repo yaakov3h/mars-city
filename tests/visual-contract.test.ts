@@ -23,3 +23,5 @@ describe('compact district visibility controls',()=>{
 it('keeps the reversible realism experiment catalog-only',()=>{expect(world).toContain("this.applyCatalogRealism(state.mode==='demo')");expect(world).toContain('const active=demo&&this.catalogRealism');expect(world).toContain('this.terrainMaterial.map=maps?.ground??null')});
 
 it('avoids renderer resizing when the quality is unchanged',()=>{expect(world).toContain('setQuality(q:Quality){if(this.quality===q)return')});
+
+it('adds catalog-only physical seams, instanced fasteners and merged branched trees',()=>{for(const token of ['catalogJoints(group','catalogPlateJoints=true','catalogFasteners=true','catalogTree(group','mergeGeometries(parts)','if(this.catalogRealism){this.catalogTree'])expect(world).toContain(token)});
