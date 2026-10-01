@@ -145,3 +145,56 @@ export function gamePavilion(group:THREE.Group,part:Part,color:string){
  for(let i=0;i<8;i++){const rb=part(new THREE.TorusGeometry(5.7,.045,5,32,Math.PI),std('#f0d9c8',.4,.5),0,.45,0);rb.rotation.y=i*Math.PI/8}
  const rr=part(new THREE.TorusGeometry(5.7,.07,5,40),std('#f0d9c8',.4,.5),0,.47,0);rr.rotation.x=Math.PI/2;
 }
+
+/** Strata Spire: a very tall triangular tower with a sharp slanted roof. Layered rock slabs on its plinth echo the soil layers underneath. */
+export function strataSpire(group:THREE.Group,part:Part,color:string){
+ const basalt=std('#4a5468',.5,.4),steel=std('#8d9bb0',.35,.65),band=glow(color),win=glow('#ffe2a8'),gl=glass('#bfe9ef',.2);
+ const layers=['#4a3f38','#7a5a44','#a27a55','#c79a68','#8a6a52','#5b4a42'];
+ // Plinth: stepped rings of rock, one tone per soil layer.
+ part(new THREE.CylinderGeometry(6.4,6.6,.4,6),std('#3a3633',.9),0,.2,0);
+ layers.forEach((c,i)=>{const r=6.0-i*.55,h=.35;const m=part(new THREE.CylinderGeometry(r,r+.12,h,6),std(c,.95,0),0,.4+.2+i*h*.9,0);m.rotation.y=i*.18;});
+ // Loose rocks sorted by layer colour around the plinth edge.
+ for(let i=0;i<14;i++){const a=i/14*Math.PI*2,rr=5.0+((i*7)%3)*.35;const c=layers[i%layers.length];const rk=part(new THREE.DodecahedronGeometry(.42+(i%3)*.12,0),std(c,.95,0),Math.cos(a)*rr,.75,Math.sin(a)*rr);rk.rotation.set(i,i*2,0);rk.scale.y=.6;}
+ // Tapering triangular tower with a sharp slanted roof cut.
+ const base=2.1,H=32,y0=2.6;
+ part(new THREE.CylinderGeometry(3.4,3.9,H,3),basalt,0,y0+H/2,0).rotation.y=Math.PI/6;
+ for(let k=0;k<3;k++){const a=k*Math.PI*2/3+Math.PI/6;const e=part(new THREE.BoxGeometry(.18,H,.18),steel,Math.cos(a)*3.7,y0+H/2,Math.sin(a)*3.7);e.rotation.z=0;}
+ for(let j=1;j<=9;j++){const r=3.7-j*.04;const t=part(new THREE.TorusGeometry(r,.05,4,3),j%3===0?band:win,0,y0+j*3.1,0);t.rotation.x=Math.PI/2;t.rotation.z=Math.PI/6;}
+ // Slanted roof: a tilted triangular slab and a sharp blade.
+ const roof=part(new THREE.CylinderGeometry(3.5,3.5,.45,3),steel,.4,y0+H+.3,0);roof.rotation.y=Math.PI/6;roof.rotation.z=.32;
+ const blade=part(new THREE.ConeGeometry(1.1,7.5,3),band,-.9,y0+H+4,0);blade.rotation.z=.22;blade.rotation.y=Math.PI/6;
+ // Glass-covered garden at the foot of the tower.
+ const dome=part(new THREE.SphereGeometry(2.2,20,10,0,Math.PI*2,0,Math.PI/2),gl,-3.6,.8,3.4);
+ for(let i=0;i<4;i++){const r=part(new THREE.TorusGeometry(2.2,.04,4,20,Math.PI),steel,-3.6,.8,3.4);r.rotation.y=i*Math.PI/4;}
+ tree(part,-3.6,.8,3.4,1.1,'#7aa95b');tree(part,-4.3,.8,3.0,.8);
+ void dome;
+}
+
+/** The Search Building: a small, slightly weird house with an oversized magnifier and a funny rooftop contraption full of tiny details. */
+export function searchBuilding(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),copper=std('#c48b62',.4,.7),paper=std('#efe3c4',.9),gl=glass('#d8f3f5',.2),band=glow(color),dark=std('#2f3a3d',.6,.3);
+ part(new THREE.CylinderGeometry(6.2,6.4,.4,6),stone,0,.2,0);
+ const pad=part(new THREE.TorusGeometry(5.9,.06,5,6),band,0,.46,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Crooked little house: stacked, slightly rotated boxes.
+ const b1=part(new THREE.BoxGeometry(4.2,2.6,3.6),std('#8f6a52',.8),0,1.7,0);b1.rotation.y=.12;
+ const b2=part(new THREE.BoxGeometry(3.2,1.8,3),std('#6f8c8f',.8),.3,3.9,.1);b2.rotation.y=-.25;
+ for(const [x,y,z] of [[-1.2,1.8,1.85],[1.1,1.8,1.85],[0,4,1.6]] as number[][]){part(new THREE.BoxGeometry(.7,.8,.06),glow('#ffe2a8'),x,y,z);}
+ // Oversized magnifier leaning on the roof.
+ const ring=part(new THREE.TorusGeometry(1.5,.14,8,24),bronze,-1.4,6.6,.2);ring.rotation.y=.2;
+ part(new THREE.CircleGeometry(1.4,24),glass('#9fe0ea',.28),-1.4,6.6,.22);
+ const handle=part(new THREE.CylinderGeometry(.14,.18,2.4,8),dark,-2.6,5.1,.25);handle.rotation.z=-.7;
+ // Rooftop contraption: dish, periscope, funnels, flag, hanging lanterns.
+ const dish=part(new THREE.SphereGeometry(.9,14,8,0,Math.PI*2,0,Math.PI/2),copper,1.3,5.3,-.4);dish.rotation.x=Math.PI*.8;
+ part(new THREE.CylinderGeometry(.08,.08,1.4,6),dark,1.3,4.9,-.4);
+ const peri=part(new THREE.CylinderGeometry(.12,.12,2.2,8),bronze,.4,6.1,-.9);part(new THREE.BoxGeometry(.5,.3,.3),dark,.4,7.3,-.75);
+ for(const [x,z,c] of [[.9,.9,'#d98a5b'],[-.2,1.0,'#5aa6a6']] as [number,number,string][]){const f=part(new THREE.ConeGeometry(.45,.8,10,1,true),std(c,.6,.3),x,5.2,z);f.rotation.z=Math.PI;}
+ part(new THREE.CylinderGeometry(.04,.04,2,5),dark,-.8,5.8,-1.1);
+ part(new THREE.BoxGeometry(.7,.45,.04),glow('#f06a8d'),-.45,6.4,-1.1);
+ for(let i=0;i<4;i++){const a=i*1.5;part(new THREE.CylinderGeometry(.01,.01,.9,3),dark,Math.cos(a)*1.5,3.3,Math.sin(a)*1.5+1);part(new THREE.SphereGeometry(.13,8,6),glow(['#ffd24a','#7fd0ff','#f06a8d','#9ff07a'][i]),Math.cos(a)*1.5,2.8,Math.sin(a)*1.5+1);}
+ // Tiny question marks and a calendar page floating by the door.
+ const page=part(new THREE.BoxGeometry(.9,1.1,.05),paper,2.4,2.2,1.7);page.rotation.z=.2;
+ for(let i=0;i<5;i++)part(new THREE.BoxGeometry(.1,.1,.06),glow('#d9505a'),2.15+(i%3)*.25,2.5-Math.floor(i/3)*.3,1.74);
+ // Glass-covered plant corner.
+ part(new THREE.SphereGeometry(1.4,16,8,0,Math.PI*2,0,Math.PI/2),gl,-3.2,.4,-2.6);
+ tree(part,-3.2,.4,-2.6,.9,'#7aa95b');
+}
