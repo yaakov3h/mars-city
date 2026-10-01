@@ -226,6 +226,19 @@
         "he": "בירור הכרה אקדמית בתארים",
         "en": "Clarifying academic recognition of degrees"
       }
+    },
+    {
+      "id": "game-concept-20261001",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "GAME_CONCEPT_BIRTH",
+      "complexity": 2,
+      "importance": 3,
+      "occurredAt": "2026-10-01T23:30:00+03:00",
+      "summary": {
+        "he": "לידת קונספט משחק חדש",
+        "en": "Birth of a new game concept"
+      }
     }
   ]
 }
