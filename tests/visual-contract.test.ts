@@ -20,8 +20,12 @@ describe('compact district visibility controls',()=>{
  it('keeps independent hidden districts alongside legacy highlights',()=>{expect(world).toContain('setHiddenDistricts(ids:Set<string>)');expect(world).toContain('!this.hiddenDistricts.has(d)')});
 });
 
-it('keeps the reversible realism experiment catalog-only',()=>{expect(world).toContain("this.applyCatalogRealism(state.mode==='demo')");expect(world).toContain('const active=demo&&this.catalogRealism');expect(world).toContain('this.terrainMaterial.map=maps?.ground??null')});
+it('keeps live realism permanent and catalog comparison reversible',()=>{expect(world).toContain("this.applyCatalogRealism(state.mode==='demo')");expect(world).toContain('const active=!demo||this.catalogRealism');expect(world).toContain('this.terrainMaterial.map=maps?.ground??null')});
 
 it('avoids renderer resizing when the quality is unchanged',()=>{expect(world).toContain('setQuality(q:Quality){if(this.quality===q)return')});
 
-it('adds catalog-only physical seams, instanced fasteners and merged branched trees',()=>{for(const token of ['catalogJoints(group','catalogPlateJoints=true','catalogFasteners=true','catalogTree(group','mergeGeometries(parts)','if(this.catalogRealism){this.catalogTree'])expect(world).toContain(token)});
+it('adds physical seams, instanced fasteners and merged branched trees',()=>{for(const token of ['catalogJoints(group','catalogPlateJoints:true','catalogFasteners:true','catalogTree(group','mergeGeometries(parts)','if(this.catalogRealism){this.catalogTree'])expect(world).toContain(token)});
+
+it('preserves basalt monuments, foliage and creature surfaces while adding live garden trees',()=>{for(const token of ['preserveRealismSurface=true','m.userData.foliage=true',"b.id+'-atelier-'","b.id+'-studio-'","b.id+'-citadel-'",'if(group.userData.buildingId)this.hit.push(mesh)'])expect(world).toContain(token)});
+
+it('extends the same cached mineral surfaces and varied trees underground',()=>{expect(world).toContain('export function detailedSurface');});
