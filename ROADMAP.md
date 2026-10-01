@@ -77,3 +77,10 @@ October 1 control feedback: mosaic chamber entry button is temporary until the u
 - Distinct granular mineral and brushed metal color/normal/roughness surfaces replace brightness-only changes; reflection intensity is reduced. Bark has a separate grain treatment.
 - Catalog garden plants become branched trees with three leaf forms, heights and colors, merged into two meshes per tree. Protected garden glass stays intact. Original mode restores original plants.
 - Still an art-directed procedural prototype, not photorealism or scanned materials. Live city remains untouched; request feedback before expanding.
+
+### Live-city realism adopted (2026-10-01)
+- Owner approved the catalog detail treatment for the whole city permanently, especially varied plant colors/forms. Live city always uses detailed material/ground maps and plate seams/fasteners; the catalog still offers a comparison button.
+- Existing Atelier, Imagery Studio, civic conservatory, cat courtyard and transit pots now hold branched trees with three foliage forms/colors, inside the same glass enclosures. No buildings, plots, public metadata or reserves moved.
+- Preserve custom basalt/copper monument surfaces, leaf maps, creature appearance and category night lighting. Merged tree geometry, instanced fasteners and cached maps limit draw-call and setup costs.
+- Underground pilot walls/floors use the same mineral maps and seam lines; all six underground planting spots use branched plants. Walkable bounds, lift, apertures and routes unchanged.
+- Still procedural and stylized, not scanned-material photorealism. Device performance must be tested separately.
