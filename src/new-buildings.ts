@@ -28,7 +28,7 @@ export function financeTower(group:THREE.Group,part:Part,color:string){
  const map=label('₪',1,1,'700 620px sans-serif','#ffe6a7','rgba(0,0,0,0)');
  for(let k=0;k<2;k++){const m=new THREE.Mesh(new THREE.PlaneGeometry(4.6,4.6),new THREE.MeshBasicMaterial({map,transparent:true,side:THREE.DoubleSide,depthWrite:false}));m.position.set(0,y+8.8,0);m.rotation.y=k*Math.PI/2;m.userData={buildingId:'b-money-map-20261001'};group.add(m);}
  const halo=part(new THREE.TorusGeometry(2.9,.06,6,40),warm,0,y+8.8,0);halo.rotation.x=Math.PI/2;
- const bl=new THREE.PointLight('#ffd79a',18,22,2);bl.position.set(0,y+5,0);group.add(bl);
+ 
 }
 
 /** Flight compensation: a small, cute airplane with skylights. */
@@ -52,8 +52,9 @@ export function cuteAirplane(group:THREE.Group,part:Part,color:string){
  for(let i=0;i<2;i++){const p=part(new THREE.BoxGeometry(.08,3.1,.34),accent,-.0+5.1,2.6,0);p.position.x=4.95;p.rotation.x=i*Math.PI/2;}
  for(const s of [-1,1]){part(new THREE.CylinderGeometry(.08,.08,1.3,6),std('#6e4a35'),1.4,1.3,s*1.1);part(new THREE.SphereGeometry(.38,10,8),std('#2f3a3d',.8),1.4,.7,s*1.1);}
  part(new THREE.SphereGeometry(.34,10,8),std('#2f3a3d',.8),-3.4,.7,0);
+ const bg=part(new THREE.CylinderGeometry(5.4,5.4,.05,6),glow('#4a7dff'),0,.5,0);bg.scale.set(1,1,1);const bg2=part(new THREE.SphereGeometry(1.5,12,8),glow('#6fa8ff'),0,1.2,0);bg2.scale.set(2.6,.2,1.3);
  tree(part,-4.8,.4,-3.8,1.1);tree(part,-5.2,.4,3.6,1.1);
- const gl2=new THREE.PointLight('#5f9bff',14,16,2);gl2.position.set(0,4,0);group.add(gl2);const gl3=new THREE.PointLight('#4a7dff',8,14,2);gl3.position.set(5,1.5,3);group.add(gl3);
+ 
 }
 
 /** Academic recognition: a small observatory tower on a stack of book-like slabs, glazed dome. */
@@ -72,7 +73,7 @@ export function scholarTower(group:THREE.Group,part:Part,color:string){
  const tel=part(new THREE.CylinderGeometry(.22,.34,2.7,10),bronze,.6,y+1.4,0);tel.rotation.z=-.9;
  part(new THREE.SphereGeometry(.5,12,8),violet,0,y+.5,0);
  tree(part,-4.8,.5,-3.6,1.2);tree(part,-5,.5,3.8,1.2,'#7aa95b');
- const l=new THREE.PointLight('#ffe7a8',10,14,2);l.position.set(0,y-2,0);group.add(l);
+ 
 }
 
 /** The Living Archive: a very large glass-fronted hall in the city's design language, with a cat statue guide at the entrance. */
@@ -104,6 +105,6 @@ export function livingArchive(group:THREE.Group,part:Part,color:string){
  for(const s of [-1,1]){const ear=part(new THREE.ConeGeometry(.38,.9,4),cat,cx+s*.62,5.55,cz+.2);ear.rotation.z=-s*.15;part(new THREE.SphereGeometry(.16,10,8),glow('#9ff0d8'),cx+s*.38,4.8,cz+1.15);part(new THREE.CylinderGeometry(.24,.3,1.5,8),cat,cx+s*.5,1.5,cz+.9);}
  part(new THREE.SphereGeometry(.12,8,6),glow('#c5656a'),cx,4.55,cz+1.25);
  const tail=part(new THREE.TorusGeometry(1.1,.2,8,18,Math.PI*1.2),cat,cx-1.4,1.5,cz-.3);tail.rotation.set(0,.8,.5);
- const pl=new THREE.PointLight('#ffd79a',22,24,2);pl.position.set(0,6,zf+3);group.add(pl);
+ 
  tree(part,-5.8,1.1,zf+1.6,1.4);tree(part,6.2,1.1,zf+1,1.4);
-                                                                                                                                                        }
+}
