@@ -239,6 +239,32 @@
         "he": "לידת קונספט משחק חדש",
         "en": "Birth of a new game concept"
       }
+    },
+    {
+      "id": "strata-spire-20261002",
+      "kind": "question",
+      "category": "ENGINEERING",
+      "subcategory": "STRATA_SPIRE",
+      "complexity": 5,
+      "importance": 4,
+      "occurredAt": "2026-10-02T02:30:00+03:00",
+      "summary": {
+        "he": "חוד השכבות",
+        "en": "Strata Spire"
+      }
+    },
+    {
+      "id": "search-building-20261002",
+      "kind": "question",
+      "category": "LEARNING",
+      "subcategory": "SEARCH_BUILDING",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-10-02T02:31:00+03:00",
+      "summary": {
+        "he": "בניין החיפוש",
+        "en": "The Search Building"
+      }
     }
   ]
 }
