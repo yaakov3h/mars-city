@@ -1,0 +1,109 @@
+import * as THREE from 'three';
+type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
+const std=(color:string,rough=.7,metal=.1)=>new THREE.MeshStandardMaterial({color,roughness:rough,metalness:metal});
+const glow=(color:string)=>new THREE.MeshBasicMaterial({color});
+const glass=(color='#bfe4e8',opacity=.22)=>new THREE.MeshPhysicalMaterial({color,transparent:true,opacity,roughness:.08,metalness:.05,side:THREE.DoubleSide,depthWrite:false});
+function label(text:string,w:number,h:number,font:string,fg='#fff1c9',bg='rgba(9,30,40,.9)'){const c=document.createElement('canvas');c.width=1024;c.height=Math.round(1024*h/w);const g=c.getContext('2d')!;g.fillStyle=bg;g.fillRect(0,0,c.width,c.height);g.strokeStyle=fg;g.lineWidth=6;g.strokeRect(8,8,c.width-16,c.height-16);g.fillStyle=fg;g.font=font;g.textAlign='center';g.textBaseline='middle';g.shadowColor=fg;g.shadowBlur=8;g.fillText(text,c.width/2,c.height/2+4);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+function tree(part:Part,x:number,y:number,z:number,s=1,leaf='#6fa05a'){part(new THREE.CylinderGeometry(.05*s,.08*s,.8*s,5),std('#6e4a35'),x,y+.4*s,z);for(let i=0;i<3;i++){const m=part(new THREE.IcosahedronGeometry(.42*s-i*.06*s,0),std(i%2?'#8fbf68':leaf,.9,0),x+(i-1)*.12*s,y+.95*s+i*.28*s,z+(i%2?.1:-.1)*s);m.scale.y=.85;}}
+
+/** Personal finance mapping: a very tall tower of stacked metallic volumes with lit bands, glazed garden terraces and a rooftop shekel sign. */
+export function financeTower(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.8),metal=std('#8fa7a1',.35,.6),bronze=std('#a77d57',.45,.6),dark=std('#2e3a3d',.5,.4),band=glow(color),warm=glow('#ffd79a'),gl=glass('#c3e7e1',.2);
+ part(new THREE.CylinderGeometry(7.4,7.8,.7,6),stone,0,.35,0);
+ part(new THREE.CylinderGeometry(6.3,6.6,.35,6),dark,0,.85,0);
+ // Garden court around the foot, enclosed by glazing.
+ for(let i=0;i<6;i++){const a=i*Math.PI/3+Math.PI/6;const x=Math.cos(a)*6.1,z=Math.sin(a)*6.1;const w=part(new THREE.BoxGeometry(5.2,2.6,.08),gl,Math.cos(a)*5.6,2.2,Math.sin(a)*5.6);w.rotation.y=-a+Math.PI/2;tree(part,x*.88,1,z*.88,1.5+(i%2)*.3,i%2?'#5f9a52':'#7aa95b');}
+ const levels=[[4.6,7,0],[4.1,7,0],[3.6,6,0],[3.1,6,0],[2.6,5,0],[2.15,5,0],[1.75,4,0]];let y=1.05;
+ levels.forEach(([r,h],i)=>{const body=part(new THREE.CylinderGeometry(r*.94,r,h as number,6),i%2?metal:stone,0,y+(h as number)/2,0);body.rotation.y=i*Math.PI/6;
+  for(let k=0;k<6;k++){const a=k*Math.PI/3+(i*Math.PI/6);part(new THREE.BoxGeometry(.16,h as number,.16),bronze,Math.cos(a)*(r as number)*.94,y+(h as number)/2,Math.sin(a)*(r as number)*.94);}
+  const b=part(new THREE.TorusGeometry((r as number)*.97,.07,5,6),band,0,y+(h as number)-.2,0);b.rotation.x=Math.PI/2;b.rotation.z=i*Math.PI/6;
+  const b2=part(new THREE.TorusGeometry((r as number)*.96,.05,5,6),band,0,y+.2,0);b2.rotation.x=Math.PI/2;b2.rotation.z=i*Math.PI/6;
+  // Lit windows and a planted terrace at every step.
+  for(let k=0;k<6;k++){const a=k*Math.PI/3+i*Math.PI/6+Math.PI/6;const wn=part(new THREE.BoxGeometry(1.5,(h as number)*.55,.06),warm,Math.cos(a)*(r as number)*.9,y+(h as number)*.5,Math.sin(a)*(r as number)*.9);wn.rotation.y=-a+Math.PI/2;}
+  const terr=part(new THREE.CylinderGeometry((r as number)*1.08,(r as number)*1.08,.16,6),stone,0,y+(h as number)+.02,0);terr.rotation.y=i*Math.PI/6;
+  for(let k=0;k<6;k++){const a=k*Math.PI/3+i*Math.PI/6;tree(part,Math.cos(a)*(r as number)*.93,y+(h as number)+.1,Math.sin(a)*(r as number)*.93,.8,'#6ba058');}
+  y+=h as number;});
+ // Crown, mast and the rooftop shekel sign (two crossed lit panels).
+ part(new THREE.CylinderGeometry(1.1,1.5,1.2,6),bronze,0,y+.6,0);part(new THREE.CylinderGeometry(.12,.16,5.5,6),bronze,0,y+3.9,0);
+ const map=label('₪',1,1,'700 620px sans-serif','#ffe6a7','rgba(0,0,0,0)');
+ for(let k=0;k<2;k++){const m=new THREE.Mesh(new THREE.PlaneGeometry(4.6,4.6),new THREE.MeshBasicMaterial({map,transparent:true,side:THREE.DoubleSide,depthWrite:false}));m.position.set(0,y+8.8,0);m.rotation.y=k*Math.PI/2;m.userData={buildingId:'b-money-map-20261001'};group.add(m);}
+ const halo=part(new THREE.TorusGeometry(2.9,.06,6,40),warm,0,y+8.8,0);halo.rotation.x=Math.PI/2;
+ const bl=new THREE.PointLight('#ffd79a',18,22,2);bl.position.set(0,y+5,0);group.add(bl);
+}
+
+/** Flight compensation: a small, cute airplane with skylights. */
+export function cuteAirplane(group:THREE.Group,part:Part,color:string){
+ const body=std('#c98a6e',.6,.05),accent=std('#b5483a',.55),teal=std('#9c5a43',.55),stone=std('#8f6a52',.9),gl=glass('#9cc8ff',.35),win=glow('#8fc4ff');
+ part(new THREE.CylinderGeometry(6.2,6.4,.4,6),stone,0,.2,0);
+ const pad=part(new THREE.TorusGeometry(5.9,.06,5,6),glow(color),0,.46,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ const fus=part(new THREE.CapsuleGeometry(1.55,5.4,8,16),body,0,2.6,0);fus.rotation.z=Math.PI/2;
+ const nose=part(new THREE.SphereGeometry(1.6,16,12),accent,2.95,2.6,0);nose.scale.set(.9,1,1);
+ // Wings, tail, stubby and rounded.
+ for(const s of [-1,1]){const w=part(new THREE.CylinderGeometry(.34,.34,4.4,10),teal,-.2,2.35,s*3.1);w.rotation.x=Math.PI/2;w.scale.set(2.2,1,.45);part(new THREE.SphereGeometry(.48,10,8),accent,-.2,2.35,s*5.3);
+  const t=part(new THREE.CylinderGeometry(.22,.22,1.9,8),teal,-4,2.7,s*1.0);t.rotation.x=Math.PI/2;t.scale.set(1.8,1,.5);}
+ const fin=part(new THREE.CylinderGeometry(.2,.2,2.1,8),accent,-4.1,3.7,0);fin.scale.set(1.8,1,.5);fin.rotation.z=-.22;
+ // Round windows plus two glazed skylights on the roof.
+ for(const s of [-1,1])for(let i=0;i<5;i++){const m=part(new THREE.CylinderGeometry(.3,.3,.06,14),win,1.7-i*.95,2.9,s*1.5);m.rotation.x=Math.PI/2;}
+ for(const x of [1.0,-1.3]){const sk=part(new THREE.SphereGeometry(.95,16,8,0,Math.PI*2,0,Math.PI/2),gl,x,3.85,0);sk.scale.set(1.15,.8,1);const r=part(new THREE.TorusGeometry(.95,.05,5,20),std('#a77d57',.4,.6),x,3.86,0);r.rotation.x=Math.PI/2;r.scale.set(1.15,1.15,1);}
+ // Cute face and a spinning-style propeller.
+ for(const s of [-1,1]){part(new THREE.SphereGeometry(.34,10,8),glow('#1b2c34'),4.1,3.05,s*.62);part(new THREE.SphereGeometry(.1,8,6),glow('#fff'),4.35,3.18,s*.68);part(new THREE.SphereGeometry(.2,8,6),glow('#f7b3b7'),3.95,2.35,s*1.05);}
+ part(new THREE.SphereGeometry(.2,8,6),glow('#c5656a'),4.5,2.7,0);
+ part(new THREE.SphereGeometry(.22,10,8),accent,4.55,2.75,0);
+ for(let i=0;i<2;i++){const p=part(new THREE.BoxGeometry(.08,3.1,.34),accent,-.0+5.1,2.6,0);p.position.x=4.95;p.rotation.x=i*Math.PI/2;}
+ for(const s of [-1,1]){part(new THREE.CylinderGeometry(.08,.08,1.3,6),std('#6e4a35'),1.4,1.3,s*1.1);part(new THREE.SphereGeometry(.38,10,8),std('#2f3a3d',.8),1.4,.7,s*1.1);}
+ part(new THREE.SphereGeometry(.34,10,8),std('#2f3a3d',.8),-3.4,.7,0);
+ tree(part,-4.8,.4,-3.8,1.1);tree(part,-5.2,.4,3.6,1.1);
+ const gl2=new THREE.PointLight('#5f9bff',14,16,2);gl2.position.set(0,4,0);group.add(gl2);const gl3=new THREE.PointLight('#4a7dff',8,14,2);gl3.position.set(5,1.5,3);group.add(gl3);
+}
+
+/** Academic recognition: a small observatory tower on a stack of book-like slabs, glazed dome. */
+export function scholarTower(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.8),paper=std('#e8dcc2',.85),leather=std('#7a4f3f',.8),violet=std('#8f80d8',.5,.3),bronze=std('#a77d57',.45,.6),gl=glass('#cfc6ff',.28),win=glow('#ffe7a8'),band=glow(color);
+ part(new THREE.CylinderGeometry(6.4,6.8,.5,6),stone,0,.25,0);
+ const slabs=[[5.2,.7,'#7a4f3f',0],[4.7,.7,'#d6c9a6',.25],[4.3,.7,'#5c6a8a',-.2]];let y=.5;
+ for(const [w,h,c,off] of slabs as [number,number,string,number][]){const b=part(new THREE.BoxGeometry(w*1.5,h,w),std(c,.85),off*2,y+h/2,0);b.rotation.y=off;y+=h;}
+ const drum=part(new THREE.CylinderGeometry(2.2,2.6,5.2,10),paper,0,y+2.6,0);
+ for(let i=0;i<10;i++){const a=i*Math.PI/5;part(new THREE.BoxGeometry(.14,5.2,.14),bronze,Math.cos(a)*2.4,y+2.6,Math.sin(a)*2.4);const w=part(new THREE.BoxGeometry(.8,2,.05),win,Math.cos(a+Math.PI/10)*2.3,y+2.8,Math.sin(a+Math.PI/10)*2.3);w.rotation.y=-(a+Math.PI/10)+Math.PI/2;}
+ for(const k of [0,1]){const r=part(new THREE.TorusGeometry(2.45+k*.25,.06,5,36),band,0,y+1.1+k*3.0,0);r.rotation.x=Math.PI/2;}
+ y+=5.2;
+ part(new THREE.CylinderGeometry(2.7,2.5,.3,10),bronze,0,y+.1,0);
+ const dome=part(new THREE.SphereGeometry(2.6,24,12,0,Math.PI*2,0,Math.PI/2),gl,0,y+.2,0);
+ for(let i=0;i<6;i++){const r=part(new THREE.TorusGeometry(2.6,.045,5,24,Math.PI),bronze,0,y+.2,0);r.rotation.y=i*Math.PI/6;}
+ const tel=part(new THREE.CylinderGeometry(.22,.34,2.7,10),bronze,.6,y+1.4,0);tel.rotation.z=-.9;
+ part(new THREE.SphereGeometry(.5,12,8),violet,0,y+.5,0);
+ tree(part,-4.8,.5,-3.6,1.2);tree(part,-5,.5,3.8,1.2,'#7aa95b');
+ const l=new THREE.PointLight('#ffe7a8',10,14,2);l.position.set(0,y-2,0);group.add(l);
+}
+
+/** The Living Archive: a very large glass-fronted hall in the city's design language, with a cat statue guide at the entrance. */
+export function livingArchive(group:THREE.Group,part:Part,color:string){
+ const basalt=std('#3b3436',.7,.2),stone=std('#b9a07f',.8),bronze=std('#a77d57',.45,.6),copper=std('#c48b62',.4,.7),gl=glass('#bfe4e8',.2),warm=glow('#ffd79a'),band=glow(color),cat=std('#c9b79a',.75,.1);
+ part(new THREE.CylinderGeometry(9.2,9.5,.8,6),basalt,0,.4,0);
+ part(new THREE.CylinderGeometry(8.1,8.5,.35,6),stone,0,.95,0);
+ // Tall glazed hall: hex body with frame mullions and stacked lit floors.
+ const H=22,R=7.4;
+ const shell=part(new THREE.CylinderGeometry(R*.9,R,H,6),gl,0,1.1+H/2,0);
+ for(let k=0;k<6;k++){const a=k*Math.PI/3;for(const t of [-1,1]){}
+  const px=Math.cos(a)*R*.97,pz=Math.sin(a)*R*.97;part(new THREE.BoxGeometry(.55,H,.55),k%2?copper:bronze,px,1.1+H/2,pz);
+  for(let f=1;f<7;f++){const fr=part(new THREE.BoxGeometry(R*.96,.12,.2),bronze,Math.cos(a+Math.PI/6)*R*.82,1.1+f*H/7,Math.sin(a+Math.PI/6)*R*.82);fr.rotation.y=-(a+Math.PI/6)+Math.PI/2;}}
+ for(let f=0;f<7;f++){const fl=part(new THREE.CylinderGeometry(R*(1-f*.012)*.9,R*.9,.22,6),f%2?stone:basalt,0,1.1+f*H/7,0);const b=part(new THREE.TorusGeometry(R*.88,.05,5,6),band,0,1.2+f*H/7,0);b.rotation.x=Math.PI/2;b.rotation.z=Math.PI/6;
+  // Hanging lit "version" panels inside the glass, a hint of the archive below.
+  for(let k=0;k<5;k++){const a=k*1.26+f*.7;const p=part(new THREE.BoxGeometry(.9,1.2,.05),warm,Math.cos(a)*R*.45,1.1+f*H/7+1.4,Math.sin(a)*R*.45);p.rotation.y=-a;}}
+ // Stepped crown with a skylight ring.
+ part(new THREE.CylinderGeometry(R*.62,R*.86,2.2,6),basalt,0,1.1+H+1.1,0);part(new THREE.CylinderGeometry(R*.38,R*.6,2,6),copper,0,1.1+H+3.1,0);
+ const crown=part(new THREE.ConeGeometry(R*.34,3.4,6),gl,0,1.1+H+5.8,0);const ring=part(new THREE.TorusGeometry(R*.62,.08,5,6),band,0,1.1+H+2.1,0);ring.rotation.x=Math.PI/2;
+ // Entrance portal on the +z side with a big cat statue as the official guide.
+ const zf=R*.95+.1;
+ part(new THREE.BoxGeometry(4.4,5.6,.7),basalt,0,3.8,zf+.15);part(new THREE.BoxGeometry(3.2,4.6,.8),glow('#e8c88a'),0,3.3,zf+.2);
+ part(new THREE.BoxGeometry(5.2,.5,1),bronze,0,6.8,zf+.3);
+ const sign=new THREE.Mesh(new THREE.PlaneGeometry(4.4,1.1),new THREE.MeshBasicMaterial({map:label('מתחת כל הסיפור',4.4,1.1,'600 120px sans-serif')}));sign.position.set(0,7.6,zf+.85);sign.userData={buildingId:'b-living-archive-20261001'};group.add(sign);
+ // Cat statue: seated, with tail, ears and lit eyes.
+ const cx=3.6,cz=zf+2.6;part(new THREE.CylinderGeometry(1.6,1.9,.9,6),basalt,cx,.55,cz);
+ const body=part(new THREE.SphereGeometry(1.45,20,14),cat,cx,2.4,cz);body.scale.set(1,1.35,.9);
+ part(new THREE.SphereGeometry(1.05,20,14),cat,cx,4.65,cz+.2);
+ for(const s of [-1,1]){const ear=part(new THREE.ConeGeometry(.38,.9,4),cat,cx+s*.62,5.55,cz+.2);ear.rotation.z=-s*.15;part(new THREE.SphereGeometry(.16,10,8),glow('#9ff0d8'),cx+s*.38,4.8,cz+1.15);part(new THREE.CylinderGeometry(.24,.3,1.5,8),cat,cx+s*.5,1.5,cz+.9);}
+ part(new THREE.SphereGeometry(.12,8,6),glow('#c5656a'),cx,4.55,cz+1.25);
+ const tail=part(new THREE.TorusGeometry(1.1,.2,8,18,Math.PI*1.2),cat,cx-1.4,1.5,cz-.3);tail.rotation.set(0,.8,.5);
+ const pl=new THREE.PointLight('#ffd79a',22,24,2);pl.position.set(0,6,zf+3);group.add(pl);
+ tree(part,-5.8,1.1,zf+1.6,1.4);tree(part,6.2,1.1,zf+1,1.4);
+                                                                                                                                                        }
