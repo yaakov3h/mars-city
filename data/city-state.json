@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 14,
+  "revision": 16,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-01T23:30:00+03:00",
-  "totalQuestions": 11,
+  "lastUpdated": "2026-10-02T02:31:00+03:00",
+  "totalQuestions": 13,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -81,18 +81,42 @@
       "category": "ENGINEERING",
       "q": -2,
       "r": 2,
-      "demand": 2,
-      "questionCount": 1,
-      "foundedAt": "2026-09-30T21:47:20+03:00"
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-09-30T21:47:20+03:00",
+      "plots": [
+        {
+          "q": -2,
+          "r": 2,
+          "foundedAt": "2026-09-30T21:47:20+03:00"
+        },
+        {
+          "q": -2,
+          "r": 1,
+          "foundedAt": "2026-10-02T02:30:00+03:00"
+        }
+      ]
     },
     {
       "id": "district-academic-recognition-20261001",
       "category": "LEARNING",
       "q": -1,
       "r": 3,
-      "demand": 2,
-      "questionCount": 1,
-      "foundedAt": "2026-10-01T20:52:00+03:00"
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-10-01T20:52:00+03:00",
+      "plots": [
+        {
+          "q": -1,
+          "r": 3,
+          "foundedAt": "2026-10-01T20:52:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": 2,
+          "foundedAt": "2026-10-02T02:31:00+03:00"
+        }
+      ]
     }
   ],
   "buildings": [
@@ -294,6 +318,50 @@
       "plot": {
         "q": -1,
         "r": -1
+      }
+    },
+    {
+      "id": "b-strata-spire-20261002",
+      "districtId": "district-transit-layers-20260930",
+      "name": {
+        "he": "חוד השכבות",
+        "en": "Strata Spire"
+      },
+      "subcategory": "STRATA_SPIRE",
+      "q": 0,
+      "r": 0,
+      "height": 34,
+      "width": 2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-02T02:30:00+03:00",
+      "lastUpdated": "2026-10-02T02:30:00+03:00",
+      "plot": {
+        "q": -2,
+        "r": 1
+      }
+    },
+    {
+      "id": "b-search-building-20261002",
+      "districtId": "district-academic-recognition-20261001",
+      "name": {
+        "he": "בניין החיפוש",
+        "en": "The Search Building"
+      },
+      "subcategory": "SEARCH_BUILDING",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 1.6,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-02T02:31:00+03:00",
+      "lastUpdated": "2026-10-02T02:31:00+03:00",
+      "plot": {
+        "q": -1,
+        "r": 2
       }
     }
   ],
