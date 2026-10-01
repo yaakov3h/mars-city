@@ -108,3 +108,40 @@ export function livingArchive(group:THREE.Group,part:Part,color:string){
  
  tree(part,-5.8,1.1,zf+1.6,1.4);tree(part,6.2,1.1,zf+1,1.4);
 }
+
+function flowerBed(part:Part,cx:number,cz:number,r:number,n:number,seed:number){
+ const cols=['#f06a8d','#ffd24a','#fff1f4','#b78cf2','#ff9a52','#7fd0ff'];
+ for(let i=0;i<n;i++){const a=(i*2.399+seed)%(Math.PI*2),d=r*(.35+.65*((i*0.618+seed*.13)%1));const x=cx+Math.cos(a)*d,z=cz+Math.sin(a)*d,h=.3+((i*7+seed)%5)*.07;
+  part(new THREE.CylinderGeometry(.02,.03,h,4),std('#4f8a3c'),x,.45+h/2,z);
+  part(new THREE.SphereGeometry(.13,8,6),glow(cols[(i+seed)%cols.length]),x,.45+h+.05,z);
+  if(i%3===0)part(new THREE.SphereGeometry(.2,7,5),std('#5f9a47',.9),x+.12,.5,z-.1);}
+}
+
+/** Game concept pavilion: a small playful glass pavilion with cat ears on the roof, glowing play pieces and a flower garden. */
+export function gamePavilion(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),copper=std('#c48b62',.4,.7),gl=glass('#d8f3f5',.16),band=glow(color),cat=std('#3b3436',.6,.2);
+ part(new THREE.CylinderGeometry(6.2,6.4,.4,6),stone,0,.2,0);
+ const pad=part(new THREE.TorusGeometry(5.9,.06,5,6),band,0,.46,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Glass pavilion: hex body, mullions, floor, and a low domed hex roof.
+ part(new THREE.CylinderGeometry(2.6,2.6,.25,6),std('#8f6a52',.8),0,.55,0);
+ part(new THREE.CylinderGeometry(2.4,2.5,2.6,6),gl,0,1.9,0);
+ for(let k=0;k<6;k++){const a=k*Math.PI/3;part(new THREE.BoxGeometry(.14,2.7,.14),k%2?copper:bronze,Math.cos(a)*2.45,1.9,Math.sin(a)*2.45)}
+ const roof=part(new THREE.CylinderGeometry(1.1,2.8,.9,6),copper,0,3.5,0);
+ const band2=part(new THREE.TorusGeometry(2.55,.05,5,6),band,0,3.05,0);band2.rotation.x=Math.PI/2;band2.rotation.z=Math.PI/6;
+ // Cat ears on top.
+ for(const s of [-1,1]){const ear=part(new THREE.ConeGeometry(.6,1.3,4),cat,s*.85,4.5,0);ear.rotation.z=-s*.18;ear.rotation.y=Math.PI/4;const inner=part(new THREE.ConeGeometry(.34,.85,4),glow('#f7b3b7'),s*.85,4.45,.25);inner.rotation.z=-s*.18;inner.rotation.y=Math.PI/4}
+ // Inside: glowing play pieces (dice, orbs, a joystick).
+ for(let i=0;i<3;i++){const a=i*2.1;const d=part(new THREE.BoxGeometry(.5,.5,.5),glow(['#ffd24a','#7fd0ff','#f06a8d'][i]),Math.cos(a)*1,1.5+i*.15,Math.sin(a)*1);d.rotation.set(.5,a,.3)}
+ part(new THREE.CylinderGeometry(.05,.05,.7,6),std('#2f3a3d'),0,1.05,0);part(new THREE.SphereGeometry(.2,10,8),glow('#f06a8d'),0,1.5,0);
+ // Door glow on the +z face.
+ part(new THREE.BoxGeometry(.9,1.5,.06),glow('#ffe7a8'),0,1.45,2.2);
+ // Floating play orbs above.
+ for(let i=0;i<4;i++){const a=i*1.57+.4;part(new THREE.SphereGeometry(.22,10,8),glow(['#ffd24a','#7fd0ff','#f06a8d','#b78cf2'][i]),Math.cos(a)*3.4,3.6+Math.sin(i*2)*.5,Math.sin(a)*3.4)}
+ // Flower garden and trees around the foot, all under one glass dome.
+ flowerBed(part,0,0,4.9,70,1);
+ for(const [x,z] of [[-4.2,2.4],[4.4,2.2],[-4.4,-2.2],[4.2,-2.6],[0,-4.6],[-1.8,4.5]])tree(part,x,.4,z,1.15,'#6fa05a');
+ for(const [x,z] of [[-3.4,-3.6],[3.2,3.6],[3.8,-0.4]])part(new THREE.IcosahedronGeometry(.4,0),std('#8a5a44',.95),x,.6,z);
+ const dg=glass('#c9efe8',.14);const dome=part(new THREE.SphereGeometry(5.7,40,20,0,Math.PI*2,0,Math.PI/2),dg,0,.45,0);dome.scale.y=1.0;
+ for(let i=0;i<8;i++){const rb=part(new THREE.TorusGeometry(5.7,.045,5,32,Math.PI),std('#f0d9c8',.4,.5),0,.45,0);rb.rotation.y=i*Math.PI/8}
+ const rr=part(new THREE.TorusGeometry(5.7,.07,5,40),std('#f0d9c8',.4,.5),0,.47,0);rr.rotation.x=Math.PI/2;
+}
