@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 13,
+  "revision": 14,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-01T20:52:00+03:00",
-  "totalQuestions": 10,
+  "lastUpdated": "2026-10-01T23:30:00+03:00",
+  "totalQuestions": 11,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -20,8 +20,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 3,
-      "questionCount": 2,
+      "demand": 4,
+      "questionCount": 3,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -33,6 +33,11 @@
           "q": -2,
           "r": -1,
           "foundedAt": "2026-09-30T22:18:50+03:00"
+        },
+        {
+          "q": -1,
+          "r": -1,
+          "foundedAt": "2026-10-01T23:30:00+03:00"
         }
       ]
     },
@@ -268,6 +273,28 @@
       "questionCount": 1,
       "createdAt": "2026-10-01T20:52:00+03:00",
       "lastUpdated": "2026-10-01T20:52:00+03:00"
+    },
+    {
+      "id": "b-game-concept-20261001",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "לידת קונספט משחק חדש",
+        "en": "Birth of a new game concept"
+      },
+      "subcategory": "GAME_CONCEPT_BIRTH",
+      "q": 1,
+      "r": 0,
+      "height": 7.9,
+      "width": 1.8,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-01T23:30:00+03:00",
+      "lastUpdated": "2026-10-01T23:30:00+03:00",
+      "plot": {
+        "q": -1,
+        "r": -1
+      }
     }
   ],
   "creatures": [],
