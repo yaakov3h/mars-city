@@ -384,6 +384,18 @@
         "lighting": "category edge glow and warm inner-gap fill",
         "eventId": "codesign-20260930"
       }
+    },
+    {
+      "id": "l-monument-1",
+      "kind": "monument",
+      "name": {
+        "he": "אנדרטה ראשונה",
+        "en": "First Monument"
+      },
+      "q": -2,
+      "r": -2,
+      "createdAt": "2026-10-02T05:56:00+03:00",
+      "eventId": "monument-1-20261002"
     }
   ],
   "mosaic": {
