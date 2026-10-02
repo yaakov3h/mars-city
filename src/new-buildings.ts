@@ -197,4 +197,44 @@ export function searchBuilding(group:THREE.Group,part:Part,color:string){
  // Glass-covered plant corner.
  part(new THREE.SphereGeometry(1.4,16,8,0,Math.PI*2,0,Math.PI/2),gl,-3.2,.4,-2.6);
  tree(part,-3.2,.4,-2.6,.9,'#7aa95b');
+ sleeve(part,color);
+}
+
+/** The sleeve (שרוול): glass corridor with plants and side lights from the search building toward the scholar tower, plus the wild reserve beside it. Positions are local to the search building hex. */
+function sleeve(part:Part,color:string){
+ const d=[.5,.8660254],n=[-.8660254,.5],yaw=-Math.atan2(d[1],d[0]),L=9.4,mid=[d[0]*8.66,d[1]*8.66];
+ const gl=glass('#bfe9ef',.2),steel=std('#8d9bb0',.35,.65),dark=std('#0b0d12',.9,0),floor=std('#5a4a40',.9,0),lamp=glow('#ffe2a8'),band=glow(color);
+ const tube=part(new THREE.CylinderGeometry(2.1,2.1,L,24,1,true),gl,mid[0],1.3,mid[1]);tube.rotation.order='YXZ';tube.rotation.y=yaw;tube.rotation.z=Math.PI/2;tube.rotation.x=0;
+ const slab=part(new THREE.BoxGeometry(L,.16,4.4),floor,mid[0],.07,mid[1]);slab.rotation.y=yaw;
+ for(let k=0;k<=6;k++){const t=-L/2+k*L/6;const rib=part(new THREE.TorusGeometry(2.1,.09,4,20),steel,mid[0]+d[0]*t,1.3,mid[1]+d[1]*t);rib.rotation.order='YXZ';rib.rotation.y=yaw+Math.PI/2;}
+ for(const sd of [-1,1])for(let k=0;k<6;k++){const t=-L/2+.8+k*(L-1.6)/5;part(new THREE.BoxGeometry(.3,.2,.3),lamp,mid[0]+d[0]*t+n[0]*sd*1.95,.3,mid[1]+d[1]*t+n[1]*sd*1.95);}
+ for(const [t,sd] of [[-3,1],[-1.5,-1],[0,1],[1.5,-1],[3,1]] as number[][])tree(part,mid[0]+d[0]*t+n[0]*sd*1.3,.15,mid[1]+d[1]*t+n[1]*sd*.55,.9,'#7aa95b');
+ // Ramps down to the underground at both ends of the corridor, each with a dark opening.
+ for(const e of [-1,1]){const cx=mid[0]+d[0]*e*(L/2+1.6),cz=mid[1]+d[1]*e*(L/2+1.6);const r=part(new THREE.BoxGeometry(3.2,.18,2.2),std('#6a5a4c',.9,0),cx,.04,cz);r.rotation.order='YXZ';r.rotation.y=yaw;r.rotation.z=-e*.22;part(new THREE.BoxGeometry(.9,.06,2.2),dark,cx+d[0]*e*1.7,-.2,cz+d[1]*e*1.7).rotation.y=yaw;const b=part(new THREE.TorusGeometry(1.1,.04,4,12),band,cx,.4,cz);b.rotation.x=Math.PI/2;}
+ // Wild reserve: nothing grows here. West side (left on the default view): a big boulder. East side: a low crater with a very tall thin antenna and a red light.
+ const wx=mid[0]+n[0]*7.2,wz=mid[1]+n[1]*7.2;
+ const rk=std('#8a6a58',.95,0);part(new THREE.DodecahedronGeometry(3.1,0),rk,wx,1.4,wz).scale.set(1,.8,1);
+ for(const [dx,dz,sc] of [[2.6,1.2,1.1],[-2.4,1.8,.9],[1.4,-2.8,1.0],[-1.6,-2.2,.7]] as number[][])part(new THREE.DodecahedronGeometry(sc,0),rk,wx+dx,.5,wz+dz).scale.set(1,.6,1);
+ const ex=mid[0]-n[0]*7.6,ez=mid[1]-n[1]*7.6;
+ const rim=part(new THREE.TorusGeometry(3.2,.55,6,24),std('#c9694a',.9,0),ex,.25,ez);rim.rotation.x=Math.PI/2;
+ part(new THREE.CylinderGeometry(2.9,2.9,.06,24),dark,ex,.12,ez);
+ part(new THREE.CylinderGeometry(.05,.09,18,6),steel,ex,9,ez);
+ part(new THREE.SphereGeometry(.28,10,8),glow('#ff3b30'),ex,18.2,ez);
+}
+
+/** Monument: a dark, futuristic stepped pyramid inspired by Mayan temples. Each future monument takes a different world-landmark inspiration. */
+export function monumentPyramid(group:THREE.Group){
+ const obs=std('#1d2028',.5,.45),edge=glow('#58e0d0'),gold=std('#c79a58',.35,.7),core=glow('#ffd899');
+ const add=(g:THREE.BufferGeometry,m:THREE.Material,x:number,y:number,z:number)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);group.add(o);return o;};
+ add(new THREE.CylinderGeometry(9.6,9.8,.4,6),std('#2a2c33',.9,.1),0,.2,0);{const rg=new THREE.Mesh(new THREE.TorusGeometry(9.3,.07,4,6),edge);rg.rotation.x=Math.PI/2;rg.rotation.z=Math.PI/6;rg.position.y=.45;group.add(rg);}
+ add(new THREE.CylinderGeometry(7.4,7.6,.3,4),std('#2a2c33',.9,.1),0,.5,0).rotation.y=Math.PI/4;
+ const tiers=7;let y=.65;
+ for(let i=0;i<tiers;i++){const w=10.2-i*1.35,h=1.15;const m=add(new THREE.BoxGeometry(w,h,w),obs,0,y+h/2,0);m.rotation.y=0;for(const sd of [-1,1]){add(new THREE.BoxGeometry(w+.1,.06,.1),edge,0,y+h+.02,sd*(w/2));add(new THREE.BoxGeometry(.1,.06,w+.1),edge,sd*(w/2),y+h+.02,0);}y+=h;}
+ // Central stairway: sloped slab on the south face with glowing steps.
+ for(let k=0;k<tiers;k++){const w=10.2-k*1.35;add(new THREE.BoxGeometry(2.2,1.15,.7),std('#3a3d46',.6,.3),0,.5+1.15*k+.575,w/2+.35-.0);add(new THREE.BoxGeometry(2.0,.05,.12),edge,0,.5+1.15*(k+1)+.03,w/2+.62);}
+ // Temple crown with a gold roof comb and a bright core.
+ add(new THREE.BoxGeometry(2.6,1.4,2.6),std('#262932',.5,.4),0,y+.7,0);
+ add(new THREE.BoxGeometry(3,.25,3),gold,0,y+1.5,0);
+ add(new THREE.ConeGeometry(.5,2.2,4),gold,0,y+2.7,0).rotation.y=Math.PI/4;
+ add(new THREE.SphereGeometry(.38,12,8),core,0,y+4.1,0);
 }
