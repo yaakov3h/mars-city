@@ -1,19 +1,31 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 16,
+  "revision": 17,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-02T02:31:00+03:00",
-  "totalQuestions": 13,
+  "lastUpdated": "2026-10-03T21:16:00+03:00",
+  "totalQuestions": 14,
   "districts": [
     {
       "id": "district-genesis-20260930",
       "category": "TECHNOLOGY",
       "q": -1,
       "r": 0,
-      "demand": 2,
-      "questionCount": 1,
-      "foundedAt": "2026-09-30T01:22:49+03:00"
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-09-30T01:22:49+03:00",
+      "plots": [
+        {
+          "q": -1,
+          "r": 0,
+          "foundedAt": "2026-09-30T01:22:49+03:00"
+        },
+        {
+          "q": 0,
+          "r": -2,
+          "foundedAt": "2026-10-03T21:16:00+03:00"
+        }
+      ]
     },
     {
       "id": "district-codesign-20260930",
@@ -362,6 +374,28 @@
       "plot": {
         "q": -1,
         "r": 2
+      }
+    },
+    {
+      "id": "b-tools-shelf-20261003",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "מדף הכלים",
+        "en": "The Tools Shelf"
+      },
+      "subcategory": "FREE_TOOLS_INDEX",
+      "q": 0,
+      "r": 0,
+      "height": 8.8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-03T21:16:00+03:00",
+      "lastUpdated": "2026-10-03T21:16:00+03:00",
+      "plot": {
+        "q": 0,
+        "r": -2
       }
     }
   ],
