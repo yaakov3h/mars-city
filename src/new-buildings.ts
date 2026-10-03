@@ -238,3 +238,31 @@ export function monumentPyramid(group:THREE.Group){
  add(new THREE.ConeGeometry(.5,2.2,4),gold,0,y+2.7,0).rotation.y=Math.PI/4;
  add(new THREE.SphereGeometry(.38,12,8),core,0,y+4.1,0);
 }
+
+/** The Tools Shelf (מדף הכלים): a rough-glass gallery with a lit card wall around a central hall, a faceted reflective facade and a small glass dome with a plant on the roof. A sealed lift shaft stands at the side. */
+export function toolsShelf(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),dark=std('#2f3a3d',.6,.3),mirror=std('#9fc3cc',.18,.85),rough=glass('#cfe9ec',.3),band=glow(color),warm=glow('#ffd79a');
+ part(new THREE.CylinderGeometry(7.4,7.8,.5,6),stone,0,.25,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.54,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Central hall: faceted mirrored core.
+ const core=part(new THREE.CylinderGeometry(2.1,2.6,6.4,8),mirror,0,3.7,0);core.rotation.y=Math.PI/8;
+ const hallGlow=part(new THREE.CylinderGeometry(1.5,1.5,5.6,8),warm,0,3.7,0);hallGlow.scale.set(1,1,1);
+ // Gallery ring: rough-glass panels with a lit card wall of tool cards.
+ const cols=['#ffd24a','#7fd0ff','#f06a8d','#9ff07a','#ffb36b','#b9a0ff'];
+ for(let i=0;i<8;i++){const a=i*Math.PI/4+Math.PI/8,R=4.3;
+  if(i===0){part(new THREE.BoxGeometry(.14,4.9,.14),bronze,Math.cos(a+Math.PI/8)*R*1.04,2.9,Math.sin(a+Math.PI/8)*R*1.04);part(new THREE.BoxGeometry(.14,4.9,.14),bronze,Math.cos(a-Math.PI/8)*R*1.04,2.9,Math.sin(a-Math.PI/8)*R*1.04);continue;}
+  const p=part(new THREE.BoxGeometry(3.3,4.6,.12),rough,Math.cos(a)*R,2.9,Math.sin(a)*R);p.rotation.y=-a+Math.PI/2;
+  const fr=part(new THREE.BoxGeometry(3,.12,.2),bronze,Math.cos(a)*R,5.25,Math.sin(a)*R);fr.rotation.y=-a+Math.PI/2;
+  const fl=part(new THREE.BoxGeometry(3,.12,.2),bronze,Math.cos(a)*R,.65,Math.sin(a)*R);fl.rotation.y=-a+Math.PI/2;
+  // Cards sit flush just inside each panel.
+  for(let k=0;k<6;k++){const cx=((k%3)-1)*.9,cy=1.5+Math.floor(k/3)*1.6,rr=R-.1;const c=part(new THREE.BoxGeometry(.7,.9,.04),glow(cols[(i+k)%6]),Math.cos(a)*rr-Math.sin(a)*cx*-1*-1,cy+1.2,Math.sin(a)*rr+Math.cos(a)*cx*-1*-1);c.rotation.y=-a+Math.PI/2;c.position.x=Math.cos(a)*rr+Math.sin(a)*cx;c.position.z=Math.sin(a)*rr-Math.cos(a)*cx;}
+  part(new THREE.BoxGeometry(.14,4.9,.14),bronze,Math.cos(a+Math.PI/8)*R*1.04,2.9,Math.sin(a+Math.PI/8)*R*1.04);}
+ // Roof slab with light rim, and the small glass dome with a plant under it.
+ part(new THREE.CylinderGeometry(5.1,5.1,.25,8),std('#c9ae88',.7,.2),0,5.55,0).rotation.y=Math.PI/8;
+ const rim=part(new THREE.TorusGeometry(5,.06,5,8),band,0,5.7,0);rim.rotation.x=Math.PI/2;rim.rotation.z=Math.PI/8;
+ part(new THREE.SphereGeometry(2.6,24,12,0,Math.PI*2,0,Math.PI/2),glass('#d8f3f5',.28),0,5.7,0);
+ tree(part,0,5.7,0,1.6,'#7aa95b');
+ // Sign blades facing out.
+ for(let i=0;i<3;i++){const a=i*Math.PI*2/3+.4;const bl=part(new THREE.BoxGeometry(.9,.4,.05),glow(cols[i]),Math.cos(a)*5.3,6.1,Math.sin(a)*5.3);bl.rotation.y=-a+Math.PI/2;}
+ // The lift entrance (gallery gap at the east side) belongs to the underground part; the opening stays free of walls.
+}
