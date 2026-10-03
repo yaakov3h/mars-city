@@ -266,3 +266,5 @@ export function toolsShelf(group:THREE.Group,part:Part,color:string){
  for(let i=0;i<3;i++){const a=i*Math.PI*2/3+.4;const bl=part(new THREE.BoxGeometry(.9,.4,.05),glow(cols[i]),Math.cos(a)*5.3,6.1,Math.sin(a)*5.3);bl.rotation.y=-a+Math.PI/2;}
  // The lift entrance (gallery gap at the east side) belongs to the underground part; the opening stays free of walls.
 }
+
+// tools-shelf: upper + underground published together.
