@@ -265,6 +265,19 @@
         "he": "בניין החיפוש",
         "en": "The Search Building"
       }
+    },
+    {
+      "id": "tools-shelf-20261003",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "FREE_TOOLS_INDEX",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-03T21:16:00+03:00",
+      "summary": {
+        "he": "מדף הכלים",
+        "en": "The Tools Shelf"
+      }
     }
   ]
 }
