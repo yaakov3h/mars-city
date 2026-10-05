@@ -356,3 +356,4 @@ export function financeHourglass(group:THREE.Group,part:Part,color:string){
  const vd=part(new THREE.CylinderGeometry(.5,.5,.12,18),metal,4.2,1.1,2.2);vd.rotation.x=Math.PI/2;
 }
 // strategy hall and hourglass live
+// strategy hall and hourglass live 2
