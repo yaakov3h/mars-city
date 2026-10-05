@@ -299,3 +299,4 @@ export function toolsMagazine(group:THREE.Group,part:Part,color:string){
  // Stack of finished issues by the door.
  for(let i=0;i<4;i++)part(new THREE.BoxGeometry(.9,.12,.65),glow(cols[i%5]),2.4,.6+i*.14,fz-.2);
 }
+// tools magazine live
