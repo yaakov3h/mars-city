@@ -278,6 +278,32 @@
         "he": "מדף הכלים",
         "en": "The Tools Shelf"
       }
+    },
+    {
+      "id": "tools-blog-20261004-district",
+      "kind": "district_created",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T05:20:00+03:00",
+      "summary": {
+        "he": "מגזין הכלים",
+        "en": "The Tools Magazine"
+      }
+    },
+    {
+      "id": "tools-blog-20261004",
+      "kind": "question",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T05:20:00+03:00",
+      "summary": {
+        "he": "מגזין הכלים",
+        "en": "The Tools Magazine"
+      }
     }
   ]
 }
