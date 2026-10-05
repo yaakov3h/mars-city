@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 17,
+  "revision": 18,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-03T21:16:00+03:00",
-  "totalQuestions": 14,
+  "lastUpdated": "2026-10-05T05:20:00+03:00",
+  "totalQuestions": 15,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -129,6 +129,15 @@
           "foundedAt": "2026-10-02T02:31:00+03:00"
         }
       ]
+    },
+    {
+      "id": "district-tools-blog-20261004",
+      "category": "PERSONAL_PROJECTS",
+      "q": -3,
+      "r": -2,
+      "demand": 2,
+      "questionCount": 1,
+      "foundedAt": "2026-10-05T05:20:00+03:00"
     }
   ],
   "buildings": [
@@ -397,6 +406,24 @@
         "q": 0,
         "r": -2
       }
+    },
+    {
+      "id": "b-tools-blog-20261004",
+      "districtId": "district-tools-blog-20261004",
+      "name": {
+        "he": "מגזין הכלים",
+        "en": "The Tools Magazine"
+      },
+      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+      "q": -1,
+      "r": 0,
+      "height": 7.9,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-05T05:20:00+03:00",
+      "lastUpdated": "2026-10-05T05:20:00+03:00"
     }
   ],
   "creatures": [],
