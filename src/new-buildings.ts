@@ -268,3 +268,34 @@ export function toolsShelf(group:THREE.Group,part:Part,color:string){
 }
 
 // tools-shelf: upper + underground published together.
+
+/** The Tools Magazine (מגזין הכלים): a small printing-house with a sawtooth roof, a front window framed like a browser page, an issue wall whose sheets fill in gradually, a seal over the permissions entrance and a glass house with a plant. */
+export function toolsMagazine(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),dark=std('#2f3a3d',.6,.3),body=std('#c79d78',.8),brick=std('#9a6a50',.85),band=glow(color),warm=glow('#ffd79a'),sky=glow('#8fd0e6'),gl=glass('#d8f3f5',.26);
+ part(new THREE.CylinderGeometry(7.4,7.8,.5,6),stone,0,.25,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.54,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Print hall and sawtooth roof.
+ const hx=-1.6;part(new THREE.BoxGeometry(6.2,3.4,4.2),body,hx,2.2,-.4);
+ part(new THREE.BoxGeometry(6.4,.2,4.4),dark,hx,3.95,-.4);
+ for(let k=0;k<3;k++){const z=-1.7+k*1.3;const roof=part(new THREE.CylinderGeometry(.8,.8,6.2,3),brick,hx,4.35,z);roof.rotation.z=Math.PI/2;roof.rotation.x=Math.PI/2;roof.scale.set(1,1,.9);const win=part(new THREE.BoxGeometry(5.6,.5,.05),warm,hx,4.4,z+.42);win.rotation.x=-.5;}
+ // Front window framed like a browser page, with a tab bar and three round buttons.
+ const fz=1.78;part(new THREE.BoxGeometry(5.2,2.6,.14),dark,hx,2.2,fz);
+ part(new THREE.BoxGeometry(4.9,2.0,.05),sky,hx,2.05,fz+.09);
+ part(new THREE.BoxGeometry(4.9,.32,.06),bronze,hx,3.3,fz+.1);
+ ['#ffd24a','#7fd0ff','#f06a8d'].forEach((c,i)=>part(new THREE.SphereGeometry(.07,8,6),glow(c),hx-2.2+i*.22,3.3,fz+.14));
+ for(let i=0;i<3;i++)part(new THREE.BoxGeometry(.9,.22,.06),glow(['#ffd24a','#7fd0ff','#f06a8d'][i]),hx-.4+i*1.1,3.3,fz+.13);
+ for(let i=0;i<4;i++)part(new THREE.BoxGeometry(1.0,.1+.08*(i%2),.06),glow('#fff1c9'),hx-1.4+i*.9,1.75-.0*i,fz+.13);
+ // Issue wall (west side): nine sheets flush on the wall; filled ones are lit, the rest pale outlines.
+ const wx=hx-3.12;const cols=['#ffd24a','#7fd0ff','#f06a8d','#9ff07a','#ffb36b'];
+ for(let i=0;i<9;i++){const r=Math.floor(i/3),c=i%3,filled=i<5;const sh=part(new THREE.BoxGeometry(.05,1.0,.8),filled?glow(cols[i%5]):std('#efe3c4',.95),wx,1.4+r*1.15,-1.5+c*1.1);sh.position.x=wx-.03;}
+ // Seal over the permissions entrance.
+ part(new THREE.BoxGeometry(1.0,1.9,.1),dark,1.0,1.45,fz-.05);
+ const seal=part(new THREE.CylinderGeometry(.45,.45,.1,20),bronze,1.0,2.75,fz+.05);seal.rotation.x=Math.PI/2;
+ const ck1=part(new THREE.BoxGeometry(.38,.07,.04),glow('#9ff07a'),.92,2.72,fz+.12);ck1.rotation.z=-.8;const ck2=part(new THREE.BoxGeometry(.18,.07,.04),glow('#9ff07a'),.82,2.67,fz+.12);ck2.rotation.z=.9;
+ // Glass house with a plant, away from the lift entrance.
+ part(new THREE.CylinderGeometry(1.7,1.8,.3,12),stone,-3.8,.65,-4.4);
+ part(new THREE.SphereGeometry(1.55,20,10,0,Math.PI*2,0,Math.PI/2),gl,-3.8,.8,-4.4);
+ tree(part,-3.8,.8,-4.4,1.3,'#7aa95b');
+ // Stack of finished issues by the door.
+ for(let i=0;i<4;i++)part(new THREE.BoxGeometry(.9,.12,.65),glow(cols[i%5]),2.4,.6+i*.14,fz-.2);
+}
