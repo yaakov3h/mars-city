@@ -304,6 +304,45 @@
         "he": "מגזין הכלים",
         "en": "The Tools Magazine"
       }
+    },
+    {
+      "id": "exec-strategy-doc-20261005-district",
+      "kind": "district_created",
+      "category": "WORK",
+      "subcategory": "STRATEGY_DOC_REVIEW",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T21:20:00+03:00",
+      "summary": {
+        "he": "מסמך אסטרטגי למנהלים",
+        "en": "The Executive Strategy Brief"
+      }
+    },
+    {
+      "id": "exec-strategy-doc-20261005",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "STRATEGY_DOC_REVIEW",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T21:20:00+03:00",
+      "summary": {
+        "he": "מסמך אסטרטגי למנהלים",
+        "en": "The Executive Strategy Brief"
+      }
+    },
+    {
+      "id": "financial-future-20261005",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "FUTURE_PLANNING_CHECK",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T21:21:00+03:00",
+      "summary": {
+        "he": "בדיקת עתיד פיננסי",
+        "en": "The Financial Horizon Check"
+      }
     }
   ]
 }
