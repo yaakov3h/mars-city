@@ -300,3 +300,59 @@ export function toolsMagazine(group:THREE.Group,part:Part,color:string){
  for(let i=0;i<4;i++)part(new THREE.BoxGeometry(.9,.12,.65),glow(cols[i%5]),2.4,.6+i*.14,fz-.2);
 }
 // tools magazine live
+
+/** Executive strategy brief: a half-round lecture hall with a big timeline screen flush on the wall, tiered roof and a glass house with a plant. */
+export function strategyHall(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),dark=std('#2f3a3d',.6,.3),body=std('#c9b08f',.8),band=glow(color),warm=glow('#ffd79a'),gl=glass('#d8f3f5',.26);
+ part(new THREE.CylinderGeometry(7.4,7.8,.5,6),stone,0,.25,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.54,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Half-round hall (open to the front), back wall flat.
+ const hall=part(new THREE.CylinderGeometry(3.6,3.6,3.4,20,1,false,Math.PI,Math.PI),body,0,2.2,-.8);hall.rotation.y=0;
+ part(new THREE.BoxGeometry(7.2,3.4,.3),body,0,2.2,-.8);
+ for(let k=0;k<3;k++)part(new THREE.CylinderGeometry(3.6-k*.9,3.6-k*.9,.28,20,1,false,Math.PI,Math.PI),k%2?bronze:dark,0,4.05+k*.28,-.8);
+ // Big screen with a timeline flush on the front of the flat wall (facing the entrance side).
+ part(new THREE.BoxGeometry(5.2,2.2,.06),dark,0,2.4,-.62);
+ part(new THREE.BoxGeometry(4.8,1.8,.05),glow('#12313b'),0,2.4,-.58);
+ part(new THREE.BoxGeometry(4.4,.07,.05),warm,0,2.2,-.54);
+ [-1.9,-.95,0,.95,1.9].forEach((x,i)=>{part(new THREE.SphereGeometry(.1,10,8),glow(i<3?'#9ff07a':'#ffd24a'),x,2.2,-.5);part(new THREE.BoxGeometry(.5,.12+.1*i,.05),glow(['#7fd0ff','#ffd24a','#f06a8d','#9ff07a','#ffb36b'][i]),x,2.65+.05*i,-.54);});
+ // Front: columns and steps.
+ for(const x of [-3.2,3.2])part(new THREE.CylinderGeometry(.22,.26,3.4,8),bronze,x,2.2,2.4);
+ part(new THREE.BoxGeometry(7,.18,.5),dark,0,4,2.4);
+ for(let i=0;i<3;i++)part(new THREE.BoxGeometry(3.4-i*.4,.14,.6),stone,0,.55+i*.14,3.0-i*.5-.2);
+ // Glass house with a plant.
+ part(new THREE.CylinderGeometry(1.6,1.7,.3,12),stone,-4.3,.65,2.6);
+ part(new THREE.SphereGeometry(1.45,20,10,0,Math.PI*2,0,Math.PI/2),gl,-4.3,.8,2.6);
+ tree(part,-4.3,.8,2.6,1.2,'#7aa95b');
+ // Tablet stack by the entrance.
+ for(let i=0;i<3;i++)part(new THREE.BoxGeometry(.9,.12,.65),glow(['#7fd0ff','#ffd24a','#9ff07a'][i]),4.4,.6+i*.14,1.6);
+}
+
+/** Financial horizon check: a tall hourglass of glass with lit sand, time-scale rings, and scenario arrows on a low wall. */
+export function financeHourglass(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.8),metal=std('#8fa7a1',.35,.6),bronze=std('#a77d57',.45,.6),dark=std('#2e3a3d',.5,.4),band=glow(color),gl=glass('#c3e7e1',.2),sand=glow('#ffcf73'),gl2=glass('#c3e7e1',.2);
+ part(new THREE.CylinderGeometry(7.4,7.8,.6,6),stone,0,.3,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.64,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ const cy=5.4;
+ // Frame plates and posts.
+ part(new THREE.CylinderGeometry(2.1,2.3,.35,6),bronze,0,.78,0);part(new THREE.CylinderGeometry(2.1,2.3,.35,6),bronze,0,cy*2+.5,0);
+ for(let i=0;i<3;i++){const a=i*Math.PI*2/3+Math.PI/6;part(new THREE.CylinderGeometry(.09,.09,cy*2-.2,6),bronze,Math.cos(a)*2,cy+.65,Math.sin(a)*2);}
+ // Two glass cones meeting at a neck.
+ const top=part(new THREE.CylinderGeometry(1.9,.18,cy-.1,20,1,true),gl,0,cy*1.5+.55,0);
+ const bot=part(new THREE.CylinderGeometry(.18,1.9,cy-.1,20,1,true),gl,0,cy*.5+.65,0);void top;void bot;
+ // Sand: upper half partly drained, lower pile growing.
+ part(new THREE.CylinderGeometry(1.2,.16,2.0,16),sand,0,cy*1.5-.4,0);
+ part(new THREE.CylinderGeometry(.06,.06,cy*.9,6),sand,0,cy+.5,0);
+ part(new THREE.ConeGeometry(1.6,1.9,16),sand,0,1.95,0);
+ // Time-scale rings (lit) around the lower cone.
+ [1.5,2.5,3.5].forEach((y,i)=>{const t=part(new THREE.TorusGeometry(1.5-i*.1,.05,6,24),band,0,y+.55,0);t.rotation.x=Math.PI/2;});
+ // Scenario arrows on a low wall, flush on its front face (south side), clear of the lift spot.
+ part(new THREE.BoxGeometry(5.2,.9,.3),dark,3.0,.9,-3.6);
+ [['#9ff07a',.3],['#ffd24a',.55],['#7fd0ff',.8]].forEach(([c,h],i)=>part(new THREE.BoxGeometry(.5,h as number,.05),glow(c as string),1.8+i*1.2,.9,-3.43));
+ // Glass house with a plant.
+ part(new THREE.CylinderGeometry(1.5,1.6,.3,12),stone,-4.4,.75,-3.4);
+ part(new THREE.SphereGeometry(1.35,20,10,0,Math.PI*2,0,Math.PI/2),gl2,-4.4,.9,-3.4);
+ tree(part,-4.4,.9,-3.4,1.15,'#7aa95b');
+ // Small vault door emblem near the base.
+ const vd=part(new THREE.CylinderGeometry(.5,.5,.12,18),metal,4.2,1.1,2.2);vd.rotation.x=Math.PI/2;
+}
+// strategy hall and hourglass live
