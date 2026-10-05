@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 18,
+  "revision": 20,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-05T05:20:00+03:00",
-  "totalQuestions": 15,
+  "lastUpdated": "2026-10-05T21:21:00+03:00",
+  "totalQuestions": 17,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -58,8 +58,8 @@
       "category": "FINANCE",
       "q": 0,
       "r": 0,
-      "demand": 4,
-      "questionCount": 3,
+      "demand": 5,
+      "questionCount": 4,
       "foundedAt": "2026-09-30T11:22:44+03:00",
       "plots": [
         {
@@ -76,6 +76,11 @@
           "q": 1,
           "r": 1,
           "foundedAt": "2026-10-01T20:51:00+03:00"
+        },
+        {
+          "q": 0,
+          "r": 3,
+          "foundedAt": "2026-10-05T21:21:00+03:00"
         }
       ]
     },
@@ -138,6 +143,15 @@
       "demand": 2,
       "questionCount": 1,
       "foundedAt": "2026-10-05T05:20:00+03:00"
+    },
+    {
+      "id": "district-exec-strategy-doc-20261005",
+      "category": "WORK",
+      "q": -2,
+      "r": 3,
+      "demand": 2,
+      "questionCount": 1,
+      "foundedAt": "2026-10-05T21:20:00+03:00"
     }
   ],
   "buildings": [
@@ -424,6 +438,46 @@
       "questionCount": 1,
       "createdAt": "2026-10-05T05:20:00+03:00",
       "lastUpdated": "2026-10-05T05:20:00+03:00"
+    },
+    {
+      "id": "b-exec-strategy-doc-20261005",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "מסמך אסטרטגי למנהלים",
+        "en": "The Executive Strategy Brief"
+      },
+      "subcategory": "STRATEGY_DOC_REVIEW",
+      "q": -1,
+      "r": 0,
+      "height": 7.8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-05T21:20:00+03:00",
+      "lastUpdated": "2026-10-05T21:20:00+03:00"
+    },
+    {
+      "id": "b-financial-future-20261005",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "בדיקת עתיד פיננסי",
+        "en": "The Financial Horizon Check"
+      },
+      "subcategory": "FUTURE_PLANNING_CHECK",
+      "q": 0,
+      "r": 0,
+      "height": 7.7,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-05T21:21:00+03:00",
+      "lastUpdated": "2026-10-05T21:21:00+03:00",
+      "plot": {
+        "q": 0,
+        "r": 3
+      }
     }
   ],
   "creatures": [],
