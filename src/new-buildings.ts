@@ -356,4 +356,101 @@ export function financeHourglass(group:THREE.Group,part:Part,color:string){
  const vd=part(new THREE.CylinderGeometry(.5,.5,.12,18),metal,4.2,1.1,2.2);vd.rotation.x=Math.PI/2;
 }
 // strategy hall and hourglass live
-// strategy hall and hourglass live 2
+
+function flagTex(kind:'il'|'us'){const c=document.createElement('canvas');c.width=512;c.height=320;const g=c.getContext('2d')!;
+ if(kind==='il'){g.fillStyle='#fff';g.fillRect(0,0,512,320);g.fillStyle='#1f55b8';g.fillRect(0,34,512,40);g.fillRect(0,246,512,40);g.strokeStyle='#1f55b8';g.lineWidth=12;const tri=(up:boolean)=>{g.beginPath();for(let i=0;i<3;i++){const a=(up?-90:90)+i*120,x=256+Math.cos(a*Math.PI/180)*72,y=160+Math.sin(a*Math.PI/180)*72;i?g.lineTo(x,y):g.moveTo(x,y);}g.closePath();g.stroke();};tri(true);tri(false);}
+ else{for(let i=0;i<13;i++){g.fillStyle=i%2?'#fff':'#b22234';g.fillRect(0,i*320/13,512,320/13+1);}g.fillStyle='#3c3b6e';g.fillRect(0,0,230,172);g.fillStyle='#fff';for(let r=0;r<5;r++)for(let k=0;k<6;k++){g.beginPath();g.arc(20+k*38+(r%2?19:0),18+r*32,6,0,7);g.fill();}}
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+function mapTex(seed:number){const c=document.createElement('canvas');c.width=256;c.height=256;const g=c.getContext('2d')!;g.fillStyle='#0d2a33';g.fillRect(0,0,256,256);g.strokeStyle='#ffd79a';g.lineWidth=3;g.strokeRect(6,6,244,244);const col=['#7fd0ff','#ffd24a','#9ff07a','#f06a8d'];for(let q=0;q<5;q++)for(let r=0;r<5;r++){if((q*7+r*3+seed)%4===0)continue;const x=40+q*44+(r%2?22:0),y=40+r*44;g.fillStyle=col[(q+r+seed)%4];g.beginPath();for(let i=0;i<6;i++){const a=i*Math.PI/3+Math.PI/6;const px=x+Math.cos(a)*17,py=y+Math.sin(a)*17;i?g.lineTo(px,py):g.moveTo(px,py);}g.closePath();g.fill();}
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+
+/** Overseas link: a diplomatic tower with two flag masts, a glass ballot-box arch gate, three glowing city maps on a flush wall and a glass greenhouse. */
+export function overseasLink(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.8),metal=std('#8fa7a1',.35,.6),bronze=std('#a77d57',.45,.6),dark=std('#2e3a3d',.5,.4),band=glow(color),warm=glow('#ffd79a'),gl=glass('#c3e7e1',.2);
+ part(new THREE.CylinderGeometry(7.4,7.8,.6,6),stone,0,.3,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.64,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Tower: stepped hexagonal shaft with lit window bands and a crown.
+ const tz=-.6;
+ [[2.5,2.1,3.2],[2.1,1.8,3.4],[1.8,1.5,3.2]].reduce((y,[r0,r1,h],i)=>{part(new THREE.CylinderGeometry(r1,r0,h,6),i%2?metal:stone,0,y+h/2,tz);for(let k=0;k<6;k++){const a=k*Math.PI/3+Math.PI/6;const w=part(new THREE.BoxGeometry(.9,h*.5,.06),warm,Math.cos(a)*r0*.86,y+h*.5,tz+Math.sin(a)*r0*.86);w.rotation.y=-a+Math.PI/2;}
+  const b=part(new THREE.TorusGeometry(r1*1.02,.06,5,6),band,0,y+h-.1,tz);b.rotation.x=Math.PI/2;return y+h;},.6);
+ const top=.6+9.8;
+ part(new THREE.CylinderGeometry(2,1.7,.5,6),bronze,0,top+.25,tz);
+ // Two masts with the Israeli and the US flag.
+ [[-.9,'il'],[.9,'us']].forEach(([x,k])=>{part(new THREE.CylinderGeometry(.05,.07,5,6),bronze,x as number,top+3,tz);part(new THREE.SphereGeometry(.1,8,6),warm,x as number,top+5.55,tz);
+  const f=new THREE.Mesh(new THREE.PlaneGeometry(2.0,1.25),new THREE.MeshBasicMaterial({map:flagTex(k as 'il'|'us'),side:THREE.DoubleSide}));f.position.set((x as number)+1.05,top+4.7,tz);f.rotation.y=(k==='il'?.12:-.12);f.userData={buildingId:'b-overseas-link-20261006'};group.add(f);});
+ // Glass ballot-box arch gate at the south-west edge of the plaza, away from the lift spot.
+ const gx=-4.2,gz=-2.8;
+ for(const s of [-1,1])part(new THREE.CylinderGeometry(.12,.14,2.6,8),bronze,gx+s*1.4,1.9,gz);
+ const arch=part(new THREE.TorusGeometry(1.4,.1,6,18,Math.PI),bronze,gx,3.2,gz);void arch;
+ const disc=part(new THREE.CircleGeometry(1.3,18,0,Math.PI),gl,gx,3.2,gz);void disc;
+ part(new THREE.BoxGeometry(1.5,.55,.9),dark,gx,4.9,gz);part(new THREE.BoxGeometry(.95,.05,.12),warm,gx,5.2,gz);part(new THREE.BoxGeometry(.5,.35,.04),glow('#ffffff'),gx,5.35,gz);
+ // Flush wall with three glowing city maps on its west face.
+ part(new THREE.BoxGeometry(.3,2.1,5.2),dark,4.6,1.65,-.4);
+ [-1.7,0,1.7].forEach((dz,i)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(1.4,1.4),new THREE.MeshBasicMaterial({map:mapTex(i)}));m.position.set(4.6-.15-.02,1.85,-.4+dz);m.rotation.y=-Math.PI/2;m.userData={buildingId:'b-overseas-link-20261006'};group.add(m);});
+ // Large glass dome garden with colorful plants and flower beds (vegetation stays under glass).
+ const gx0=-3.4,gz0=2.8;
+ part(new THREE.CylinderGeometry(2.1,2.2,.3,16),stone,gx0,.75,gz0);
+ part(new THREE.CylinderGeometry(1.85,1.85,.06,16),std('#5a7a45',.95,0),gx0,.93,gz0);
+ part(new THREE.SphereGeometry(1.95,24,12,0,Math.PI*2,0,Math.PI/2),gl,gx0,.9,gz0);
+ const dr=part(new THREE.TorusGeometry(1.95,.05,5,24),bronze,gx0,.92,gz0);dr.rotation.x=Math.PI/2;
+ tree(part,gx0-.3,.9,gz0-.2,1.35,'#6fa05a');tree(part,gx0+.9,.9,gz0+.7,.9,'#8fbf68');tree(part,gx0-1.0,.9,gz0+.8,.8,'#5f9a52');
+ const fcols=['#f06a8d','#ffd24a','#b98cf0','#ff9b4a','#7fd0ff','#ff6f6f','#fff1c9'];
+ for(let n=0;n<26;n++){const a=n*2.399,rr=.55+((n*37)%10)/10*1.0;const fx=gx0+Math.cos(a)*rr,fz=gz0+Math.sin(a)*rr,fh=.35+((n*13)%6)*.09;
+  part(new THREE.CylinderGeometry(.015,.02,fh,4),std('#4f8a45',.9,0),fx,.93+fh/2,fz);
+  part(new THREE.SphereGeometry(.09+((n*7)%3)*.02,8,6),std(fcols[n%7],.6,0),fx,.93+fh+.04,fz);}
+ for(let n=0;n<6;n++){const a=n*Math.PI/3+.3;part(new THREE.IcosahedronGeometry(.28,0),std(n%2?'#6fa05a':'#4f8a45',.9,0),gx0+Math.cos(a)*1.45,1.15,gz0+Math.sin(a)*1.45);}
+}
+
+/** Travel coordination: a glass-vaulted terminal with a flight arc, a lit luggage belt and a small control tower. */
+export function travelHub(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.8),metal=std('#8fa7a1',.35,.6),bronze=std('#a77d57',.45,.6),dark=std('#2e3a3d',.5,.4),band=glow(color),warm=glow('#ffd79a'),gl=glass('#c3e7e1',.2);
+ part(new THREE.CylinderGeometry(7.4,7.8,.6,6),stone,0,.3,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.64,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Terminal hall with a glass barrel vault.
+ part(new THREE.BoxGeometry(7.4,2.4,3.4),stone,-1.2,1.8,-1.6);
+ const vault=part(new THREE.CylinderGeometry(1.9,1.9,7.4,14,1,true,0,Math.PI),gl,-1.2,3,-1.6);vault.rotation.z=Math.PI/2;vault.rotation.y=Math.PI/2;vault.rotation.x=0;
+ for(let i=-3;i<=3;i+=1.5){const r=part(new THREE.TorusGeometry(1.9,.05,5,14,Math.PI),bronze,-1.2+i,3,-1.6);void r;}
+ for(let i=0;i<5;i++)part(new THREE.BoxGeometry(.7,1.1,.06),warm,-3.6+i*1.2,1.7,-.07);
+ // Flight arc over the entrance, tilted like a take-off path.
+ const arc=part(new THREE.TorusGeometry(3,.1,6,24,Math.PI),band,-1.2,.6,1.3);arc.rotation.z=0;
+ for(const s of [-1,1])part(new THREE.CylinderGeometry(.14,.16,.5,8),bronze,-1.2+s*3,.6,1.3);
+ part(new THREE.SphereGeometry(.22,10,8),warm,-1.2,3.7,1.3);
+ // Luggage belt: a flat lit ring with small cases.
+ const belt=part(new THREE.TorusGeometry(1.6,.14,6,24),dark,3.7,.8,2.4);belt.rotation.x=Math.PI/2;belt.scale.set(1.2,1,1);
+ ['#ffd24a','#7fd0ff','#f06a8d','#9ff07a','#ffb36b','#b9a0ff'].forEach((c,i)=>{const a=i*Math.PI/3;part(new THREE.BoxGeometry(.5,.34,.3),std(c,.7,0),3.7+Math.cos(a)*1.9,1.05,2.4+Math.sin(a)*1.55);});
+ const bt=part(new THREE.TorusGeometry(1.45,.03,5,24),warm,3.7,.97,2.4);bt.rotation.x=Math.PI/2;bt.scale.set(1.2,1,1);
+ // Control tower.
+ part(new THREE.CylinderGeometry(.8,1,6,6),metal,4.4,3.6,-3);part(new THREE.CylinderGeometry(1.5,1.1,.9,6),bronze,4.4,6.9,-3);
+ part(new THREE.CylinderGeometry(1.35,1.45,1.2,6,1,true),gl,4.4,7.9,-3);part(new THREE.CylinderGeometry(1.5,1.5,.2,6),bronze,4.4,8.55,-3);part(new THREE.SphereGeometry(.2,8,6),warm,4.4,8.9,-3);
+ // Glass house with a plant.
+ part(new THREE.CylinderGeometry(1.5,1.6,.3,12),stone,-4.4,.75,3.2);
+ part(new THREE.SphereGeometry(1.35,20,10,0,Math.PI*2,0,Math.PI/2),gl,-4.4,.9,3.2);
+ tree(part,-4.4,.9,3.2,1.15,'#7aa95b');
+}
+
+function clockTex(){const c=document.createElement('canvas');c.width=256;c.height=256;const g=c.getContext('2d')!;g.fillStyle='#12313b';g.fillRect(0,0,256,256);g.strokeStyle='#ffd79a';g.lineWidth=8;g.beginPath();g.arc(128,128,112,0,7);g.stroke();g.lineWidth=5;for(let i=0;i<12;i++){const a=i*Math.PI/6;g.beginPath();g.moveTo(128+Math.cos(a)*92,128+Math.sin(a)*92);g.lineTo(128+Math.cos(a)*106,128+Math.sin(a)*106);g.stroke();}g.lineWidth=9;g.beginPath();g.moveTo(128,128);g.lineTo(128,58);g.stroke();g.beginPath();g.moveTo(128,128);g.lineTo(176,148);g.stroke();const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t;}
+
+/** Inquiry desk and follow-up: a small clock tower, a glass mailbox and a week-long follow-up board. */
+export function inquiryDesk(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.8),metal=std('#8fa7a1',.35,.6),bronze=std('#a77d57',.45,.6),dark=std('#2e3a3d',.5,.4),band=glow(color),warm=glow('#ffd79a'),gl=glass('#c3e7e1',.2);
+ part(new THREE.CylinderGeometry(7.4,7.8,.6,6),stone,0,.3,0);
+ const pad=part(new THREE.TorusGeometry(7,.07,5,6),band,0,.64,0);pad.rotation.x=Math.PI/2;pad.rotation.z=Math.PI/6;
+ // Clock tower with four faces set flush on the shaft.
+ const tz=-1.2;part(new THREE.CylinderGeometry(1.7,2,.5,4),bronze,0,.85,tz).rotation.y=Math.PI/4;
+ const shaft=part(new THREE.CylinderGeometry(1.35,1.6,6.2,4),stone,0,4.2,tz);shaft.rotation.y=Math.PI/4;
+ const ct=clockTex();
+ [[0,1],[Math.PI/2,0],[Math.PI,-1],[-Math.PI/2,0]].forEach(([ry,dz],i)=>{const a=ry as number;const off=1.17;const m=new THREE.Mesh(new THREE.CircleGeometry(.95,24),new THREE.MeshBasicMaterial({map:ct}));m.position.set(Math.sin(a)*off,6,tz+Math.cos(a)*off);m.rotation.y=a;m.userData={buildingId:'b-inquiry-desk-20261006'};group.add(m);void dz;void i;});
+ part(new THREE.CylinderGeometry(1.9,1.4,.6,4),bronze,0,7.6,tz).rotation.y=Math.PI/4;
+ const cap=part(new THREE.ConeGeometry(1.4,1.6,4),bronze,0,8.7,tz);cap.rotation.y=Math.PI/4;part(new THREE.SphereGeometry(.16,8,6),warm,0,9.6,tz);
+ // Glass mailbox on a post.
+ part(new THREE.CylinderGeometry(.1,.12,1.2,8),bronze,-4.2,1.2,-1.4);
+ part(new THREE.BoxGeometry(1.6,1.1,1),gl,-4.2,2.3,-1.4);part(new THREE.BoxGeometry(1.5,.08,.9),bronze,-4.2,2.88,-1.4);part(new THREE.BoxGeometry(.9,.06,.06),warm,-4.2,2.5,-.88);
+ for(let i=0;i<3;i++)part(new THREE.BoxGeometry(.5,.34,.04),std(['#fff1c9','#ffd24a','#7fd0ff'][i],.8,0),-4.5+i*.3,2.0+i*.13,-1.4);
+ // Follow-up board: a low wall with seven small lamps for the week, set flush on its front face.
+ part(new THREE.BoxGeometry(5.2,1.2,.3),dark,3.0,1.2,-3.8);
+ for(let i=0;i<7;i++)part(new THREE.SphereGeometry(.14,8,6),glow(i<3?'#9ff07a':'#ffd24a'),1.1+i*.55+.3,1.2,-3.62);
+ // Glass house with a plant.
+ part(new THREE.CylinderGeometry(1.5,1.6,.3,12),stone,-4.4,.75,3.2);
+ part(new THREE.SphereGeometry(1.35,20,10,0,Math.PI*2,0,Math.PI/2),gl,-4.4,.9,3.2);
+ tree(part,-4.4,.9,3.2,1.15,'#7aa95b');
+}
