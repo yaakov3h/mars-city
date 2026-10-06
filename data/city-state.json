@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 20,
+  "revision": 25,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-05T21:21:00+03:00",
-  "totalQuestions": 17,
+  "lastUpdated": "2026-10-06T20:33:00+03:00",
+  "totalQuestions": 20,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -149,9 +149,31 @@
       "category": "WORK",
       "q": -2,
       "r": 3,
-      "demand": 2,
-      "questionCount": 1,
-      "foundedAt": "2026-10-05T21:20:00+03:00"
+      "demand": 5,
+      "questionCount": 4,
+      "foundedAt": "2026-10-05T21:20:00+03:00",
+      "plots": [
+        {
+          "q": -2,
+          "r": 3,
+          "foundedAt": "2026-10-05T21:20:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": 4,
+          "foundedAt": "2026-10-06T20:12:00+03:00"
+        },
+        {
+          "q": -3,
+          "r": 4,
+          "foundedAt": "2026-10-06T20:22:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": 4,
+          "foundedAt": "2026-10-06T20:22:00+03:00"
+        }
+      ]
     }
   ],
   "buildings": [
@@ -478,6 +500,72 @@
         "q": 0,
         "r": 3
       }
+    },
+    {
+      "id": "b-overseas-link-20261006",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "קשר חו\"ל",
+        "en": "The Overseas Link"
+      },
+      "subcategory": "OVERSEAS_COORDINATION",
+      "q": 0,
+      "r": 0,
+      "height": 9.5,
+      "width": 1.8,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-06T20:12:00+03:00",
+      "lastUpdated": "2026-10-06T20:12:00+03:00",
+      "plot": {
+        "q": -2,
+        "r": 4
+      }
+    },
+    {
+      "id": "b-travel-hub-20261006",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "מרכז תיאום מסעות",
+        "en": "The Travel Coordination Hub"
+      },
+      "subcategory": "TRAVEL_COORDINATION",
+      "q": 0,
+      "r": 0,
+      "height": 8.6,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-06T20:22:00+03:00",
+      "lastUpdated": "2026-10-06T20:22:00+03:00",
+      "plot": {
+        "q": -3,
+        "r": 4
+      }
+    },
+    {
+      "id": "b-inquiry-desk-20261006",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "שולחן פנייה ומעקב",
+        "en": "The Inquiry Desk"
+      },
+      "subcategory": "INQUIRY_FOLLOWUP",
+      "q": 0,
+      "r": 0,
+      "height": 9.2,
+      "width": 1.8,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-06T20:22:00+03:00",
+      "lastUpdated": "2026-10-06T20:22:00+03:00",
+      "plot": {
+        "q": -1,
+        "r": 4
+      }
     }
   ],
   "creatures": [],
@@ -514,7 +602,7 @@
     }
   ],
   "mosaic": {
-    "tiles": 2,
+    "tiles": 3,
     "segmentCapacity": 7,
     "hexes": [
       {
