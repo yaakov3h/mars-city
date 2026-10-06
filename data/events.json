@@ -343,6 +343,45 @@
         "he": "בדיקת עתיד פיננסי",
         "en": "The Financial Horizon Check"
       }
+    },
+    {
+      "id": "overseas-link-20261006",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "OVERSEAS_COORDINATION",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-06T20:12:00+03:00",
+      "summary": {
+        "he": "קשר חו\"ל",
+        "en": "The Overseas Link"
+      }
+    },
+    {
+      "id": "travel-hub-20261006",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "TRAVEL_COORDINATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-06T20:22:00+03:00",
+      "summary": {
+        "he": "מרכז תיאום מסעות",
+        "en": "The Travel Coordination Hub"
+      }
+    },
+    {
+      "id": "inquiry-desk-20261006",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "INQUIRY_FOLLOWUP",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-10-06T20:22:00+03:00",
+      "summary": {
+        "he": "שולחן פנייה ומעקב",
+        "en": "The Inquiry Desk"
+      }
     }
   ]
 }
