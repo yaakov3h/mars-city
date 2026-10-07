@@ -298,6 +298,9 @@ export function toolsMagazine(group:THREE.Group,part:Part,color:string){
  tree(part,-3.8,.8,-4.4,1.3,'#7aa95b');
  // Stack of finished issues by the door.
  for(let i=0;i<4;i++)part(new THREE.BoxGeometry(.9,.12,.65),glow(cols[i%5]),2.4,.6+i*.14,fz-.2);
+ // Add two elevated editing halls without removing the original press hall.
+ for(const z of [-1.75,1.75]){part(new THREE.BoxGeometry(5.6,.2,2.7),bronze,-1.6,5.6,z);for(const x of [-4.15,.95])part(new THREE.BoxGeometry(.16,3.1,.16),bronze,x,7.15,z);part(new THREE.BoxGeometry(5.6,2.8,.05),gl,-1.6,7.1,z+1.35);part(new THREE.BoxGeometry(5.6,2.8,.05),gl,-1.6,7.1,z-1.35);part(new THREE.BoxGeometry(5.8,.18,2.9),dark,-1.6,8.65,z);for(let k=0;k<3;k++){part(new THREE.BoxGeometry(.9,.12,.6),bronze,-3.3+k*1.7,6.1,z);part(new THREE.BoxGeometry(.7,.45,.05),glow(z<0?'#7fd0ff':'#ffd24a'),-3.3+k*1.7,6.4,z-.25);}}
+ part(new THREE.BoxGeometry(5.4,.15,.85),bronze,-1.6,6.05,0);part(new THREE.BoxGeometry(5.4,1.9,.05),gl,-1.6,7.05,.43);part(new THREE.BoxGeometry(5.4,1.9,.05),gl,-1.6,7.05,-.43);part(new THREE.BoxGeometry(5.6,.12,1),gl,-1.6,8.05,0);
 }
 // tools magazine live
 
@@ -453,4 +456,45 @@ export function inquiryDesk(group:THREE.Group,part:Part,color:string){
  part(new THREE.CylinderGeometry(1.5,1.6,.3,12),stone,-4.4,.75,3.2);
  part(new THREE.SphereGeometry(1.35,20,10,0,Math.PI*2,0,Math.PI/2),gl,-4.4,.9,3.2);
  tree(part,-4.4,.9,3.2,1.15,'#7aa95b');
+}
+
+/** Full-hex interactive learning campus, using the existing warm metal/glass palette. */
+export function journeyAcademy(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),dark=std('#2f3a3d',.6,.3),body=std('#c9b08f',.8),band=glow(color),warm=glow('#ffd79a'),gl=glass('#d8f3f5',.26);
+ part(new THREE.CylinderGeometry(8.1,8.5,.5,6),stone,0,.25,0);
+ const ring=part(new THREE.TorusGeometry(7.7,.06,6,6),band,0,.54,0);ring.rotation.x=Math.PI/2;ring.rotation.z=Math.PI/6;
+ // Seven inhabited stations around a courtyard, with windowed upper galleries.
+ for(let k=0;k<7;k++){const a=k/7*Math.PI*2,r=5.0,x=Math.cos(a)*r,z=Math.sin(a)*r;const h=3.2+(k%3)*.65;
+  const hall=part(new THREE.BoxGeometry(2.5,h,2.3),body,x,.6+h/2,z);hall.rotation.y=-a;
+  const roof=part(new THREE.BoxGeometry(2.7,.18,2.5),bronze,x,.7+h,z);roof.rotation.y=-a;
+  for(const dy of [1.25,2.3]){const win=part(new THREE.BoxGeometry(1.8,.62,.07),warm,x+Math.sin(a)*1.17,dy,z+Math.cos(a)*1.17);win.rotation.y=-a;}
+  const nx=Math.cos(a+Math.PI*2/7)*r,nz=Math.sin(a+Math.PI*2/7)*r,L=Math.hypot(nx-x,nz-z),yaw=-Math.atan2(nz-z,nx-x);
+  for(const [yy,mat] of [[1,bronze],[3.05,gl]] as const){const deck=part(new THREE.BoxGeometry(L,.12,1),mat,(x+nx)/2,yy,(z+nz)/2);deck.rotation.y=yaw;}
+  for(const side of [-.5,.5]){const pane=part(new THREE.BoxGeometry(L,2,.04),gl,(x+nx)/2+Math.sin(yaw)*side,2.05,(z+nz)/2+Math.cos(yaw)*side);pane.rotation.y=yaw;}
+ }
+ // Tall observation tower, intentionally substantial at complexity five.
+ part(new THREE.CylinderGeometry(1.55,2,16,6),bronze,0,8.6,-1);
+ for(let k=0;k<8;k++){part(new THREE.CylinderGeometry(1.62,1.62,.12,6),band,0,2+k*1.9,-1);for(const x of [-.8,.8])part(new THREE.BoxGeometry(.45,.95,.06),warm,x,2.6+k*1.9,.39);}
+ part(new THREE.CylinderGeometry(2.2,1.6,2,6),gl,0,17.2,-1);part(new THREE.ConeGeometry(2.45,1,6),bronze,0,18.7,-1);
+ // Enclosed courtyard garden.
+ part(new THREE.SphereGeometry(1.8,24,12,0,Math.PI*2,0,Math.PI/2),gl,-1.65,.6,1.7);
+ for(const [x,z] of [[-2.25,1.5],[-1.15,1.5],[-1.65,2.3]])tree(part,x,.65,z,.85,'#8fbf68');
+ part(new THREE.BoxGeometry(1.9,.18,2.8),bronze,0,.65,6.5);
+}
+
+/** Glass-core agent lab with radial experiment cells and enclosed greenery. */
+export function agentLaboratory(group:THREE.Group,part:Part,color:string){
+ const stone=std('#b9a07f',.85),bronze=std('#a77d57',.45,.6),dark=std('#2f3a3d',.6,.3),body=std('#c79d78',.8),band=glow(color),warm=glow('#ffd79a'),gl=glass('#d8f3f5',.26);
+ part(new THREE.CylinderGeometry(7.4,7.8,.5,6),stone,0,.25,0);
+ part(new THREE.CylinderGeometry(2,2.4,6.8,6),gl,0,4,0);part(new THREE.ConeGeometry(2.3,2.3,6),bronze,0,8.55,0);
+ for(let k=0;k<6;k++){const a=k*Math.PI/3,x=Math.cos(a)*4.9,z=Math.sin(a)*4.9;
+  const cell=part(new THREE.BoxGeometry(2.5,2.8,2.3),body,x,2,z);cell.rotation.y=-a;
+  const roof=part(new THREE.BoxGeometry(2.6,.15,2.4),bronze,x,3.5,z);roof.rotation.y=-a;
+  const pane=part(new THREE.BoxGeometry(1.85,1.6,.05),gl,x+Math.sin(a)*1.18,2.1,z+Math.cos(a)*1.18);pane.rotation.y=-a;
+  const bridge=part(new THREE.BoxGeometry(3,.14,.85),bronze,Math.cos(a)*3.1,1.05,Math.sin(a)*3.1);bridge.rotation.y=-a;
+  const rail=part(new THREE.BoxGeometry(3,.08,.06),band,Math.cos(a)*3.1,1.8,Math.sin(a)*3.1+.4);rail.rotation.y=-a;
+  part(new THREE.CylinderGeometry(.11,.11,5.9,6),band,Math.cos(a)*1.95,3.7,Math.sin(a)*1.95);
+ }
+ part(new THREE.SphereGeometry(1.65,20,12,0,Math.PI*2,0,Math.PI/2),gl,0,.65,0);tree(part,0,.7,0,1.25);
+ part(new THREE.BoxGeometry(1.3,.15,1.5),dark,0,.65,6.7);void warm;
 }
