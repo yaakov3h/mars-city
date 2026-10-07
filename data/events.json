@@ -382,6 +382,32 @@
         "he": "שולחן פנייה ומעקב",
         "en": "The Inquiry Desk"
       }
+    },
+    {
+      "id": "journey-academy-20261007",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "INTERACTIVE_LEARNING",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-10-07T20:13:29+03:00",
+      "summary": {
+        "he": "פיתוח מסע למידה אינטראקטיבי עם תחנות, ניסויים וקריינות",
+        "en": "Development of an interactive learning journey with stations, experiments and narration"
+      }
+    },
+    {
+      "id": "agent-lab-20261007",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "AGENT_SETUP",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-07T20:13:29+03:00",
+      "summary": {
+        "he": "מדריך מעשי להקמה, חיבור ובדיקה של סוכן עצמאי",
+        "en": "A practical guide to setting up, connecting and testing an independent agent"
+      }
     }
   ]
 }

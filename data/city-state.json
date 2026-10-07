@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 25,
+  "revision": 26,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-06T20:33:00+03:00",
-  "totalQuestions": 20,
+  "lastUpdated": "2026-10-07T20:13:29+03:00",
+  "totalQuestions": 22,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -12,7 +12,7 @@
       "q": -1,
       "r": 0,
       "demand": 3,
-      "questionCount": 2,
+      "questionCount": 3,
       "foundedAt": "2026-09-30T01:22:49+03:00",
       "plots": [
         {
@@ -24,6 +24,11 @@
           "q": 0,
           "r": -2,
           "foundedAt": "2026-10-03T21:16:00+03:00"
+        },
+        {
+          "q": 0,
+          "r": -3,
+          "foundedAt": "2026-10-07T20:13:29+03:00"
         }
       ]
     },
@@ -150,7 +155,7 @@
       "q": -2,
       "r": 3,
       "demand": 5,
-      "questionCount": 4,
+      "questionCount": 5,
       "foundedAt": "2026-10-05T21:20:00+03:00",
       "plots": [
         {
@@ -172,6 +177,11 @@
           "q": -1,
           "r": 4,
           "foundedAt": "2026-10-06T20:22:00+03:00"
+        },
+        {
+          "q": -3,
+          "r": 5,
+          "foundedAt": "2026-10-07T20:13:29+03:00"
         }
       ]
     }
@@ -459,7 +469,7 @@
       "activity": 1,
       "questionCount": 1,
       "createdAt": "2026-10-05T05:20:00+03:00",
-      "lastUpdated": "2026-10-05T05:20:00+03:00"
+      "lastUpdated": "2026-10-07T20:13:29+03:00"
     },
     {
       "id": "b-exec-strategy-doc-20261005",
@@ -565,6 +575,50 @@
       "plot": {
         "q": -1,
         "r": 4
+      }
+    },
+    {
+      "id": "b-journey-academy-20261007",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "אקדמיית המסע",
+        "en": "Journey Academy"
+      },
+      "subcategory": "INTERACTIVE_LEARNING",
+      "q": 0,
+      "r": 0,
+      "height": 22,
+      "width": 2.2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-07T20:13:29+03:00",
+      "lastUpdated": "2026-10-07T20:13:29+03:00",
+      "plot": {
+        "q": -3,
+        "r": 5
+      }
+    },
+    {
+      "id": "b-agent-lab-20261007",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "מעבדת הסוכנים",
+        "en": "Agent Laboratory"
+      },
+      "subcategory": "AGENT_SETUP",
+      "q": 0,
+      "r": 0,
+      "height": 10,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-07T20:13:29+03:00",
+      "lastUpdated": "2026-10-07T20:13:29+03:00",
+      "plot": {
+        "q": 0,
+        "r": -3
       }
     }
   ],
