@@ -109,7 +109,6 @@ export class World {
   for(const z of [.65,2.7]){box(4.4,.045,.06,-3.55,.44,z,accent);box(4.4,.045,.06,3.55,.44,z,accent);}
   for(const x of [-3.9,3.9]){box(1.9,.16,.55,x,.73,2.3,frame);for(const dx of [-.65,.65])box(.09,.4,.4,x+dx,.53,2.3,dark);}
   const greens=['#71977b','#9aaf6d','#4f7d68'].map(c=>material(c,.02,.85));for(let i=0;i<6;i++){const x=i<3?-5.6:5.6,z=-1.4+(i%3)*1.2;box(.65,.28,.65,x,.58,z,dark);this.catalogTree(group,x,.72,z,i%3,b.id+'-transit-'+i,.58);const cap=part(new THREE.SphereGeometry(.52,16,10,0,Math.PI*2,0,Math.PI/2),glass,x,.65,z);cap.scale.y=1.5;}
-  const c=document.createElement('canvas');c.width=1024;c.height=180;const ctx=c.getContext('2d')!;ctx.fillStyle='#443a32';ctx.fillRect(0,0,1024,180);ctx.fillStyle='#ffe1b7';ctx.textAlign='center';ctx.font='62px sans-serif';ctx.fillText('צומת השכבות',512,80);ctx.font='30px sans-serif';ctx.fillText('TRANSIT / LIGHT / CONNECTION',512,137);const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;const sign=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,depthWrite:false}));sign.position.set(2.8,3.12,3.3);sign.scale.set(3.7,.65,1);group.add(sign);
   const light=new THREE.PointLight(color,0,16,2);light.position.copy(group.position).add(new THREE.Vector3(0,3,1));this.cityLights.push(light);
  }
  imageStudio(group:THREE.Group,b:Building,color:string,part:(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh){
@@ -124,7 +123,6 @@ export class World {
   for(const px of [1.7,2.05]){const leg=box(.06,1.1,.06,px,.62,1.55,trim);leg.rotation.x=-.3;}box(.66,.8,.05,1.87,.75,1.42,canvasMat);
   canvasMat.userData.preserveRealismSurface=true;const pots=['#d97b5a','#5a7bd9','#e8c25a'].map((c,i)=>box(.16,.14,.16,-1.7+i*.3,.27,1.5,new THREE.MeshStandardMaterial({color:c,roughness:.8})));
   box(.9,.5,.04,0,2.15,1.05,canvasMat);box(.98,.58,.03,0,2.15,1.03,trim);
-  const c=document.createElement('canvas');c.width=640;c.height=140;const ctx=c.getContext('2d')!;ctx.fillStyle='#443a32';ctx.fillRect(0,0,640,140);ctx.fillStyle='#ffe1b7';ctx.textAlign='center';ctx.font='52px sans-serif';ctx.fillText('סדנת הדימויים',320,88);const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;const sign=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,depthWrite:false}));sign.position.set(0,2.75,1.5);sign.scale.set(2.5,.55,1);group.add(sign);
   const gardenGlass=new THREE.MeshPhysicalMaterial({color:'#cae8dc',transparent:true,opacity:.13,roughness:.08,side:THREE.DoubleSide,depthWrite:false}),rib=new THREE.MeshBasicMaterial({color:'#f0c1d4'});const dome=part(new THREE.SphereGeometry(8.6,48,24,0,Math.PI*2,0,Math.PI/2),gardenGlass,0,.08,0);dome.scale.y=.5;
   for(let j=0;j<6;j++){const curve=new THREE.EllipseCurve(0,0,8.6,4.3,0,Math.PI,false,0),points=curve.getPoints(40).map(p=>new THREE.Vector3(p.x,p.y+.08,0));const arch=part(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points),40,.04,6,false),rib);arch.rotation.y=j*Math.PI/6;}
   const leaves=['#4c6835','#9bba68','#245341','#739548'].map(gardenLeaf),soil=warmBody('#80624a');for(let j=0;j<24;j++){const a=j*Math.PI/12,r=4.7+(j%3)*1.1,px=Math.cos(a)*r,pz=Math.sin(a)*r;part(new THREE.CylinderGeometry(.5,.43,.28,10),soil,px,.28,pz);this.catalogTree(group,px,.43,pz,j%3,b.id+'-studio-'+j);}
@@ -152,7 +150,6 @@ export class World {
   for(let i=0;i<12;i++){const x=1.6+(i%3)*1.0,z=-2.25+Math.floor(i/3)*1.3,tall=.38+(i%4)*.14;box(.65,.17,.68,x,.57,z,soil);this.catalogTree(group,x,.66,z,i%3,b.id+'-cat-'+i);}
   for(let i=0;i<6;i++)box(.5,.035,.43,.75,.5,-2.4+i*.9,wall);
   box(1.25,.18,.48,2.55,.8,1.76,wall);for(const x of [2.05,3.05])box(.08,.48,.3,x,.6,1.76,roof);
-  const c=document.createElement('canvas');c.width=768;c.height=160;const ctx=c.getContext('2d')!;ctx.fillStyle='#473c31';ctx.fillRect(0,0,768,160);ctx.fillStyle='#fff0d4';ctx.font='60px sans-serif';ctx.textAlign='center';ctx.fillText('בית החתולים',384,101);const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;const sign=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,depthWrite:false}));sign.position.set(-1.8,2.8,1.61);sign.scale.set(2.4,.5,1);group.add(sign);
  }
 
  civicCitadel(group:THREE.Group,b:Building,color:string,part:(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh,stone:THREE.Material,base:THREE.Material){
@@ -343,8 +340,6 @@ export class World {
   for(let j=0;j<9;j++){const a=.25+j*Math.PI*2/9,x=Math.cos(a)*4.65,z=Math.sin(a)*4.65,h=.55+(j%3)*.16;part(new THREE.BoxGeometry(.55,h,.45),stone,x,.34+h/2,z).rotation.y=-a;part(new THREE.BoxGeometry(.59,.045,.49),copper,x,.36+h,z).rotation.y=-a;}
   for(let j=0;j<5;j++)part(new THREE.BoxGeometry(.65,.07,.55),copper,0,.35,2.5+j*.62);
   // Two crisp text faces alternate, keeping the approved public signature literal.
-  const signMaps=['MARS CITY'].map(text=>{const canvas=document.createElement('canvas');canvas.width=1024;canvas.height=256;const ctx=canvas.getContext('2d')!;ctx.fillStyle='rgba(9,30,40,.88)';ctx.fillRect(0,0,1024,256);ctx.strokeStyle='#7ee5f2';ctx.lineWidth=5;ctx.strokeRect(10,10,1004,236);ctx.shadowColor='#86e9fa';ctx.shadowBlur=7;ctx.fillStyle='#e5fcff';ctx.font=text==='MARS CITY'?'600 100px sans-serif':'500 84px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,512,130);const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;return texture;});
-  const sign=new THREE.Sprite(new THREE.SpriteMaterial({map:signMaps[0],transparent:true,depthWrite:false}));sign.position.set(0,2.55,5.05);sign.scale.set(5.7,1.425,1);sign.userData={buildingId:b.id,districtId:b.districtId,foundingSign:true,signMaps};group.add(sign);this.hit.push(sign);this.animated.push(sign);
   for(const x of [-2.1,2.1])part(new THREE.CylinderGeometry(.035,.065,2.3,6),copper,x,1.5,5.05);
  }
  originRing(group:THREE.Group,x:number,y:number,z:number){
