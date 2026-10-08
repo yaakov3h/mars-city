@@ -16,3 +16,5 @@ export function addCulture(world:World){
  add(new THREE.BoxGeometry(1.05,.75,.65),new THREE.MeshStandardMaterial({color:'#987857',roughness:.75}),0,1.2,6.45,'experiment');
  const c=document.createElement('canvas');c.width=640;c.height=320;const ctx=c.getContext('2d')!;ctx.fillStyle='#102732';ctx.fillRect(0,0,640,320);ctx.strokeStyle='#e7c383';ctx.lineWidth=4;ctx.beginPath();ctx.ellipse(320,155,160,70,-.3,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#edb55b';ctx.beginPath();ctx.arc(320,155,22,0,Math.PI*2);ctx.fill();ctx.fillStyle='#81d6d2';ctx.beginPath();ctx.arc(473,113,12,0,Math.PI*2);ctx.fill();ctx.font='32px sans-serif';ctx.textAlign='center';ctx.fillStyle='#fff0d8';ctx.fillText('ORBIT LAB · TAP TO OPEN',320,290);const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;add(new THREE.PlaneGeometry(.98,.49),new THREE.MeshBasicMaterial({map:texture}),0,1.23,6.78,'experiment');
 }
+
+// External experiment is loaded only by the tap-open dialog.
