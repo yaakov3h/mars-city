@@ -1,0 +1,4 @@
+import {it,expect} from 'vitest';
+import {readFileSync} from 'node:fs';
+it('keeps external experiments opt-in and pauses city until close',()=>{const s=readFileSync('src/main.ts','utf8');expect(s).toContain('world.setPaused(true)');expect(s).toContain("experienceDialog.querySelector('iframe')?.remove()");expect(s).toContain('referrerpolicy="no-referrer"');expect(s).toContain('world.onExperience=openExperience');expect(s).toContain('if(!experienceOpen&&cinematic')});
+it('preserves data and uses small local attributed NASA assets',()=>{const s=readFileSync('src/culture.ts','utf8');expect(s).toContain('NASA/JPL-Caltech/ASU/MSSS');expect(s).toContain('NASA/JPL-Caltech');expect(s).toContain("noMerge:true");expect(s).toContain("b-journey-academy-20261007");expect(s).not.toContain('VideoTexture')});
