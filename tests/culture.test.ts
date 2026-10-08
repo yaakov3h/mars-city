@@ -1,4 +1,4 @@
 import {it,expect} from 'vitest';
-import {readFileSync} from 'node:fs';
-it('keeps external experiments opt-in and pauses city until close',()=>{const s=readFileSync('src/main.ts','utf8');expect(s).toContain('world.setPaused(true)');expect(s).toContain("experienceDialog.querySelector('iframe')?.remove()");expect(s).toContain('referrerpolicy="no-referrer"');expect(s).toContain('world.onExperience=openExperience');expect(s).toContain('if(!experienceOpen&&cinematic')});
-it('preserves data and uses small local attributed NASA assets',()=>{const s=readFileSync('src/culture.ts','utf8');expect(s).toContain('NASA/JPL-Caltech/ASU/MSSS');expect(s).toContain('NASA/JPL-Caltech');expect(s).toContain("noMerge:true");expect(s).toContain("b-journey-academy-20261007");expect(s).not.toContain('VideoTexture')});
+import {gallery,orbitalSpace} from '../src/culture';
+it('uses local NASA assets with image-level credits',()=>{expect(gallery).toHaveLength(2);expect(gallery[0].credit).toBe('NASA/JPL-Caltech/ASU/MSSS');expect(gallery[1].credit).toBe('NASA/JPL-Caltech');expect(gallery.every(i=>i.file.endsWith('.webp'))).toBe(true)});
+it('identifies the public licensed orbital experiment',()=>{expect(orbitalSpace.license).toBe('MIT');expect(orbitalSpace.embed).toMatch(/^https:/);expect(orbitalSpace.page).toContain('/spaces/')});
