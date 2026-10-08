@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import type {World} from './world';
 export const gallery=[
- {file:'panorama.webp',title:'Perseverance · Jezero · Sol 3',credit:'NASA/JPL-Caltech/ASU/MSSS',url:'https://science.nasa.gov/resource/mastcam-zs-first-360-degree-panorama/'},
- {file:'dunes.webp',title:'Curiosity · Namib Dune',credit:'NASA/JPL-Caltech',url:'https://science.nasa.gov/photojournal/mastcam-telephoto-of-a-martian-dunes-downwind-face/'}
+ {file:'1-panorama.webp',title:'Perseverance · Jezero · Sol 3',credit:'NASA/JPL-Caltech/ASU/MSSS',url:'https://science.nasa.gov/resource/mastcam-zs-first-360-degree-panorama/'},
+ {file:'2-dunes.webp',title:'Curiosity · Namib Dune',credit:'NASA/JPL-Caltech',url:'https://science.nasa.gov/photojournal/mastcam-telephoto-of-a-martian-dunes-downwind-face/'}
 ];
 export const orbitalSpace={name:'N-Body Orbital Physics Lab',author:'dschechter27',license:'MIT',page:'https://huggingface.co/spaces/dschechter27/N-Body_Orbital_Physics_Lab',embed:'https://dschechter27-n-body-orbital-physics-lab.hf.space/'};
 export function addCulture(world:World){
