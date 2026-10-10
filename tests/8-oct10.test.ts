@@ -1,0 +1,12 @@
+import {it,expect} from 'vitest';
+import {buildable} from '../scripts/layout.mjs';
+import {hex,random} from '../src/model';
+import {ANNEX,reviewWalkable,reviewFloorAt} from '../src/review-underground';
+import {OCT10_SHAFTS,pilotOpening,cutApertures} from '../src/underground';
+import * as THREE from 'three';
+import state from '../data/city-state.json';
+import events from '../data/events.json';
+it('keeps two new full hexes outside crater and all 360 permanent rock footprints',()=>{for(const id of ['b-preparation-house-20261010','b-presence-house-20261010']){const b=state.buildings.find(b=>b.id===id)!;expect(buildable(b.plot!.q,b.plot!.r)).toBe(true);const [x,z]=hex(b.plot!.q,b.plot!.r,10);for(let i=0;i<360;i++){const rx=(random('rx'+i)-.5)*230,rz=(random('rz'+i)-.5)*230,r=.16+random('rs'+i)*1.35;expect(Math.hypot(x-rx,z-rz)).toBeGreaterThan(10+r);}}});
+it('expands imagery once in its original plot',()=>{const b=state.buildings.find(b=>b.id==='b-images-20260930')!;expect([b.plot!.q,b.plot!.r]).toEqual([-2,-1]);expect(b.complexity).toBe(3);expect(events.events.filter(e=>e.id==='consistent-imagery-20261010')).toHaveLength(1)});
+it('connects each new room to two adjacent existing rooms along walkable ramps',()=>{for(const [a,b] of [[22,15],[22,18],[23,13],[23,9]]){for(let k=0;k<=100;k++){const t=k/100,x=ANNEX[a].x*(1-t)+ANNEX[b].x*t,z=ANNEX[a].z*(1-t)+ANNEX[b].z*t;expect(reviewWalkable(x,z)).toBe(true);expect(Number.isFinite(reviewFloorAt(x,z))).toBe(true);}}});
+it('has a true surface opening at all three new lift locations',()=>{expect(OCT10_SHAFTS).toHaveLength(3);for(const s of OCT10_SHAFTS){const x=(s.x0+s.x1)/2,z=(s.z0+s.z1)/2;expect(pilotOpening(x,z)).toBe(true);const g=new THREE.PlaneGeometry(4,4);g.rotateX(-Math.PI/2);cutApertures(g,true,x,z);const m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({side:THREE.DoubleSide}));m.position.set(x,0,z);m.updateMatrixWorld();const ray=new THREE.Raycaster(new THREE.Vector3(x,2,z),new THREE.Vector3(0,-1,0));expect(ray.intersectObject(m)).toHaveLength(0);g.dispose();}});
