@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 26,
+  "revision": 29,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-07T20:13:29+03:00",
-  "totalQuestions": 22,
+  "lastUpdated": "2026-10-10T21:14:19+03:00",
+  "totalQuestions": 25,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -37,8 +37,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 4,
-      "questionCount": 3,
+      "demand": 5,
+      "questionCount": 4,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -145,17 +145,29 @@
       "category": "PERSONAL_PROJECTS",
       "q": -3,
       "r": -2,
-      "demand": 2,
-      "questionCount": 1,
-      "foundedAt": "2026-10-05T05:20:00+03:00"
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-10-05T05:20:00+03:00",
+      "plots": [
+        {
+          "q": -3,
+          "r": -2,
+          "foundedAt": "2026-10-05T05:20:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": -3,
+          "foundedAt": "2026-10-10T21:14:19+03:00"
+        }
+      ]
     },
     {
       "id": "district-exec-strategy-doc-20261005",
       "category": "WORK",
       "q": -2,
       "r": 3,
-      "demand": 5,
-      "questionCount": 5,
+      "demand": 6,
+      "questionCount": 6,
       "foundedAt": "2026-10-05T21:20:00+03:00",
       "plots": [
         {
@@ -182,6 +194,11 @@
           "q": -3,
           "r": 5,
           "foundedAt": "2026-10-07T20:13:29+03:00"
+        },
+        {
+          "q": -3,
+          "r": 3,
+          "foundedAt": "2026-10-10T21:11:41+03:00"
         }
       ]
     }
@@ -291,13 +308,13 @@
       "subcategory": "IMAGE_MAKING_EXPERIMENTS",
       "q": 0,
       "r": 0,
-      "height": 2.2,
+      "height": 5.2,
       "width": 2.6,
-      "complexity": 1,
+      "complexity": 3,
       "activity": 1,
-      "questionCount": 1,
+      "questionCount": 2,
       "createdAt": "2026-09-30T22:18:50+03:00",
-      "lastUpdated": "2026-09-30T22:18:50+03:00",
+      "lastUpdated": "2026-10-10T21:11:41+03:00",
       "plot": {
         "q": -2,
         "r": -1
@@ -620,6 +637,50 @@
         "q": 0,
         "r": -3
       }
+    },
+    {
+      "id": "b-preparation-house-20261010",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "בית ההכנה",
+        "en": "Preparation House"
+      },
+      "subcategory": "PERSONALIZED_PREPARATION_TOOL",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -3,
+        "r": 3
+      },
+      "height": 12.5,
+      "width": 6.8,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-10T21:11:41+03:00",
+      "lastUpdated": "2026-10-10T21:11:41+03:00"
+    },
+    {
+      "id": "b-presence-house-20261010",
+      "districtId": "district-tools-blog-20261004",
+      "name": {
+        "he": "בית הנוכחות",
+        "en": "Presence House"
+      },
+      "subcategory": "SOCIAL_CONTENT_STUDIO",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -2,
+        "r": -3
+      },
+      "height": 15,
+      "width": 6.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-10T21:14:19+03:00",
+      "lastUpdated": "2026-10-10T21:14:19+03:00"
     }
   ],
   "creatures": [],
