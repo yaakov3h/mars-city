@@ -408,6 +408,46 @@
         "he": "מדריך מעשי להקמה, חיבור ובדיקה של סוכן עצמאי",
         "en": "A practical guide to setting up, connecting and testing an independent agent"
       }
+    },
+    {
+      "id": "preparation-house-20261010",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "PERSONALIZED_PREPARATION_TOOL",
+      "complexity": 4,
+      "importance": 4,
+      "occurredAt": "2026-10-10T21:11:41+03:00",
+      "summary": {
+        "he": "פיתוח כלי הכנה אישי ונגיש עם רשימות מותאמות והסברים",
+        "en": "Development of an accessible personal preparation tool with tailored lists and explanations"
+      }
+    },
+    {
+      "id": "consistent-imagery-20261010",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "CONSISTENT_CHARACTER_DESIGN",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-10T21:11:41+03:00",
+      "summary": {
+        "he": "פיתוח שפה חזותית עקבית לדמות ולסצנות",
+        "en": "Development of a consistent visual language for a character and scenes"
+      },
+      "existingBuildingId": "b-images-20260930"
+    },
+    {
+      "id": "presence-house-20261010",
+      "kind": "question",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "SOCIAL_CONTENT_STUDIO",
+      "complexity": 4,
+      "importance": 4,
+      "occurredAt": "2026-10-10T21:14:19+03:00",
+      "summary": {
+        "he": "הקמת ערוץ תוכן חזותי עם זהות עקבית ותוכנית פרסום",
+        "en": "Creation of a visual content channel with a consistent identity and publishing plan"
+      }
     }
   ]
 }
