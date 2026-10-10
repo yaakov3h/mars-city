@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "id": "genesis-20260930-district",
+      "kind": "district_created",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T01:22:49+03:00",
+      "summary": {
+        "he": "הקמת MARS CITY",
+        "en": "Founding of MARS CITY"
+      }
+    },
+    {
+      "id": "genesis-20260930",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T01:22:49+03:00",
+      "summary": {
+        "he": "הקמת MARS CITY",
+        "en": "Founding of MARS CITY"
+      }
+    },
+    {
+      "id": "genesis-core-20260930",
+      "kind": "concept_milestone",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T01:22:50+03:00",
+      "summary": {
+        "he": "ליבת בראשית",
+        "en": "The Genesis Core"
+      }
+    },
+    {
+      "id": "codesign-20260930-district",
+      "kind": "district_created",
+      "category": "CREATIVE",
+      "subcategory": "LIVING_3D_WORLD_DESIGN",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T09:50:43+03:00",
+      "summary": {
+        "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
+        "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
+      }
+    },
+    {
+      "id": "codesign-20260930",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "LIVING_3D_WORLD_DESIGN",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-09-30T09:50:43+03:00",
+      "summary": {
+        "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
+        "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
+      },
+      "relatedLandmarkId": "l-genesis-core-20260930",
+      "existingLandmarkTreatment": {
+        "material": "dark basalt with copper veins",
+        "lighting": "category edge glow and warm inner-gap fill"
+      }
+    },
+    {
+      "id": "bank-regulation-20260930-district",
+      "kind": "district_created",
+      "category": "FINANCE",
+      "subcategory": "BANKING_REGULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T11:22:44+03:00",
+      "summary": {
+        "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
+        "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
+      }
+    },
+    {
+      "id": "bank-regulation-20260930",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "BANKING_REGULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T11:22:44+03:00",
+      "summary": {
+        "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
+        "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
+      }
+    },
+    {
+      "id": "cat-rhythm-20260930-district",
+      "kind": "district_created",
+      "category": "ANIMALS",
+      "subcategory": "DAILY_CARE_AND_CURIOSITY",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-09-30T21:15:58+03:00",
+      "summary": {
+        "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
+        "en": "A daily care routine paired with curiosity and learning"
+      }
+    },
+    {
+      "id": "cat-rhythm-20260930",
+      "kind": "question",
+      "category": "ANIMALS",
+      "subcategory": "DAILY_CARE_AND_CURIOSITY",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-09-30T21:15:58+03:00",
+      "summary": {
+        "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
+        "en": "A daily care routine paired with curiosity and learning"
+      }
+    },
+    {
+      "id": "transit-layers-20260930-district",
+      "kind": "district_created",
+      "category": "ENGINEERING",
+      "subcategory": "LAYERED_CITY_CIRCULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T21:47:20+03:00",
+      "summary": {
+        "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
+        "en": "A transit center linking the upper city and the streets below, with light through hex connections"
+      }
+    },
+    {
+      "id": "transit-layers-20260930",
+      "kind": "question",
+      "category": "ENGINEERING",
+      "subcategory": "LAYERED_CITY_CIRCULATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-09-30T21:47:20+03:00",
+      "summary": {
+        "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
+        "en": "A transit center linking the upper city and the streets below, with light through hex connections"
+      }
+    },
+    {
+      "id": "images-20260930",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "IMAGE_MAKING_EXPERIMENTS",
+      "complexity": 1,
+      "importance": 1,
+      "occurredAt": "2026-09-30T22:18:50+03:00",
+      "summary": {
+        "he": "ניסוי יצירתי קטן בדימויים ממוחשבים",
+        "en": "A small creative experiment in generated imagery"
+      }
+    },
+    {
+      "id": "permissions-mosaic-20260930",
+      "kind": "question",
+      "category": "OTHER",
+      "subcategory": "ACCESS_AND_SHARING_ADMIN",
+      "complexity": 1,
+      "importance": 1,
+      "occurredAt": "2026-09-30T22:25:05+03:00",
+      "summary": {
+        "he": "מעקב מצטבר של שיתופי קבצים, נאסף כפסיפס בכיכר המרכזית",
+        "en": "A cumulative record of file sharing, collected as a mosaic in the central plaza"
+      }
+    },
+    {
+      "id": "money-map-20261001",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "PERSONAL_FINANCE_MAPPING",
+      "complexity": 5,
+      "importance": 4,
+      "occurredAt": "2026-10-01T20:50:00+03:00",
+      "summary": {
+        "he": "מיפוי פיננסי שנתי: סקירה מסודרת של הוצאות, הכנסות וחיסכון",
+        "en": "A structured annual map of spending, income and savings"
+      }
+    },
+    {
+      "id": "claim-airplane-20261001",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "CONSUMER_CLAIM",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-10-01T20:51:00+03:00",
+      "summary": {
+        "he": "פנייה מסודרת לקבלת פיצוי מגורם מסחרי",
+        "en": "A structured request for compensation from a commercial party"
+      }
+    },
+    {
+      "id": "academic-recognition-20261001-district",
+      "kind": "district_created",
+      "category": "LEARNING",
+      "subcategory": "ACADEMIC_RECOGNITION",
+      "complexity": 2,
+      "importance": 3,
+      "occurredAt": "2026-10-01T20:52:00+03:00",
+      "summary": {
+        "he": "בירור הכרה אקדמית בתארים",
+        "en": "Clarifying academic recognition of degrees"
+      }
+    },
+    {
+      "id": "academic-recognition-20261001",
+      "kind": "question",
+      "category": "LEARNING",
+      "subcategory": "ACADEMIC_RECOGNITION",
+      "complexity": 2,
+      "importance": 3,
+      "occurredAt": "2026-10-01T20:52:00+03:00",
+      "summary": {
+        "he": "בירור הכרה אקדמית בתארים",
+        "en": "Clarifying academic recognition of degrees"
+      }
+    },
+    {
+      "id": "game-concept-20261001",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "GAME_CONCEPT_BIRTH",
+      "complexity": 2,
+      "importance": 3,
+      "occurredAt": "2026-10-01T23:30:00+03:00",
+      "summary": {
+        "he": "לידת קונספט משחק חדש",
+        "en": "Birth of a new game concept"
+      }
+    },
+    {
+      "id": "strata-spire-20261002",
+      "kind": "question",
+      "category": "ENGINEERING",
+      "subcategory": "STRATA_SPIRE",
+      "complexity": 5,
+      "importance": 4,
+      "occurredAt": "2026-10-02T02:30:00+03:00",
+      "summary": {
+        "he": "חוד השכבות",
+        "en": "Strata Spire"
+      }
+    },
+    {
+      "id": "search-building-20261002",
+      "kind": "question",
+      "category": "LEARNING",
+      "subcategory": "SEARCH_BUILDING",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-10-02T02:31:00+03:00",
+      "summary": {
+        "he": "בניין החיפוש",
+        "en": "The Search Building"
+      }
+    },
+    {
+      "id": "tools-shelf-20261003",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "FREE_TOOLS_INDEX",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-03T21:16:00+03:00",
+      "summary": {
+        "he": "מדף הכלים",
+        "en": "The Tools Shelf"
+      }
+    },
+    {
+      "id": "tools-blog-20261004-district",
+      "kind": "district_created",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T05:20:00+03:00",
+      "summary": {
+        "he": "מגזין הכלים",
+        "en": "The Tools Magazine"
+      }
+    },
+    {
+      "id": "tools-blog-20261004",
+      "kind": "question",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T05:20:00+03:00",
+      "summary": {
+        "he": "מגזין הכלים",
+        "en": "The Tools Magazine"
+      }
+    },
+    {
+      "id": "exec-strategy-doc-20261005-district",
+      "kind": "district_created",
+      "category": "WORK",
+      "subcategory": "STRATEGY_DOC_REVIEW",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T21:20:00+03:00",
+      "summary": {
+        "he": "מסמך אסטרטגי למנהלים",
+        "en": "The Executive Strategy Brief"
+      }
+    },
+    {
+      "id": "exec-strategy-doc-20261005",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "STRATEGY_DOC_REVIEW",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T21:20:00+03:00",
+      "summary": {
+        "he": "מסמך אסטרטגי למנהלים",
+        "en": "The Executive Strategy Brief"
+      }
+    },
+    {
+      "id": "financial-future-20261005",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "FUTURE_PLANNING_CHECK",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-05T21:21:00+03:00",
+      "summary": {
+        "he": "בדיקת עתיד פיננסי",
+        "en": "The Financial Horizon Check"
+      }
+    },
+    {
+      "id": "overseas-link-20261006",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "OVERSEAS_COORDINATION",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-06T20:12:00+03:00",
+      "summary": {
+        "he": "קשר חו\"ל",
+        "en": "The Overseas Link"
+      }
+    },
+    {
+      "id": "travel-hub-20261006",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "TRAVEL_COORDINATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-06T20:22:00+03:00",
+      "summary": {
+        "he": "מרכז תיאום מסעות",
+        "en": "The Travel Coordination Hub"
+      }
+    },
+    {
+      "id": "inquiry-desk-20261006",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "INQUIRY_FOLLOWUP",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-10-06T20:22:00+03:00",
+      "summary": {
+        "he": "שולחן פנייה ומעקב",
+        "en": "The Inquiry Desk"
+      }
+    },
+    {
+      "id": "journey-academy-20261007",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "INTERACTIVE_LEARNING",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-10-07T20:13:29+03:00",
+      "summary": {
+        "he": "פיתוח מסע למידה אינטראקטיבי עם תחנות, ניסויים וקריינות",
+        "en": "Development of an interactive learning journey with stations, experiments and narration"
+      }
+    },
+    {
+      "id": "agent-lab-20261007",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "AGENT_SETUP",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-07T20:13:29+03:00",
+      "summary": {
+        "he": "מדריך מעשי להקמה, חיבור ובדיקה של סוכן עצמאי",
+        "en": "A practical guide to setting up, connecting and testing an independent agent"
+      }
+    },
+    {
+      "id": "preparation-house-20261010",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "PERSONALIZED_PREPARATION_TOOL",
+      "complexity": 4,
+      "importance": 4,
+      "occurredAt": "2026-10-10T21:11:41+03:00",
+      "summary": {
+        "he": "פיתוח כלי הכנה אישי ונגיש עם רשימות מותאמות והסברים",
+        "en": "Development of an accessible personal preparation tool with tailored lists and explanations"
+      }
+    },
+    {
+      "id": "consistent-imagery-20261010",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "CONSISTENT_CHARACTER_DESIGN",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-10T21:11:41+03:00",
+      "summary": {
+        "he": "פיתוח שפה חזותית עקבית לדמות ולסצנות",
+        "en": "Development of a consistent visual language for a character and scenes"
+      },
+      "existingBuildingId": "b-images-20260930"
+    },
+    {
+      "id": "presence-house-20261010",
+      "kind": "question",
+      "category": "PERSONAL_PROJECTS",
+      "subcategory": "SOCIAL_CONTENT_STUDIO",
+      "complexity": 4,
+      "importance": 4,
+      "occurredAt": "2026-10-10T21:14:19+03:00",
+      "summary": {
+        "he": "הקמת ערוץ תוכן חזותי עם זהות עקבית ותוכנית פרסום",
+        "en": "Creation of a visual content channel with a consistent identity and publishing plan"
+      }
+    }
+  ]
+}
