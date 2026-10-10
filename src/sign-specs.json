@@ -366,5 +366,37 @@
     "color": "#e6ceb0",
     "plate": "#242723",
     "accent": "#89715b"
+  },
+  {
+    "id": "b-preparation-house-20261010",
+    "text": "בית ההכנה",
+    "x": 0,
+    "y": 4,
+    "z": 2.842,
+    "yaw": 0,
+    "width": 2.8,
+    "height": 0.5,
+    "tilt": 0,
+    "family": "civic",
+    "sub": "",
+    "color": "#f4e6cc",
+    "plate": "#282c2a",
+    "accent": "#927456"
+  },
+  {
+    "id": "b-presence-house-20261010",
+    "text": "בית הנוכחות",
+    "x": -0.4,
+    "y": 2,
+    "z": 3.468,
+    "yaw": 0,
+    "width": 3.15,
+    "height": 0.5,
+    "tilt": 0,
+    "family": "creative",
+    "sub": "",
+    "color": "#fff0ce",
+    "plate": "#302820",
+    "accent": "#ad7c57"
   }
 ]
