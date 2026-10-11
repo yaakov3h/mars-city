@@ -448,6 +448,19 @@
         "he": "הקמת ערוץ תוכן חזותי עם זהות עקבית ותוכנית פרסום",
         "en": "Creation of a visual content channel with a consistent identity and publishing plan"
       }
+    },
+    {
+      "id": "opening-house-20261011",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "INTERACTIVE_INVITATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-11T20:09:52+03:00",
+      "summary": {
+        "he": "עיצוב הזמנה אינטראקטיבית עם פתיחה מונפשת והתאמה למסכים",
+        "en": "Interactive invitation design with an animated opening and responsive layout"
+      }
     }
   ]
 }

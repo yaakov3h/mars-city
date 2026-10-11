@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 29,
+  "revision": 30,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-10T21:14:19+03:00",
-  "totalQuestions": 25,
+  "lastUpdated": "2026-10-11T20:09:52+03:00",
+  "totalQuestions": 26,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -37,8 +37,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 5,
-      "questionCount": 4,
+      "demand": 6,
+      "questionCount": 5,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -55,6 +55,11 @@
           "q": -1,
           "r": -1,
           "foundedAt": "2026-10-01T23:30:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": -3,
+          "foundedAt": "2026-10-11T20:09:52+03:00"
         }
       ]
     },
@@ -681,6 +686,28 @@
       "questionCount": 1,
       "createdAt": "2026-10-10T21:14:19+03:00",
       "lastUpdated": "2026-10-10T21:14:19+03:00"
+    },
+    {
+      "id": "b-opening-house-20261011",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "בית הפתיחה",
+        "en": "Opening House"
+      },
+      "subcategory": "INTERACTIVE_INVITATION",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -1,
+        "r": -3
+      },
+      "height": 8.1,
+      "width": 6.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-11T20:09:52+03:00",
+      "lastUpdated": "2026-10-11T20:09:52+03:00"
     }
   ],
   "creatures": [],
