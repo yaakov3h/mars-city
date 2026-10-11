@@ -1,0 +1,12 @@
+import {it,expect} from 'vitest';
+import {buildable} from '../scripts/layout.mjs';
+import {hex,random} from '../src/model';
+import {ANNEX,reviewWalkable,reviewFloorAt} from '../src/review-underground';
+import {OCT11_SHAFTS,pilotOpening,cutApertures} from '../src/underground';
+import * as THREE from 'three';
+import state from '../data/city-state.json';
+import prior from './fixtures/revision29.json';
+it('preserves every earlier building and landmark without changes',()=>{for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);expect(state.landmarks).toEqual(prior.landmarks);expect(state.mosaic).toEqual(prior.mosaic)});
+it('places the new full hex outside craters and every permanent rock footprint',()=>{const b=state.buildings.find(b=>b.id==='b-opening-house-20261011')!;expect(b.complexity).toBe(3);expect(buildable(b.plot!.q,b.plot!.r)).toBe(true);const[x,z]=hex(b.plot!.q,b.plot!.r,10);for(let i=0;i<360;i++){const rx=(random('rx'+i)-.5)*230,rz=(random('rz'+i)-.5)*230,r=.16+random('rs'+i)*1.35;expect(Math.hypot(x-rx,z-rz)).toBeGreaterThan(10+r)}});
+it('joins both neighboring rooms with walkable continuous ramps',()=>{expect(ANNEX[24].theme).toBe('opening');for(const j of [21,23])for(let k=0;k<=100;k++){const t=k/100,x=ANNEX[24].x*(1-t)+ANNEX[j].x*t,z=ANNEX[24].z*(1-t)+ANNEX[j].z*t;expect(reviewWalkable(x,z)).toBe(true);expect(Number.isFinite(reviewFloorAt(x,z))).toBe(true)}});
+it('cuts the new surface shaft fully open',()=>{const r=OCT11_SHAFTS[0],x=(r.x0+r.x1)/2,z=(r.z0+r.z1)/2;expect(pilotOpening(x,z)).toBe(true);const g=new THREE.PlaneGeometry(4,4);g.rotateX(-Math.PI/2);cutApertures(g,true,x,z);const m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({side:THREE.DoubleSide}));m.position.set(x,0,z);m.updateMatrixWorld();expect(new THREE.Raycaster(new THREE.Vector3(x,2,z),new THREE.Vector3(0,-1,0)).intersectObject(m)).toHaveLength(0)});
