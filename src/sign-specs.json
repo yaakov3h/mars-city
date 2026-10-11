@@ -398,5 +398,21 @@
     "color": "#fff0ce",
     "plate": "#302820",
     "accent": "#ad7c57"
+  },
+  {
+    "id": "b-opening-house-20261011",
+    "text": "בית הפתיחה",
+    "x": 0,
+    "y": 4.35,
+    "z": 3.805,
+    "yaw": 0,
+    "width": 3.05,
+    "height": 0.5,
+    "tilt": 0,
+    "family": "creative",
+    "sub": "",
+    "color": "#fff0ce",
+    "plate": "#302820",
+    "accent": "#ad7c57"
   }
 ]
