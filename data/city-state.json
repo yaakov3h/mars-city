@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 30,
+  "revision": 32,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-11T20:09:52+03:00",
-  "totalQuestions": 26,
+  "lastUpdated": "2026-10-12T20:41:40+03:00",
+  "totalQuestions": 28,
   "districts": [
     {
       "id": "district-genesis-20260930",
       "category": "TECHNOLOGY",
       "q": -1,
       "r": 0,
-      "demand": 3,
-      "questionCount": 3,
+      "demand": 4,
+      "questionCount": 4,
       "foundedAt": "2026-09-30T01:22:49+03:00",
       "plots": [
         {
@@ -29,6 +29,11 @@
           "q": 0,
           "r": -3,
           "foundedAt": "2026-10-07T20:13:29+03:00"
+        },
+        {
+          "q": 1,
+          "r": -3,
+          "foundedAt": "2026-10-12T20:41:40+03:00"
         }
       ]
     },
@@ -171,8 +176,8 @@
       "category": "WORK",
       "q": -2,
       "r": 3,
-      "demand": 6,
-      "questionCount": 6,
+      "demand": 7,
+      "questionCount": 7,
       "foundedAt": "2026-10-05T21:20:00+03:00",
       "plots": [
         {
@@ -204,6 +209,11 @@
           "q": -3,
           "r": 3,
           "foundedAt": "2026-10-10T21:11:41+03:00"
+        },
+        {
+          "q": -4,
+          "r": 4,
+          "foundedAt": "2026-10-12T20:41:40+03:00"
         }
       ]
     }
@@ -708,6 +718,50 @@
       "questionCount": 1,
       "createdAt": "2026-10-11T20:09:52+03:00",
       "lastUpdated": "2026-10-11T20:09:52+03:00"
+    },
+    {
+      "id": "b-view-house-20261012",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "בית המבט",
+        "en": "View House"
+      },
+      "subcategory": "CURRENT_STATUS_DASHBOARD",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -4,
+        "r": 4
+      },
+      "height": 8,
+      "width": 6.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-12T20:41:40+03:00",
+      "lastUpdated": "2026-10-12T20:41:40+03:00"
+    },
+    {
+      "id": "b-spatial-lab-20261012",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "מעבדת המרחב",
+        "en": "Spatial Laboratory"
+      },
+      "subcategory": "IMAGE_TO_3D_EXPERIMENT",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": -3
+      },
+      "height": 8,
+      "width": 6.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-12T20:41:40+03:00",
+      "lastUpdated": "2026-10-12T20:41:40+03:00"
     }
   ],
   "creatures": [],

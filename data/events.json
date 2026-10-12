@@ -461,6 +461,32 @@
         "he": "עיצוב הזמנה אינטראקטיבית עם פתיחה מונפשת והתאמה למסכים",
         "en": "Interactive invitation design with an animated opening and responsive layout"
       }
+    },
+    {
+      "id": "view-house-20261012",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "CURRENT_STATUS_DASHBOARD",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-12T20:41:40+03:00",
+      "summary": {
+        "he": "פיתוח לוח מחוונים לתמונת מצב עדכנית, עם סינון ובקרת נתונים",
+        "en": "Development of a current-status dashboard with filtering and data checks"
+      }
+    },
+    {
+      "id": "spatial-lab-20261012",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "IMAGE_TO_3D_EXPERIMENT",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-12T20:41:40+03:00",
+      "summary": {
+        "he": "ניסוי בהמרת תמונה למודל תלת־ממדי ובדיקתו במרחב",
+        "en": "Experiment in converting an image to a 3D model and testing it in space"
+      }
     }
   ]
 }
