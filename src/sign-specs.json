@@ -414,5 +414,37 @@
     "color": "#fff0ce",
     "plate": "#302820",
     "accent": "#ad7c57"
+  },
+  {
+    "id": "b-view-house-20261012",
+    "text": "בית המבט",
+    "x": 0,
+    "y": 4.1,
+    "z": 1.945,
+    "yaw": 0,
+    "width": 2.35,
+    "height": 0.5,
+    "tilt": 0,
+    "family": "civic",
+    "sub": "",
+    "color": "#f4e6cc",
+    "plate": "#282c2a",
+    "accent": "#927456"
+  },
+  {
+    "id": "b-spatial-lab-20261012",
+    "text": "מעבדת המרחב",
+    "x": 0,
+    "y": 3.3,
+    "z": 2.77,
+    "yaw": 0,
+    "width": 2.45,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "lab",
+    "sub": "",
+    "color": "#d2d9d1",
+    "plate": "#293b40",
+    "accent": "#659b93"
   }
 ]
