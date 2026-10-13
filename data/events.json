@@ -500,6 +500,32 @@
         "he": "הוספת תחנת תצפית ותקשורת אווירית קשורה, עם מצפה מזג אוויר בהדמיה",
         "en": "Addition of a tethered aerial observation and communications station with a simulated weather observatory"
       }
+    },
+    {
+      "id": "professions-observatory-20261013",
+      "kind": "question",
+      "category": "WORK",
+      "subcategory": "ENGINEERING_LABOR_MARKET",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-13T21:14:14+03:00",
+      "summary": {
+        "he": "ניתוח מגמות ביקוש למקצועות הנדסה והצגת ממצאים למנהלים",
+        "en": "Analysis of engineering-profession demand trends and presentation of findings to managers"
+      }
+    },
+    {
+      "id": "frequency-island-20261013",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "RADIO_STATION_INTERFACE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-13T21:14:14+03:00",
+      "summary": {
+        "he": "פיתוח ממשק אינטראקטיבי לתחנות רדיו ועיצוב חוויית האזנה",
+        "en": "Development of an interactive radio-station interface and listening experience"
+      }
     }
   ]
 }
