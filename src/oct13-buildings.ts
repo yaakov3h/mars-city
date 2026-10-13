@@ -39,4 +39,4 @@ export function frequencyIsland(part:Part,group:THREE.Group,world:World){
  part(new THREE.CylinderGeometry(.07,.12,2.5,8),copper,3.9,6.6,-1.5);for(const yy of [6.5,7.2])box(1.25,.06,.06,3.9,yy,-1.5,copper);
  // Inhabited bays behind the glazing; no streams, playback controls or credentials.
  for(const x of [-4,3.9]){box(1.25,.14,.8,x,1.05,.5,copper);box(.75,.5,.08,x,1.4,.2,dark);box(.9,.35,.5,x,.75,1.3,cream);}
-                       }
+}
