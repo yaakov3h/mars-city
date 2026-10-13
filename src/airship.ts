@@ -1,6 +1,7 @@
 import * as THREE from 'three';
+let weatherPromise:Promise<any>|undefined;
 const metal=(color:string)=>new THREE.MeshStandardMaterial({color,roughness:.65,metalness:.25});
-function board(lines:string[],w:number,h:number){const c=document.createElement('canvas');c.width=1024;c.height=Math.round(1024*h/w);const g=c.getContext('2d')!;g.fillStyle='#35403d';g.fillRect(0,0,c.width,c.height);g.strokeStyle='#b79871';g.lineWidth=16;g.strokeRect(10,10,c.width-20,c.height-20);g.fillStyle='#eee1c8';g.textAlign='center';g.textBaseline='middle';g.direction='rtl';g.font=`600 ${Math.floor(c.height/(lines.length+1)*(lines.length===1?1.08:.62))}px sans-serif`;lines.forEach((s,i)=>g.fillText(s,c.width/2,c.height*(i+.7)/lines.length,c.width*.91));const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return new THREE.MeshBasicMaterial({map:t});}
+function board(lines:string[],w:number,h:number){const c=document.createElement('canvas');c.width=1024;c.height=Math.round(1024*h/w);const g=c.getContext('2d')!;g.fillStyle='#35403d';g.fillRect(0,0,c.width,c.height);g.strokeStyle='#b79871';g.lineWidth=16;g.strokeRect(10,10,c.width-20,c.height-20);g.fillStyle='#eee1c8';g.textAlign='center';g.textBaseline='middle';g.direction='rtl';g.font=`600 ${Math.floor(c.height/(lines.length+1)*(lines.length===1?1.08:.62))}px sans-serif`;lines.forEach((s,i)=>g.fillText(s,c.width/2,c.height*(i+.5)/lines.length,c.width*.91));const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return new THREE.MeshBasicMaterial({map:t});}
 /** Tethered observation and weather concept. Values are illustrative, not telemetry. */
 export function addAirship(root:THREE.Group){
  let tower:THREE.Object3D|undefined,highest=-Infinity;
@@ -29,8 +30,14 @@ export function addAirship(root:THREE.Group){
  // Roof winch fixed beside the existing crown, with two bridle cables.
  const anchor=new THREE.Vector3(x+1.2,highest-10,z+1.2);add(new THREE.BoxGeometry(1.4,.6,1.4),steel,anchor.x,anchor.y,anchor.z);rod(anchor,new THREE.Vector3(anchor.x,anchor.y+2,anchor.z),.16);const tip=anchor.clone().add(new THREE.Vector3(0,2,0));
  for(const dx of [-2,4])rod(tip,new THREE.Vector3(cx+dx,Y-8,cz),.075,dark);
- // Weather readout bolted to the tower facade at pedestrian level.
- add(new THREE.BoxGeometry(5.1,2.55,.18),bronze,x, tower.position.y+6.1,z+4.4);
- add(new THREE.PlaneGeometry(4.9,2.35),board(['מצפה רוח ואבק','הדמיה בלבד · לא נתוני אמת','רוח: 8 מ׳/ש׳ · אבק: קל'],4.9,2.35),x,tower.position.y+6.1,z+4.51);
+ // Dated observations, fetched once from a tiny same-origin file.
+ add(new THREE.BoxGeometry(5.1,3.8,.18),bronze,x,tower.position.y+6.1,z+4.4);
+ const display=add(new THREE.PlaneGeometry(4.9,3.6),board(['מצפה רוח ואבק','הדמיה בלבד · לא נתוני אמת','רוח: 8 מ׳/ש׳ · אבק: קל'],4.9,3.6),x,tower.position.y+6.1,z+4.51);
+ (weatherPromise??=fetch(import.meta.env.BASE_URL+'weather/latest.json',{signal:AbortSignal.timeout(30000)}).then(r=>{if(!r.ok)throw Error('Weather unavailable');return r.json()})).then(v=>{
+  if(v.schemaVersion!==1||v.rover!=='Curiosity'||!/^\d{4}-\d{2}-\d{2}$/.test(v.date)||![v.sol,v.minC,v.maxC,v.pressurePa].every(Number.isFinite)||v.minC>v.maxC||v.minC<-160||v.maxC>50||v.pressurePa<0||v.pressurePa>2000)throw Error('Invalid sample');
+  const [y,m,d]=v.date.split('-');const number=(n:number)=>'\u200e'+n;
+  const material=board(['Curiosity · מכתש גייל',`${d}.${m}.${y} · Sol ${v.sol}`,`אוויר: ${number(v.minC)} עד ${number(v.maxC)}°C`,`לחץ: ${v.pressurePa} Pa`,'מדידה שפורסמה באיחור','מקור: CAB / REMS'],4.9,3.6);
+  if(display.parent){display.material=material;}else material.dispose();
+ }).catch(()=>{/* Keep the clearly labelled simulation when no valid file loads. */});
  g.userData.center=[cx,Y,cz];g.userData.anchorBuilding=tower.userData.buildingId;
 }
