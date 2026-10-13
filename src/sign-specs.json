@@ -446,5 +446,37 @@
     "color": "#d2d9d1",
     "plate": "#293b40",
     "accent": "#659b93"
+  },
+  {
+    "id": "b-professions-observatory-20261013",
+    "text": "מצפה המקצועות",
+    "x": 0,
+    "y": 3.8,
+    "z": 2.45,
+    "yaw": 0,
+    "width": 2.5,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "civic",
+    "sub": "",
+    "color": "#f4e6cc",
+    "plate": "#282c2a",
+    "accent": "#927456"
+  },
+  {
+    "id": "b-frequency-island-20261013",
+    "text": "אי התדרים",
+    "x": 0,
+    "y": 2.8,
+    "z": 4.11,
+    "yaw": 0,
+    "width": 2.5,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "lab",
+    "sub": "מעבדה וחיפוש",
+    "color": "#d2d9d1",
+    "plate": "#293b40",
+    "accent": "#659b93"
   }
 ]
