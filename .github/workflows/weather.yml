@@ -1,0 +1,44 @@
+name: Refresh published Mars weather
+on:
+  schedule:
+    - cron: '23 7 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: node scripts/update-weather.mjs
+      - id: changed
+        run: |
+          if git diff --quiet -- public/weather/latest.json; then
+            echo 'yes=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'yes=true' >> "$GITHUB_OUTPUT"
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add public/weather/latest.json
+            git commit -m 'Refresh dated Mars weather sample'
+            git push
+          fi
+      - if: steps.changed.outputs.yes == 'true'
+        run: npm ci && npm test && npm run build
+      - if: steps.changed.outputs.yes == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - if: steps.changed.outputs.yes == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
