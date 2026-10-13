@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 33,
+  "revision": 35,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-13T16:48:20+03:00",
-  "totalQuestions": 28,
+  "lastUpdated": "2026-10-13T21:14:14+03:00",
+  "totalQuestions": 30,
   "districts": [
     {
       "id": "district-genesis-20260930",
       "category": "TECHNOLOGY",
       "q": -1,
       "r": 0,
-      "demand": 4,
-      "questionCount": 4,
+      "demand": 5,
+      "questionCount": 5,
       "foundedAt": "2026-09-30T01:22:49+03:00",
       "plots": [
         {
@@ -34,6 +34,11 @@
           "q": 1,
           "r": -3,
           "foundedAt": "2026-10-12T20:41:40+03:00"
+        },
+        {
+          "q": 1,
+          "r": -2,
+          "foundedAt": "2026-10-13T21:14:14+03:00"
         }
       ]
     },
@@ -176,8 +181,8 @@
       "category": "WORK",
       "q": -2,
       "r": 3,
-      "demand": 7,
-      "questionCount": 7,
+      "demand": 8,
+      "questionCount": 8,
       "foundedAt": "2026-10-05T21:20:00+03:00",
       "plots": [
         {
@@ -214,6 +219,11 @@
           "q": -4,
           "r": 4,
           "foundedAt": "2026-10-12T20:41:40+03:00"
+        },
+        {
+          "q": -4,
+          "r": 5,
+          "foundedAt": "2026-10-13T21:14:14+03:00"
         }
       ]
     }
@@ -762,6 +772,50 @@
       "questionCount": 1,
       "createdAt": "2026-10-12T20:41:40+03:00",
       "lastUpdated": "2026-10-12T20:41:40+03:00"
+    },
+    {
+      "id": "b-professions-observatory-20261013",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "מצפה המקצועות",
+        "en": "Professions Observatory"
+      },
+      "subcategory": "ENGINEERING_LABOR_MARKET",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -4,
+        "r": 5
+      },
+      "height": 7,
+      "width": 7.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-13T21:14:14+03:00",
+      "lastUpdated": "2026-10-13T21:14:14+03:00"
+    },
+    {
+      "id": "b-frequency-island-20261013",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "אי התדרים",
+        "en": "Frequency Island"
+      },
+      "subcategory": "RADIO_STATION_INTERFACE",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": -2
+      },
+      "height": 7,
+      "width": 7.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-13T21:14:14+03:00",
+      "lastUpdated": "2026-10-13T21:14:14+03:00"
     }
   ],
   "creatures": [],
