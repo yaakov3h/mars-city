@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 35,
+  "revision": 37,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-13T21:14:14+03:00",
-  "totalQuestions": 30,
+  "lastUpdated": "2026-10-14T20:20:36+03:00",
+  "totalQuestions": 32,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -47,8 +47,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 6,
-      "questionCount": 5,
+      "demand": 7,
+      "questionCount": 6,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -70,6 +70,11 @@
           "q": -1,
           "r": -3,
           "foundedAt": "2026-10-11T20:09:52+03:00"
+        },
+        {
+          "q": -3,
+          "r": -3,
+          "foundedAt": "2026-10-14T20:20:36+03:00"
         }
       ]
     },
@@ -139,8 +144,8 @@
       "category": "LEARNING",
       "q": -1,
       "r": 3,
-      "demand": 3,
-      "questionCount": 2,
+      "demand": 4,
+      "questionCount": 3,
       "foundedAt": "2026-10-01T20:52:00+03:00",
       "plots": [
         {
@@ -152,6 +157,11 @@
           "q": -1,
           "r": 2,
           "foundedAt": "2026-10-02T02:31:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": 5,
+          "foundedAt": "2026-10-14T20:20:36+03:00"
         }
       ]
     },
@@ -816,6 +826,50 @@
       "questionCount": 1,
       "createdAt": "2026-10-13T21:14:14+03:00",
       "lastUpdated": "2026-10-13T21:14:14+03:00"
+    },
+    {
+      "id": "b-scale-house-20261014",
+      "districtId": "district-academic-recognition-20261001",
+      "name": {
+        "he": "בית המידות",
+        "en": "Scale House"
+      },
+      "subcategory": "INTERACTIVE_SCALE_COMPARISON",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -2,
+        "r": 5
+      },
+      "height": 12,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-14T20:20:36+03:00",
+      "lastUpdated": "2026-10-14T20:20:36+03:00"
+    },
+    {
+      "id": "b-tutorial-workshop-20261014",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "סדנת ההדרכה",
+        "en": "Tutorial Workshop"
+      },
+      "subcategory": "DATA_TUTORIAL_VIDEO_SERIES",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -3,
+        "r": -3
+      },
+      "height": 6,
+      "width": 7.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-14T20:20:36+03:00",
+      "lastUpdated": "2026-10-14T20:20:36+03:00"
     }
   ],
   "creatures": [],

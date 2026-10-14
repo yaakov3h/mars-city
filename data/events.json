@@ -526,6 +526,32 @@
         "he": "פיתוח ממשק אינטראקטיבי לתחנות רדיו ועיצוב חוויית האזנה",
         "en": "Development of an interactive radio-station interface and listening experience"
       }
+    },
+    {
+      "id": "scale-house-20261014",
+      "kind": "question",
+      "category": "LEARNING",
+      "subcategory": "INTERACTIVE_SCALE_COMPARISON",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-14T20:20:36+03:00",
+      "summary": {
+        "he": "פיתוח תצוגה אינטראקטיבית להשוואת גדלים וקנה מידה",
+        "en": "Development of an interactive display for size and scale comparisons"
+      }
+    },
+    {
+      "id": "tutorial-workshop-20261014",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "DATA_TUTORIAL_VIDEO_SERIES",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-14T20:20:36+03:00",
+      "summary": {
+        "he": "הפקת סדרת סרטוני הדרכה קצרים לטיפול בנתונים",
+        "en": "Production of a short tutorial video series for data handling"
+      }
     }
   ]
 }
