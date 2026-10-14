@@ -478,5 +478,37 @@
     "color": "#d2d9d1",
     "plate": "#293b40",
     "accent": "#659b93"
+  },
+  {
+    "id": "b-scale-house-20261014",
+    "text": "בית המידות",
+    "x": 0,
+    "y": 3.9,
+    "z": 5.0,
+    "yaw": 0,
+    "width": 2.6,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "academy",
+    "sub": "אקדמיה ולמידה",
+    "color": "#aa8359",
+    "plate": "#dfd7c4",
+    "accent": "#718b9b"
+  },
+  {
+    "id": "b-tutorial-workshop-20261014",
+    "text": "סדנת ההדרכה",
+    "x": 0,
+    "y": 3.35,
+    "z": 2.28,
+    "yaw": 0,
+    "width": 2.6,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "creative",
+    "sub": "סדנה ויצירה",
+    "color": "#fff0ce",
+    "plate": "#302820",
+    "accent": "#ad7c57"
   }
 ]
