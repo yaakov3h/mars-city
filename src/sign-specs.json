@@ -510,5 +510,21 @@
     "color": "#fff0ce",
     "plate": "#302820",
     "accent": "#ad7c57"
+  },
+  {
+    "id": "b-premiere-cinema-20261015",
+    "text": "קולנוע הבכורה",
+    "x": 0,
+    "y": 3.28,
+    "z": 4.83,
+    "yaw": 0,
+    "width": 3.5,
+    "height": 0.55,
+    "tilt": 0,
+    "family": "creative",
+    "sub": "סדנה ויצירה",
+    "color": "#fff0ce",
+    "plate": "#302820",
+    "accent": "#ad7c57"
   }
 ]
