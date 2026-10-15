@@ -1,0 +1,918 @@
+{
+  "schemaVersion": 1,
+  "mode": "live",
+  "revision": 37,
+  "foundedAt": "2026-09-30T01:22:49+03:00",
+  "lastUpdated": "2026-10-14T20:20:36+03:00",
+  "totalQuestions": 32,
+  "districts": [
+    {
+      "id": "district-genesis-20260930",
+      "category": "TECHNOLOGY",
+      "q": -1,
+      "r": 0,
+      "demand": 5,
+      "questionCount": 5,
+      "foundedAt": "2026-09-30T01:22:49+03:00",
+      "plots": [
+        {
+          "q": -1,
+          "r": 0,
+          "foundedAt": "2026-09-30T01:22:49+03:00"
+        },
+        {
+          "q": 0,
+          "r": -2,
+          "foundedAt": "2026-10-03T21:16:00+03:00"
+        },
+        {
+          "q": 0,
+          "r": -3,
+          "foundedAt": "2026-10-07T20:13:29+03:00"
+        },
+        {
+          "q": 1,
+          "r": -3,
+          "foundedAt": "2026-10-12T20:41:40+03:00"
+        },
+        {
+          "q": 1,
+          "r": -2,
+          "foundedAt": "2026-10-13T21:14:14+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-codesign-20260930",
+      "category": "CREATIVE",
+      "q": -2,
+      "r": 0,
+      "demand": 7,
+      "questionCount": 6,
+      "foundedAt": "2026-09-30T09:50:43+03:00",
+      "plots": [
+        {
+          "q": -2,
+          "r": 0,
+          "foundedAt": "2026-09-30T09:50:43+03:00"
+        },
+        {
+          "q": -2,
+          "r": -1,
+          "foundedAt": "2026-09-30T22:18:50+03:00"
+        },
+        {
+          "q": -1,
+          "r": -1,
+          "foundedAt": "2026-10-01T23:30:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": -3,
+          "foundedAt": "2026-10-11T20:09:52+03:00"
+        },
+        {
+          "q": -3,
+          "r": -3,
+          "foundedAt": "2026-10-14T20:20:36+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-bank-regulation-20260930",
+      "category": "FINANCE",
+      "q": 0,
+      "r": 0,
+      "demand": 5,
+      "questionCount": 4,
+      "foundedAt": "2026-09-30T11:22:44+03:00",
+      "plots": [
+        {
+          "q": 0,
+          "r": 0,
+          "foundedAt": "2026-09-30T11:22:44+03:00"
+        },
+        {
+          "q": 1,
+          "r": 0,
+          "foundedAt": "2026-10-01T20:50:00+03:00"
+        },
+        {
+          "q": 1,
+          "r": 1,
+          "foundedAt": "2026-10-01T20:51:00+03:00"
+        },
+        {
+          "q": 0,
+          "r": 3,
+          "foundedAt": "2026-10-05T21:21:00+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-cat-rhythm-20260930",
+      "category": "ANIMALS",
+      "q": -1,
+      "r": 1,
+      "demand": 1,
+      "questionCount": 1,
+      "foundedAt": "2026-09-30T21:15:58+03:00"
+    },
+    {
+      "id": "district-transit-layers-20260930",
+      "category": "ENGINEERING",
+      "q": -2,
+      "r": 2,
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-09-30T21:47:20+03:00",
+      "plots": [
+        {
+          "q": -2,
+          "r": 2,
+          "foundedAt": "2026-09-30T21:47:20+03:00"
+        },
+        {
+          "q": -2,
+          "r": 1,
+          "foundedAt": "2026-10-02T02:30:00+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-academic-recognition-20261001",
+      "category": "LEARNING",
+      "q": -1,
+      "r": 3,
+      "demand": 4,
+      "questionCount": 3,
+      "foundedAt": "2026-10-01T20:52:00+03:00",
+      "plots": [
+        {
+          "q": -1,
+          "r": 3,
+          "foundedAt": "2026-10-01T20:52:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": 2,
+          "foundedAt": "2026-10-02T02:31:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": 5,
+          "foundedAt": "2026-10-14T20:20:36+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-tools-blog-20261004",
+      "category": "PERSONAL_PROJECTS",
+      "q": -3,
+      "r": -2,
+      "demand": 3,
+      "questionCount": 2,
+      "foundedAt": "2026-10-05T05:20:00+03:00",
+      "plots": [
+        {
+          "q": -3,
+          "r": -2,
+          "foundedAt": "2026-10-05T05:20:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": -3,
+          "foundedAt": "2026-10-10T21:14:19+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-exec-strategy-doc-20261005",
+      "category": "WORK",
+      "q": -2,
+      "r": 3,
+      "demand": 8,
+      "questionCount": 8,
+      "foundedAt": "2026-10-05T21:20:00+03:00",
+      "plots": [
+        {
+          "q": -2,
+          "r": 3,
+          "foundedAt": "2026-10-05T21:20:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": 4,
+          "foundedAt": "2026-10-06T20:12:00+03:00"
+        },
+        {
+          "q": -3,
+          "r": 4,
+          "foundedAt": "2026-10-06T20:22:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": 4,
+          "foundedAt": "2026-10-06T20:22:00+03:00"
+        },
+        {
+          "q": -3,
+          "r": 5,
+          "foundedAt": "2026-10-07T20:13:29+03:00"
+        },
+        {
+          "q": -3,
+          "r": 3,
+          "foundedAt": "2026-10-10T21:11:41+03:00"
+        },
+        {
+          "q": -4,
+          "r": 4,
+          "foundedAt": "2026-10-12T20:41:40+03:00"
+        },
+        {
+          "q": -4,
+          "r": 5,
+          "foundedAt": "2026-10-13T21:14:14+03:00"
+        }
+      ]
+    }
+  ],
+  "buildings": [
+    {
+      "id": "b-genesis-20260930",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "הקמת MARS CITY",
+        "en": "Founding of MARS CITY"
+      },
+      "subcategory": "AI_AGENTS",
+      "q": -1,
+      "r": 0,
+      "height": 11.1,
+      "width": 2.2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T01:22:49+03:00",
+      "lastUpdated": "2026-09-30T01:22:49+03:00"
+    },
+    {
+      "id": "b-codesign-20260930",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "אטלייה העולמות",
+        "en": "Worlds Atelier"
+      },
+      "subcategory": "LIVING_3D_WORLD_DESIGN",
+      "q": -1,
+      "r": 0,
+      "height": 11.3,
+      "width": 2.2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T09:50:43+03:00",
+      "lastUpdated": "2026-09-30T09:50:43+03:00",
+      "plot": {
+        "q": -2,
+        "r": 0
+      }
+    },
+    {
+      "id": "b-bank-regulation-20260930",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "מצודת האסדרה",
+        "en": "Regulation Citadel"
+      },
+      "subcategory": "BANKING_REGULATION",
+      "q": -1,
+      "r": 0,
+      "height": 9.1,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T11:22:44+03:00",
+      "lastUpdated": "2026-09-30T11:22:44+03:00"
+    },
+    {
+      "id": "b-cat-rhythm-20260930",
+      "districtId": "district-cat-rhythm-20260930",
+      "name": {
+        "he": "בית החתולים",
+        "en": "The Cat House"
+      },
+      "subcategory": "DAILY_CARE_AND_CURIOSITY",
+      "q": 0,
+      "r": 0,
+      "height": 3.6,
+      "width": 4,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T21:15:58+03:00",
+      "lastUpdated": "2026-09-30T21:15:58+03:00"
+    },
+    {
+      "id": "b-transit-layers-20260930",
+      "districtId": "district-transit-layers-20260930",
+      "name": {
+        "he": "צומת השכבות",
+        "en": "Layers Junction"
+      },
+      "subcategory": "LAYERED_CITY_CIRCULATION",
+      "q": 0,
+      "r": 0,
+      "height": 5.2,
+      "width": 5,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-09-30T21:47:20+03:00",
+      "lastUpdated": "2026-09-30T21:47:20+03:00"
+    },
+    {
+      "id": "b-images-20260930",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "סדנת הדימויים",
+        "en": "The Imagery Studio"
+      },
+      "subcategory": "IMAGE_MAKING_EXPERIMENTS",
+      "q": 0,
+      "r": 0,
+      "height": 5.2,
+      "width": 2.6,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 2,
+      "createdAt": "2026-09-30T22:18:50+03:00",
+      "lastUpdated": "2026-10-10T21:11:41+03:00",
+      "plot": {
+        "q": -2,
+        "r": -1
+      }
+    },
+    {
+      "id": "b-money-map-20261001",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "מיפוי פיננסי שנתי: סקירה מסודרת של הוצאות, הכנסות וחיסכון",
+        "en": "A structured annual map of spending, income and savings"
+      },
+      "subcategory": "PERSONAL_FINANCE_MAPPING",
+      "q": 0,
+      "r": 0,
+      "height": 11.8,
+      "width": 2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-01T20:50:00+03:00",
+      "lastUpdated": "2026-10-01T20:50:00+03:00",
+      "plot": {
+        "q": 1,
+        "r": 0
+      }
+    },
+    {
+      "id": "b-claim-airplane-20261001",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "פנייה מסודרת לקבלת פיצוי מגורם מסחרי",
+        "en": "A structured request for compensation from a commercial party"
+      },
+      "subcategory": "CONSUMER_CLAIM",
+      "q": 1,
+      "r": 0,
+      "height": 7.7,
+      "width": 1.6,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-01T20:51:00+03:00",
+      "lastUpdated": "2026-10-01T20:51:00+03:00",
+      "plot": {
+        "q": 1,
+        "r": 1
+      }
+    },
+    {
+      "id": "b-academic-recognition-20261001",
+      "districtId": "district-academic-recognition-20261001",
+      "name": {
+        "he": "בירור הכרה אקדמית בתארים",
+        "en": "Clarifying academic recognition of degrees"
+      },
+      "subcategory": "ACADEMIC_RECOGNITION",
+      "q": -1,
+      "r": 0,
+      "height": 7.3,
+      "width": 1.8,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-01T20:52:00+03:00",
+      "lastUpdated": "2026-10-01T20:52:00+03:00"
+    },
+    {
+      "id": "b-game-concept-20261001",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "לידת קונספט משחק חדש",
+        "en": "Birth of a new game concept"
+      },
+      "subcategory": "GAME_CONCEPT_BIRTH",
+      "q": 1,
+      "r": 0,
+      "height": 7.9,
+      "width": 1.8,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-01T23:30:00+03:00",
+      "lastUpdated": "2026-10-01T23:30:00+03:00",
+      "plot": {
+        "q": -1,
+        "r": -1
+      }
+    },
+    {
+      "id": "b-strata-spire-20261002",
+      "districtId": "district-transit-layers-20260930",
+      "name": {
+        "he": "חוד השכבות",
+        "en": "Strata Spire"
+      },
+      "subcategory": "STRATA_SPIRE",
+      "q": 0,
+      "r": 0,
+      "height": 34,
+      "width": 2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-02T02:30:00+03:00",
+      "lastUpdated": "2026-10-02T02:30:00+03:00",
+      "plot": {
+        "q": -2,
+        "r": 1
+      }
+    },
+    {
+      "id": "b-search-building-20261002",
+      "districtId": "district-academic-recognition-20261001",
+      "name": {
+        "he": "בניין החיפוש",
+        "en": "The Search Building"
+      },
+      "subcategory": "SEARCH_BUILDING",
+      "q": 0,
+      "r": 0,
+      "height": 8,
+      "width": 1.6,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-02T02:31:00+03:00",
+      "lastUpdated": "2026-10-02T02:31:00+03:00",
+      "plot": {
+        "q": -1,
+        "r": 2
+      }
+    },
+    {
+      "id": "b-tools-shelf-20261003",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "מדף הכלים",
+        "en": "The Tools Shelf"
+      },
+      "subcategory": "FREE_TOOLS_INDEX",
+      "q": 0,
+      "r": 0,
+      "height": 8.8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-03T21:16:00+03:00",
+      "lastUpdated": "2026-10-03T21:16:00+03:00",
+      "plot": {
+        "q": 0,
+        "r": -2
+      }
+    },
+    {
+      "id": "b-tools-blog-20261004",
+      "districtId": "district-tools-blog-20261004",
+      "name": {
+        "he": "מגזין הכלים",
+        "en": "The Tools Magazine"
+      },
+      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+      "q": -1,
+      "r": 0,
+      "height": 7.9,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-05T05:20:00+03:00",
+      "lastUpdated": "2026-10-07T20:13:29+03:00"
+    },
+    {
+      "id": "b-exec-strategy-doc-20261005",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "מסמך אסטרטגי למנהלים",
+        "en": "The Executive Strategy Brief"
+      },
+      "subcategory": "STRATEGY_DOC_REVIEW",
+      "q": -1,
+      "r": 0,
+      "height": 7.8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-05T21:20:00+03:00",
+      "lastUpdated": "2026-10-05T21:20:00+03:00"
+    },
+    {
+      "id": "b-financial-future-20261005",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "בדיקת עתיד פיננסי",
+        "en": "The Financial Horizon Check"
+      },
+      "subcategory": "FUTURE_PLANNING_CHECK",
+      "q": 0,
+      "r": 0,
+      "height": 7.7,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-05T21:21:00+03:00",
+      "lastUpdated": "2026-10-05T21:21:00+03:00",
+      "plot": {
+        "q": 0,
+        "r": 3
+      }
+    },
+    {
+      "id": "b-overseas-link-20261006",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "קשר חו\"ל",
+        "en": "The Overseas Link"
+      },
+      "subcategory": "OVERSEAS_COORDINATION",
+      "q": 0,
+      "r": 0,
+      "height": 9.5,
+      "width": 1.8,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-06T20:12:00+03:00",
+      "lastUpdated": "2026-10-06T20:12:00+03:00",
+      "plot": {
+        "q": -2,
+        "r": 4
+      }
+    },
+    {
+      "id": "b-travel-hub-20261006",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "מרכז תיאום מסעות",
+        "en": "The Travel Coordination Hub"
+      },
+      "subcategory": "TRAVEL_COORDINATION",
+      "q": 0,
+      "r": 0,
+      "height": 8.6,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-06T20:22:00+03:00",
+      "lastUpdated": "2026-10-06T20:22:00+03:00",
+      "plot": {
+        "q": -3,
+        "r": 4
+      }
+    },
+    {
+      "id": "b-inquiry-desk-20261006",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "שולחן פנייה ומעקב",
+        "en": "The Inquiry Desk"
+      },
+      "subcategory": "INQUIRY_FOLLOWUP",
+      "q": 0,
+      "r": 0,
+      "height": 9.2,
+      "width": 1.8,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-06T20:22:00+03:00",
+      "lastUpdated": "2026-10-06T20:22:00+03:00",
+      "plot": {
+        "q": -1,
+        "r": 4
+      }
+    },
+    {
+      "id": "b-journey-academy-20261007",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "אקדמיית המסע",
+        "en": "Journey Academy"
+      },
+      "subcategory": "INTERACTIVE_LEARNING",
+      "q": 0,
+      "r": 0,
+      "height": 22,
+      "width": 2.2,
+      "complexity": 5,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-07T20:13:29+03:00",
+      "lastUpdated": "2026-10-07T20:13:29+03:00",
+      "plot": {
+        "q": -3,
+        "r": 5
+      }
+    },
+    {
+      "id": "b-agent-lab-20261007",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "מעבדת הסוכנים",
+        "en": "Agent Laboratory"
+      },
+      "subcategory": "AGENT_SETUP",
+      "q": 0,
+      "r": 0,
+      "height": 10,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-07T20:13:29+03:00",
+      "lastUpdated": "2026-10-07T20:13:29+03:00",
+      "plot": {
+        "q": 0,
+        "r": -3
+      }
+    },
+    {
+      "id": "b-preparation-house-20261010",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "בית ההכנה",
+        "en": "Preparation House"
+      },
+      "subcategory": "PERSONALIZED_PREPARATION_TOOL",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -3,
+        "r": 3
+      },
+      "height": 12.5,
+      "width": 6.8,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-10T21:11:41+03:00",
+      "lastUpdated": "2026-10-10T21:11:41+03:00"
+    },
+    {
+      "id": "b-presence-house-20261010",
+      "districtId": "district-tools-blog-20261004",
+      "name": {
+        "he": "בית הנוכחות",
+        "en": "Presence House"
+      },
+      "subcategory": "SOCIAL_CONTENT_STUDIO",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -2,
+        "r": -3
+      },
+      "height": 15,
+      "width": 6.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-10T21:14:19+03:00",
+      "lastUpdated": "2026-10-10T21:14:19+03:00"
+    },
+    {
+      "id": "b-opening-house-20261011",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "בית הפתיחה",
+        "en": "Opening House"
+      },
+      "subcategory": "INTERACTIVE_INVITATION",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -1,
+        "r": -3
+      },
+      "height": 8.1,
+      "width": 6.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-11T20:09:52+03:00",
+      "lastUpdated": "2026-10-11T20:09:52+03:00"
+    },
+    {
+      "id": "b-view-house-20261012",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "בית המבט",
+        "en": "View House"
+      },
+      "subcategory": "CURRENT_STATUS_DASHBOARD",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -4,
+        "r": 4
+      },
+      "height": 8,
+      "width": 6.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-12T20:41:40+03:00",
+      "lastUpdated": "2026-10-12T20:41:40+03:00"
+    },
+    {
+      "id": "b-spatial-lab-20261012",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "מעבדת המרחב",
+        "en": "Spatial Laboratory"
+      },
+      "subcategory": "IMAGE_TO_3D_EXPERIMENT",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": -3
+      },
+      "height": 8,
+      "width": 6.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-12T20:41:40+03:00",
+      "lastUpdated": "2026-10-12T20:41:40+03:00"
+    },
+    {
+      "id": "b-professions-observatory-20261013",
+      "districtId": "district-exec-strategy-doc-20261005",
+      "name": {
+        "he": "מצפה המקצועות",
+        "en": "Professions Observatory"
+      },
+      "subcategory": "ENGINEERING_LABOR_MARKET",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -4,
+        "r": 5
+      },
+      "height": 7,
+      "width": 7.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-13T21:14:14+03:00",
+      "lastUpdated": "2026-10-13T21:14:14+03:00"
+    },
+    {
+      "id": "b-frequency-island-20261013",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "אי התדרים",
+        "en": "Frequency Island"
+      },
+      "subcategory": "RADIO_STATION_INTERFACE",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": -2
+      },
+      "height": 7,
+      "width": 7.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-13T21:14:14+03:00",
+      "lastUpdated": "2026-10-13T21:14:14+03:00"
+    },
+    {
+      "id": "b-scale-house-20261014",
+      "districtId": "district-academic-recognition-20261001",
+      "name": {
+        "he": "בית המידות",
+        "en": "Scale House"
+      },
+      "subcategory": "INTERACTIVE_SCALE_COMPARISON",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -2,
+        "r": 5
+      },
+      "height": 12,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-14T20:20:36+03:00",
+      "lastUpdated": "2026-10-14T20:20:36+03:00"
+    },
+    {
+      "id": "b-tutorial-workshop-20261014",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "סדנת ההדרכה",
+        "en": "Tutorial Workshop"
+      },
+      "subcategory": "DATA_TUTORIAL_VIDEO_SERIES",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -3,
+        "r": -3
+      },
+      "height": 6,
+      "width": 7.2,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-14T20:20:36+03:00",
+      "lastUpdated": "2026-10-14T20:20:36+03:00"
+    }
+  ],
+  "creatures": [],
+  "landmarks": [
+    {
+      "id": "l-genesis-core-20260930",
+      "kind": "concept",
+      "name": {
+        "he": "ליבת בראשית",
+        "en": "The Genesis Core"
+      },
+      "q": 0,
+      "r": -1,
+      "createdAt": "2026-09-30T01:22:50+03:00",
+      "eventId": "genesis-core-20260930",
+      "lastUpdated": "2026-09-30T09:50:43+03:00",
+      "surfaceTreatment": {
+        "material": "dark basalt with copper veins",
+        "lighting": "category edge glow and warm inner-gap fill",
+        "eventId": "codesign-20260930"
+      }
+    },
+    {
+      "id": "l-monument-1",
+      "kind": "monument",
+      "name": {
+        "he": "אנדרטה ראשונה",
+        "en": "First Monument"
+      },
+      "q": -2,
+      "r": -2,
+      "createdAt": "2026-10-02T05:56:00+03:00",
+      "eventId": "monument-1-20261002"
+    }
+  ],
+  "mosaic": {
+    "tiles": 3,
+    "segmentCapacity": 7,
+    "hexes": [
+      {
+        "q": 0,
+        "r": 1
+      }
+    ]
+  }
+}
