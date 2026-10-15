@@ -552,6 +552,19 @@
         "he": "הפקת סדרת סרטוני הדרכה קצרים לטיפול בנתונים",
         "en": "Production of a short tutorial video series for data handling"
       }
+    },
+    {
+      "id": "premiere-cinema-20261015",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "FIRST_SHORT_FILM",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-15T13:21:20+03:00",
+      "summary": {
+        "he": "יצירת סרטון קצר ראשון משילוב דימויים, תנועה וקריינות",
+        "en": "Creation of a first short film combining imagery, motion and narration"
+      }
     }
   ]
 }
