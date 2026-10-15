@@ -565,6 +565,32 @@
         "he": "יצירת סרטון קצר ראשון משילוב דימויים, תנועה וקריינות",
         "en": "Creation of a first short film combining imagery, motion and narration"
       }
+    },
+    {
+      "id": "links-house-20261015",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "ASSOCIATIVE_WRITING",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-15T23:32:00+03:00",
+      "summary": {
+        "he": "כתיבה רעיונית על קשרים ואסוציאציות בין נושאים",
+        "en": "Reflective writing about connections and associations between topics"
+      }
+    },
+    {
+      "id": "launch-house-20261015",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "STATIC_SITE_PUBLISHING",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-15T23:32:00+03:00",
+      "summary": {
+        "he": "למידת פרסום ואחסון של אתרים סטטיים והנגשת התהליך",
+        "en": "Learning to publish and host static websites and explain the process"
+      }
     }
   ]
 }
