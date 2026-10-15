@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 38,
+  "revision": 40,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-15T13:21:20+03:00",
-  "totalQuestions": 33,
+  "lastUpdated": "2026-10-15T23:32:00+03:00",
+  "totalQuestions": 35,
   "districts": [
     {
       "id": "district-genesis-20260930",
       "category": "TECHNOLOGY",
       "q": -1,
       "r": 0,
-      "demand": 5,
-      "questionCount": 5,
+      "demand": 6,
+      "questionCount": 6,
       "foundedAt": "2026-09-30T01:22:49+03:00",
       "plots": [
         {
@@ -39,6 +39,11 @@
           "q": 1,
           "r": -2,
           "foundedAt": "2026-10-13T21:14:14+03:00"
+        },
+        {
+          "q": -1,
+          "r": -4,
+          "foundedAt": "2026-10-15T23:32:00+03:00"
         }
       ]
     },
@@ -47,8 +52,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 8,
-      "questionCount": 7,
+      "demand": 9,
+      "questionCount": 8,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -80,6 +85,11 @@
           "q": -4,
           "r": -2,
           "foundedAt": "2026-10-15T13:21:20+03:00"
+        },
+        {
+          "q": -2,
+          "r": -4,
+          "foundedAt": "2026-10-15T23:32:00+03:00"
         }
       ]
     },
@@ -897,6 +907,50 @@
       "questionCount": 1,
       "createdAt": "2026-10-15T13:21:20+03:00",
       "lastUpdated": "2026-10-15T13:21:20+03:00"
+    },
+    {
+      "id": "b-links-house-20261015",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "בית הקישורים",
+        "en": "House of Connections"
+      },
+      "subcategory": "ASSOCIATIVE_WRITING",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -2,
+        "r": -4
+      },
+      "height": 6.5,
+      "width": 8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-15T23:32:00+03:00",
+      "lastUpdated": "2026-10-15T23:32:00+03:00"
+    },
+    {
+      "id": "b-launch-house-20261015",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "בית העלייה לאוויר",
+        "en": "Publishing House"
+      },
+      "subcategory": "STATIC_SITE_PUBLISHING",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -1,
+        "r": -4
+      },
+      "height": 11.5,
+      "width": 8,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-15T23:32:00+03:00",
+      "lastUpdated": "2026-10-15T23:32:00+03:00"
     }
   ],
   "creatures": [],
