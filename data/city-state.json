@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 37,
+  "revision": 38,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-14T20:20:36+03:00",
-  "totalQuestions": 32,
+  "lastUpdated": "2026-10-15T13:21:20+03:00",
+  "totalQuestions": 33,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -47,8 +47,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 7,
-      "questionCount": 6,
+      "demand": 8,
+      "questionCount": 7,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -75,6 +75,11 @@
           "q": -3,
           "r": -3,
           "foundedAt": "2026-10-14T20:20:36+03:00"
+        },
+        {
+          "q": -4,
+          "r": -2,
+          "foundedAt": "2026-10-15T13:21:20+03:00"
         }
       ]
     },
@@ -870,6 +875,28 @@
       "questionCount": 1,
       "createdAt": "2026-10-14T20:20:36+03:00",
       "lastUpdated": "2026-10-14T20:20:36+03:00"
+    },
+    {
+      "id": "b-premiere-cinema-20261015",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "קולנוע הבכורה",
+        "en": "Premiere Cinema"
+      },
+      "subcategory": "FIRST_SHORT_FILM",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -4,
+        "r": -2
+      },
+      "height": 8,
+      "width": 8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-15T13:21:20+03:00",
+      "lastUpdated": "2026-10-15T13:21:20+03:00"
     }
   ],
   "creatures": [],
