@@ -526,5 +526,37 @@
     "color": "#fff0ce",
     "plate": "#302820",
     "accent": "#ad7c57"
+  },
+  {
+    "id": "b-links-house-20261015",
+    "text": "בית הקישורים",
+    "x": -0.5,
+    "y": 3.05,
+    "z": 4.89,
+    "yaw": 0,
+    "width": 2.8,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "creative",
+    "sub": "סדנה ויצירה",
+    "color": "#fff0ce",
+    "plate": "#302820",
+    "accent": "#ad7c57"
+  },
+  {
+    "id": "b-launch-house-20261015",
+    "text": "בית העלייה לאוויר",
+    "x": 0,
+    "y": 4.1,
+    "z": 3.63,
+    "yaw": 0,
+    "width": 2.8,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "lab",
+    "sub": "מעבדה וחיפוש",
+    "color": "#d2d9d1",
+    "plate": "#293b40",
+    "accent": "#659b93"
   }
 ]
