@@ -558,5 +558,37 @@
     "color": "#d2d9d1",
     "plate": "#293b40",
     "accent": "#659b93"
+  },
+  {
+    "id": "b-planning-house-20261017",
+    "text": "בית תכנון הערים",
+    "x": 0.2,
+    "y": 3.08,
+    "z": 6.63,
+    "yaw": 0,
+    "width": 3.0,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "lab",
+    "sub": "מעבדה וחיפוש",
+    "color": "#d2d9d1",
+    "plate": "#293b40",
+    "accent": "#659b93"
+  },
+  {
+    "id": "b-sounds-house-20261017",
+    "text": "בית הצלילים",
+    "x": 0.4,
+    "y": 2.9,
+    "z": 2.22,
+    "yaw": 0,
+    "width": 2.6,
+    "height": 0.48,
+    "tilt": 0,
+    "family": "creative",
+    "sub": "סדנה ויצירה",
+    "color": "#fff0ce",
+    "plate": "#302820",
+    "accent": "#ad7c57"
   }
 ]
