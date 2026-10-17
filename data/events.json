@@ -591,6 +591,32 @@
         "he": "למידת פרסום ואחסון של אתרים סטטיים והנגשת התהליך",
         "en": "Learning to publish and host static websites and explain the process"
       }
+    },
+    {
+      "id": "planning-house-20261017",
+      "kind": "question",
+      "category": "TECHNOLOGY",
+      "subcategory": "CITY_BUILDING_SIMULATION",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-17T21:30:00+03:00",
+      "summary": {
+        "he": "סימולציית תכנון עיר עם אזורים, תשתיות ויועצים",
+        "en": "City-planning simulation game with zoning, infrastructure and advisors"
+      }
+    },
+    {
+      "id": "sounds-house-20261017",
+      "kind": "question",
+      "category": "CREATIVE",
+      "subcategory": "SOUNDBOARD_WEB_APP",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-17T21:30:00+03:00",
+      "summary": {
+        "he": "יישום צלילים חופשיים עם הקלטה, עריכה ומחולל ביטים מובנים",
+        "en": "Free-sound app with built-in recording, editing and beat generator"
+      }
     }
   ]
 }

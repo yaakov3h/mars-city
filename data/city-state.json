@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 40,
+  "revision": 42,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-15T23:32:00+03:00",
-  "totalQuestions": 35,
+  "lastUpdated": "2026-10-17T21:30:00+03:00",
+  "totalQuestions": 37,
   "districts": [
     {
       "id": "district-genesis-20260930",
       "category": "TECHNOLOGY",
       "q": -1,
       "r": 0,
-      "demand": 6,
-      "questionCount": 6,
+      "demand": 7,
+      "questionCount": 7,
       "foundedAt": "2026-09-30T01:22:49+03:00",
       "plots": [
         {
@@ -44,6 +44,11 @@
           "q": -1,
           "r": -4,
           "foundedAt": "2026-10-15T23:32:00+03:00"
+        },
+        {
+          "q": -2,
+          "r": -5,
+          "foundedAt": "2026-10-17T21:30:00+03:00"
         }
       ]
     },
@@ -52,8 +57,8 @@
       "category": "CREATIVE",
       "q": -2,
       "r": 0,
-      "demand": 9,
-      "questionCount": 8,
+      "demand": 10,
+      "questionCount": 9,
       "foundedAt": "2026-09-30T09:50:43+03:00",
       "plots": [
         {
@@ -90,6 +95,11 @@
           "q": -2,
           "r": -4,
           "foundedAt": "2026-10-15T23:32:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": -5,
+          "foundedAt": "2026-10-17T21:30:00+03:00"
         }
       ]
     },
@@ -951,6 +961,50 @@
       "questionCount": 1,
       "createdAt": "2026-10-15T23:32:00+03:00",
       "lastUpdated": "2026-10-15T23:32:00+03:00"
+    },
+    {
+      "id": "b-planning-house-20261017",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "בית תכנון הערים",
+        "en": "City Planning House"
+      },
+      "subcategory": "CITY_BUILDING_SIMULATION",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -2,
+        "r": -5
+      },
+      "height": 12.5,
+      "width": 8,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-17T21:30:00+03:00",
+      "lastUpdated": "2026-10-17T21:30:00+03:00"
+    },
+    {
+      "id": "b-sounds-house-20261017",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "בית הצלילים",
+        "en": "House of Sounds"
+      },
+      "subcategory": "SOUNDBOARD_WEB_APP",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -1,
+        "r": -5
+      },
+      "height": 8,
+      "width": 8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-17T21:30:00+03:00",
+      "lastUpdated": "2026-10-17T21:30:00+03:00"
     }
   ],
   "creatures": [],
