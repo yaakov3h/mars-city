@@ -617,6 +617,32 @@
         "he": "יישום צלילים חופשיים עם הקלטה, עריכה ומחולל ביטים מובנים",
         "en": "Free-sound app with built-in recording, editing and beat generator"
       }
+    },
+    {
+      "id": "monuments-avenue-20261018",
+      "kind": "question",
+      "category": "LEARNING",
+      "subcategory": "SCIENCE_MONUMENT_COLLECTION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-18T20:20:00+03:00",
+      "summary": {
+        "he": "אוסף אנדרטאות זעירות למדענים דגולים, לכל אחת סמל מזהה וסיפור אמיתי",
+        "en": "Collection of small monuments to great scientists, each with an identifying symbol and a true story"
+      }
+    },
+    {
+      "id": "tesla-storm-20261018",
+      "kind": "question",
+      "category": "ENGINEERING",
+      "subcategory": "STATIC_STORM_DEFENSE_SIMULATION",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-18T20:20:00+03:00",
+      "summary": {
+        "he": "תחנת לכידת סופות חשמל סטטי עם תורני טסלה ופסל של ניקולה טסלה",
+        "en": "Static-electricity storm capture station with Tesla masts and a Nikola Tesla statue"
+      }
     }
   ]
 }
