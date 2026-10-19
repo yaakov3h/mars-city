@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 44,
+  "revision": 45,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-18T20:20:00+03:00",
-  "totalQuestions": 39,
+  "lastUpdated": "2026-10-19T20:45:00+03:00",
+  "totalQuestions": 40,
   "districts": [
     {
       "id": "district-genesis-20260930",
@@ -109,7 +109,7 @@
       "q": 0,
       "r": 0,
       "demand": 5,
-      "questionCount": 4,
+      "questionCount": 5,
       "foundedAt": "2026-09-30T11:22:44+03:00",
       "plots": [
         {
@@ -131,6 +131,11 @@
           "q": 0,
           "r": 3,
           "foundedAt": "2026-10-05T21:21:00+03:00"
+        },
+        {
+          "q": 1,
+          "r": -6,
+          "foundedAt": "2026-10-19T20:45:00+03:00"
         }
       ]
     },
@@ -1059,6 +1064,28 @@
       "questionCount": 1,
       "createdAt": "2026-10-18T20:20:00+03:00",
       "lastUpdated": "2026-10-18T20:20:00+03:00"
+    },
+    {
+      "id": "b-civic-assembly-20261019",
+      "districtId": "district-bank-regulation-20260930",
+      "name": {
+        "he": "בית האסיפה האזרחית",
+        "en": "Civic Assembly House"
+      },
+      "subcategory": "CIVIC_ASSEMBLY_AND_VOTING",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": -6
+      },
+      "height": 8,
+      "width": 8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 1,
+      "createdAt": "2026-10-19T20:45:00+03:00",
+      "lastUpdated": "2026-10-19T20:45:00+03:00"
     }
   ],
   "creatures": [],
