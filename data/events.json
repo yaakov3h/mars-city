@@ -643,6 +643,19 @@
         "he": "תחנת לכידת סופות חשמל סטטי עם תורני טסלה ופסל של ניקולה טסלה",
         "en": "Static-electricity storm capture station with Tesla masts and a Nikola Tesla statue"
       }
+    },
+    {
+      "id": "civic-assembly-20261019",
+      "kind": "question",
+      "category": "FINANCE",
+      "subcategory": "CIVIC_ASSEMBLY_AND_VOTING",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-19T20:45:00+03:00",
+      "summary": {
+        "he": "אולם אסיפה אזרחית מעגלי עם ארכיון הכרעות למושבה",
+        "en": "Circular civic assembly hall with a colony decision archive"
+      }
     }
   ]
 }
