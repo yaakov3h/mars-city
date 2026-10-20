@@ -152,7 +152,7 @@ export class ReviewUnderground {
     this.mesh(new THREE.CylinderGeometry(.16,.16,.03,20),dialM,cX,fy+.87,cZ);
     for(const k of [-0.6,0.6])this.mesh(new THREE.CylinderGeometry(.07,.07,.04,12),new THREE.MeshStandardMaterial({color:'#c9a86a',metalness:.5,roughness:.35}),cX-Math.sin(w)*k,fy+.87,cZ+Math.cos(w)*k);
     const fX=wx-Math.cos(w)*.12-Math.sin(w)*off,fZ=wz-Math.sin(w)*.12+Math.cos(w)*off,pX=wx-Math.cos(w)*.2-Math.sin(w)*off,pZ=wz-Math.sin(w)*.2+Math.cos(w)*off;
-    const tex=new THREE.TextureLoader().load(import.meta.env.BASE_URL+'radio-wall-art.png');tex.colorSpace=THREE.SRGBColorSpace;
+    const tex=new THREE.TextureLoader().load(import.meta.env.BASE_URL+'4-radio-wall-art.png');tex.colorSpace=THREE.SRGBColorSpace;
     const frame=this.box(2.9,2.02,.1,fX,fy+2.45,fZ,bronze);frame.rotation.y=rot;
     const pic=this.box(2.72,1.84,.04,pX,fy+2.45,pZ,new THREE.MeshStandardMaterial({map:tex,roughness:.85}));pic.rotation.y=rot;
     const pl=new THREE.PointLight('#ffe2b3',26,15,2);pl.position.set(cx,fy+3.2,cz);this.group.add(pl);
