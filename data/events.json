@@ -656,6 +656,19 @@
         "he": "אולם אסיפה אזרחית מעגלי עם ארכיון הכרעות למושבה",
         "en": "Circular civic assembly hall with a colony decision archive"
       }
+    },
+    {
+      "id": "israel-sky-map-20261020",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "LIVE_AIR_TRAFFIC_MAP",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-20T15:55:00+03:00",
+      "summary": {
+        "he": "שולחן מסך של חמישה משושים עם מפת שמי ישראל וטיסות חיות מעל הארץ, בקרדיט adsb.lol",
+        "en": "Five-hex screen table with a live map of Israel's skies and real air traffic, credited to adsb.lol"
+      }
     }
   ]
 }
