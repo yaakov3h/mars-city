@@ -5,6 +5,7 @@ import {marsTime,clockText,ARES,viewerLightTime,viewerLocalHours} from './mars-t
 import './style.css';
 import {state,districtPlots,events,demoState,demoEvents,categories,category,population,districtPopulation,snapshot,validateState,validateEvent,type Locale,type Building} from './model';
 import {World,type Quality} from './world';
+import {ISRAEL_MAP_ID} from './israel-map';
 let experienceOpen=false;
 const errors=[...validateState(state),...events.flatMap(validateEvent)];if(errors.length)throw new Error('Invalid city data: '+errors.join(', '));
 type Settings={lang:Locale;theme:'dark'|'light'|'system';quality:Quality;reduced:boolean;sound:boolean;stats:boolean;creatures:boolean;labels:boolean;sensitivity:number;info:boolean;catalogRealism:boolean};
@@ -50,3 +51,13 @@ function closeExperience(){experienceDialog.querySelector('iframe')?.remove();ex
 function openExperience(kind:string){if(kind!=='gallery')return;experienceOpen=true;world.setPaused(true);experienceDialog.innerHTML='<button class="experience-close" aria-label="Close">✕ סגירה</button>'+`<h2>גלריית מאדים</h2><p>תמונות מדעיות · אין חסות או שותפות של NASA</p><p>שלט מזג האוויר: מדידות Curiosity במכתש גייל, לשימוש הסברתי בלבד. התאריך על השלט הוא תאריך המדידה, לא היום. המקור: CAB / REMS. הנתונים מתפרסמים באיחור ואינם תחזית.<br><a href="https://mars.nasa.gov/rss/api/?feed=weather&amp;category=msl&amp;feedtype=json" target="_blank" rel="noopener noreferrer">מקור נתוני מזג האוויר</a></p><div class="mars-gallery">${gallery.map(item=>`<figure><img src="${import.meta.env.BASE_URL}gallery/${item.file}" alt="${item.title}"><figcaption><strong>${item.title}</strong><br>${item.credit}<br><a href="${item.url}" target="_blank" rel="noopener noreferrer">מקור ותיאור התמונה</a></figcaption></figure>`).join('')}</div>`;experienceDialog.querySelector('.experience-close')!.addEventListener('click',closeExperience);experienceDialog.showModal()}
 experienceDialog.addEventListener('cancel',e=>{e.preventDefault();closeExperience()});world.onExperience=openExperience;
 const cultureMenu=document.createElement('div');cultureMenu.className='culture-menu';cultureMenu.innerHTML='<button data-culture="gallery" aria-label="גלריית מאדים" title="גלריית מאדים"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="17" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="16.5" cy="8.5" r="2" fill="#e9b180"/><path d="m4 18 5-6 4 4 3-3 4 5" stroke="#9ed5c8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';document.querySelector('.hero-actions')!.append(cultureMenu);cultureMenu.addEventListener('click',e=>{const b=(e.target as HTMLElement).closest<HTMLButtonElement>('[data-culture]');if(b)openExperience(b.dataset.culture!)});
+
+;(window as unknown as Record<string,unknown>).__world=world; // render-verification instrumentation
+// Permanent installation: "Israel skies" live-traffic map table (rendered by world.renderCity when the live state includes it).
+if((state.installations??[]).some(i=>i.id===ISRAEL_MAP_ID)){
+  const badge=document.createElement('div');
+  badge.style.cssText='position:absolute;top:64px;right:16px;z-index:6;background:rgba(22,37,46,.85);color:#dfcba9;border:1px solid #829098;font-size:11px;padding:4px 8px;border-radius:4px;pointer-events:none';
+  badge.textContent='מפת טיסות חיה · נתונים: adsb.lol (ODbL)';
+  badge.dir='rtl';
+  document.getElementById('world-wrap')!.append(badge);
+                                }

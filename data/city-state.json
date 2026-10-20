@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 45,
+  "revision": 46,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-19T20:45:00+03:00",
+  "lastUpdated": "2026-10-20T15:55:00+03:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -1130,5 +1130,39 @@
         "r": 1
       }
     ]
-  }
+  },
+  "installations": [
+    {
+      "id": "israel-sky-map-20261020",
+      "kind": "map_table",
+      "name": {
+        "he": "שמי ישראל",
+        "en": "Israel Skies"
+      },
+      "plots": [
+        {
+          "q": -1,
+          "r": 5
+        },
+        {
+          "q": 0,
+          "r": 5
+        },
+        {
+          "q": -1,
+          "r": 6
+        },
+        {
+          "q": 0,
+          "r": 4
+        },
+        {
+          "q": -2,
+          "r": 6
+        }
+      ],
+      "createdAt": "2026-10-20T15:55:00+03:00",
+      "eventId": "israel-sky-map-20261020"
+    }
+  ]
 }
