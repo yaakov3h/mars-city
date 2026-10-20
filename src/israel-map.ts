@@ -63,7 +63,7 @@ function canvasTexture(plots:[number,number][],x0:number,z0:number,W:number,H:nu
   const bgx=px(mx(34.9)),bgz=pz(mz(32.0));g.strokeStyle='#ffd899';g.lineWidth=2.5;g.beginPath();g.arc(bgx,bgz,14,0,7);g.stroke();g.beginPath();g.arc(bgx,bgz,7,0,7);g.stroke();
   // credit inside map area
   g.font='20px sans-serif';g.fillStyle='rgba(223,203,169,.75)';g.textAlign='left';g.direction='ltr';
-  g.fillText('מקור נתונים: adsb.lol (ODbL) · גבולות סכמטיים · תנועה מואצת',px(x0)+18,CH-20);
+  g.fillText('גבולות סכמטיים · תנועה מואצת',px(x0)+18,CH-20);
   {
     const[pcx,pcz]=hexCenter(...plots.reduce((a,b)=>hexCenter(...a)[0]>=hexCenter(...b)[0]?a:b));
     const panCx=px(pcx),panCz=pz(pcz);
@@ -144,4 +144,4 @@ export function addIsraelMapTable(world:World):MapTable{
   void loadLive().then(applyPayload);
   const refresh=setInterval(()=>{void loadLive().then(p=>{if(!disposed)applyPayload(p)})},15*60*1000);
   return{group,stats:()=>({aircraft:dots.length,frames,avgUpdateMs:frames?totalMs/frames:0,live,fetchedAt}),dispose(){disposed=true;cancelAnimationFrame(raf);clearInterval(refresh);for(const l of labels)l.dispose();world.scene.remove(group);group.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const m=o.material as THREE.MeshBasicMaterial;m.map?.dispose();m.dispose()}});texPack.tex.dispose();dotTex.dispose()}};
-    }
+}
