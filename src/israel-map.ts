@@ -116,10 +116,11 @@ export function addIsraelMapTable(world:World):MapTable{
   let texPack=canvasTexture(plots,x0,z0,W,H,dots.length);
   screenMat.map=texPack.tex;
   // slabs (one per hex, common flat top = the "table")
-  for(let i=0;i<centers.length;i++){const[cx,cz]=centers[i];const h=surfaceY-.05-(baseY[i]-.8);const slab=new THREE.Mesh(new THREE.CylinderGeometry(HEX-.06,HEX-.06,h,6),new THREE.MeshStandardMaterial({color:PADS,roughness:.85}));slab.position.set(cx,surfaceY-.05-h/2,cz);group.add(slab)}
+  const pickables:THREE.Mesh[]=[];for(let i=0;i<centers.length;i++){const[cx,cz]=centers[i];const h=surfaceY-.05-(baseY[i]-.8);const slab=new THREE.Mesh(new THREE.CylinderGeometry(HEX-.06,HEX-.06,h,6),new THREE.MeshStandardMaterial({color:PADS,roughness:.85}));slab.position.set(cx,surfaceY-.05-h/2,cz);group.add(slab);pickables.push(slab)}
   // screen
   const screen=new THREE.Mesh(new THREE.PlaneGeometry(W,H),screenMat);
   screen.rotation.x=-Math.PI/2;screen.position.set(x0+W/2,surfaceY,z0+H/2);group.add(screen);
+  pickables.push(screen);for(const m of pickables){m.userData.focusAnchor=group;world.hit.push(m)}
   // dots
   const geo=new THREE.BufferGeometry();
   const dotTex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d')!;const gr=g.createRadialGradient(32,32,2,32,32,30);gr.addColorStop(0,'rgba(255,240,200,1)');gr.addColorStop(.4,'rgba(255,216,137,.85)');gr.addColorStop(1,'rgba(255,216,137,0)');g.fillStyle=gr;g.fillRect(0,0,64,64);return new THREE.CanvasTexture(c)})();

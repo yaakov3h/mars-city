@@ -5,7 +5,6 @@ import {marsTime,clockText,ARES,viewerLightTime,viewerLocalHours} from './mars-t
 import './style.css';
 import {state,districtPlots,events,demoState,demoEvents,categories,category,population,districtPopulation,snapshot,validateState,validateEvent,type Locale,type Building} from './model';
 import {World,type Quality} from './world';
-import {ISRAEL_MAP_ID} from './israel-map';
 let experienceOpen=false;
 const errors=[...validateState(state),...events.flatMap(validateEvent)];if(errors.length)throw new Error('Invalid city data: '+errors.join(', '));
 type Settings={lang:Locale;theme:'dark'|'light'|'system';quality:Quality;reduced:boolean;sound:boolean;stats:boolean;creatures:boolean;labels:boolean;sensitivity:number;info:boolean;catalogRealism:boolean};
@@ -55,10 +54,3 @@ cultureMenu.addEventListener('click',e=>{const b=(e.target as HTMLElement).close
 
 ;(window as unknown as Record<string,unknown>).__world=world; // render-verification instrumentation
 // Permanent installation: "Israel skies" live-traffic map table (rendered by world.renderCity when the live state includes it).
-if((state.installations??[]).some(i=>i.id===ISRAEL_MAP_ID)){
-  const badge=document.createElement('div');
-  badge.style.cssText='position:absolute;top:64px;right:16px;z-index:6;background:rgba(22,37,46,.85);color:#dfcba9;border:1px solid #829098;font-size:11px;padding:4px 8px;border-radius:4px;pointer-events:none';
-  badge.textContent='מפת טיסות חיה · נתונים: adsb.lol (ODbL)';
-  badge.dir='rtl';
-  document.getElementById('world-wrap')!.append(badge);
-}
