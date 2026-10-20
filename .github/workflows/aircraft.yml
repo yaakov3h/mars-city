@@ -1,7 +1,7 @@
 name: Refresh Israel-skies aircraft snapshot
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '37 */2 * * * *'
   workflow_dispatch:
 permissions:
   contents: write

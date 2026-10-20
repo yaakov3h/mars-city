@@ -1,5 +1,5 @@
 // Permanent live installation: "Israel skies" live-traffic map table on five city hexes.
-// Data: adsb.lol snapshot refreshed by .github/workflows/aircraft.yml (~30 min), served from
+// Data: adsb.lol snapshot refreshed by .github/workflows/aircraft.yml (every ~2 h, off-peak), served from
 // public/aircraft/israel-latest.json (same origin) or raw.githubusercontent.com (freshest).
 import * as THREE from 'three';
 import {Text} from 'troika-three-text';
@@ -72,7 +72,7 @@ function canvasTexture(plots:[number,number][],x0:number,z0:number,W:number,H:nu
     g.fillStyle='#dfcba9';g.font='30px sans-serif';g.fillText('טיסות חיות מעל הארץ',panCx,panCz-160);
     g.fillStyle='#ffd899';g.font='600 84px sans-serif';g.fillText(String(airborne),panCx,panCz-48);
     g.fillStyle='#dfcba9';g.font='26px sans-serif';g.fillText('מטוסים באוויר כרגע',panCx,panCz-6);g.fillStyle='rgba(223,203,169,.7)';g.font='21px sans-serif';g.fillText('נתונים: adsb.lol (ODbL)',panCx,panCz+38);
-    if(fetchedAt){const d=new Date(fetchedAt);const hh=String(d.getHours()).padStart(2,'0'),mm=String(d.getMinutes()).padStart(2,'0');g.fillStyle='rgba(223,203,169,.55)';g.font='19px sans-serif';g.fillText(`עודכן ${hh}:${mm} · מתרענן כחצי שעה`,panCx,panCz+66)}
+    if(fetchedAt){const d=new Date(fetchedAt);const hh=String(d.getHours()).padStart(2,'0'),mm=String(d.getMinutes()).padStart(2,'0');g.fillStyle='rgba(223,203,169,.55)';g.font='19px sans-serif';g.fillText(`עודכן ${hh}:${mm} · מתעדכן מעת לעת`,panCx,panCz+66)}
     g.fillStyle='rgba(158,213,200,.5)';g.fillRect(px(ox+mapKmW*s+.6),panCz-260,2,310);
   }
   g.restore();
