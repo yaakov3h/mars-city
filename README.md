@@ -42,7 +42,9 @@ npm test
 npm run build
 ```
 
-Node 22 recommended. Main-branch pushes affecting app or data run the GitHub Actions test/build workflow and publish `dist/` to GitHub Pages. Enable Pages source **GitHub Actions** in repository settings if it has not been enabled. Vite's `base` is `/mars-city/`. No tokens or credentials are stored in the repository. A public repository means every city file is public. Live state and events must contain only abstract metadata: category, subcategory, complexity, question count and an abstract non-identifying summary. Never store private conversation text or identifying personal details there. The fictional demo summaries are safe to publish.
+Node 22 recommended. Two free scheduled workflows keep public data fresh without any account or server: `.github/workflows/weather.yml` refreshes the dated Mars-weather sample daily, and `.github/workflows/aircraft.yml` refreshes the Israel-skies aircraft snapshot (`public/aircraft/israel-latest.json`, source adsb.lol under ODbL) about every 30 minutes; the map-table installation reads the freshest copy and falls back to the bundled snapshot when the source is unreachable. GitHub may pause schedules after 60 days of repository inactivity.
+
+ Main-branch pushes affecting app or data run the GitHub Actions test/build workflow and publish `dist/` to GitHub Pages. Enable Pages source **GitHub Actions** in repository settings if it has not been enabled. Vite's `base` is `/mars-city/`. No tokens or credentials are stored in the repository. A public repository means every city file is public. Live state and events must contain only abstract metadata: category, subcategory, complexity, question count and an abstract non-identifying summary. Never store private conversation text or identifying personal details there. The fictional demo summaries are safe to publish.
 
 ## What is still ahead
 
