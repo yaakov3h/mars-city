@@ -669,6 +669,19 @@
         "he": "שולחן מסך של חמישה משושים עם מפת שמי ישראל וטיסות חיות מעל הארץ, בקרדיט adsb.lol",
         "en": "Five-hex screen table with a live map of Israel's skies and real air traffic, credited to adsb.lol"
       }
+    },
+    {
+      "id": "explainer-studio-20261024",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "STEP_BY_STEP_EXPLANATION",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-24T03:00:00+03:00",
+      "summary": {
+        "he": "סטודיו הסבר קטן: שלושה לוחות שנדלקים בזה אחר זה, מדרגות חיצוניות פתוחות וכיפת זכוכית קטנה על הגג",
+        "en": "Small explainer studio: three panels lit in sequence, an open exterior stair and a small rooftop glass dome"
+      }
     }
   ]
 }
