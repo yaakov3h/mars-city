@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 46,
+  "revision": 47,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-20T15:55:00+03:00",
+  "lastUpdated": "2026-10-24T03:00:00+03:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -11,7 +11,7 @@
       "category": "TECHNOLOGY",
       "q": -1,
       "r": 0,
-      "demand": 7,
+      "demand": 8,
       "questionCount": 7,
       "foundedAt": "2026-09-30T01:22:49+03:00",
       "plots": [
@@ -49,6 +49,11 @@
           "q": -2,
           "r": -5,
           "foundedAt": "2026-10-17T21:30:00+03:00"
+        },
+        {
+          "q": -5,
+          "r": 6,
+          "foundedAt": "2026-10-24T03:00:00+03:00"
         }
       ]
     },
@@ -1086,6 +1091,28 @@
       "questionCount": 1,
       "createdAt": "2026-10-19T20:45:00+03:00",
       "lastUpdated": "2026-10-19T20:45:00+03:00"
+    },
+    {
+      "id": "b-explainer-studio-20261024",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "סטודיו ההסבר",
+        "en": "Explainer Studio"
+      },
+      "subcategory": "STEP_BY_STEP_EXPLANATION",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -5,
+        "r": 6
+      },
+      "height": 8.2,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-10-24T03:00:00+03:00",
+      "lastUpdated": "2026-10-24T03:00:00+03:00"
     }
   ],
   "creatures": [],
