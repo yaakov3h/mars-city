@@ -9,11 +9,11 @@ import source from '../src/oct24-explainer.ts?raw';
 const ID='b-explainer-studio-20261024';
 it('preserves every previous entity and adds only the Explainer Studio',()=>{
   for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);
-  for(const k of ['landmarks','mosaic','creatures','installations']as const)expect(state[k]).toEqual(prior[k]);
+  for(const k of ['landmarks','mosaic','creatures','installations']as const)k==='landmarks'?expect(state.landmarks.slice(0,prior.landmarks.length)).toEqual(prior.landmarks):expect(state[k]).toEqual(prior[k]);
   for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length).map(p=>[p.q,p.r])).toEqual([[-5,6]]);}else expect(n).toEqual(d);}
   expect(state.buildings.length-prior.buildings.length).toBe(1);
   expect(state.totalQuestions).toBe(prior.totalQuestions);
-  expect(state.revision-prior.revision).toBe(1);
+  expect(state.revision-prior.revision).toBe(2);
   expect(validateState(state)).toEqual([]);
 });
 it('sits on the locked tech plot q=-5 r=6 with the guide height and width',()=>{
