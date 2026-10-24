@@ -168,4 +168,4 @@ export function monumentGroundPad(group:THREE.Group,ground:(x:number,z:number)=>
  const wg=new THREE.BufferGeometry();wg.setAttribute('position',new THREE.Float32BufferAttribute(v,3));wg.setIndex(idx);wg.computeVertexNormals();add(wg,m.wall).userData.groundRim=true;
  const halo=add(new THREE.TorusGeometry(R-.16,.095,5,6),m.glow,0,.13,0);halo.rotation.x=Math.PI/2;halo.rotation.z=Math.PI/6;
  for(let i=0;i<6;i++){const a=i*Math.PI/3;add(new THREE.CylinderGeometry(.09,.14,1.1,6),m.post,Math.sin(a)*(R-.8),.45,Math.cos(a)*(R-.8));}
-   }
+}
