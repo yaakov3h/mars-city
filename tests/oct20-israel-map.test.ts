@@ -40,7 +40,17 @@ it('publishes a fresh credited aircraft snapshot covering Israel',()=>{
   expect(aircraft.license).toBe('ODbL');
   expect(aircraft.source).toBe('adsb.lol');
   expect(aircraft.ac.length).toBeGreaterThan(0);
-  for(const a of aircraft.ac){expect(a.lat).toBeGreaterThan(28);expect(a.lat).toBeLessThan(34.5);expect(a.lon).toBeGreaterThan(33);expect(a.lon).toBeLessThan(37)}
+  // Producer requests /v2/point/31.4/35.1/120: a 120-nautical-mile circle,
+  // not the former rectangular longitude cutoff. API contract: /api/openapi.json.
+  const radians=(degrees:number)=>degrees*Math.PI/180;
+  for(const a of aircraft.ac){
+    expect(Number.isFinite(a.lat)).toBe(true);expect(Number.isFinite(a.lon)).toBe(true);
+    expect(Math.abs(a.lat)).toBeLessThanOrEqual(90);expect(Math.abs(a.lon)).toBeLessThanOrEqual(180);
+    const dLat=radians(a.lat-31.4),dLon=radians(a.lon-35.1);
+    const h=Math.sin(dLat/2)**2+Math.cos(radians(31.4))*Math.cos(radians(a.lat))*Math.sin(dLon/2)**2;
+    const distanceNm=3440.065*2*Math.atan2(Math.sqrt(h),Math.sqrt(1-h));
+    expect(distanceNm).toBeLessThanOrEqual(120);
+  }
 });
 it('renders the credited Hebrew panel without demo leftovers',()=>{
   expect(source).toContain('adsb.lol (ODbL)');
