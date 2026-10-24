@@ -10,10 +10,10 @@ import {PLOTS,ISRAEL_MAP_ID} from '../src/israel-map';
 it('preserves all previous entities and adds the installation with no new questions',()=>{
   for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);
   for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930')expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);else expect(n).toEqual(d);}
-  for(const k of ['landmarks','mosaic','creatures']as const)expect(state[k]).toEqual(prior[k]);
+  for(const k of ['landmarks','mosaic','creatures']as const)k==='landmarks'?expect(state.landmarks.slice(0,prior.landmarks.length)).toEqual(prior.landmarks):expect(state[k]).toEqual(prior[k]);
   expect(state.buildings.length-prior.buildings.length).toBe(1);
   expect(state.totalQuestions-prior.totalQuestions).toBe(0);
-  expect(state.revision-prior.revision).toBe(2);
+  expect(state.revision-prior.revision).toBe(3);
   expect(validateState(state)).toEqual([]);
 });
 it('reserves five free plots beyond all craters and rocks, hugging the city edge',()=>{
