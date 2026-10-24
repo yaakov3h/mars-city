@@ -682,6 +682,19 @@
         "he": "סטודיו הסבר קטן: שלושה לוחות שנדלקים בזה אחר זה, מדרגות חיצוניות פתוחות וכיפת זכוכית קטנה על הגג",
         "en": "Small explainer studio: three panels lit in sequence, an open exterior stair and a small rooftop glass dome"
       }
+    },
+    {
+      "id": "joint-monument-20261024",
+      "kind": "concept_milestone",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 5,
+      "importance": 5,
+      "occurredAt": "2026-10-24T14:30:00+03:00",
+      "summary": {
+        "he": "אנדרטה משותפת: מגדל בזלת אטום עם ספירלה כפולה בטורקיז וענבר, מעלית זכוכית, חממת כתר וכיפה שקופה לתצפית מתוך התא בלבד (אין יציאה בתחנה העליונה)",
+        "en": "Joint monument: a sealed basalt tower with a turquoise and amber double spiral, a glass lift, a crown greenhouse and a glass cupola viewed from inside the cab only (no exit at the top stop)"
+      }
     }
   ]
 }
