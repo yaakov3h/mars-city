@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 47,
+  "revision": 48,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-24T03:00:00+03:00",
+  "lastUpdated": "2026-10-24T14:30:00+03:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -1146,6 +1146,24 @@
       "r": -2,
       "createdAt": "2026-10-02T05:56:00+03:00",
       "eventId": "monument-1-20261002"
+    },
+    {
+      "id": "l-joint-monument-20261024",
+      "kind": "monument",
+      "name": {
+        "he": "אנדרטת השותפות",
+        "en": "Partnership Monument"
+      },
+      "q": -4,
+      "r": 6,
+      "createdAt": "2026-10-24T14:30:00+03:00",
+      "eventId": "joint-monument-20261024",
+      "lastUpdated": "2026-10-24T14:30:00+03:00",
+      "surfaceTreatment": {
+        "material": "dark basalt with copper edge glow",
+        "lighting": "turquoise and amber double spiral bands, glass crown greenhouse",
+        "eventId": "joint-monument-20261024"
+      }
     }
   ],
   "mosaic": {
