@@ -15,14 +15,14 @@ describe('city-state and events',()=>{
  it('counts population reproducibly',()=>{expect(population(state)).toBeGreaterThan(0);expect(districtPopulation(state,state.districts[0].id)).toBeGreaterThan(0)});
  it('detects future milestones',()=>{expect(nextMilestone(99)).toBe(100);expect(nextMilestone(100)).toBe(250)});
  it('avoids trivial acknowledgements',()=>{expect(shouldCount('תודה')).toBe(false);expect(shouldCount('I want to understand AI agents')).toBe(true)});
- it('preserves live history and separate demo history',()=>{const old=snapshot(state,events[0].occurredAt);expect(old.buildings.length).toBe(1);expect(old.landmarks.length).toBe(0);expect(demoState.buildings).toHaveLength(15);expect(state.buildings).toHaveLength(39)})
+ it('preserves live history and separate demo history',()=>{const old=snapshot(state,events[0].occurredAt);expect(old.buildings.length).toBe(1);expect(old.landmarks.length).toBe(0);expect(demoState.buildings).toHaveLength(15);expect(state.buildings).toHaveLength(41)})
 });
 
 describe('living category catalog',()=>{
- it('contains one fictional example per category and keeps live data separate',()=>{expect(demoState.districts).toHaveLength(15);expect(new Set(demoState.districts.map(d=>d.category)).size).toBe(15);expect(demoState.totalQuestions).toBe(15);expect(demoEvents.every(e=>e.demo)).toBe(true);expect(state.buildings).toHaveLength(39)});
+ it('contains one fictional example per category and keeps live data separate',()=>{expect(demoState.districts).toHaveLength(15);expect(new Set(demoState.districts.map(d=>d.category)).size).toBe(15);expect(demoState.totalQuestions).toBe(15);expect(demoEvents.every(e=>e.demo)).toBe(true);expect(state.buildings).toHaveLength(41)});
  it('includes a marked voice-conversation example',()=>{expect(demoState.buildings.filter(b=>b.sourceChannel==='voice')).toHaveLength(2);expect(demoEvents.filter(e=>e.sourceChannel==='voice')).toHaveLength(2)});
 });
 
- it('preserves two full-size creative plots and both buildings in one logical district',()=>{const d=state.districts.find(d=>d.category==='CREATIVE')!;expect(d.plots?.map(p=>[p.q,p.r])).toEqual([[-2,0],[-2,-1],[-1,-1],[-1,-3],[-3,-3],[-4,-2],[-2,-4],[-1,-5]]);expect(d.questionCount).toBe(9);expect(state.buildings.filter(b=>b.districtId===d.id)).toHaveLength(8);expect(state.districts).toHaveLength(8);expect(population(state)).toBeGreaterThan(2448);expect(state.totalQuestions).toBe(40)});
+ it('preserves two full-size creative plots and both buildings in one logical district',()=>{const d=state.districts.find(d=>d.category==='CREATIVE')!;expect(d.plots?.map(p=>[p.q,p.r])).toEqual([[-2,0],[-2,-1],[-1,-1],[-1,-3],[-3,-3],[-4,-2],[-2,-4],[-1,-5],[-5,-2]]);expect(d.questionCount).toBe(9);expect(state.buildings.filter(b=>b.districtId===d.id)).toHaveLength(9);expect(state.districts).toHaveLength(8);expect(population(state)).toBeGreaterThan(2448);expect(state.totalQuestions).toBe(40)});
 
 it('adds two independent full-hex approved topics while retaining the magazine entity',()=>{expect(state.buildings.filter(b=>b.id==='b-journey-academy-20261007')).toHaveLength(1);expect(state.buildings.find(b=>b.id==='b-journey-academy-20261007')?.complexity).toBe(5);expect(state.buildings.find(b=>b.id==='b-agent-lab-20261007')?.complexity).toBe(3);expect(state.buildings.filter(b=>b.id==='b-tools-blog-20261004')).toHaveLength(1);expect(events.filter(e=>e.id==='journey-academy-20261007')).toHaveLength(1);expect(events.filter(e=>e.id==='agent-lab-20261007')).toHaveLength(1);});

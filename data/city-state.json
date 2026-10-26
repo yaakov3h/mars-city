@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 48,
+  "revision": 50,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-24T14:30:00+03:00",
+  "lastUpdated": "2026-10-26T21:40:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -54,6 +54,11 @@
           "q": -5,
           "r": 6,
           "foundedAt": "2026-10-24T03:00:00+03:00"
+        },
+        {
+          "q": -1,
+          "r": 7,
+          "foundedAt": "2026-10-26T19:50:00+02:00"
         }
       ]
     },
@@ -105,6 +110,11 @@
           "q": -1,
           "r": -5,
           "foundedAt": "2026-10-17T21:30:00+03:00"
+        },
+        {
+          "q": -5,
+          "r": -2,
+          "foundedAt": "2026-10-26T20:45:00+02:00"
         }
       ]
     },
@@ -1113,6 +1123,50 @@
       "questionCount": 0,
       "createdAt": "2026-10-24T03:00:00+03:00",
       "lastUpdated": "2026-10-24T03:00:00+03:00"
+    },
+    {
+      "id": "b-backup-vault-20261026",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "ארכיון הגיבויים",
+        "en": "Backup Vault"
+      },
+      "subcategory": "BACKUP_AND_RESTORE",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -1,
+        "r": 7
+      },
+      "height": 8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-10-26T19:50:00+02:00",
+      "lastUpdated": "2026-10-26T19:50:00+02:00"
+    },
+    {
+      "id": "b-cat-house-20261026",
+      "districtId": "district-codesign-20260930",
+      "name": {
+        "he": "בית החתולים",
+        "en": "Cat Scratching Tower"
+      },
+      "subcategory": "PLAYFUL_HINT",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -5,
+        "r": -2
+      },
+      "height": 16,
+      "width": 1.4,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-10-26T20:45:00+02:00",
+      "lastUpdated": "2026-10-26T21:40:00+02:00"
     }
   ],
   "creatures": [],
