@@ -3,7 +3,7 @@
   "mode": "live",
   "revision": 50,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-26T20:45:00+02:00",
+  "lastUpdated": "2026-10-26T21:40:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -1151,7 +1151,7 @@
       "districtId": "district-codesign-20260930",
       "name": {
         "he": "בית החתולים",
-        "en": "Little Cat House"
+        "en": "Cat Scratching Tower"
       },
       "subcategory": "PLAYFUL_HINT",
       "q": 0,
@@ -1160,13 +1160,13 @@
         "q": -5,
         "r": -2
       },
-      "height": 7.5,
+      "height": 16,
       "width": 1.4,
       "complexity": 2,
       "activity": 1,
       "questionCount": 0,
       "createdAt": "2026-10-26T20:45:00+02:00",
-      "lastUpdated": "2026-10-26T20:45:00+02:00"
+      "lastUpdated": "2026-10-26T21:40:00+02:00"
     }
   ],
   "creatures": [],
