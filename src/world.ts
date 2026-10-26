@@ -650,4 +650,4 @@ export function catHouse(part:CatPart,g:THREE.Group,_w:World){
  hbox(.1,.42,.1,HW+.22,RY-.05,0,brass);hp(new THREE.SphereGeometry(.12,12,10),amber,HW+.22,RY+.24,0);
  // A short carpet porch strip in front of the cat door on the deck.
  part(new THREE.BoxGeometry(1.4,.04,.6),carpetLight,0,DECK+.02,FZ*S+.35);
-  }
+ }
