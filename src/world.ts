@@ -609,8 +609,8 @@ export function catHouse(part:CatPart,g:THREE.Group,_w:World){
  for(let i=0;i<6;i++){const k=i/5,x=-1.9+k*2.8+(i%2?.14:-.14),pz=5.15-k*.6;
   const pd=part(new THREE.CylinderGeometry(.09,.1,.02,12),dark,x,P0+.01,pz);pd.scale.z=.8;
   for(const [tx,tz] of [[-.09,-.12],[-.03,-.16],[.03,-.16],[.09,-.12]])part(new THREE.CylinderGeometry(.03,.03,.02,8),dark,x+tx,P0+.01,pz+tz);}
- // ---- The cat house at the top of the tower (the house built first, scaled onto the deck). ----
- const S=tower.scale,hp=(geo:THREE.BufferGeometry,m:THREE.Material,x=0,y=0,z=0)=>{geo.scale(S,S,S);return part(geo,m,x*S,DECK+y*S,z*S);};
+ // ---- The cat house at the top of the tower (the house built first, scaled onto the deck by mesh scale, so plate joints follow it). ----
+ const S=tower.scale,hp=(geo:THREE.BufferGeometry,m:THREE.Material,x=0,y=0,z=0)=>{const mesh=part(geo,m,x*S,DECK+y*S,z*S);mesh.scale.setScalar(S);return mesh;};
  const hbox=(a:number,b:number,c:number,x:number,y:number,z:number,m:THREE.Material=stone)=>hp(new THREE.BoxGeometry(a,b,c),m,x,y,z);
  const {walls,roof}=CAT_HOUSE,W1=walls.height,FZ=walls.depth/2,HW=walls.width/2;
  // Walls: warm sandstone with copper corner posts and a copper eave band (visible joints, not just a tint).
@@ -628,8 +628,8 @@ export function catHouse(part:CatPart,g:THREE.Group,_w:World){
  for(const sx of [-1,1]){const ear=hp(new THREE.ConeGeometry(.62,EH,4),copper,sx*1.45,RY+EH/2,0);ear.rotation.y=Math.PI/4;
   const inner=hp(new THREE.ConeGeometry(.34,EH*.66,3),patina,sx*1.45,RY+EH*.36,.3);inner.rotation.x=-.12;}
  // A cat asleep on the ridge between the ears: a dark curled silhouette (body, head tucked in, tail wrapped round).
- const body=hp(new THREE.SphereGeometry(.42,16,10),fur,.05,RY+.32,0);body.scale.set(1.25,.62,.8);
- const head=hp(new THREE.SphereGeometry(.22,14,10),fur,-.48,RY+.3,.12);head.scale.set(1,.85,1);
+ const body=hp(new THREE.SphereGeometry(.42,16,10),fur,.05,RY+.32,0);body.scale.set(1.25*S,.62*S,.8*S);
+ const head=hp(new THREE.SphereGeometry(.22,14,10),fur,-.48,RY+.3,.12);head.scale.set(S,.85*S,S);
  for(const ex of [-.56,-.4]){const e=hp(new THREE.ConeGeometry(.07,.16,4),fur,ex,RY+.5,.12);e.rotation.z=.15;}
  const tail=hp(new THREE.TorusGeometry(.42,.06,6,20,Math.PI*1.1),fur,.05,RY+.12,.05);tail.rotation.x=Math.PI/2;
  // The round cat door in the middle of the front wall: a brass ring, a dark opening and a little flap left slightly open.

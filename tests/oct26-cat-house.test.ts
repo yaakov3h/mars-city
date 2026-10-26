@@ -60,7 +60,7 @@ it('is a giant scratching tower: sisal-rope posts, staggered carpeted perches, a
   expect(cat).toContain('Two toy balls dangling on strings');
   expect(cat).toContain('The top deck: a big carpeted hex platform');
   expect(cat).toContain('The cat house at the top of the tower');
-  expect(cat).toContain('return part(geo,m,x*S,DECK+y*S,z*S)');
+  expect(cat).toContain('const mesh=part(geo,m,x*S,DECK+y*S,z*S);mesh.scale.setScalar(S)');
 });
 it('keeps the cozy cat house details: cat-ear roof, round cat door, warm window, a cat asleep on the ridge, paw prints and a fixed name plate',()=>{
   expect(cat).toContain('export function catHouse');
