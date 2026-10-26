@@ -708,6 +708,19 @@
         "he": "ארכיון גיבויים קטן: כספת נחושת עם דלת עגולה, תופי ארכיון מוערמים, מנעול על הגג וניסוי שחזור שהצליח",
         "en": "Small backup vault: a copper vault with a round door, stacked archive drums, a lock emblem on the roof and a restore test that passed"
       }
+    },
+    {
+      "id": "cat-house-20261026",
+      "kind": "expansion",
+      "category": "CREATIVE",
+      "subcategory": "PLAYFUL_HINT",
+      "complexity": 2,
+      "importance": 2,
+      "occurredAt": "2026-10-26T20:45:00+02:00",
+      "summary": {
+        "he": "בית חתולים קטן וסמלי: גג עם אוזני חתול, דלת עגולה, עקבות כפות בשביל וחתול ישן על הגג",
+        "en": "A small symbolic cat house: a roof with cat ears, a round cat door, paw prints on the path and a cat asleep on the roof"
+      }
     }
   ]
 }
