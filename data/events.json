@@ -721,6 +721,19 @@
         "he": "מגדל גירוד ענק לחתולים: עמודי חבל סיסל, מדפים מרופדים, סולם וכדורי צעצוע תלויים, ובראשו בית חתולים עם אוזני חתול, דלת עגולה וחתול ישן על הגג",
         "en": "A giant cat scratching tower: sisal-rope posts, carpeted perches, a ladder and dangling toy balls, crowned by a cat house with cat ears, a round cat door and a cat asleep on the roof"
       }
+    },
+    {
+      "id": "knowledge-tree-20261026",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 4,
+      "importance": 3,
+      "occurredAt": "2026-10-26T21:30:00+02:00",
+      "summary": {
+        "he": "עץ הידע: עץ מלאכותי גבוה מנחושת ובזלת, ששה ענפים מחוברים וכל אחד נגמר בפנס מואר, שולחן משותף למרגלותיו וחדר קריאה בתת־קרקע עם מעלית זכוכית",
+        "en": "Knowledge Tree: a tall artificial tree of copper and basalt with six jointed branches, each ending in a lit lantern, a shared table at its foot and an underground reading room with a glass lift"
+      }
     }
   ]
 }
