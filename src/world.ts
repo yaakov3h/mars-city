@@ -538,59 +538,115 @@ export function geodesicDome(part:DomePart,radius:number,x:number,y:number,z:num
  const base=part(new THREE.TorusGeometry(radius,.05,6,40),frame,x,y+.02,z);base.rotation.x=Math.PI/2;
 }
 
-// Cat House (בית החתולים), hex q=-5 r=-2, Alon's second build of 26.10.2026: a small, cozy house that only hints at a
-// cat - a pitched roof with two cat ears, a round cat door, paw prints on the path, a cat asleep on the ridge and one
-// small window with warm light inside. A symbol only: nothing on it describes anything beyond a home for cats.
+// Cat House (בית החתולים), hex q=-5 r=-2, Alon's second build of 26.10.2026, reshaped the same evening at Yaakov's
+// request (approval of PR 27): a GIANT CAT SCRATCHING TOWER. Thick sisal-rope posts rise from a carpeted base, carry
+// staggered carpeted perches, a little ladder and two dangling toy balls, and on the top deck sits the cozy cat house:
+// a pitched roof with two cat ears, a round cat door, a cat asleep on the ridge and one small window with warm light.
+// A symbol only: nothing on it describes anything beyond a home and a playground for cats.
 // Own hex, chosen at random among the free edge plots after a full occupancy check (office claim #452).
 // Local frame: origin = plot centre, y=0 = the group's ground. The cat door faces +z, toward the street. Surface only.
 export const CAT_HOUSE_ID='b-cat-house-20261026';
-export const CAT_HOUSE=Object.freeze({pad:{radius:6.5,top:.35},plinth:{radius:3.6,height:.6},walls:{width:4.2,depth:3.4,height:3.3},roof:{rise:2},ears:{top:7.5}});
+export const CAT_HOUSE=Object.freeze({pad:{radius:6.5,top:.35},plinth:{radius:3.6,height:.6},tower:{deck:11.2,scale:.72,post:.55,base:2.95},walls:{width:4.2,depth:3.4,height:3.3},roof:{rise:2},ears:{top:6.55}});
+// Highest point of the tower: the tips of the cat ears on the house at the top.
+export const CAT_TOWER_APEX=CAT_HOUSE.tower.deck+CAT_HOUSE.tower.scale*CAT_HOUSE.ears.top;
 type CatPart=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
+class SisalWrap extends THREE.Curve<THREE.Vector3>{
+ constructor(private r:number,private y0:number,private y1:number,private turns:number){super();}
+ getPoint(t:number,target=new THREE.Vector3()){const a=t*this.turns*Math.PI*2;return target.set(Math.cos(a)*this.r,this.y0+(this.y1-this.y0)*t,Math.sin(a)*this.r);}
+}
 export function catHouse(part:CatPart,g:THREE.Group,_w:World){
  const mat=(color:string,kind:'stone'|'metal'='stone',metal=.06,rough=.75)=>{const s=detailedSurface(kind);return new THREE.MeshStandardMaterial({color,map:s.color,normalMap:s.normal,roughnessMap:s.rough,normalScale:new THREE.Vector2(.12,.12),roughness:rough,metalness:metal});};
  const stone=mat('#c7ab86'),wall=mat('#d2a477'),dark=mat('#2f2d2f'),copper=mat('#c97f45','metal',.55,.42),brass=mat('#d9a35a','metal',.7,.3),patina=mat('#8a5a3a','metal',.55,.5),fur=mat('#3a312d','stone',.02,.9);
+ const sisal=mat('#d9bf8e','stone',0,.98),sisalCore=mat('#c2a173','stone',0,.95),sisalBand=mat('#9a7448','stone',0,.9),carpet=mat('#b9673f','stone',0,1),carpetLight=mat('#cf8a55','stone',0,1),toy=mat('#e8893a','stone',.05,.6);
  const glow=new THREE.MeshBasicMaterial({color:'#ffd9a0'}),amber=new THREE.MeshBasicMaterial({color:'#ffad4d'});
  const box=(a:number,b:number,c:number,x:number,y:number,z:number,m:THREE.Material=stone)=>part(new THREE.BoxGeometry(a,b,c),m,x,y,z);
- const {pad,plinth,walls,roof}=CAT_HOUSE,P0=pad.top,D0=P0+plinth.height,W1=D0+walls.height,FZ=walls.depth/2,HW=walls.width/2;
+ const up=new THREE.Vector3(0,1,0);
+ const rod=(a:THREE.Vector3,b:THREE.Vector3,r:number,m:THREE.Material)=>{const len=a.distanceTo(b),mid=a.clone().add(b).multiplyScalar(.5),s=part(new THREE.CylinderGeometry(r,r,len,8),m,mid.x,mid.y,mid.z);s.quaternion.setFromUnitVectors(up,b.clone().sub(a).normalize());return s;};
+ const {pad,plinth,tower}=CAT_HOUSE,P0=pad.top,D0=P0+plinth.height,B0=D0+.22,DECK=tower.deck;
  // Hex pad like every bespoke building of the colony, and a low stone plinth at the same base height as the neighbouring houses.
  part(new THREE.CylinderGeometry(pad.radius,pad.radius+.2,.3,6),stone,0,.2,0);
  part(new THREE.CylinderGeometry(plinth.radius,plinth.radius+.15,plinth.height,6),stone,0,P0+plinth.height/2,0);
- // Walls: warm sandstone with copper corner posts and a copper eave band (visible joints, not just a tint).
- box(walls.width,walls.height,walls.depth,0,D0+walls.height/2,0,wall);
- for(const sx of [-1,1])for(const sz of [-1,1])box(.22,walls.height,.22,sx*(HW-.02),D0+walls.height/2,sz*(FZ-.02),copper);
- box(walls.width+.2,.14,walls.depth+.2,0,W1-.05,0,copper);box(walls.width+.1,.12,walls.depth+.1,0,D0+.06,0,patina);
- // Pitched roof: two copper slopes meeting on a ridge that runs left to right, closed by gable triangles at both sides.
- const slope=Math.hypot(FZ+.35,roof.rise),tilt=Math.atan2(roof.rise,FZ+.35);
- for(const sz of [-1,1]){const r=box(walls.width+.5,.16,slope,0,W1+roof.rise/2,sz*(FZ+.35)/2,copper);r.rotation.x=sz*tilt;}
- const gable=new THREE.Shape();gable.moveTo(-FZ,0);gable.lineTo(FZ,0);gable.lineTo(0,roof.rise);gable.closePath();
- for(const sx of [-1,1]){const gg=new THREE.ExtrudeGeometry(gable,{depth:.12,bevelEnabled:false});gg.rotateY(Math.PI/2);const m=part(gg,wall,sx*HW-(sx>0?.12:0),W1,0);m.userData.gable=sx;}
- const RY=W1+roof.rise;box(walls.width+.6,.12,.18,0,RY+.02,0,brass);
- // The two cat ears: four-sided copper cones on the ridge, each with a darker inner face - from the street the roof reads as a cat's head.
- const EH=CAT_HOUSE.ears.top-RY;
- for(const sx of [-1,1]){const ear=part(new THREE.ConeGeometry(.62,EH,4),copper,sx*1.45,RY+EH/2,0);ear.rotation.y=Math.PI/4;
-  const inner=part(new THREE.ConeGeometry(.34,EH*.66,3),patina,sx*1.45,RY+EH*.36,.3);inner.rotation.x=-.12;}
- // A cat asleep on the ridge between the ears: a dark curled silhouette (body, head tucked in, tail wrapped round).
- const body=part(new THREE.SphereGeometry(.42,16,10),fur,.05,RY+.32,0);body.scale.set(1.25,.62,.8);
- const head=part(new THREE.SphereGeometry(.22,14,10),fur,-.48,RY+.3,.12);head.scale.set(1,.85,1);
- for(const ex of [-.56,-.4]){const e=part(new THREE.ConeGeometry(.07,.16,4),fur,ex,RY+.5,.12);e.rotation.z=.15;}
- const tail=part(new THREE.TorusGeometry(.42,.06,6,20,Math.PI*1.1),fur,.05,RY+.12,.05);tail.rotation.x=Math.PI/2;
- // The round cat door in the middle of the front wall: a brass ring, a dark opening and a little flap left slightly open.
- const CY=D0+.75;
- const ring=part(new THREE.TorusGeometry(.62,.08,10,32),brass,0,CY,FZ+.04);
- part(new THREE.CylinderGeometry(.6,.6,.06,32),dark,0,CY,FZ+.01).rotation.x=Math.PI/2;
- const flap=part(new THREE.CylinderGeometry(.5,.5,.04,32),copper,0,CY+.04,FZ+.1);flap.rotation.x=Math.PI/2+.28;
- // One small window with warm light: a lit pane behind a copper cross frame, with a brass sill.
- const WX=1.15,WY=D0+2.15;box(.8,.8,.05,WX,WY,FZ+.02,glow);box(.92,.08,.1,WX,WY,FZ+.06,copper);box(.08,.92,.1,WX,WY,FZ+.06,copper);
- for(const dy of [-.44,.44])box(.96,.07,.1,WX,WY+dy,FZ+.06,copper);box(1,.08,.2,WX,WY-.5,FZ+.1,brass);
- // Name strip: a physical bronze-framed plate fixed to the wall above the cat door, never floating.
- box(2.1,.48,.08,-.55,D0+2.15,FZ+.04,dark);box(2.22,.05,.1,-.55,D0+2.41,FZ+.05,brass);box(2.22,.05,.1,-.55,D0+1.89,FZ+.05,brass);
- const t=new Text();t.text='בית החתולים';t.direction='rtl';t.font=import.meta.env.BASE_URL+'fonts/sign-hebrew.ttf';t.fontSize=.27;t.anchorX='center';t.anchorY='middle';t.color='#ffd899';t.position.set(-.55,D0+2.15,FZ+.1);t.userData.noMerge=true;g.add(t);t.sync();
- // Entrance strip in amber under the cat door (Alon's builder signature); the amber point on the ridge end is Alon's roof signature.
- box(1.6,.07,.07,0,D0+.06,FZ+.1,amber);
- box(.1,.42,.1,HW+.22,RY-.05,0,brass);part(new THREE.SphereGeometry(.12,12,10),amber,HW+.22,RY+.24,0);
- // A short stone step down from the plinth, then paw prints on the path: little dark pads walking up to the cat door.
- box(1.6,.2,.6,0,P0+.1,plinth.radius*.87+.3,stone);
- for(let i=0;i<6;i++){const z=plinth.radius*.87+.9+i*.42,x=(i%2?.18:-.18),pz=z;
+ // Carpeted base board of the scratching tower, with a copper lip, sitting on the plinth.
+ part(new THREE.CylinderGeometry(tower.base,tower.base,.22,6),carpet,0,D0+.11,0);
+ part(new THREE.CylinderGeometry(tower.base+.06,tower.base+.06,.06,6),copper,0,D0+.03,0);
+ // Sisal-rope posts: a core wrapped in one continuous helix of rope, with darker rope bands at both ends and every few metres.
+ const sisalPost=(x:number,z:number,r:number,y0:number,y1:number)=>{
+  part(new THREE.CylinderGeometry(r,r,y1-y0,20),sisalCore,x,(y0+y1)/2,z);
+  const rope=.07,turns=Math.round((y1-y0)/(rope*2.1));
+  part(new THREE.TubeGeometry(new SisalWrap(r+rope*.55,y0+rope,y1-rope,turns),turns*10,rope,5,false),sisal,x,0,z);
+  const bands=Math.max(2,Math.round((y1-y0)/2.6)+1);
+  for(let i=0;i<bands;i++){const y=y0+.12+(y1-y0-.24)*i/(bands-1),b=part(new THREE.TorusGeometry(r+rope*1.1,rope*1.3,6,24),sisalBand,x,y,z);b.rotation.x=Math.PI/2;}
+ };
+ // A carpeted perch: a round carpet disc with a copper edge ring.
+ const perch=(x:number,y:number,z:number,r:number)=>{part(new THREE.CylinderGeometry(r,r,.22,28),carpetLight,x,y-.11,z);const e=part(new THREE.TorusGeometry(r,.05,6,36),copper,x,y-.11,z);e.rotation.x=Math.PI/2;};
+ // The giant main post in the middle, from the base board up to the top deck.
+ sisalPost(0,0,tower.post,B0,DECK-.3);
+ // Several staggered carpeted platforms, each on its own sisal post, climbing around the main post.
+ const PA={x:1.9,y:4.2,z:1.25,r:1.2},PB={x:-1.95,y:7,z:-1.05,r:1.25},PC={x:1.8,y:9.1,z:-1.35,r:1};
+ for(const p of [PA,PB,PC]){sisalPost(p.x,p.z,.3,B0,p.y-.22);perch(p.x,p.y,p.z,p.r);}
+ // A cat bed rim on the middle perch, and short copper arms tying each perch to the main post.
+ const bed=part(new THREE.TorusGeometry(.78,.17,8,28),carpet,PB.x,PB.y+.1,PB.z);bed.rotation.x=Math.PI/2;
+ for(const p of [PA,PB,PC])rod(new THREE.Vector3(p.x*.32,p.y-.35,p.z*.32),new THREE.Vector3(p.x*.85,p.y-.24,p.z*.85),.06,copper);
+ // A little ladder from the ground up to the first perch: two copper rails and brass rungs.
+ const LF=new THREE.Vector3(1.3,P0,4.3),LT=new THREE.Vector3(1.65,PA.y,2.4),side=new THREE.Vector3(.36,0,0);
+ for(const s of [-1,1])rod(LF.clone().addScaledVector(side,s),LT.clone().addScaledVector(side,s),.06,copper);
+ for(let i=1;i<9;i++){const p=LF.clone().lerp(LT,i/9);rod(p.clone().sub(side),p.clone().add(side),.045,brass);}
+ // Two toy balls dangling on strings: one from the edge of the middle perch, one from the top deck.
+ const dangle=(x:number,yTop:number,z:number,len:number)=>{part(new THREE.CylinderGeometry(.015,.015,len,5),dark,x,yTop-len/2,z);part(new THREE.SphereGeometry(.26,16,12),toy,x,yTop-len-.24,z);part(new THREE.SphereGeometry(.09,10,8),brass,x,yTop-len-.02,z);};
+ dangle(PB.x-1.05,PB.y-.22,PB.z+.45,1.6);dangle(-1.75,DECK-.3,1.55,1.9);
+ // The top deck: a big carpeted hex platform with a copper lip, held by the main post and three copper braces.
+ part(new THREE.CylinderGeometry(2.75,2.75,.3,6),carpet,0,DECK-.15,0);
+ part(new THREE.CylinderGeometry(2.82,2.82,.08,6),copper,0,DECK-.32,0);
+ for(let j=0;j<3;j++){const a=Math.PI/2+j*2.094;rod(new THREE.Vector3(Math.cos(a)*tower.post,DECK-2.1,Math.sin(a)*tower.post),new THREE.Vector3(Math.cos(a)*1.9,DECK-.34,Math.sin(a)*1.9),.07,copper);}
+ // Name strip: a physical bronze-framed plate strapped to the main post at eye height, never floating.
+ const SY=B0+1.35,SZ=tower.post+.06;
+ box(1.7,.44,.08,0,SY,SZ,dark);box(1.8,.05,.1,0,SY+.24,SZ+.01,brass);box(1.8,.05,.1,0,SY-.24,SZ+.01,brass);
+ for(const dy of [-.3,.3]){const st=part(new THREE.TorusGeometry(tower.post+.09,.03,6,24),brass,0,SY+dy,0);st.rotation.x=Math.PI/2;}
+ const t=new Text();t.text='בית החתולים';t.direction='rtl';t.font=import.meta.env.BASE_URL+'fonts/sign-hebrew.ttf';t.fontSize=.25;t.anchorX='center';t.anchorY='middle';t.color='#ffd899';t.position.set(0,SY,SZ+.06);t.userData.noMerge=true;g.add(t);t.sync();
+ // Entrance strip in amber at the foot of the ladder (Alon's builder signature).
+ box(1.1,.07,.07,LF.x,P0+.04,LF.z+.25,amber);
+ // Paw prints on the path: little dark pads walking across the pad to the foot of the ladder.
+ for(let i=0;i<6;i++){const k=i/5,x=-1.9+k*2.8+(i%2?.14:-.14),pz=5.15-k*.6;
   const pd=part(new THREE.CylinderGeometry(.09,.1,.02,12),dark,x,P0+.01,pz);pd.scale.z=.8;
   for(const [tx,tz] of [[-.09,-.12],[-.03,-.16],[.03,-.16],[.09,-.12]])part(new THREE.CylinderGeometry(.03,.03,.02,8),dark,x+tx,P0+.01,pz+tz);}
+ // ---- The cat house at the top of the tower (the house built first, scaled onto the deck). ----
+ const S=tower.scale,hp=(geo:THREE.BufferGeometry,m:THREE.Material,x=0,y=0,z=0)=>{geo.scale(S,S,S);return part(geo,m,x*S,DECK+y*S,z*S);};
+ const hbox=(a:number,b:number,c:number,x:number,y:number,z:number,m:THREE.Material=stone)=>hp(new THREE.BoxGeometry(a,b,c),m,x,y,z);
+ const {walls,roof}=CAT_HOUSE,W1=walls.height,FZ=walls.depth/2,HW=walls.width/2;
+ // Walls: warm sandstone with copper corner posts and a copper eave band (visible joints, not just a tint).
+ hbox(walls.width,walls.height,walls.depth,0,walls.height/2,0,wall);
+ for(const sx of [-1,1])for(const sz of [-1,1])hbox(.22,walls.height,.22,sx*(HW-.02),walls.height/2,sz*(FZ-.02),copper);
+ hbox(walls.width+.2,.14,walls.depth+.2,0,W1-.05,0,copper);hbox(walls.width+.1,.12,walls.depth+.1,0,.06,0,patina);
+ // Pitched roof: two copper slopes meeting on a ridge that runs left to right, closed by gable triangles at both sides.
+ const slope=Math.hypot(FZ+.35,roof.rise),tilt=Math.atan2(roof.rise,FZ+.35);
+ for(const sz of [-1,1]){const r=hbox(walls.width+.5,.16,slope,0,W1+roof.rise/2,sz*(FZ+.35)/2,copper);r.rotation.x=sz*tilt;}
+ const gable=new THREE.Shape();gable.moveTo(-FZ,0);gable.lineTo(FZ,0);gable.lineTo(0,roof.rise);gable.closePath();
+ for(const sx of [-1,1]){const gg=new THREE.ExtrudeGeometry(gable,{depth:.12,bevelEnabled:false});gg.rotateY(Math.PI/2);const m=hp(gg,wall,sx*HW-(sx>0?.12:0),W1,0);m.userData.gable=sx;}
+ const RY=W1+roof.rise;hbox(walls.width+.6,.12,.18,0,RY+.02,0,brass);
+ // The two cat ears: four-sided copper cones on the ridge, each with a darker inner face - from the street the roof reads as a cat's head.
+ const EH=CAT_HOUSE.ears.top-RY;
+ for(const sx of [-1,1]){const ear=hp(new THREE.ConeGeometry(.62,EH,4),copper,sx*1.45,RY+EH/2,0);ear.rotation.y=Math.PI/4;
+  const inner=hp(new THREE.ConeGeometry(.34,EH*.66,3),patina,sx*1.45,RY+EH*.36,.3);inner.rotation.x=-.12;}
+ // A cat asleep on the ridge between the ears: a dark curled silhouette (body, head tucked in, tail wrapped round).
+ const body=hp(new THREE.SphereGeometry(.42,16,10),fur,.05,RY+.32,0);body.scale.set(1.25,.62,.8);
+ const head=hp(new THREE.SphereGeometry(.22,14,10),fur,-.48,RY+.3,.12);head.scale.set(1,.85,1);
+ for(const ex of [-.56,-.4]){const e=hp(new THREE.ConeGeometry(.07,.16,4),fur,ex,RY+.5,.12);e.rotation.z=.15;}
+ const tail=hp(new THREE.TorusGeometry(.42,.06,6,20,Math.PI*1.1),fur,.05,RY+.12,.05);tail.rotation.x=Math.PI/2;
+ // The round cat door in the middle of the front wall: a brass ring, a dark opening and a little flap left slightly open.
+ const CY=.75;
+ hp(new THREE.TorusGeometry(.62,.08,10,32),brass,0,CY,FZ+.04);
+ hp(new THREE.CylinderGeometry(.6,.6,.06,32),dark,0,CY,FZ+.01).rotation.x=Math.PI/2;
+ const flap=hp(new THREE.CylinderGeometry(.5,.5,.04,32),copper,0,CY+.04,FZ+.1);flap.rotation.x=Math.PI/2+.28;
+ // One small window with warm light: a lit pane behind a copper cross frame, with a brass sill.
+ const WX=1.15,WY=2.15;hbox(.8,.8,.05,WX,WY,FZ+.02,glow);hbox(.92,.08,.1,WX,WY,FZ+.06,copper);hbox(.08,.92,.1,WX,WY,FZ+.06,copper);
+ for(const dy of [-.44,.44])hbox(.96,.07,.1,WX,WY+dy,FZ+.06,copper);hbox(1,.08,.2,WX,WY-.5,FZ+.1,brass);
+ // A small bronze plate with a paw mark above the cat door (the full name is on the post below, readable from the street).
+ hbox(1.6,.42,.08,-.6,2.15,FZ+.04,dark);hbox(1.7,.05,.1,-.6,2.38,FZ+.05,brass);hbox(1.7,.05,.1,-.6,1.92,FZ+.05,brass);
+ hp(new THREE.CylinderGeometry(.1,.11,.03,12),brass,-.6,2.12,FZ+.1).rotation.x=Math.PI/2;
+ for(const [tx,ty] of [[-.12,.12],[-.04,.17],[.04,.17],[.12,.12]])hp(new THREE.CylinderGeometry(.035,.035,.03,8),brass,-.6+tx,2.12+ty,FZ+.1).rotation.x=Math.PI/2;
+ // Amber strip at the cat door and the amber point on the ridge end is Alon's roof signature.
+ hbox(1.6,.07,.07,0,.06,FZ+.1,amber);
+ hbox(.1,.42,.1,HW+.22,RY-.05,0,brass);hp(new THREE.SphereGeometry(.12,12,10),amber,HW+.22,RY+.24,0);
+ // A short carpet porch strip in front of the cat door on the deck.
+ part(new THREE.BoxGeometry(1.4,.04,.6),carpetLight,0,DECK+.02,FZ*S+.35);
 }
