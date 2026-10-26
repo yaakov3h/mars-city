@@ -1,4 +1,5 @@
 import {it,expect} from 'vitest';
+import world from '../src/world.ts?raw';
 import state from '../data/city-state.json';
 import {validateState,hex} from '../src/model';
 import {ANNEX,annexLiftAt,reviewWalkable} from '../src/review-underground';
@@ -46,4 +47,8 @@ it('is reachable by walking from the standard entry and back, over the real walk
  expect(seen.has(key(g[0],g[1]))).toBe(true);
  // undirected grid: the return trip is the same connected set
  expect(seen.has(key(s[0],s[1]))).toBe(true);
+});
+it('levels its own hex like the other plots, so district paving cannot rise over the pad, seats and nameplate on a slope',()=>{
+  expect(world).toContain("for(const kb of state.buildings)if(kb.id===KNOWLEDGE_TREE_ID&&kb.plot){const [x,z]=hex(kb.plot.q,kb.plot.r,10);leveledPads.push({x,z,y:naturalGroundY(x,z)+.08});}");
+  expect(world).toMatch(/leveledPads=state\.districts[\s\S]*for\(const kb of state\.buildings\)/);
 });
