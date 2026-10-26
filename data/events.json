@@ -695,6 +695,19 @@
         "he": "אנדרטה משותפת: מגדל בזלת אטום עם ספירלה כפולה בטורקיז וענבר, מעלית זכוכית, חממת כתר וכיפה שקופה לתצפית מתוך התא בלבד (אין יציאה בתחנה העליונה)",
         "en": "Joint monument: a sealed basalt tower with a turquoise and amber double spiral, a glass lift, a crown greenhouse and a glass cupola viewed from inside the cab only (no exit at the top stop)"
       }
+    },
+    {
+      "id": "backup-vault-20261026",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "BACKUP_AND_RESTORE",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-26T19:50:00+02:00",
+      "summary": {
+        "he": "ארכיון גיבויים קטן: כספת נחושת עם דלת עגולה, תופי ארכיון מוערמים, מנעול על הגג וניסוי שחזור שהצליח",
+        "en": "Small backup vault: a copper vault with a round door, stacked archive drums, a lock emblem on the roof and a restore test that passed"
+      }
     }
   ]
 }
