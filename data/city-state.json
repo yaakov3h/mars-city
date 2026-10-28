@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 51,
+  "revision": 52,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-26T21:45:00+02:00",
+  "lastUpdated": "2026-10-27T22:10:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -64,6 +64,11 @@
           "q": -5,
           "r": 5,
           "foundedAt": "2026-10-26T21:30:00+02:00"
+        },
+        {
+          "q": -6,
+          "r": 7,
+          "foundedAt": "2026-10-27T22:10:00+02:00"
         }
       ]
     },
@@ -1194,6 +1199,28 @@
       "questionCount": 0,
       "createdAt": "2026-10-26T20:45:00+02:00",
       "lastUpdated": "2026-10-26T21:40:00+02:00"
+    },
+    {
+      "id": "b-dream-archive-20261027",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "ארכיון החלומות של מאדים",
+        "en": "Mars Dream Archive"
+      },
+      "subcategory": "AI_AGENTS",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": -6,
+        "r": 7
+      },
+      "height": 8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-10-27T22:10:00+02:00",
+      "lastUpdated": "2026-10-27T22:10:00+02:00"
     }
   ],
   "creatures": [],
