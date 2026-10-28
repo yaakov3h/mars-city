@@ -22,7 +22,7 @@ it('has its own reading room and lift at the same shaft point as the surface hea
 it('connects only to the professions analysis room and changes no other room',()=>{
  const me=ANNEX.find(a=>a.theme==='knowledge')!,pr=ANNEX.find(a=>a.theme==='professions')!,view=ANNEX.find(a=>a.theme==='view')!,ex=ANNEX.find(a=>a.theme==='explainer')!;
  expect(me.doors).toEqual([180,0]);expect(pr.doors).toEqual([240,300,120,60,180]);
- expect(view.doors).toEqual([0,300,60]);expect(ex.doors).toEqual([300,180]);
+ expect(view.doors).toEqual([0,300,60]);expect(ex.doors).toEqual([300,180,120]);
  expect(pr.x-me.x).toBeCloseTo(10*Math.sqrt(3),6);expect(pr.z).toBe(me.z);expect(pr.fy).toBe(me.fy);
  for(const a of ANNEX.filter(a=>a!==me&&a!==pr)){expect(Math.hypot(a.x-me.x,a.z-me.z)).toBeGreaterThan(13.6);}
 });
@@ -49,6 +49,6 @@ it('is reachable by walking from the standard entry and back, over the real walk
  expect(seen.has(key(s[0],s[1]))).toBe(true);
 });
 it('levels its own hex like the other plots, so district paving cannot rise over the pad, seats and nameplate on a slope',()=>{
-  expect(world).toContain("for(const kb of state.buildings)if(kb.id===KNOWLEDGE_TREE_ID&&kb.plot){const [x,z]=hex(kb.plot.q,kb.plot.r,10);leveledPads.push({x,z,y:naturalGroundY(x,z)+.08});}");
+  expect(world).toContain("for(const kb of state.buildings)if((kb.id===KNOWLEDGE_TREE_ID||kb.id===DREAM_ARCHIVE_ID)&&kb.plot){const [x,z]=hex(kb.plot.q,kb.plot.r,10);leveledPads.push({x,z,y:naturalGroundY(x,z)+.08});}");
   expect(world).toMatch(/leveledPads=state\.districts[\s\S]*for\(const kb of state\.buildings\)/);
 });

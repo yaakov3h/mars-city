@@ -734,6 +734,19 @@
         "he": "עץ הידע: עץ מלאכותי גבוה מנחושת ובזלת, ששה ענפים מחוברים וכל אחד נגמר בפנס מואר, שולחן משותף למרגלותיו וחדר קריאה בתת־קרקע עם מעלית זכוכית",
         "en": "Knowledge Tree: a tall artificial tree of copper and basalt with six jointed branches, each ending in a lit lantern, a shared table at its foot and an underground reading room with a glass lift"
       }
+    },
+    {
+      "id": "dream-archive-20261027",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-27T22:10:00+02:00",
+      "summary": {
+        "he": "ארכיון החלומות של מאדים: כיפת זכוכית שקופה עם ספרים זוהרים שצפים בתוכה. מדי פעם ספר אחד נפתח והולוגרמה קטנה של חתול, עץ, ספינה או אי עולה ממנו. לחיצה על הבניין מקריאה חלום מאדימי קצר ובדוי. מתחת לכיפה יש חדר חלומות עם מעלית זכוכית",
+        "en": "Mars Dream Archive: a transparent glass dome with softly glowing books floating inside. Now and then one book opens and a small hologram of a cat, a tree, a ship or an island rises from it. Clicking the building reads a short invented Martian dream. Below the dome is a dream room with a glass lift"
+      }
     }
   ]
 }
