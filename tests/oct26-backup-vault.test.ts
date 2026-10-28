@@ -10,11 +10,11 @@ const vault=source.slice(source.indexOf('// Backup Vault (ארכיון הגיב�
 it('preserves every previous entity and adds only the Backup Vault and the Cat House',()=>{
   for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);
   for(const k of ['landmarks','mosaic','creatures','installations']as const)expect(state[k]).toEqual(prior[k]);
-  for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length).map(p=>[p.q,p.r])).toEqual([[-1,7],[-5,5]]);}else if(d.id==='district-codesign-20260930'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length).map(p=>[p.q,p.r])).toEqual([[-5,-2]]);}else expect(n).toEqual(d);}
-  expect(state.buildings.length-prior.buildings.length).toBe(3);
-  expect(state.buildings.slice(-2).map(b=>b.id)).toEqual([ID,'b-cat-house-20261026']);
+  for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length).map(p=>[p.q,p.r])).toEqual([[-1,7],[-5,5],[-6,7]]);}else if(d.id==='district-codesign-20260930'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length).map(p=>[p.q,p.r])).toEqual([[-5,-2]]);}else expect(n).toEqual(d);}
+  expect(state.buildings.length-prior.buildings.length).toBe(4);
+  expect(state.buildings.slice(-3,-1).map(b=>b.id)).toEqual([ID,'b-cat-house-20261026']);
   expect(state.totalQuestions).toBe(prior.totalQuestions);
-  expect(state.revision-prior.revision).toBe(3);
+  expect(state.revision-prior.revision).toBe(4);
   expect(validateState(state)).toEqual([]);
 });
 it('moved off (-3,6) to its own free plot q=-1 r=7 (office claim #453), with a base height like the existing houses',()=>{
