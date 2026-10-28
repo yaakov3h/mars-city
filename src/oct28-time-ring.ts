@@ -39,9 +39,9 @@ export function timeRing(group:THREE.Group,animated:THREE.Object3D[]){
   const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;let last=Date.now();
   const dial=new THREE.Mesh(new THREE.PlaneGeometry(R.dialW,R.dialW*310/256),new THREE.MeshBasicMaterial({map:tex,side:THREE.DoubleSide,transparent:true}));
   dial.onBeforeRender=()=>{const n=Date.now();if(n-last>20000){last=n;paint(cv,pl,new Date(n));tex.needsUpdate=true;}};
-  dial.position.set(cx*radius*1.02,-.35,cz*radius*1.02);dial.lookAt(cx*40,-.35,cz*40);dial.userData.noMerge=true;
-  const back=new THREE.Mesh(new THREE.BoxGeometry(R.dialW+.16,R.dialW*310/256+.16,.1),copper);back.position.set(cx*radius,-.35,cz*radius);back.lookAt(cx*40,-.35,cz*40);back.userData.noMerge=true;
-  const spoke=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,radius,6),copper);spoke.position.set(cx*radius/2,0,cz*radius/2);spoke.rotation.z=Math.PI/2;spoke.rotation.y=-a;spoke.userData.noMerge=true;
+  const out=radius+R.tube+.3;dial.position.set(cx*(out+.07),-.35,cz*(out+.07));dial.lookAt(cx*40,-.35,cz*40);dial.userData.noMerge=true;
+  const back=new THREE.Mesh(new THREE.BoxGeometry(R.dialW+.16,R.dialW*310/256+.16,.1),copper);back.position.set(cx*out,-.35,cz*out);back.lookAt(cx*40,-.35,cz*40);back.userData.noMerge=true;
+  const spoke=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,out,6),copper);spoke.position.set(cx*out/2,0,cz*out/2);spoke.rotation.z=Math.PI/2;spoke.rotation.y=-a;spoke.userData.noMerge=true;
   spin.add(back,dial,spoke);
  });
  spin.userData.spin=true;animated.push(spin);group.add(ring);return ring;
