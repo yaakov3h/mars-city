@@ -6,7 +6,7 @@ import {hexCenter} from '../scripts/layout.mjs';
 const deg=(ax:number,az:number,bx:number,bz:number)=>(Math.round(Math.atan2(bz-az,bx-ax)*180/Math.PI)+360)%360;
 describe('shared partnership room',()=>{
  const n=ANNEX[45],pro=ANNEX[27];
- it('sits at hex q-4 r6 on the level -8.4 floor',()=>{const [x,z]=hexCenter(-4,6);expect(n.theme).toBe('partnership');expect(n.x).toBeCloseTo(x,6);expect(n.z).toBeCloseTo(z,6);expect(n.fy).toBe(-8.4);expect(ANNEX).toHaveLength(48)});
+ it('sits at hex q-4 r6 on the level -8.4 floor',()=>{const [x,z]=hexCenter(-4,6);expect(n.theme).toBe('partnership');expect(n.x).toBeCloseTo(x,6);expect(n.z).toBeCloseTo(z,6);expect(n.fy).toBe(-8.4);expect(ANNEX).toHaveLength(49)});
  it('has one reciprocal door pair with the professions room: 240 here, 60 there',()=>{expect(deg(n.x,n.z,pro.x,pro.z)).toBe(240);expect(deg(pro.x,pro.z,n.x,n.z)).toBe(60);expect(n.doors).toEqual([240]);expect(pro.doors).toContain(60);expect(pro.doors).toContain(120)});
  it('keeps the passage level and walkable',()=>{for(let k=0;k<=85;k++){const t=k/100,x=pro.x+(n.x-pro.x)*t,z=pro.z+(n.z-pro.z)*t;expect(reviewFloorAt(x,z)).toBeCloseTo(-8.4,6);expect(reviewWalkable(x,z)).toBe(true)}});
  it('puts the lift at +3.6,0 so the surface head is at world (-13.72, 90)',()=>{const l=annexLiftAt(45);expect(l.x).toBeCloseTo(n.x+3.6,6);expect(l.z).toBeCloseTo(90,6);expect(l.x).toBeCloseTo(-13.7205,3)});

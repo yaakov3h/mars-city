@@ -541,18 +541,18 @@ export function geodesicDome(part:DomePart,radius:number,x:number,y:number,z:num
  const base=part(new THREE.TorusGeometry(radius,.05,6,40),frame,x,y+.02,z);base.rotation.x=Math.PI/2;
 }
 
-// Version Atlas (אטלס הגרסאות): Alon's map of the apps and versions we built together (Yaakov, Alon, Noa). An amber-copper
-// hexagonal tower on plot q=0 r=-4. On the roof, six app pedestals (one per app family) each send a lit "version line" to
-// the central mast; the beads on each line are its versions, and the amber beacon on the mast is Alon's roof signature.
-// A glass lift stands on the reserved shaft point (pad local x=0 z=-5.4) and joins the tower through two enclosed glass
-// bridges, so nobody steps outside. The underground room below is not built in this PR: the shaft point is sealed by a hatch.
+// Version Atlas (אטלס הגרסאות): an abstract map of apps and their versions. An amber-copper hexagonal tower on plot
+// q=0 r=-4. On the roof, six app pedestals (one per app family) each send a lit "version line" to the central mast; the
+// beads on each line are its versions, and the amber beacon on the mast is the builder's roof signature.
+// A glass lift stands on the shaft point (pad local x=0 z=-5.4): the pad is open there, the lift runs down to the map room
+// below (atlasRoom, wired in review-underground.ts as the 'atlas' room) and joins the tower through two enclosed glass
+// bridges, so nobody steps outside.
 // The loose natural stones that the terrain scatters on this hex are cleared in terrain() (radius 10 around the plot centre).
 // Local frame: origin = plot centre, y=0 = the group's ground. The door faces +z.
 export const VERSION_ATLAS_ID='b-version-atlas-20261027';
 export const VERSION_ATLAS_PLOT=Object.freeze({q:0,r:-4});
 export const VERSION_ATLAS_SHAFT_POINT=Object.freeze({x:0,z:-5.4});
-export const VERSION_ATLAS=Object.freeze({pad:{radius:8.3,top:.35},plinth:{radius:4.6,height:.6},body:{radius:3.4,height:6},roof:{slab:.3},mast:{top:9.6},beacon:{y:9.85,r:.3},apps:6,lift:{radius:.95,top:7.7}});
-export const VERSION_ATLAS_APPS=Object.freeze(['בית החתולים','המשרד','קופת החתול','מאדים','משחקים','אתרים']);
+export const VERSION_ATLAS=Object.freeze({pad:{radius:8.3,top:.35},plinth:{radius:4.6,height:.6},body:{radius:3.4,height:6},roof:{slab:.3},mast:{top:9.6},beacon:{y:9.85,r:.3},apps:6,lift:{radius:1.1,top:7.7,well:1.05},room:{fy:-8.6}});
 type AtlasPart=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 export function versionAtlas(part:AtlasPart,g:THREE.Group,_w:World){
  const mat=(color:string,kind:'stone'|'metal'='stone',metal=.06,rough=.75)=>{const s=detailedSurface(kind);return new THREE.MeshStandardMaterial({color,map:s.color,normalMap:s.normal,roughnessMap:s.rough,normalScale:new THREE.Vector2(.12,.12),roughness:rough,metalness:metal});};
@@ -564,10 +564,13 @@ export function versionAtlas(part:AtlasPart,g:THREE.Group,_w:World){
  const rod=(a:THREE.Vector3,b:THREE.Vector3,r:number,m:THREE.Material)=>{const d=b.clone().sub(a),o=part(new THREE.CylinderGeometry(r,r,d.length(),8),m,...a.clone().add(b).multiplyScalar(.5).toArray() as [number,number,number]);o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());return o;};
  const {pad,plinth,body,roof,mast,beacon,lift}=VERSION_ATLAS,P0=pad.top,B0=P0+plinth.height,B1=B0+body.height,R1=B1+roof.slab,ap=body.radius*Math.cos(Math.PI/6);
  const S=VERSION_ATLAS_SHAFT_POINT;
- // Shared hex pad, the same stone and size as the other bespoke houses; the reserved shaft point is sealed with a copper hatch.
- part(new THREE.CylinderGeometry(pad.radius,pad.radius+.2,.3,6),stone,0,.2,0);
- part(new THREE.CylinderGeometry(1.25,1.25,.06,24),dark,S.x,P0+.03,S.z);
- const hatch=part(new THREE.TorusGeometry(1.25,.07,8,24),copper,S.x,P0+.07,S.z);hatch.rotation.x=Math.PI/2;
+ // Shared hex pad, the same stone and size as the other bespoke houses, with a real round opening (the lift well) at the
+ // shaft point, so the lift goes through the pad into the terrain opening and down to the map room. A copper rim edges it.
+ const padShape=new THREE.Shape();for(let k=0;k<6;k++){const a=k*Math.PI/3,px=Math.sin(a)*pad.radius,py=-Math.cos(a)*pad.radius;k?padShape.lineTo(px,py):padShape.moveTo(px,py);}padShape.closePath();
+ const well=new THREE.Path();well.absarc(S.x,-S.z,lift.well,0,Math.PI*2,true);padShape.holes.push(well);
+ const padGeo=new THREE.ExtrudeGeometry(padShape,{depth:.3,bevelEnabled:false,curveSegments:24});padGeo.rotateX(-Math.PI/2);
+ const padMesh=part(padGeo,stone,0,P0-.3,0);padMesh.userData.atlasPad=true;
+ const rimRing=part(new THREE.TorusGeometry(lift.well+.08,.07,8,24),copper,S.x,P0+.03,S.z);rimRing.rotation.x=Math.PI/2;
  // Plinth and body: a low stone hexagon, then a hexagonal amber-copper tower turned so one face looks at the street (+z).
  // Base height is the vault's (pad .35 + plinth .6), so the Atlas stands level with the neighbouring houses.
  const pl=part(new THREE.CylinderGeometry(plinth.radius,plinth.radius+.15,plinth.height,6),stone,0,P0+plinth.height/2,0);pl.rotation.y=Math.PI/6;
@@ -577,7 +580,7 @@ export function versionAtlas(part:AtlasPart,g:THREE.Group,_w:World){
  for(let k=0;k<6;k++){const a=Math.PI/6+k*Math.PI/3,x=Math.sin(a)*(body.radius-.05),z=Math.cos(a)*(body.radius-.05);box(.14,body.height,.14,x,B0+body.height/2,z,brass);}
  // Warm windows: two tall slits on each face except the door face and the lift face; the Atlas is staffed.
  for(let k=0;k<6;k++){const a=k*Math.PI/3;if(k===0||k===3)continue;for(const off of [-.7,.7]){const nx=Math.sin(a),nz=Math.cos(a),tx=Math.cos(a),tz=-Math.sin(a),x=nx*(ap+.04)+tx*off,z=nz*(ap+.04)+tz*off;const s=box(.42,2.2,.05,x,B0+3.4,z,glow);s.rotation.y=a;}}
- // Door on the street face with Alon's amber entrance light strip above it (colour signature, decision #27).
+ // Door on the street face with the builder's amber entrance light strip above it (colour signature).
  box(1.5,2.4,.12,0,B0+1.2,ap+.03,dark);box(1.7,.12,.14,0,B0+2.5,ap+.05,brass);box(1.4,.14,.1,0,B0+2.75,ap+.08,amber);
  // Sign over the door: the building's name on a copper plate, lit from inside.
  const cv=typeof document!=='undefined'?document.createElement('canvas'):null;
@@ -598,7 +601,8 @@ export function versionAtlas(part:AtlasPart,g:THREE.Group,_w:World){
   const sc=box(.72,.5,.08,x,R1+.78,z,screens[k]);sc.rotation.y=a;const fr=box(.82,.6,.05,x-Math.sin(a)*.05,R1+.78,z-Math.cos(a)*.05,dark);fr.rotation.y=a;
   const from=new THREE.Vector3(x*.9,R1+.95,z*.9);rod(from,hub,.035,line);
   const beads=3+(k%3);for(let j=1;j<=beads;j++){const t=j/(beads+1),p=from.clone().lerp(hub,t);part(new THREE.SphereGeometry(.07+.02*t,8,6),j===beads?amber:glow,p.x,p.y,p.z);}}
- // Glass lift on the reserved shaft point: a glass tube in a copper frame, the cab parked at the top landing.
+ // Glass lift on the shaft point: a glass tube in a copper frame over the open well, the cab parked at the top landing.
+ // The underground part of the shaft (glass walls, platform, posts) is drawn by the room wiring, so the two meet at the well.
  const LH=lift.top-P0;part(new THREE.CylinderGeometry(lift.radius,lift.radius,LH,20,1,true),glass,S.x,P0+LH/2,S.z);
  for(let k=0;k<4;k++){const a=k*Math.PI/2+Math.PI/4;box(.1,LH,.1,S.x+Math.cos(a)*lift.radius,P0+LH/2,S.z+Math.sin(a)*lift.radius,copper);}
  part(new THREE.CylinderGeometry(lift.radius+.08,lift.radius+.08,.16,20),copper,S.x,lift.top,S.z);
@@ -607,6 +611,33 @@ export function versionAtlas(part:AtlasPart,g:THREE.Group,_w:World){
  const z0=-ap,z1=S.z+lift.radius*.6,bz=(z0+z1)/2,bl=z0-z1;
  for(const[y,h] of [[B0+1.1,2.2],[B1-.9,1.9]] as const){box(1.3,h,bl,0,y,bz,glass);box(1.4,.1,bl,0,y-h/2,bz,copper);box(1.4,.1,bl,0,y+h/2,bz,copper);}
  return g;
+}
+// Atlas map room, below the Version Atlas (theme 'atlas' in review-underground.ts, hex q=0 r=-4, floor -8.6). The lift lands
+// at local (0,-5.4) under the tower's glass lift; the door at 180 opens a level passage west to the neighbouring room.
+// A hexagonal map table repeats the roof: six lit app tiles, a version line from each to the amber centre, beads = versions.
+// The table stands off the door-to-lift route, so the walk from the passage to the lift stays clear.
+export const ATLAS_TABLE=Object.freeze({x:1.7,z:1.5,radius:1.35,height:.85});
+export function atlasRoom(root:THREE.Group,cx:number,fy:number,cz:number){
+ const mat=(c:string,metal=0,rough=.75)=>new THREE.MeshStandardMaterial({color:c,roughness:rough,metalness:metal});
+ const copper=mat('#d08a4c',.6,.38),brass=mat('#d9a35a',.7,.3),dark=mat('#2f2d2f',.1,.6);
+ const amber=new THREE.MeshBasicMaterial({color:'#ffad4d'}),glow=new THREE.MeshBasicMaterial({color:'#fff1d2'}),line=new THREE.MeshBasicMaterial({color:'#ffc477'});
+ const tiles=['#ffd08a','#ffb36b','#f6c38f','#ffd9a8','#f0a35e','#ffe0b0'].map(c=>new THREE.MeshBasicMaterial({color:c}));
+ const add=(g:THREE.BufferGeometry,m:THREE.Material,x:number,y:number,z:number)=>{const o=new THREE.Mesh(g,m);o.position.set(cx+x,fy+y,cz+z);root.add(o);return o;};
+ const T=ATLAS_TABLE,top=T.height;
+ const base=add(new THREE.CylinderGeometry(T.radius*.82,T.radius*.9,top-.08,6),copper,T.x,(top-.08)/2,T.z);base.rotation.y=Math.PI/6;
+ const slab=add(new THREE.CylinderGeometry(T.radius,T.radius,.08,6),dark,T.x,top-.04,T.z);slab.rotation.y=Math.PI/6;
+ const rim=add(new THREE.CylinderGeometry(T.radius+.05,T.radius+.05,.05,6),brass,T.x,top-.1,T.z);rim.rotation.y=Math.PI/6;
+ add(new THREE.CylinderGeometry(.12,.16,.32,10),brass,T.x,top+.16,T.z);add(new THREE.SphereGeometry(.13,14,10),amber,T.x,top+.38,T.z);
+ const hub=new THREE.Vector3(T.x,top+.36,T.z);
+ for(let k=0;k<6;k++){const a=Math.PI/6+k*Math.PI/3,x=T.x+Math.sin(a)*.9,z=T.z+Math.cos(a)*.9;
+  const tile=add(new THREE.CylinderGeometry(.2,.2,.04,6),tiles[k],x,top+.02,z);tile.rotation.y=Math.PI/6;
+  const from=new THREE.Vector3(x,top+.08,z),d=hub.clone().sub(from);const rod=add(new THREE.CylinderGeometry(.018,.018,d.length(),6),line,(from.x+hub.x)/2,(from.y+hub.y)/2,(from.z+hub.z)/2);rod.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());
+  const beads=3+(k%3);for(let j=1;j<=beads;j++){const t=j/(beads+1),p=from.clone().lerp(hub,t);add(new THREE.SphereGeometry(.04+.012*t,8,6),j===beads?amber:glow,p.x,p.y,p.z);}}
+ // A copper lamp ring hangs over the table; a low bench faces it from the lift side.
+ const ring=add(new THREE.TorusGeometry(.75,.04,8,6),copper,T.x,3.25,T.z);ring.rotation.x=Math.PI/2;add(new THREE.SphereGeometry(.18,12,10),glow,T.x,3.1,T.z);
+ add(new THREE.CylinderGeometry(.015,.015,.7,6),brass,T.x,3.6,T.z);
+ add(new THREE.BoxGeometry(1.6,.42,.45),copper,T.x,.21,T.z-2.1);
+ const lamp=new THREE.PointLight('#ffc98a',10,7,2);lamp.position.set(cx+T.x,fy+2.6,cz+T.z);root.add(lamp);
 }
 // Cat House (בית החתולים), hex q=-5 r=-2, Alon's second build of 26.10.2026, reshaped the same evening at Yaakov's
 // request (approval of PR 27): a GIANT CAT SCRATCHING TOWER. Thick sisal-rope posts rise from a carpeted base, carry
