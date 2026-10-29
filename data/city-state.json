@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 52,
+  "revision": 53,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-10-27T22:10:00+02:00",
+  "lastUpdated": "2026-10-29T00:30:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -69,6 +69,11 @@
           "q": -6,
           "r": 7,
           "foundedAt": "2026-10-27T22:10:00+02:00"
+        },
+        {
+          "q": 0,
+          "r": -4,
+          "foundedAt": "2026-10-29T00:30:00+02:00"
         }
       ]
     },
@@ -1221,6 +1226,28 @@
       "questionCount": 0,
       "createdAt": "2026-10-27T22:10:00+02:00",
       "lastUpdated": "2026-10-27T22:10:00+02:00"
+    },
+    {
+      "id": "b-version-atlas-20261027",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "אטלס הגרסאות",
+        "en": "Version Atlas"
+      },
+      "subcategory": "APPS_AND_VERSIONS",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 0,
+        "r": -4
+      },
+      "height": 8,
+      "width": 1.8,
+      "complexity": 3,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-10-29T00:30:00+02:00",
+      "lastUpdated": "2026-10-29T00:30:00+02:00"
     }
   ],
   "creatures": [],

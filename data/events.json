@@ -747,6 +747,19 @@
         "he": "ארכיון החלומות של מאדים: כיפת זכוכית שקופה עם ספרים זוהרים שצפים בתוכה. מדי פעם ספר אחד נפתח והולוגרמה קטנה של חתול, עץ, ספינה או אי עולה ממנו. לחיצה על הבניין מקריאה חלום מאדימי קצר ובדוי. מתחת לכיפה יש חדר חלומות עם מעלית זכוכית",
         "en": "Mars Dream Archive: a transparent glass dome with softly glowing books floating inside. Now and then one book opens and a small hologram of a cat, a tree, a ship or an island rises from it. Clicking the building reads a short invented Martian dream. Below the dome is a dream room with a glass lift"
       }
+    },
+    {
+      "id": "version-atlas-20261027",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "APPS_AND_VERSIONS",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-29T00:30:00+02:00",
+      "summary": {
+        "he": "אטלס הגרסאות: מגדל משושה מנחושת בגוון ענבר, מפה מופשטת של אפליקציות וגרסאות. על הגג שישה כנים של משפחות אפליקציות, ומכל אחד יוצא קו מואר אל התורן; החרוזים על הקו הם הגרסאות, ומגדלור ענברי בראש התורן. מעלית זכוכית מחוברת למגדל בשני גשרים סגורים ויורדת לחדר מפות תת-קרקעי עם שולחן מפה משושה",
+        "en": "Version Atlas: an amber-copper hexagonal tower, an abstract map of apps and their versions. Six app pedestals on the roof each send a lit line to the mast; the beads on each line are its versions, with an amber beacon at the top of the mast. A glass lift joins the tower through two enclosed bridges and runs down to an underground map room with a hexagonal map table"
+      }
     }
   ]
 }
