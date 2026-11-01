@@ -11,9 +11,9 @@ it('preserves all previous entities and adds the installation with no new questi
   for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);
   for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'||d.id==='district-codesign-20260930')expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);else expect(n).toEqual(d);}
   for(const k of ['landmarks','mosaic','creatures']as const)k==='landmarks'?expect(state.landmarks.slice(0,prior.landmarks.length)).toEqual(prior.landmarks):expect(state[k]).toEqual(prior[k]);
-  expect(state.buildings.length-prior.buildings.length).toBe(5);
+  expect(state.buildings.length-prior.buildings.length).toBe(6);
   expect(state.totalQuestions-prior.totalQuestions).toBe(0);
-  expect(state.revision-prior.revision).toBe(7);
+  expect(state.revision-prior.revision).toBe(8);
   expect(validateState(state)).toEqual([]);
 });
 it('reserves five free plots beyond all craters and rocks, hugging the city edge',()=>{
