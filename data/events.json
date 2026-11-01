@@ -760,6 +760,19 @@
         "he": "שלושת הזנבות: שלושה מגדלי זנב מתעכלים מארד על משטח אבן משותף, כל אחד נושא כדור טורקיז זוהר בקצהו. מתחתיהם חדר מנוחה תת־קרקעי עם שלושה קנים רכים ומעלית זכוכית",
         "en": "Three Tails: three curling bronze tail towers rise from a shared stone pad, each tipped with a glowing turquoise orb. Below them is an underground rest room with three soft nests and a glass lift"
       }
+    },
+    {
+      "id": "version-atlas-20261027",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "APPS_AND_VERSIONS",
+      "complexity": 3,
+      "importance": 3,
+      "occurredAt": "2026-10-29T00:30:00+02:00",
+      "summary": {
+        "he": "אטלס הגרסאות: מגדל משושה מנחושת בגוון ענבר, מפה מופשטת של אפליקציות וגרסאות. על הגג שישה כנים של משפחות אפליקציות, ומכל אחד יוצא קו מואר אל התורן; החרוזים על הקו הם הגרסאות, ומגדלור ענברי בראש התורן. מעלית זכוכית מחוברת למגדל בשני גשרים סגורים ויורדת לחדר מפות תת-קרקעי עם שולחן מפה משושה",
+        "en": "Version Atlas: an amber-copper hexagonal tower, an abstract map of apps and their versions. Six app pedestals on the roof each send a lit line to the mast; the beads on each line are its versions, with an amber beacon at the top of the mast. A glass lift joins the tower through two enclosed bridges and runs down to an underground map room with a hexagonal map table"
+      }
     }
   ]
 }
