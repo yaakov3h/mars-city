@@ -34,9 +34,9 @@ it('has its own dream room and lift at the same shaft point as the surface head,
  const l=annexLiftAt(i);expect(l.x).toBeCloseTo(cx+DREAM_SHAFT_POINT.x,5);expect(l.z).toBeCloseTo(cz+DREAM_SHAFT_POINT.z,5);
  expect(OCT27_SHAFTS).toHaveLength(1);expect(pilotOpening(l.x,l.z)).toBe(true);expect(reviewWalkable(cx,cz)).toBe(true);
 });
-it('connects only to the explainer archive; the explainer gains only the door that faces it and no other room changes',()=>{
+it('connects to the explainer archive and the tails rest room; each neighbor gains only the door that faces it and no other room changes',()=>{
  const me=ANNEX.find(here)!,ex=ANNEX.find(a=>a.theme==='explainer')!,kn=ANNEX.find(a=>a.theme==='knowledge')!,pr=ANNEX.find(a=>a.theme==='professions')!;
- expect(me.doors).toEqual([300]);expect(ex.doors).toEqual([300,180,120]);expect(kn.doors).toEqual([180,0]);expect(pr.doors).toEqual([240,300,120,60,180]);
+ expect(me.doors).toEqual([300,0]);expect(ex.doors).toEqual([300,180,120]);expect(kn.doors).toEqual([180,0]);expect(pr.doors).toEqual([240,300,120,60,180]);
  expect(Math.hypot(ex.x-me.x,ex.z-me.z)).toBeCloseTo(10*Math.sqrt(3),6);
  expect((Math.atan2(me.z-ex.z,me.x-ex.x)*180/Math.PI+360)%360).toBeCloseTo(120,6);
  for(const a of ANNEX.filter(a=>a!==me&&a!==ex)){expect(Math.hypot(a.x-me.x,a.z-me.z)).toBeGreaterThan(13.6);}
