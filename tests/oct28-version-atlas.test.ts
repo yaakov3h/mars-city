@@ -12,7 +12,7 @@ const num=(name:string)=>{const m=atlas.match(new RegExp(name+':\\{[^}]*\\}'));r
 describe('Version Atlas (אטלס הגרסאות)',()=>{
  it('adds one building on its reserved plot q=0 r=-4 and keeps the state valid',()=>{
   const b=state.buildings.find(b=>b.id===ID)!;expect(b).toBeTruthy();expect(b.plot).toEqual({q:0,r:-4});expect(b.name.he).toBe('אטלס הגרסאות');
-  expect(state.buildings.at(-1)!.id).toBe(ID);expect(events.at(-1)!.id).toBe('version-atlas-20261027');
+  expect(state.buildings.some(b=>b.id===ID)).toBe(true);expect(events.some(e=>e.id==='version-atlas-20261027')).toBe(true);
   expect(validateState(state as State)).toEqual([]);
  });
  it('the plot is free on the surface and buildable outside craters and rocks',()=>{
@@ -44,13 +44,13 @@ describe('Version Atlas (אטלס הגרסאות)',()=>{
   expect(VERSION_ATLAS.lift.well).toBeGreaterThanOrEqual(1);expect(VERSION_ATLAS.lift.radius).toBeGreaterThan(VERSION_ATLAS.lift.well);
   expect(atlas).toContain('padShape.holes.push(well)');
  });
- it('connects only to the launch room west of it; the launch room gains only the door that faces it',()=>{
+ it('connects to the launch room west of it (and, since 4.11, to the ramp lab east of it); the launch room gains only the door that faces it',()=>{
   const me=ANNEX.find(a=>a.theme==='atlas')!,la=ANNEX.find(a=>a.theme==='launch')!;
-  expect(me.doors).toEqual([180]);expect(la.doors).toEqual([180,60,120,240,0]);
+  expect(me.doors).toEqual([180,0]);expect(la.doors).toEqual([180,60,120,240,0]);
   expect(Math.hypot(me.x-la.x,me.z-la.z)).toBeCloseTo(10*Math.sqrt(3),9);expect(me.z).toBe(la.z);expect(me.x).toBeGreaterThan(la.x);
   expect(la.fy).toBe(me.fy);
   for(let k=0;k<=100;k++){const t=k/100,x=me.x*(1-t)+la.x*t,z=me.z;expect(reviewWalkable(x,z)).toBe(true);expect(reviewFloorAt(x,z)).toBeCloseTo(-8.6,6);}
-  for(const o of ANNEX.filter(o=>o!==me&&o!==la))expect(Math.hypot(o.x-me.x,o.z-me.z)).toBeGreaterThan(17);
+  for(const o of ANNEX.filter(o=>o!==me&&o!==la&&o.theme!=='ramp'))expect(Math.hypot(o.x-me.x,o.z-me.z)).toBeGreaterThan(17);
  });
  it('lift centre is walkable with a free step in every direction, and the table stays off the door-to-lift route',()=>{
   const i=ANNEX.findIndex(a=>a.theme==='atlas'),l=annexLiftAt(i),me=ANNEX[i];
