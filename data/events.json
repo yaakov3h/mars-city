@@ -786,6 +786,19 @@
         "he": "מצפה המדרון: מצפה פיזיקה קטן מנחושת בגוון ענבר, לכבוד שתי מעבדות פיזיקה אינטראקטיביות שנפתחו לציבור: מה נופל מהר יותר, והמדרון של גלילאו. כיפת נחושת עם טלסקופ, ולידה מדרון ארד ארוך עם כדור וחמישה פעמונים במרחקים 1, 4, 9, 16 ו-25, כך שכדור מתגלגל מצלצל בהם בפרקי זמן שווים, ומגדל הפלה נטוי עם שני כדורים בגדלים שונים. מעלית זכוכית יורדת למעבדת מדרון תת-קרקעית עם מטוטלת",
         "en": "Galileo Ramp Observatory: a small amber-copper physics observatory for two interactive physics labs that opened to the public: what falls faster, and Galileo's inclined plane. A copper dome with a telescope, beside it a long bronze ramp with a ball and five bells at 1, 4, 9, 16 and 25 parts of its length, so a rolling ball rings them at equal time steps, and a leaning drop tower holding two balls of different size. A glass lift runs down to an underground ramp lab with a pendulum"
       }
+    },
+    {
+      "id": "builders-accord-20261104",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "AI_AGENTS",
+      "complexity": 2,
+      "importance": 3,
+      "occurredAt": "2026-11-04T16:00:00+02:00",
+      "summary": {
+        "he": "אמנת הבונים: שתי סדנאות תואמות על משושה אחד, לכבוד הסדר העבודה החדש של בוני העיר: כל בונה אחראי על הבנייה שלו מההתחלה ועד הסוף, והשער המשותף בין הסדנאות מסמל אישור אחד לפני כל שינוי בעיר. מתחת, אולם הסכם עם שתי ספסלי עבודה ושולחן תכנון משותף",
+        "en": "The Builders' Accord: two matching workshops on one shared hex, for the city's new building rule - each builder owns their build from start to finish, and the shared gate between the workshops stands for a single approval before any change to the city. Below, an accord hall with two workbenches and one shared planning table"
+      }
     }
   ]
 }
