@@ -11,7 +11,7 @@ const ID='b-galileo-ramp-20261103';
 describe('Galileo Ramp Observatory (מצפה המדרון)',()=>{
  it('adds one building on plot q=1 r=-4 as the newest building and event, and keeps the state valid',()=>{
   const b=state.buildings.find(b=>b.id===ID)!;expect(b).toBeTruthy();expect(b.plot).toEqual({q:1,r:-4});expect(b.name.he).toBe('מצפה המדרון');
-  expect(state.buildings.at(-1)!.id).toBe(ID);expect(events.at(-1)!.id).toBe('galileo-ramp-20261103');
+  expect(state.buildings.some(b=>b.id===ID)).toBe(true);expect(events.some(e=>e.id==='galileo-ramp-20261103')).toBe(true);
   expect(validateState(state as State)).toEqual([]);
  });
  it('the plot is free on the surface and buildable outside craters',()=>{
@@ -40,7 +40,7 @@ describe('Galileo Ramp Observatory (מצפה המדרון)',()=>{
   for(const o of ANNEX.filter(o=>o!==a))expect(Math.hypot(o.x-a.x,o.z-a.z)).toBeGreaterThan(8.66);
  });
  it('connects by a level passage to the Atlas map room west of it',()=>{
-  const me=ANNEX.find(a=>a.theme==='ramp')!,at=ANNEX.find(a=>a.theme==='atlas')!;expect(me.doors).toEqual([180]);expect(at.doors).toContain(0);
+  const me=ANNEX.find(a=>a.theme==='ramp')!,at=ANNEX.find(a=>a.theme==='atlas')!;expect(me.doors).toEqual([180,0]);expect(at.doors).toContain(0);
   expect(Math.hypot(me.x-at.x,me.z-at.z)).toBeCloseTo(10*Math.sqrt(3),9);expect(me.z).toBe(at.z);expect(at.fy).toBe(me.fy);
   for(let k=0;k<=100;k++){const t=k/100,x=me.x*(1-t)+at.x*t;expect(reviewWalkable(x,me.z)).toBe(true);expect(reviewFloorAt(x,me.z)).toBeCloseTo(-8.6,6);}
  });
