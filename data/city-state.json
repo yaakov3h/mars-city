@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 55,
+  "revision": 56,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-11-01T22:45:00+02:00",
+  "lastUpdated": "2026-11-04T19:30:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -84,6 +84,11 @@
           "q": 1,
           "r": -4,
           "foundedAt": "2026-11-04T01:00:00+02:00"
+        },
+        {
+          "q": 2,
+          "r": -4,
+          "foundedAt": "2026-11-04T19:30:00+02:00"
         }
       ]
     },
@@ -1302,6 +1307,28 @@
       "questionCount": 0,
       "createdAt": "2026-11-04T01:00:00+02:00",
       "lastUpdated": "2026-11-04T01:00:00+02:00"
+    },
+    {
+      "id": "b-builders-accord-20261104",
+      "districtId": "district-genesis-20260930",
+      "name": {
+        "he": "אמנת הבונים",
+        "en": "The Builders' Accord"
+      },
+      "subcategory": "AI_AGENTS",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 2,
+        "r": -4
+      },
+      "height": 7,
+      "width": 1.7,
+      "complexity": 2,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-04T19:30:00+02:00",
+      "lastUpdated": "2026-11-04T19:30:00+02:00"
     }
   ],
   "creatures": [],
