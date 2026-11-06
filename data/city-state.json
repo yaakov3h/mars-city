@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
  "mode": "live",
- "revision": 60,
+ "revision": 61,
  "foundedAt": "2026-09-30T01:22:49+03:00",
- "lastUpdated": "2026-11-06T18:00:00+02:00",
+ "lastUpdated": "2026-11-07T01:30:00+02:00",
  "totalQuestions": 40,
  "districts": [
   {
@@ -89,6 +89,16 @@
      "q": 2,
      "r": -4,
      "foundedAt": "2026-11-04T19:30:00+02:00"
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "foundedAt": "2026-11-07T00:40:00+02:00"
+    },
+    {
+     "q": 2,
+     "r": -3,
+     "foundedAt": "2026-11-07T00:40:00+02:00"
     }
    ]
   },
@@ -1609,6 +1619,50 @@
    "questionCount": 0,
    "createdAt": "2026-11-06T09:50:00+02:00",
    "lastUpdated": "2026-11-06T18:30:00+02:00"
+  },
+  {
+   "id": "b-orbit-tower-20261107",
+   "districtId": "district-genesis-20260930",
+   "name": {
+    "he": "מגדל המסלול",
+    "en": "Orbit Tower"
+   },
+   "subcategory": "DESIGN_SYSTEMS",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 3,
+    "r": -4
+   },
+   "height": 28,
+   "width": 10,
+   "complexity": 4,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-07T01:30:00+02:00",
+   "lastUpdated": "2026-11-07T01:30:00+02:00"
+  },
+  {
+   "id": "b-cat-treasury-20261107",
+   "districtId": "district-genesis-20260930",
+   "name": {
+    "he": "קופת החתולים",
+    "en": "Cat Treasury"
+   },
+   "subcategory": "PERSONAL_FINANCE",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 2,
+    "r": -3
+   },
+   "height": 13,
+   "width": 12,
+   "complexity": 4,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-07T01:30:01+02:00",
+   "lastUpdated": "2026-11-07T01:30:01+02:00"
   }
  ],
  "creatures": [],
