@@ -24,20 +24,7 @@ export const MONUMENT=Object.freeze({
 export const MONUMENT_SHAFT_POINT=Object.freeze({x:MONUMENT.shaft.x,z:MONUMENT.shaft.z,y:0,radius:MONUMENT.shaft.radius});
 // Shared lift contract (agreed with Noa, do not move silently): world axis x=-13.72 z=90, her room floor at absolute world y=-8.4 (undergroundFloor, NOT podiumY-8.4),
 // a 1.9x1.9 square cage whose door faces +z, a 2.4x2.4 square head pad at the plinth floor, stops 0 / 46 / 52.
-export const MONUMENT_LIFT=Object.freeze({cage:1.9,headPad:2.4,opening:2.0,door:'+z',undergroundFloor:-8.4,stops:[0,46,52]});
-// The ONE moving lift cab is built by Noa's underground builder (motion + stations, underground and above ground).
-// This file draws no cab, only the glass sleeve, the head pad and the floor opening. What her cab must fit:
-// a square 1.9 x 1.9 cab, 2.2 tall (floor to roof, frames included), door on +z, centred on the lift axis
-// (plot-local x=3.6 z=0; world x=-13.7205 z=90). Stations are LOCAL to the plinth floor: world y = podiumY + station,
-// where podiumY is the monument group's world y (ground at the plot centre). Only the stations are local: undergroundFloor -8.4 is an
-// ABSOLUTE world y (NOT podiumY-8.4); her own stop(s) down there are hers to set.
-// At the top stop (52) the cab stands inside the sealed cupola with >=0.2 head room under the glass: a view from the cab, no floor outside it.
-export const MONUMENT_LIFT_CAB=Object.freeze({width:1.9,depth:1.9,height:2.2,door:'+z',
- axisLocal:Object.freeze({x:3.6,z:0}),axisWorld:Object.freeze({x:-13.7205,z:90}),
- stations:Object.freeze([Object.freeze({name:'plinth floor',y:0}),Object.freeze({name:'crown greenhouse',y:46}),Object.freeze({name:'observation cupola',y:52})]),
- undergroundFloor:-8.4,
- undergroundFloorFrame:'absolute world y',
- stationsAreLocal:'world y = podiumY + station'});
+
 const TURQUOISE='#3fe3d4',AMBER='#ffad4d';
 // The city's plot hex (world.ts hex(q,r,10) is pointy-top): circumradius 9.94, a vertex on ±z, flat faces on ±x.
 // The monument's ground pad is that tile, drawn like a district tile; its top is the plinth floor (y=0), so podiumY
@@ -81,12 +68,8 @@ export function jointMonument(group:THREE.Group,w:World,skirt=2){
  const hexHole=(r:number,cx=0)=>{const p=new THREE.Path();for(let k=6;k>=0;k--){const[px,pz]=corner(r,k);k===6?p.moveTo(cx+px,-pz):p.lineTo(cx+px,-pz);}return p;};
  const slab=(s:THREE.Shape,depth:number,m:THREE.Material,y:number)=>{const g=new THREE.ExtrudeGeometry(s,{depth,bevelEnabled:false});g.rotateX(-Math.PI/2);return add(g,m,0,y,0);};
  const top=hexShape(plinth.radius,0,plinthCorner);top.holes.push(hexHole(AI/Math.cos(Math.PI/6),body.x));slab(top,.3,basalt,H0-.3);
- const L=MONUMENT_LIFT,floorS=hexShape(plinth.radius-.01,0,plinthCorner),sq=new THREE.Path(),o2=L.opening/2;
- sq.moveTo(shaft.x-o2,-o2);sq.lineTo(shaft.x-o2,o2);sq.lineTo(shaft.x+o2,o2);sq.lineTo(shaft.x+o2,-o2);sq.lineTo(shaft.x-o2,-o2);floorS.holes.push(sq);
+ const floorS=hexShape(plinth.radius-.01,0,plinthCorner);
  slab(floorS,.3,basalt,-.3);
- // Head pad: a 2.4x2.4 copper-and-amber frame round the 2.0 opening, flush on the plinth floor at the lift axis.
- const hp=L.headPad,fw=(hp-L.opening)/2;
- for(const s of [-1,1]){add(new THREE.BoxGeometry(hp,.06,fw),amber,shaft.x,.03,s*(hp-fw)/2).userData.liftHeadPad=true;add(new THREE.BoxGeometry(fw,.06,L.opening),amber,shaft.x+s*(hp-fw)/2,.03,0).userData.liftHeadPad=true;}
  ring(plinth.radius+.02,0,H0,.07,edge,plinthCorner);ring(plinth.radius+.02,0,.12,.05,edge,plinthCorner);
  for(let k=0;k<6;k++){const[cx,cz]=plinthCorner(plinth.radius+.02,k);rod(new THREE.Vector3(cx,0,cz),new THREE.Vector3(cx,H0,cz),.05,edge);}
  // Tower body: hollow hexagon, wall 0.3. Each face is two basalt piers around a tall glass strip, so the atrium,
@@ -104,11 +87,6 @@ export function jointMonument(group:THREE.Group,w:World,skirt=2){
  class HexHelix extends THREE.Curve<THREE.Vector3>{phase:number;constructor(phase:number){super();this.phase=phase;}getPoint(t:number,target=new THREE.Vector3()){const th=this.phase+t*TURNS*Math.PI*2,f=((th%(Math.PI/3))+Math.PI/3)%(Math.PI/3)-Math.PI/6,r=(A+.06)/Math.cos(f);return target.set(body.x+r*Math.cos(th),body.y0+1.2+t*(H-2.4),r*Math.sin(th));}}
  const bandA=add(new THREE.TubeGeometry(new HexHelix(Math.PI/2),540,.16,6,false),turq);bandA.userData.spiral='noa';
  const bandB=add(new THREE.TubeGeometry(new HexHelix(-Math.PI/2),540,.16,6,false),amber);bandB.userData.spiral='alon';
-  // Lift: a glass sleeve r1.5 from the plinth floor (0) to the cupola floor (52). No cab here: the one moving cab
- // (MONUMENT_LIFT_CAB) is Noa's, it runs from her room through this sleeve up into the cupola.
- // Below y=0 the shaft continues into Noa's room (her part). The head pad at the floor is the meeting point.
- add(new THREE.CylinderGeometry(shaft.radius,shaft.radius,shaft.y1-shaft.y0,28,1,true),glass,shaft.x,(shaft.y0+shaft.y1)/2,shaft.z).userData.liftShaft=true;
- for(let k=0;k<4;k++){const a=k*Math.PI/2+Math.PI/4;rod(new THREE.Vector3(shaft.x+Math.cos(a)*shaft.radius,shaft.y0,Math.sin(a)*shaft.radius),new THREE.Vector3(shaft.x+Math.cos(a)*shaft.radius,shaft.y1,Math.sin(a)*shaft.radius),.035,copper);}
 
  // Spiral stair round the shaft: open treads, inner radius 1.6, outer 2.8, from the plinth floor (0) up to the crown (46).
  const STEP=.25,SWEEP=Math.PI/8,n=Math.round((stair.y1-stair.y0)/STEP),tread=new THREE.Shape();
