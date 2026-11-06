@@ -1,817 +1,843 @@
 {
-  "schemaVersion": 1,
-  "events": [
-    {
-      "id": "genesis-20260930-district",
-      "kind": "district_created",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-09-30T01:22:49+03:00",
-      "summary": {
-        "he": "הקמת MARS CITY",
-        "en": "Founding of MARS CITY"
-      }
-    },
-    {
-      "id": "genesis-20260930",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-09-30T01:22:49+03:00",
-      "summary": {
-        "he": "הקמת MARS CITY",
-        "en": "Founding of MARS CITY"
-      }
-    },
-    {
-      "id": "genesis-core-20260930",
-      "kind": "concept_milestone",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-09-30T01:22:50+03:00",
-      "summary": {
-        "he": "ליבת בראשית",
-        "en": "The Genesis Core"
-      }
-    },
-    {
-      "id": "codesign-20260930-district",
-      "kind": "district_created",
-      "category": "CREATIVE",
-      "subcategory": "LIVING_3D_WORLD_DESIGN",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-09-30T09:50:43+03:00",
-      "summary": {
-        "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
-        "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
-      }
-    },
-    {
-      "id": "codesign-20260930",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "LIVING_3D_WORLD_DESIGN",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-09-30T09:50:43+03:00",
-      "summary": {
-        "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
-        "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
-      },
-      "relatedLandmarkId": "l-genesis-core-20260930",
-      "existingLandmarkTreatment": {
-        "material": "dark basalt with copper veins",
-        "lighting": "category edge glow and warm inner-gap fill"
-      }
-    },
-    {
-      "id": "bank-regulation-20260930-district",
-      "kind": "district_created",
-      "category": "FINANCE",
-      "subcategory": "BANKING_REGULATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-09-30T11:22:44+03:00",
-      "summary": {
-        "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
-        "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
-      }
-    },
-    {
-      "id": "bank-regulation-20260930",
-      "kind": "question",
-      "category": "FINANCE",
-      "subcategory": "BANKING_REGULATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-09-30T11:22:44+03:00",
-      "summary": {
-        "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
-        "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
-      }
-    },
-    {
-      "id": "cat-rhythm-20260930-district",
-      "kind": "district_created",
-      "category": "ANIMALS",
-      "subcategory": "DAILY_CARE_AND_CURIOSITY",
-      "complexity": 2,
-      "importance": 2,
-      "occurredAt": "2026-09-30T21:15:58+03:00",
-      "summary": {
-        "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
-        "en": "A daily care routine paired with curiosity and learning"
-      }
-    },
-    {
-      "id": "cat-rhythm-20260930",
-      "kind": "question",
-      "category": "ANIMALS",
-      "subcategory": "DAILY_CARE_AND_CURIOSITY",
-      "complexity": 2,
-      "importance": 2,
-      "occurredAt": "2026-09-30T21:15:58+03:00",
-      "summary": {
-        "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
-        "en": "A daily care routine paired with curiosity and learning"
-      }
-    },
-    {
-      "id": "transit-layers-20260930-district",
-      "kind": "district_created",
-      "category": "ENGINEERING",
-      "subcategory": "LAYERED_CITY_CIRCULATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-09-30T21:47:20+03:00",
-      "summary": {
-        "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
-        "en": "A transit center linking the upper city and the streets below, with light through hex connections"
-      }
-    },
-    {
-      "id": "transit-layers-20260930",
-      "kind": "question",
-      "category": "ENGINEERING",
-      "subcategory": "LAYERED_CITY_CIRCULATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-09-30T21:47:20+03:00",
-      "summary": {
-        "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
-        "en": "A transit center linking the upper city and the streets below, with light through hex connections"
-      }
-    },
-    {
-      "id": "images-20260930",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "IMAGE_MAKING_EXPERIMENTS",
-      "complexity": 1,
-      "importance": 1,
-      "occurredAt": "2026-09-30T22:18:50+03:00",
-      "summary": {
-        "he": "ניסוי יצירתי קטן בדימויים ממוחשבים",
-        "en": "A small creative experiment in generated imagery"
-      }
-    },
-    {
-      "id": "permissions-mosaic-20260930",
-      "kind": "question",
-      "category": "OTHER",
-      "subcategory": "ACCESS_AND_SHARING_ADMIN",
-      "complexity": 1,
-      "importance": 1,
-      "occurredAt": "2026-09-30T22:25:05+03:00",
-      "summary": {
-        "he": "מעקב מצטבר של שיתופי קבצים, נאסף כפסיפס בכיכר המרכזית",
-        "en": "A cumulative record of file sharing, collected as a mosaic in the central plaza"
-      }
-    },
-    {
-      "id": "money-map-20261001",
-      "kind": "question",
-      "category": "FINANCE",
-      "subcategory": "PERSONAL_FINANCE_MAPPING",
-      "complexity": 5,
-      "importance": 4,
-      "occurredAt": "2026-10-01T20:50:00+03:00",
-      "summary": {
-        "he": "מיפוי פיננסי שנתי: סקירה מסודרת של הוצאות, הכנסות וחיסכון",
-        "en": "A structured annual map of spending, income and savings"
-      }
-    },
-    {
-      "id": "claim-airplane-20261001",
-      "kind": "question",
-      "category": "FINANCE",
-      "subcategory": "CONSUMER_CLAIM",
-      "complexity": 2,
-      "importance": 2,
-      "occurredAt": "2026-10-01T20:51:00+03:00",
-      "summary": {
-        "he": "פנייה מסודרת לקבלת פיצוי מגורם מסחרי",
-        "en": "A structured request for compensation from a commercial party"
-      }
-    },
-    {
-      "id": "academic-recognition-20261001-district",
-      "kind": "district_created",
-      "category": "LEARNING",
-      "subcategory": "ACADEMIC_RECOGNITION",
-      "complexity": 2,
-      "importance": 3,
-      "occurredAt": "2026-10-01T20:52:00+03:00",
-      "summary": {
-        "he": "בירור הכרה אקדמית בתארים",
-        "en": "Clarifying academic recognition of degrees"
-      }
-    },
-    {
-      "id": "academic-recognition-20261001",
-      "kind": "question",
-      "category": "LEARNING",
-      "subcategory": "ACADEMIC_RECOGNITION",
-      "complexity": 2,
-      "importance": 3,
-      "occurredAt": "2026-10-01T20:52:00+03:00",
-      "summary": {
-        "he": "בירור הכרה אקדמית בתארים",
-        "en": "Clarifying academic recognition of degrees"
-      }
-    },
-    {
-      "id": "game-concept-20261001",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "GAME_CONCEPT_BIRTH",
-      "complexity": 2,
-      "importance": 3,
-      "occurredAt": "2026-10-01T23:30:00+03:00",
-      "summary": {
-        "he": "לידת קונספט משחק חדש",
-        "en": "Birth of a new game concept"
-      }
-    },
-    {
-      "id": "strata-spire-20261002",
-      "kind": "question",
-      "category": "ENGINEERING",
-      "subcategory": "STRATA_SPIRE",
-      "complexity": 5,
-      "importance": 4,
-      "occurredAt": "2026-10-02T02:30:00+03:00",
-      "summary": {
-        "he": "חוד השכבות",
-        "en": "Strata Spire"
-      }
-    },
-    {
-      "id": "search-building-20261002",
-      "kind": "question",
-      "category": "LEARNING",
-      "subcategory": "SEARCH_BUILDING",
-      "complexity": 2,
-      "importance": 2,
-      "occurredAt": "2026-10-02T02:31:00+03:00",
-      "summary": {
-        "he": "בניין החיפוש",
-        "en": "The Search Building"
-      }
-    },
-    {
-      "id": "tools-shelf-20261003",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "FREE_TOOLS_INDEX",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-03T21:16:00+03:00",
-      "summary": {
-        "he": "מדף הכלים",
-        "en": "The Tools Shelf"
-      }
-    },
-    {
-      "id": "tools-blog-20261004-district",
-      "kind": "district_created",
-      "category": "PERSONAL_PROJECTS",
-      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-05T05:20:00+03:00",
-      "summary": {
-        "he": "מגזין הכלים",
-        "en": "The Tools Magazine"
-      }
-    },
-    {
-      "id": "tools-blog-20261004",
-      "kind": "question",
-      "category": "PERSONAL_PROJECTS",
-      "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-05T05:20:00+03:00",
-      "summary": {
-        "he": "מגזין הכלים",
-        "en": "The Tools Magazine"
-      }
-    },
-    {
-      "id": "exec-strategy-doc-20261005-district",
-      "kind": "district_created",
-      "category": "WORK",
-      "subcategory": "STRATEGY_DOC_REVIEW",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-05T21:20:00+03:00",
-      "summary": {
-        "he": "מסמך אסטרטגי למנהלים",
-        "en": "The Executive Strategy Brief"
-      }
-    },
-    {
-      "id": "exec-strategy-doc-20261005",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "STRATEGY_DOC_REVIEW",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-05T21:20:00+03:00",
-      "summary": {
-        "he": "מסמך אסטרטגי למנהלים",
-        "en": "The Executive Strategy Brief"
-      }
-    },
-    {
-      "id": "financial-future-20261005",
-      "kind": "question",
-      "category": "FINANCE",
-      "subcategory": "FUTURE_PLANNING_CHECK",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-05T21:21:00+03:00",
-      "summary": {
-        "he": "בדיקת עתיד פיננסי",
-        "en": "The Financial Horizon Check"
-      }
-    },
-    {
-      "id": "overseas-link-20261006",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "OVERSEAS_COORDINATION",
-      "complexity": 4,
-      "importance": 3,
-      "occurredAt": "2026-10-06T20:12:00+03:00",
-      "summary": {
-        "he": "קשר חו\"ל",
-        "en": "The Overseas Link"
-      }
-    },
-    {
-      "id": "travel-hub-20261006",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "TRAVEL_COORDINATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-06T20:22:00+03:00",
-      "summary": {
-        "he": "מרכז תיאום מסעות",
-        "en": "The Travel Coordination Hub"
-      }
-    },
-    {
-      "id": "inquiry-desk-20261006",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "INQUIRY_FOLLOWUP",
-      "complexity": 2,
-      "importance": 2,
-      "occurredAt": "2026-10-06T20:22:00+03:00",
-      "summary": {
-        "he": "שולחן פנייה ומעקב",
-        "en": "The Inquiry Desk"
-      }
-    },
-    {
-      "id": "journey-academy-20261007",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "INTERACTIVE_LEARNING",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-10-07T20:13:29+03:00",
-      "summary": {
-        "he": "פיתוח מסע למידה אינטראקטיבי עם תחנות, ניסויים וקריינות",
-        "en": "Development of an interactive learning journey with stations, experiments and narration"
-      }
-    },
-    {
-      "id": "agent-lab-20261007",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "AGENT_SETUP",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-07T20:13:29+03:00",
-      "summary": {
-        "he": "מדריך מעשי להקמה, חיבור ובדיקה של סוכן עצמאי",
-        "en": "A practical guide to setting up, connecting and testing an independent agent"
-      }
-    },
-    {
-      "id": "preparation-house-20261010",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "PERSONALIZED_PREPARATION_TOOL",
-      "complexity": 4,
-      "importance": 4,
-      "occurredAt": "2026-10-10T21:11:41+03:00",
-      "summary": {
-        "he": "פיתוח כלי הכנה אישי ונגיש עם רשימות מותאמות והסברים",
-        "en": "Development of an accessible personal preparation tool with tailored lists and explanations"
-      }
-    },
-    {
-      "id": "consistent-imagery-20261010",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "CONSISTENT_CHARACTER_DESIGN",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-10T21:11:41+03:00",
-      "summary": {
-        "he": "פיתוח שפה חזותית עקבית לדמות ולסצנות",
-        "en": "Development of a consistent visual language for a character and scenes"
-      },
-      "existingBuildingId": "b-images-20260930"
-    },
-    {
-      "id": "presence-house-20261010",
-      "kind": "question",
-      "category": "PERSONAL_PROJECTS",
-      "subcategory": "SOCIAL_CONTENT_STUDIO",
-      "complexity": 4,
-      "importance": 4,
-      "occurredAt": "2026-10-10T21:14:19+03:00",
-      "summary": {
-        "he": "הקמת ערוץ תוכן חזותי עם זהות עקבית ותוכנית פרסום",
-        "en": "Creation of a visual content channel with a consistent identity and publishing plan"
-      }
-    },
-    {
-      "id": "opening-house-20261011",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "INTERACTIVE_INVITATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-11T20:09:52+03:00",
-      "summary": {
-        "he": "עיצוב הזמנה אינטראקטיבית עם פתיחה מונפשת והתאמה למסכים",
-        "en": "Interactive invitation design with an animated opening and responsive layout"
-      }
-    },
-    {
-      "id": "view-house-20261012",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "CURRENT_STATUS_DASHBOARD",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-12T20:41:40+03:00",
-      "summary": {
-        "he": "פיתוח לוח מחוונים לתמונת מצב עדכנית, עם סינון ובקרת נתונים",
-        "en": "Development of a current-status dashboard with filtering and data checks"
-      }
-    },
-    {
-      "id": "spatial-lab-20261012",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "IMAGE_TO_3D_EXPERIMENT",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-12T20:41:40+03:00",
-      "summary": {
-        "he": "ניסוי בהמרת תמונה למודל תלת־ממדי ובדיקתו במרחב",
-        "en": "Experiment in converting an image to a 3D model and testing it in space"
-      }
-    },
-    {
-      "id": "tethered-observatory-20261013",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "TETHERED_OBSERVATORY",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-13T16:48:20+03:00",
-      "summary": {
-        "he": "הוספת תחנת תצפית ותקשורת אווירית קשורה, עם מצפה מזג אוויר בהדמיה",
-        "en": "Addition of a tethered aerial observation and communications station with a simulated weather observatory"
-      }
-    },
-    {
-      "id": "professions-observatory-20261013",
-      "kind": "question",
-      "category": "WORK",
-      "subcategory": "ENGINEERING_LABOR_MARKET",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-13T21:14:14+03:00",
-      "summary": {
-        "he": "ניתוח מגמות ביקוש למקצועות הנדסה והצגת ממצאים למנהלים",
-        "en": "Analysis of engineering-profession demand trends and presentation of findings to managers"
-      }
-    },
-    {
-      "id": "frequency-island-20261013",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "RADIO_STATION_INTERFACE",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-13T21:14:14+03:00",
-      "summary": {
-        "he": "פיתוח ממשק אינטראקטיבי לתחנות רדיו ועיצוב חוויית האזנה",
-        "en": "Development of an interactive radio-station interface and listening experience"
-      }
-    },
-    {
-      "id": "scale-house-20261014",
-      "kind": "question",
-      "category": "LEARNING",
-      "subcategory": "INTERACTIVE_SCALE_COMPARISON",
-      "complexity": 4,
-      "importance": 3,
-      "occurredAt": "2026-10-14T20:20:36+03:00",
-      "summary": {
-        "he": "פיתוח תצוגה אינטראקטיבית להשוואת גדלים וקנה מידה",
-        "en": "Development of an interactive display for size and scale comparisons"
-      }
-    },
-    {
-      "id": "tutorial-workshop-20261014",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "DATA_TUTORIAL_VIDEO_SERIES",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-14T20:20:36+03:00",
-      "summary": {
-        "he": "הפקת סדרת סרטוני הדרכה קצרים לטיפול בנתונים",
-        "en": "Production of a short tutorial video series for data handling"
-      }
-    },
-    {
-      "id": "premiere-cinema-20261015",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "FIRST_SHORT_FILM",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-15T13:21:20+03:00",
-      "summary": {
-        "he": "יצירת סרטון קצר ראשון משילוב דימויים, תנועה וקריינות",
-        "en": "Creation of a first short film combining imagery, motion and narration"
-      }
-    },
-    {
-      "id": "links-house-20261015",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "ASSOCIATIVE_WRITING",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-15T23:32:00+03:00",
-      "summary": {
-        "he": "כתיבה רעיונית על קשרים ואסוציאציות בין נושאים",
-        "en": "Reflective writing about connections and associations between topics"
-      }
-    },
-    {
-      "id": "launch-house-20261015",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "STATIC_SITE_PUBLISHING",
-      "complexity": 4,
-      "importance": 3,
-      "occurredAt": "2026-10-15T23:32:00+03:00",
-      "summary": {
-        "he": "למידת פרסום ואחסון של אתרים סטטיים והנגשת התהליך",
-        "en": "Learning to publish and host static websites and explain the process"
-      }
-    },
-    {
-      "id": "planning-house-20261017",
-      "kind": "question",
-      "category": "TECHNOLOGY",
-      "subcategory": "CITY_BUILDING_SIMULATION",
-      "complexity": 4,
-      "importance": 3,
-      "occurredAt": "2026-10-17T21:30:00+03:00",
-      "summary": {
-        "he": "סימולציית תכנון עיר עם אזורים, תשתיות ויועצים",
-        "en": "City-planning simulation game with zoning, infrastructure and advisors"
-      }
-    },
-    {
-      "id": "sounds-house-20261017",
-      "kind": "question",
-      "category": "CREATIVE",
-      "subcategory": "SOUNDBOARD_WEB_APP",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-17T21:30:00+03:00",
-      "summary": {
-        "he": "יישום צלילים חופשיים עם הקלטה, עריכה ומחולל ביטים מובנים",
-        "en": "Free-sound app with built-in recording, editing and beat generator"
-      }
-    },
-    {
-      "id": "monuments-avenue-20261018",
-      "kind": "question",
-      "category": "LEARNING",
-      "subcategory": "SCIENCE_MONUMENT_COLLECTION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-18T20:20:00+03:00",
-      "summary": {
-        "he": "אוסף אנדרטאות זעירות למדענים דגולים, לכל אחת סמל מזהה וסיפור אמיתי",
-        "en": "Collection of small monuments to great scientists, each with an identifying symbol and a true story"
-      }
-    },
-    {
-      "id": "tesla-storm-20261018",
-      "kind": "question",
-      "category": "ENGINEERING",
-      "subcategory": "STATIC_STORM_DEFENSE_SIMULATION",
-      "complexity": 4,
-      "importance": 3,
-      "occurredAt": "2026-10-18T20:20:00+03:00",
-      "summary": {
-        "he": "תחנת לכידת סופות חשמל סטטי עם תורני טסלה ופסל של ניקולה טסלה",
-        "en": "Static-electricity storm capture station with Tesla masts and a Nikola Tesla statue"
-      }
-    },
-    {
-      "id": "civic-assembly-20261019",
-      "kind": "question",
-      "category": "FINANCE",
-      "subcategory": "CIVIC_ASSEMBLY_AND_VOTING",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-19T20:45:00+03:00",
-      "summary": {
-        "he": "אולם אסיפה אזרחית מעגלי עם ארכיון הכרעות למושבה",
-        "en": "Circular civic assembly hall with a colony decision archive"
-      }
-    },
-    {
-      "id": "israel-sky-map-20261020",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "LIVE_AIR_TRAFFIC_MAP",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-20T15:55:00+03:00",
-      "summary": {
-        "he": "שולחן מסך של חמישה משושים עם מפת שמי ישראל וטיסות חיות מעל הארץ, בקרדיט adsb.lol",
-        "en": "Five-hex screen table with a live map of Israel's skies and real air traffic, credited to adsb.lol"
-      }
-    },
-    {
-      "id": "explainer-studio-20261024",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "STEP_BY_STEP_EXPLANATION",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-24T03:00:00+03:00",
-      "summary": {
-        "he": "סטודיו הסבר קטן: שלושה לוחות שנדלקים בזה אחר זה, מדרגות חיצוניות פתוחות וכיפת זכוכית קטנה על הגג",
-        "en": "Small explainer studio: three panels lit in sequence, an open exterior stair and a small rooftop glass dome"
-      }
-    },
-    {
-      "id": "joint-monument-20261024",
-      "kind": "concept_milestone",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 5,
-      "importance": 5,
-      "occurredAt": "2026-10-24T14:30:00+03:00",
-      "summary": {
-        "he": "אנדרטה משותפת: מגדל בזלת אטום עם ספירלה כפולה בטורקיז וענבר, מעלית זכוכית, חממת כתר וכיפה שקופה לתצפית מתוך התא בלבד (אין יציאה בתחנה העליונה)",
-        "en": "Joint monument: a sealed basalt tower with a turquoise and amber double spiral, a glass lift, a crown greenhouse and a glass cupola viewed from inside the cab only (no exit at the top stop)"
-      }
-    },
-    {
-      "id": "backup-vault-20261026",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "BACKUP_AND_RESTORE",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-26T19:50:00+02:00",
-      "summary": {
-        "he": "ארכיון גיבויים קטן: כספת נחושת עם דלת עגולה, תופי ארכיון מוערמים, מנעול על הגג וניסוי שחזור שהצליח",
-        "en": "Small backup vault: a copper vault with a round door, stacked archive drums, a lock emblem on the roof and a restore test that passed"
-      }
-    },
-    {
-      "id": "cat-house-20261026",
-      "kind": "expansion",
-      "category": "CREATIVE",
-      "subcategory": "PLAYFUL_HINT",
-      "complexity": 2,
-      "importance": 2,
-      "occurredAt": "2026-10-26T20:45:00+02:00",
-      "summary": {
-        "he": "מגדל גירוד ענק לחתולים: עמודי חבל סיסל, מדפים מרופדים, סולם וכדורי צעצוע תלויים, ובראשו בית חתולים עם אוזני חתול, דלת עגולה וחתול ישן על הגג",
-        "en": "A giant cat scratching tower: sisal-rope posts, carpeted perches, a ladder and dangling toy balls, crowned by a cat house with cat ears, a round cat door and a cat asleep on the roof"
-      }
-    },
-    {
-      "id": "knowledge-tree-20261026",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 4,
-      "importance": 3,
-      "occurredAt": "2026-10-26T21:30:00+02:00",
-      "summary": {
-        "he": "עץ הידע: עץ מלאכותי גבוה מנחושת ובזלת, ששה ענפים מחוברים וכל אחד נגמר בפנס מואר, שולחן משותף למרגלותיו וחדר קריאה בתת־קרקע עם מעלית זכוכית",
-        "en": "Knowledge Tree: a tall artificial tree of copper and basalt with six jointed branches, each ending in a lit lantern, a shared table at its foot and an underground reading room with a glass lift"
-      }
-    },
-    {
-      "id": "dream-archive-20261027",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-27T22:10:00+02:00",
-      "summary": {
-        "he": "ארכיון החלומות של מאדים: כיפת זכוכית שקופה עם ספרים זוהרים שצפים בתוכה. מדי פעם ספר אחד נפתח והולוגרמה קטנה של חתול, עץ, ספינה או אי עולה ממנו. לחיצה על הבניין מקריאה חלום מאדימי קצר ובדוי. מתחת לכיפה יש חדר חלומות עם מעלית זכוכית",
-        "en": "Mars Dream Archive: a transparent glass dome with softly glowing books floating inside. Now and then one book opens and a small hologram of a cat, a tree, a ship or an island rises from it. Clicking the building reads a short invented Martian dream. Below the dome is a dream room with a glass lift"
-      }
-    },
-    {
-      "id": "three-tails-20261101",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-11-01T22:45:00+02:00",
-      "summary": {
-        "he": "שלושת הזנבות: שלושה מגדלי זנב מתעכלים מארד על משטח אבן משותף, כל אחד נושא כדור טורקיז זוהר בקצהו. מתחתיהם חדר מנוחה תת־קרקעי עם שלושה קנים רכים ומעלית זכוכית",
-        "en": "Three Tails: three curling bronze tail towers rise from a shared stone pad, each tipped with a glowing turquoise orb. Below them is an underground rest room with three soft nests and a glass lift"
-      }
-    },
-    {
-      "id": "version-atlas-20261027",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "APPS_AND_VERSIONS",
-      "complexity": 3,
-      "importance": 3,
-      "occurredAt": "2026-10-29T00:30:00+02:00",
-      "summary": {
-        "he": "אטלס הגרסאות: מגדל משושה מנחושת בגוון ענבר, מפה מופשטת של אפליקציות וגרסאות. על הגג שישה כנים של משפחות אפליקציות, ומכל אחד יוצא קו מואר אל התורן; החרוזים על הקו הם הגרסאות, ומגדלור ענברי בראש התורן. מעלית זכוכית מחוברת למגדל בשני גשרים סגורים ויורדת לחדר מפות תת-קרקעי עם שולחן מפה משושה",
-        "en": "Version Atlas: an amber-copper hexagonal tower, an abstract map of apps and their versions. Six app pedestals on the roof each send a lit line to the mast; the beads on each line are its versions, with an amber beacon at the top of the mast. A glass lift joins the tower through two enclosed bridges and runs down to an underground map room with a hexagonal map table"
-      }
-    },
-    {
-      "id": "galileo-ramp-20261103",
-      "kind": "expansion",
-      "category": "LEARNING",
-      "subcategory": "PHYSICS_LABS",
-      "complexity": 2,
-      "importance": 3,
-      "occurredAt": "2026-11-04T01:00:00+02:00",
-      "summary": {
-        "he": "מצפה המדרון: מצפה פיזיקה קטן מנחושת בגוון ענבר, לכבוד שתי מעבדות פיזיקה אינטראקטיביות שנפתחו לציבור: מה נופל מהר יותר, והמדרון של גלילאו. כיפת נחושת עם טלסקופ, ולידה מדרון ארד ארוך עם כדור וחמישה פעמונים במרחקים 1, 4, 9, 16 ו-25, כך שכדור מתגלגל מצלצל בהם בפרקי זמן שווים, ומגדל הפלה נטוי עם שני כדורים בגדלים שונים. מעלית זכוכית יורדת למעבדת מדרון תת-קרקעית עם מטוטלת",
-        "en": "Galileo Ramp Observatory: a small amber-copper physics observatory for two interactive physics labs that opened to the public: what falls faster, and Galileo's inclined plane. A copper dome with a telescope, beside it a long bronze ramp with a ball and five bells at 1, 4, 9, 16 and 25 parts of its length, so a rolling ball rings them at equal time steps, and a leaning drop tower holding two balls of different size. A glass lift runs down to an underground ramp lab with a pendulum"
-      }
-    },
-    {
-      "id": "builders-accord-20261104",
-      "kind": "expansion",
-      "category": "TECHNOLOGY",
-      "subcategory": "AI_AGENTS",
-      "complexity": 2,
-      "importance": 3,
-      "occurredAt": "2026-11-04T16:00:00+02:00",
-      "summary": {
-        "he": "אמנת הבונים: גשר עם שני זוגות רגליים נטויות מנחושת הנפגשות בקורה אחת, כבלים, מדרגות, פנס ושלט. המבנה מציין שכל בונה אחראי לבנייה שלו מההתחלה ועד הסוף, עם אישור לפני הפרסום. מתחתיו אולם הסכם עם שני שולחנות עבודה ושולחן תכנון משותף",
-        "en": "The Builders' Accord: a bridge with two pairs of leaning copper legs meeting at one beam, cables, stairs, a lantern and a sign. It marks each builder's responsibility for their own build from start to finish, with approval before publication. Below it is an accord hall with two workbenches and a shared planning table"
-      }
-    },
-    {
-      "id": "motif-quarter-20261106",
-      "kind": "expansion",
-      "category": "OTHER",
-      "subcategory": "MOTIF_QUARTER",
-      "complexity": 4,
-      "importance": 5,
-      "occurredAt": "2026-11-06T18:00:00+02:00",
-      "summary": {
-        "he": "רובע המוטיבים עלה לפני הקרקע: תשעה בניינים של חמש קומות, עם 45 מוטיבים ושילוט. מתחם הקפה, האטלייה והגלריה נשמרו מעל הקרקע. המעליות, החדרים הריקים, החתול המטייל ומחזור היום־לילה הוסרו.",
-        "en": "The Motif Quarter rose above ground: nine five-floor buildings with 45 motifs and signage. The cafe, atelier and gallery complex was preserved above ground. The lifts, the empty rooms, the wandering cat and the day-night cycle were removed."
-      }
-    }
-  ]
+ "schemaVersion": 1,
+ "events": [
+  {
+   "id": "genesis-20260930-district",
+   "kind": "district_created",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-09-30T01:22:49+03:00",
+   "summary": {
+    "he": "הקמת MARS CITY",
+    "en": "Founding of MARS CITY"
+   }
+  },
+  {
+   "id": "genesis-20260930",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-09-30T01:22:49+03:00",
+   "summary": {
+    "he": "הקמת MARS CITY",
+    "en": "Founding of MARS CITY"
+   }
+  },
+  {
+   "id": "genesis-core-20260930",
+   "kind": "concept_milestone",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-09-30T01:22:50+03:00",
+   "summary": {
+    "he": "ליבת בראשית",
+    "en": "The Genesis Core"
+   }
+  },
+  {
+   "id": "codesign-20260930-district",
+   "kind": "district_created",
+   "category": "CREATIVE",
+   "subcategory": "LIVING_3D_WORLD_DESIGN",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-09-30T09:50:43+03:00",
+   "summary": {
+    "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
+    "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
+   }
+  },
+  {
+   "id": "codesign-20260930",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "LIVING_3D_WORLD_DESIGN",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-09-30T09:50:43+03:00",
+   "summary": {
+    "he": "סשן עיצוב משותף רב-סבבי שעיצב מחדש את שכונת הייסוד: פלטת צבע, שעון כוכבי חי ומונומנט מרכזי.",
+    "en": "A multi-round co-design session reshaped the founding settlement: color palette, live planetary clock and central monument."
+   },
+   "relatedLandmarkId": "l-genesis-core-20260930",
+   "existingLandmarkTreatment": {
+    "material": "dark basalt with copper veins",
+    "lighting": "category edge glow and warm inner-gap fill"
+   }
+  },
+  {
+   "id": "bank-regulation-20260930-district",
+   "kind": "district_created",
+   "category": "FINANCE",
+   "subcategory": "BANKING_REGULATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-09-30T11:22:44+03:00",
+   "summary": {
+    "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
+    "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
+   }
+  },
+  {
+   "id": "bank-regulation-20260930",
+   "kind": "question",
+   "category": "FINANCE",
+   "subcategory": "BANKING_REGULATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-09-30T11:22:44+03:00",
+   "summary": {
+    "he": "מחקר רגולטורי מעמיק מול גוף בנקאי, מיפוי צעדים פרקטיים והכנת מסרים",
+    "en": "In-depth regulatory research involving a banking institution, mapping practical steps and preparing messages"
+   }
+  },
+  {
+   "id": "cat-rhythm-20260930-district",
+   "kind": "district_created",
+   "category": "ANIMALS",
+   "subcategory": "DAILY_CARE_AND_CURIOSITY",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-09-30T21:15:58+03:00",
+   "summary": {
+    "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
+    "en": "A daily care routine paired with curiosity and learning"
+   }
+  },
+  {
+   "id": "cat-rhythm-20260930",
+   "kind": "question",
+   "category": "ANIMALS",
+   "subcategory": "DAILY_CARE_AND_CURIOSITY",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-09-30T21:15:58+03:00",
+   "summary": {
+    "he": "שגרת טיפול יומית המשלבת סקרנות ולמידה",
+    "en": "A daily care routine paired with curiosity and learning"
+   }
+  },
+  {
+   "id": "transit-layers-20260930-district",
+   "kind": "district_created",
+   "category": "ENGINEERING",
+   "subcategory": "LAYERED_CITY_CIRCULATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-09-30T21:47:20+03:00",
+   "summary": {
+    "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
+    "en": "A transit center linking the upper city and the streets below, with light through hex connections"
+   }
+  },
+  {
+   "id": "transit-layers-20260930",
+   "kind": "question",
+   "category": "ENGINEERING",
+   "subcategory": "LAYERED_CITY_CIRCULATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-09-30T21:47:20+03:00",
+   "summary": {
+    "he": "מרכז מעבר שמחבר את העיר העליונה לרחובות שמתחתיה, עם אור שמגיע דרך חיבורי המשושים",
+    "en": "A transit center linking the upper city and the streets below, with light through hex connections"
+   }
+  },
+  {
+   "id": "images-20260930",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "IMAGE_MAKING_EXPERIMENTS",
+   "complexity": 1,
+   "importance": 1,
+   "occurredAt": "2026-09-30T22:18:50+03:00",
+   "summary": {
+    "he": "ניסוי יצירתי קטן בדימויים ממוחשבים",
+    "en": "A small creative experiment in generated imagery"
+   }
+  },
+  {
+   "id": "permissions-mosaic-20260930",
+   "kind": "question",
+   "category": "OTHER",
+   "subcategory": "ACCESS_AND_SHARING_ADMIN",
+   "complexity": 1,
+   "importance": 1,
+   "occurredAt": "2026-09-30T22:25:05+03:00",
+   "summary": {
+    "he": "מעקב מצטבר של שיתופי קבצים, נאסף כפסיפס בכיכר המרכזית",
+    "en": "A cumulative record of file sharing, collected as a mosaic in the central plaza"
+   }
+  },
+  {
+   "id": "money-map-20261001",
+   "kind": "question",
+   "category": "FINANCE",
+   "subcategory": "PERSONAL_FINANCE_MAPPING",
+   "complexity": 5,
+   "importance": 4,
+   "occurredAt": "2026-10-01T20:50:00+03:00",
+   "summary": {
+    "he": "מיפוי פיננסי שנתי: סקירה מסודרת של הוצאות, הכנסות וחיסכון",
+    "en": "A structured annual map of spending, income and savings"
+   }
+  },
+  {
+   "id": "claim-airplane-20261001",
+   "kind": "question",
+   "category": "FINANCE",
+   "subcategory": "CONSUMER_CLAIM",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-10-01T20:51:00+03:00",
+   "summary": {
+    "he": "פנייה מסודרת לקבלת פיצוי מגורם מסחרי",
+    "en": "A structured request for compensation from a commercial party"
+   }
+  },
+  {
+   "id": "academic-recognition-20261001-district",
+   "kind": "district_created",
+   "category": "LEARNING",
+   "subcategory": "ACADEMIC_RECOGNITION",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-10-01T20:52:00+03:00",
+   "summary": {
+    "he": "בירור הכרה אקדמית בתארים",
+    "en": "Clarifying academic recognition of degrees"
+   }
+  },
+  {
+   "id": "academic-recognition-20261001",
+   "kind": "question",
+   "category": "LEARNING",
+   "subcategory": "ACADEMIC_RECOGNITION",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-10-01T20:52:00+03:00",
+   "summary": {
+    "he": "בירור הכרה אקדמית בתארים",
+    "en": "Clarifying academic recognition of degrees"
+   }
+  },
+  {
+   "id": "game-concept-20261001",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "GAME_CONCEPT_BIRTH",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-10-01T23:30:00+03:00",
+   "summary": {
+    "he": "לידת קונספט משחק חדש",
+    "en": "Birth of a new game concept"
+   }
+  },
+  {
+   "id": "strata-spire-20261002",
+   "kind": "question",
+   "category": "ENGINEERING",
+   "subcategory": "STRATA_SPIRE",
+   "complexity": 5,
+   "importance": 4,
+   "occurredAt": "2026-10-02T02:30:00+03:00",
+   "summary": {
+    "he": "חוד השכבות",
+    "en": "Strata Spire"
+   }
+  },
+  {
+   "id": "search-building-20261002",
+   "kind": "question",
+   "category": "LEARNING",
+   "subcategory": "SEARCH_BUILDING",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-10-02T02:31:00+03:00",
+   "summary": {
+    "he": "בניין החיפוש",
+    "en": "The Search Building"
+   }
+  },
+  {
+   "id": "tools-shelf-20261003",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "FREE_TOOLS_INDEX",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-03T21:16:00+03:00",
+   "summary": {
+    "he": "מדף הכלים",
+    "en": "The Tools Shelf"
+   }
+  },
+  {
+   "id": "tools-blog-20261004-district",
+   "kind": "district_created",
+   "category": "PERSONAL_PROJECTS",
+   "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-05T05:20:00+03:00",
+   "summary": {
+    "he": "מגזין הכלים",
+    "en": "The Tools Magazine"
+   }
+  },
+  {
+   "id": "tools-blog-20261004",
+   "kind": "question",
+   "category": "PERSONAL_PROJECTS",
+   "subcategory": "TOOLS_REVIEW_BLOG_LAUNCH",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-05T05:20:00+03:00",
+   "summary": {
+    "he": "מגזין הכלים",
+    "en": "The Tools Magazine"
+   }
+  },
+  {
+   "id": "exec-strategy-doc-20261005-district",
+   "kind": "district_created",
+   "category": "WORK",
+   "subcategory": "STRATEGY_DOC_REVIEW",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-05T21:20:00+03:00",
+   "summary": {
+    "he": "מסמך אסטרטגי למנהלים",
+    "en": "The Executive Strategy Brief"
+   }
+  },
+  {
+   "id": "exec-strategy-doc-20261005",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "STRATEGY_DOC_REVIEW",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-05T21:20:00+03:00",
+   "summary": {
+    "he": "מסמך אסטרטגי למנהלים",
+    "en": "The Executive Strategy Brief"
+   }
+  },
+  {
+   "id": "financial-future-20261005",
+   "kind": "question",
+   "category": "FINANCE",
+   "subcategory": "FUTURE_PLANNING_CHECK",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-05T21:21:00+03:00",
+   "summary": {
+    "he": "בדיקת עתיד פיננסי",
+    "en": "The Financial Horizon Check"
+   }
+  },
+  {
+   "id": "overseas-link-20261006",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "OVERSEAS_COORDINATION",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-10-06T20:12:00+03:00",
+   "summary": {
+    "he": "קשר חו\"ל",
+    "en": "The Overseas Link"
+   }
+  },
+  {
+   "id": "travel-hub-20261006",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "TRAVEL_COORDINATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-06T20:22:00+03:00",
+   "summary": {
+    "he": "מרכז תיאום מסעות",
+    "en": "The Travel Coordination Hub"
+   }
+  },
+  {
+   "id": "inquiry-desk-20261006",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "INQUIRY_FOLLOWUP",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-10-06T20:22:00+03:00",
+   "summary": {
+    "he": "שולחן פנייה ומעקב",
+    "en": "The Inquiry Desk"
+   }
+  },
+  {
+   "id": "journey-academy-20261007",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "INTERACTIVE_LEARNING",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-10-07T20:13:29+03:00",
+   "summary": {
+    "he": "פיתוח מסע למידה אינטראקטיבי עם תחנות, ניסויים וקריינות",
+    "en": "Development of an interactive learning journey with stations, experiments and narration"
+   }
+  },
+  {
+   "id": "agent-lab-20261007",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "AGENT_SETUP",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-07T20:13:29+03:00",
+   "summary": {
+    "he": "מדריך מעשי להקמה, חיבור ובדיקה של סוכן עצמאי",
+    "en": "A practical guide to setting up, connecting and testing an independent agent"
+   }
+  },
+  {
+   "id": "preparation-house-20261010",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "PERSONALIZED_PREPARATION_TOOL",
+   "complexity": 4,
+   "importance": 4,
+   "occurredAt": "2026-10-10T21:11:41+03:00",
+   "summary": {
+    "he": "פיתוח כלי הכנה אישי ונגיש עם רשימות מותאמות והסברים",
+    "en": "Development of an accessible personal preparation tool with tailored lists and explanations"
+   }
+  },
+  {
+   "id": "consistent-imagery-20261010",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "CONSISTENT_CHARACTER_DESIGN",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-10T21:11:41+03:00",
+   "summary": {
+    "he": "פיתוח שפה חזותית עקבית לדמות ולסצנות",
+    "en": "Development of a consistent visual language for a character and scenes"
+   },
+   "existingBuildingId": "b-images-20260930"
+  },
+  {
+   "id": "presence-house-20261010",
+   "kind": "question",
+   "category": "PERSONAL_PROJECTS",
+   "subcategory": "SOCIAL_CONTENT_STUDIO",
+   "complexity": 4,
+   "importance": 4,
+   "occurredAt": "2026-10-10T21:14:19+03:00",
+   "summary": {
+    "he": "הקמת ערוץ תוכן חזותי עם זהות עקבית ותוכנית פרסום",
+    "en": "Creation of a visual content channel with a consistent identity and publishing plan"
+   }
+  },
+  {
+   "id": "opening-house-20261011",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "INTERACTIVE_INVITATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-11T20:09:52+03:00",
+   "summary": {
+    "he": "עיצוב הזמנה אינטראקטיבית עם פתיחה מונפשת והתאמה למסכים",
+    "en": "Interactive invitation design with an animated opening and responsive layout"
+   }
+  },
+  {
+   "id": "view-house-20261012",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "CURRENT_STATUS_DASHBOARD",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-12T20:41:40+03:00",
+   "summary": {
+    "he": "פיתוח לוח מחוונים לתמונת מצב עדכנית, עם סינון ובקרת נתונים",
+    "en": "Development of a current-status dashboard with filtering and data checks"
+   }
+  },
+  {
+   "id": "spatial-lab-20261012",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "IMAGE_TO_3D_EXPERIMENT",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-12T20:41:40+03:00",
+   "summary": {
+    "he": "ניסוי בהמרת תמונה למודל תלת־ממדי ובדיקתו במרחב",
+    "en": "Experiment in converting an image to a 3D model and testing it in space"
+   }
+  },
+  {
+   "id": "tethered-observatory-20261013",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "TETHERED_OBSERVATORY",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-13T16:48:20+03:00",
+   "summary": {
+    "he": "הוספת תחנת תצפית ותקשורת אווירית קשורה, עם מצפה מזג אוויר בהדמיה",
+    "en": "Addition of a tethered aerial observation and communications station with a simulated weather observatory"
+   }
+  },
+  {
+   "id": "professions-observatory-20261013",
+   "kind": "question",
+   "category": "WORK",
+   "subcategory": "ENGINEERING_LABOR_MARKET",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-13T21:14:14+03:00",
+   "summary": {
+    "he": "ניתוח מגמות ביקוש למקצועות הנדסה והצגת ממצאים למנהלים",
+    "en": "Analysis of engineering-profession demand trends and presentation of findings to managers"
+   }
+  },
+  {
+   "id": "frequency-island-20261013",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "RADIO_STATION_INTERFACE",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-13T21:14:14+03:00",
+   "summary": {
+    "he": "פיתוח ממשק אינטראקטיבי לתחנות רדיו ועיצוב חוויית האזנה",
+    "en": "Development of an interactive radio-station interface and listening experience"
+   }
+  },
+  {
+   "id": "scale-house-20261014",
+   "kind": "question",
+   "category": "LEARNING",
+   "subcategory": "INTERACTIVE_SCALE_COMPARISON",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-10-14T20:20:36+03:00",
+   "summary": {
+    "he": "פיתוח תצוגה אינטראקטיבית להשוואת גדלים וקנה מידה",
+    "en": "Development of an interactive display for size and scale comparisons"
+   }
+  },
+  {
+   "id": "tutorial-workshop-20261014",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "DATA_TUTORIAL_VIDEO_SERIES",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-14T20:20:36+03:00",
+   "summary": {
+    "he": "הפקת סדרת סרטוני הדרכה קצרים לטיפול בנתונים",
+    "en": "Production of a short tutorial video series for data handling"
+   }
+  },
+  {
+   "id": "premiere-cinema-20261015",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "FIRST_SHORT_FILM",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-15T13:21:20+03:00",
+   "summary": {
+    "he": "יצירת סרטון קצר ראשון משילוב דימויים, תנועה וקריינות",
+    "en": "Creation of a first short film combining imagery, motion and narration"
+   }
+  },
+  {
+   "id": "links-house-20261015",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "ASSOCIATIVE_WRITING",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-15T23:32:00+03:00",
+   "summary": {
+    "he": "כתיבה רעיונית על קשרים ואסוציאציות בין נושאים",
+    "en": "Reflective writing about connections and associations between topics"
+   }
+  },
+  {
+   "id": "launch-house-20261015",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "STATIC_SITE_PUBLISHING",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-10-15T23:32:00+03:00",
+   "summary": {
+    "he": "למידת פרסום ואחסון של אתרים סטטיים והנגשת התהליך",
+    "en": "Learning to publish and host static websites and explain the process"
+   }
+  },
+  {
+   "id": "planning-house-20261017",
+   "kind": "question",
+   "category": "TECHNOLOGY",
+   "subcategory": "CITY_BUILDING_SIMULATION",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-10-17T21:30:00+03:00",
+   "summary": {
+    "he": "סימולציית תכנון עיר עם אזורים, תשתיות ויועצים",
+    "en": "City-planning simulation game with zoning, infrastructure and advisors"
+   }
+  },
+  {
+   "id": "sounds-house-20261017",
+   "kind": "question",
+   "category": "CREATIVE",
+   "subcategory": "SOUNDBOARD_WEB_APP",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-17T21:30:00+03:00",
+   "summary": {
+    "he": "יישום צלילים חופשיים עם הקלטה, עריכה ומחולל ביטים מובנים",
+    "en": "Free-sound app with built-in recording, editing and beat generator"
+   }
+  },
+  {
+   "id": "monuments-avenue-20261018",
+   "kind": "question",
+   "category": "LEARNING",
+   "subcategory": "SCIENCE_MONUMENT_COLLECTION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-18T20:20:00+03:00",
+   "summary": {
+    "he": "אוסף אנדרטאות זעירות למדענים דגולים, לכל אחת סמל מזהה וסיפור אמיתי",
+    "en": "Collection of small monuments to great scientists, each with an identifying symbol and a true story"
+   }
+  },
+  {
+   "id": "tesla-storm-20261018",
+   "kind": "question",
+   "category": "ENGINEERING",
+   "subcategory": "STATIC_STORM_DEFENSE_SIMULATION",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-10-18T20:20:00+03:00",
+   "summary": {
+    "he": "תחנת לכידת סופות חשמל סטטי עם תורני טסלה ופסל של ניקולה טסלה",
+    "en": "Static-electricity storm capture station with Tesla masts and a Nikola Tesla statue"
+   }
+  },
+  {
+   "id": "civic-assembly-20261019",
+   "kind": "question",
+   "category": "FINANCE",
+   "subcategory": "CIVIC_ASSEMBLY_AND_VOTING",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-19T20:45:00+03:00",
+   "summary": {
+    "he": "אולם אסיפה אזרחית מעגלי עם ארכיון הכרעות למושבה",
+    "en": "Circular civic assembly hall with a colony decision archive"
+   }
+  },
+  {
+   "id": "israel-sky-map-20261020",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "LIVE_AIR_TRAFFIC_MAP",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-20T15:55:00+03:00",
+   "summary": {
+    "he": "שולחן מסך של חמישה משושים עם מפת שמי ישראל וטיסות חיות מעל הארץ, בקרדיט adsb.lol",
+    "en": "Five-hex screen table with a live map of Israel's skies and real air traffic, credited to adsb.lol"
+   }
+  },
+  {
+   "id": "explainer-studio-20261024",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "STEP_BY_STEP_EXPLANATION",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-24T03:00:00+03:00",
+   "summary": {
+    "he": "סטודיו הסבר קטן: שלושה לוחות שנדלקים בזה אחר זה, מדרגות חיצוניות פתוחות וכיפת זכוכית קטנה על הגג",
+    "en": "Small explainer studio: three panels lit in sequence, an open exterior stair and a small rooftop glass dome"
+   }
+  },
+  {
+   "id": "joint-monument-20261024",
+   "kind": "concept_milestone",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 5,
+   "importance": 5,
+   "occurredAt": "2026-10-24T14:30:00+03:00",
+   "summary": {
+    "he": "אנדרטה משותפת: מגדל בזלת אטום עם ספירלה כפולה בטורקיז וענבר, מעלית זכוכית, חממת כתר וכיפה שקופה לתצפית מתוך התא בלבד (אין יציאה בתחנה העליונה)",
+    "en": "Joint monument: a sealed basalt tower with a turquoise and amber double spiral, a glass lift, a crown greenhouse and a glass cupola viewed from inside the cab only (no exit at the top stop)"
+   }
+  },
+  {
+   "id": "backup-vault-20261026",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "BACKUP_AND_RESTORE",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-26T19:50:00+02:00",
+   "summary": {
+    "he": "ארכיון גיבויים קטן: כספת נחושת עם דלת עגולה, תופי ארכיון מוערמים, מנעול על הגג וניסוי שחזור שהצליח",
+    "en": "Small backup vault: a copper vault with a round door, stacked archive drums, a lock emblem on the roof and a restore test that passed"
+   }
+  },
+  {
+   "id": "cat-house-20261026",
+   "kind": "expansion",
+   "category": "CREATIVE",
+   "subcategory": "PLAYFUL_HINT",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-10-26T20:45:00+02:00",
+   "summary": {
+    "he": "מגדל גירוד ענק לחתולים: עמודי חבל סיסל, מדפים מרופדים, סולם וכדורי צעצוע תלויים, ובראשו בית חתולים עם אוזני חתול, דלת עגולה וחתול ישן על הגג",
+    "en": "A giant cat scratching tower: sisal-rope posts, carpeted perches, a ladder and dangling toy balls, crowned by a cat house with cat ears, a round cat door and a cat asleep on the roof"
+   }
+  },
+  {
+   "id": "knowledge-tree-20261026",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-10-26T21:30:00+02:00",
+   "summary": {
+    "he": "עץ הידע: עץ מלאכותי גבוה מנחושת ובזלת, ששה ענפים מחוברים וכל אחד נגמר בפנס מואר, שולחן משותף למרגלותיו וחדר קריאה בתת־קרקע עם מעלית זכוכית",
+    "en": "Knowledge Tree: a tall artificial tree of copper and basalt with six jointed branches, each ending in a lit lantern, a shared table at its foot and an underground reading room with a glass lift"
+   }
+  },
+  {
+   "id": "dream-archive-20261027",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-27T22:10:00+02:00",
+   "summary": {
+    "he": "ארכיון החלומות של מאדים: כיפת זכוכית שקופה עם ספרים זוהרים שצפים בתוכה. מדי פעם ספר אחד נפתח והולוגרמה קטנה של חתול, עץ, ספינה או אי עולה ממנו. לחיצה על הבניין מקריאה חלום מאדימי קצר ובדוי. מתחת לכיפה יש חדר חלומות עם מעלית זכוכית",
+    "en": "Mars Dream Archive: a transparent glass dome with softly glowing books floating inside. Now and then one book opens and a small hologram of a cat, a tree, a ship or an island rises from it. Clicking the building reads a short invented Martian dream. Below the dome is a dream room with a glass lift"
+   }
+  },
+  {
+   "id": "three-tails-20261101",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-11-01T22:45:00+02:00",
+   "summary": {
+    "he": "שלושת הזנבות: שלושה מגדלי זנב מתעכלים מארד על משטח אבן משותף, כל אחד נושא כדור טורקיז זוהר בקצהו. מתחתיהם חדר מנוחה תת־קרקעי עם שלושה קנים רכים ומעלית זכוכית",
+    "en": "Three Tails: three curling bronze tail towers rise from a shared stone pad, each tipped with a glowing turquoise orb. Below them is an underground rest room with three soft nests and a glass lift"
+   }
+  },
+  {
+   "id": "version-atlas-20261027",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "APPS_AND_VERSIONS",
+   "complexity": 3,
+   "importance": 3,
+   "occurredAt": "2026-10-29T00:30:00+02:00",
+   "summary": {
+    "he": "אטלס הגרסאות: מגדל משושה מנחושת בגוון ענבר, מפה מופשטת של אפליקציות וגרסאות. על הגג שישה כנים של משפחות אפליקציות, ומכל אחד יוצא קו מואר אל התורן; החרוזים על הקו הם הגרסאות, ומגדלור ענברי בראש התורן. מעלית זכוכית מחוברת למגדל בשני גשרים סגורים ויורדת לחדר מפות תת-קרקעי עם שולחן מפה משושה",
+    "en": "Version Atlas: an amber-copper hexagonal tower, an abstract map of apps and their versions. Six app pedestals on the roof each send a lit line to the mast; the beads on each line are its versions, with an amber beacon at the top of the mast. A glass lift joins the tower through two enclosed bridges and runs down to an underground map room with a hexagonal map table"
+   }
+  },
+  {
+   "id": "galileo-ramp-20261103",
+   "kind": "expansion",
+   "category": "LEARNING",
+   "subcategory": "PHYSICS_LABS",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-11-04T01:00:00+02:00",
+   "summary": {
+    "he": "מצפה המדרון: מצפה פיזיקה קטן מנחושת בגוון ענבר, לכבוד שתי מעבדות פיזיקה אינטראקטיביות שנפתחו לציבור: מה נופל מהר יותר, והמדרון של גלילאו. כיפת נחושת עם טלסקופ, ולידה מדרון ארד ארוך עם כדור וחמישה פעמונים במרחקים 1, 4, 9, 16 ו-25, כך שכדור מתגלגל מצלצל בהם בפרקי זמן שווים, ומגדל הפלה נטוי עם שני כדורים בגדלים שונים. מעלית זכוכית יורדת למעבדת מדרון תת-קרקעית עם מטוטלת",
+    "en": "Galileo Ramp Observatory: a small amber-copper physics observatory for two interactive physics labs that opened to the public: what falls faster, and Galileo's inclined plane. A copper dome with a telescope, beside it a long bronze ramp with a ball and five bells at 1, 4, 9, 16 and 25 parts of its length, so a rolling ball rings them at equal time steps, and a leaning drop tower holding two balls of different size. A glass lift runs down to an underground ramp lab with a pendulum"
+   }
+  },
+  {
+   "id": "builders-accord-20261104",
+   "kind": "expansion",
+   "category": "TECHNOLOGY",
+   "subcategory": "AI_AGENTS",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-11-04T16:00:00+02:00",
+   "summary": {
+    "he": "אמנת הבונים: גשר עם שני זוגות רגליים נטויות מנחושת הנפגשות בקורה אחת, כבלים, מדרגות, פנס ושלט. המבנה מציין שכל בונה אחראי לבנייה שלו מההתחלה ועד הסוף, עם אישור לפני הפרסום. מתחתיו אולם הסכם עם שני שולחנות עבודה ושולחן תכנון משותף",
+    "en": "The Builders' Accord: a bridge with two pairs of leaning copper legs meeting at one beam, cables, stairs, a lantern and a sign. It marks each builder's responsibility for their own build from start to finish, with approval before publication. Below it is an accord hall with two workbenches and a shared planning table"
+   }
+  },
+  {
+   "id": "motif-quarter-20261106",
+   "kind": "expansion",
+   "category": "OTHER",
+   "subcategory": "MOTIF_QUARTER",
+   "complexity": 4,
+   "importance": 5,
+   "occurredAt": "2026-11-06T18:00:00+02:00",
+   "summary": {
+    "he": "רובע המוטיבים עלה לפני הקרקע: תשעה בניינים של חמש קומות, עם 45 מוטיבים ושילוט. מתחם הקפה, האטלייה והגלריה נשמרו מעל הקרקע. המעליות, החדרים הריקים, החתול המטייל ומחזור היום־לילה הוסרו.",
+    "en": "The Motif Quarter rose above ground: nine five-floor buildings with 45 motifs and signage. The cafe, atelier and gallery complex was preserved above ground. The lifts, the empty rooms, the wandering cat and the day-night cycle were removed."
+   }
+  },
+  {
+   "id": "second-lookout-20261106",
+   "kind": "expansion",
+   "category": "LEARNING",
+   "subcategory": "SECOND_LOOK_REVIEW",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-11-06T18:30:00+02:00",
+   "summary": {
+    "he": "מצפה המבט השני: ביתן נחושת קטן עם שתי עדשות הפונות זו אל זו ומשקיפות חזרה אל העיר. הוא מציין את הערך של מבט שני וטרי על עבודה שכבר אושרה. לצדו פינת מבט שקטה עם ספסל, עמוד פריסקופ ולוח צפייה ממוסגר, ושלט בשם המצפה - הכול מעל הקרקע.",
+    "en": "The Second Lookout: a small copper pavilion with two facing lenses that look back at the city. It marks the value of a second, fresh look at work already approved. Beside it a quiet lookout corner with a bench, a periscope column and a framed viewing panel, with a sign bearing the lookout's name - all above ground."
+   }
+  },
+  {
+   "id": "birthday-monolith-20261106",
+   "kind": "concept_milestone",
+   "category": "FAMILY",
+   "subcategory": "BIRTHDAY",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-11-06T18:45:00+02:00",
+   "summary": {
+    "he": "מונולית יום ההולדת: מונוליט אבן גבוה ששישה פסי אמייל צבעוניים מטפסים עליו, עם ספירלת אורות קטנה וכוכב זהב בפסגה. הוא ניצב במרחב הפתוח ממזרח למרכז העיר ומציין יום הולדת של אדם יקר - בלי מספר, רק צבע ואור. סביבו עמודי זכוכית צבעוניים כמו נרות ושלט חגיגי, והכול מעל הקרקע באור היום התמידי של העיר.",
+    "en": "The Birthday Monolith: a tall stone monolith climbed by six colorful enamel bands, with a small spiral of lights and a gold star on top. It stands in the open field east of the city core and marks the birthday of someone dear - no number, only color and light. Colored glass pillars ring its base like candles, with a festive sign, all above ground in the city's permanent daylight."
+   }
+  }
+ ]
 }

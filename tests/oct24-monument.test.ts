@@ -9,13 +9,13 @@ import prior from './fixtures/revision47.json';
 import source from '../src/oct24-monument.ts?raw';
 it('preserves every previous entity and adds only the joint monument landmark',()=>{
   for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);
-  for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'||d.id==='district-codesign-20260930')expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);else expect(n).toEqual(d);}
+  for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'||d.id==='district-codesign-20260930')expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);else if(d.id==='district-academic-recognition-20261001'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length).map(p=>[p.q,p.r])).toEqual([[0,-7]]);}else expect(n).toEqual(d);}
   for(const k of ['creatures','installations']as const)expect(state[k]).toEqual(prior[k]);
   expect(state.landmarks.slice(0,prior.landmarks.length)).toEqual(prior.landmarks);
-  expect(state.landmarks.slice(prior.landmarks.length).map(l=>l.id)).toEqual([JOINT_MONUMENT_ID]);
-  expect(state.buildings.length).toBe(prior.buildings.length+17);
+  expect(state.landmarks.slice(prior.landmarks.length).map(l=>l.id)).toEqual([JOINT_MONUMENT_ID,'l-birthday-monolith-20261106']);
+  expect(state.buildings.length).toBe(prior.buildings.length+18);
   expect(state.totalQuestions).toBe(prior.totalQuestions);
-  expect(state.revision-prior.revision).toBe(11);
+  expect(state.revision-prior.revision).toBe(13);
   expect(validateState(state)).toEqual([]);
 });
 it('stands on the free, rock-clear plot q=-4 r=6, mirroring the Genesis Core data shape',()=>{
