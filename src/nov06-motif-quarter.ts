@@ -69,7 +69,9 @@ export function motifHouse(part:(geo:THREE.BufferGeometry,mat:THREE.Material,px?
   const y=.5+fh*i,ww=w*(1-i*.045),body=new THREE.MeshStandardMaterial({color:f.color,roughness:.68,metalness:.08});
   part(new THREE.BoxGeometry(ww,.14,ww),slabMat,0,y+.07,0);
   part(new THREE.BoxGeometry(ww-.34,.03,ww-.34),new THREE.MeshStandardMaterial({color:'#e8dcc4',roughness:.85}),0,y+.15,0);
-  part(new THREE.BoxGeometry(ww,fh-.2,.18),body,0,y+.1+(fh-.2)/2,ww/2-.09);
+  part(new THREE.BoxGeometry(ww,.56,.16),body,0,y+.28,ww/2-.08);
+  part(new THREE.BoxGeometry(ww-.16,fh-.78,.05),glassMat,0,y+.56+(fh-.78)/2,ww/2-.03);
+  part(new THREE.BoxGeometry(ww,.12,.14),body,0,y+fh-.06,ww/2-.07);
   for(const sx of [-1,1]){part(new THREE.BoxGeometry(.18,fh-.2,ww),body,sx*(ww/2-.09),y+.1+(fh-.2)/2,0);
    for(const wz of [-1,1])part(new THREE.BoxGeometry(.06,.6,.5),winMat,sx*(ww/2+.01),y+fh*.55,wz*ww*.22);}
   part(new THREE.BoxGeometry(ww,.56,.16),body,0,y+.28,-(ww/2-.08));
@@ -149,4 +151,4 @@ export function pilotQuarter(world:World,ground:(x:number,z:number)=>number){
   new THREE.TextureLoader().load(import.meta.env.BASE_URL+'personal-gallery/'+photo.file,t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,world.renderer.capabilities.getMaxAnisotropy());mat.map=t;mat.needsUpdate=true;});
  });
  const plaza=sign('כיכר הכניסה',-26,ground(-26,5.6)+1.5,5.6,true,'#f4e6cc',.4);plaza.rotation.y=Math.PI;
- }
+}

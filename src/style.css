@@ -71,6 +71,10 @@ button{touch-action:manipulation}
 .flight-credit .fc-src{color:#cf9e82}
 @media(max-width:760px){.flight-credit{font-size:8px}}
 #info-toggle{display:inline-flex;align-items:center;gap:7px;border-radius:20px!important}
-#info-toggle .info-dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:#7a8a92}
-#info-toggle[aria-pressed="true"]{background:#1d3a2a!important;border-color:#5fae7a!important;color:#cdf0d8!important}
-#info-toggle[aria-pressed="true"] .info-dot{background:#5fd68a;box-shadow:0 0 7px #5fd68a}
+#info-toggle *{pointer-events:none}
+#info-toggle .switch-i{font-style:italic;font-weight:700;font-family:Georgia,serif;font-size:12px;line-height:1}
+#info-toggle .switch-track{width:30px;height:16px;border-radius:8px;background:#4a555d;display:inline-block;position:relative;transition:background .18s;flex:none}
+#info-toggle .switch-knob{position:absolute;top:2px;inset-inline-start:2px;width:12px;height:12px;border-radius:50%;background:#e8e4da;transition:inset-inline-start .18s}
+#info-toggle[aria-pressed="true"]{border-color:#5fae7a!important;color:#cdf0d8!important}
+#info-toggle[aria-pressed="true"] .switch-track{background:#2f8f57}
+#info-toggle[aria-pressed="true"] .switch-knob{inset-inline-start:16px;background:#fff}
