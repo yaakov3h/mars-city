@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import {Text} from 'troika-three-text';
 import type {World} from './world';
 import {buildVignette,type Add} from './nov06-motif-vignettes';
+import {partnerStatues} from './nov06-partnership-statues';
 export type MotifFloor={theme:string;he:string;color:string};
 export type MotifHouse={id:string;he:string;en:string;plot:{q:number;r:number};floors:MotifFloor[]};
 const F=(theme:string,he:string,color:string):MotifFloor=>({theme,he,color});
@@ -59,7 +60,9 @@ function floorSign(text:string,color:string,width:number):Text{
 export function motifHouse(part:(geo:THREE.BufferGeometry,mat:THREE.Material,px?:number,py?:number,pz?:number)=>THREE.Mesh,group:THREE.Group,world:World,spec:MotifHouse){
  const w=MOTIF_HOUSE_WIDTH,fh=MOTIF_FLOOR_HEIGHT,trim=new THREE.MeshStandardMaterial({color:'#6b5d4f',roughness:.6,metalness:.25});
  part(new THREE.CylinderGeometry(w*.78,w*.9,.5,6),trim,0,.25,0);
- const glassMat=new THREE.MeshStandardMaterial({color:'#cfe9ec',roughness:.12,metalness:.15,transparent:true,opacity:.38});
+ const glassMat=new THREE.MeshStandardMaterial({color:'#dff3f6',roughness:.08,metalness:.1,transparent:true,opacity:.16});
+ const lightStrip=new THREE.MeshBasicMaterial({color:'#fff2cf'});
+ const signPlate=new THREE.MeshStandardMaterial({color:'#f4e6cc',roughness:.8});
  const slabMat=new THREE.MeshStandardMaterial({color:'#8a7d6b',roughness:.8});
  const winMat=new THREE.MeshStandardMaterial({color:'#fff2cf',emissive:'#ffe9b8',emissiveIntensity:.5,roughness:.3});
  spec.floors.forEach((f,i)=>{
@@ -72,7 +75,9 @@ export function motifHouse(part:(geo:THREE.BufferGeometry,mat:THREE.Material,px?
   part(new THREE.BoxGeometry(ww,.56,.16),body,0,y+.28,-(ww/2-.08));
   part(new THREE.BoxGeometry(ww-.16,fh-.78,.05),glassMat,0,y+.56+(fh-.78)/2,-(ww/2-.03));
   part(new THREE.BoxGeometry(ww,.12,.14),body,0,y+fh-.06,-(ww/2-.07));
-  const sign=floorSign(f.he,'#2e2a26',ww);sign.fontSize=.3;sign.position.set(0,y+.28,-(ww/2+.03));sign.rotation.y=Math.PI;group.add(sign);
+  part(new THREE.BoxGeometry(ww-.7,.06,.34),lightStrip,0,y+fh-.14,0);
+  part(new THREE.BoxGeometry(ww*.62,.42,.05),signPlate,0,y+.28,-(ww/2+.012));
+  const sign=floorSign(f.he,'#2e2a26',ww);sign.fontSize=.37;sign.position.set(0,y+.28,-(ww/2+.045));sign.rotation.y=Math.PI;group.add(sign);
   const floor=new THREE.Group();floor.position.set(0,y+.16,0);group.add(floor);
   const add:Add=(geo,mat,x,yy,z,rotY=0)=>{const m=new THREE.Mesh(geo,mat);m.position.set(x,yy,z);if(rotY)m.rotation.y=rotY;m.userData.noMerge=true;floor.add(m);return m;};
   buildVignette(f.theme,add,0,f.color);
@@ -97,8 +102,13 @@ export function motifHouse(part:(geo:THREE.BufferGeometry,mat:THREE.Material,px?
  const cap=new THREE.MeshStandardMaterial({color:'#8a7d6b',roughness:.85});
  part(new THREE.CylinderGeometry(w*.34,w*.52,.9,6),cap,0,.5+fh*5+.45,0);
  const crest=emblem(EMBLEM[spec.floors[4].theme]??'star',new THREE.MeshStandardMaterial({color:'#4a423a',roughness:.55,metalness:.3}),new THREE.MeshStandardMaterial({color:spec.floors[4].color,emissive:spec.floors[4].color,emissiveIntensity:.6,roughness:.4}));crest.position.set(0,.5+fh*5+.5,-w*.36);crest.rotation.y=Math.PI;group.add(crest);
- const beacon=new THREE.Mesh(new THREE.OctahedronGeometry(.42),new THREE.MeshStandardMaterial({color:spec.floors[4].color,emissive:spec.floors[4].color,emissiveIntensity:.9,roughness:.3}));beacon.position.set(0,.5+fh*5+1.25,0);beacon.userData.noMerge=true;group.add(beacon);world.animated.push(beacon);
- const name=floorSign(spec.he,'#f4e6cc',w);name.fontSize=.42;name.position.set(0,.95,-w*.46);name.rotation.y=Math.PI;group.add(name);
+ const roofY=.5+fh*5+.9,hasStatues=spec.id==='b-motif-memory-story-20261106';
+ const beacon=new THREE.Mesh(new THREE.OctahedronGeometry(.42),new THREE.MeshStandardMaterial({color:spec.floors[4].color,emissive:spec.floors[4].color,emissiveIntensity:.9,roughness:.3}));beacon.position.set(0,roofY+(hasStatues?3.1:.35),0);beacon.userData.noMerge=true;group.add(beacon);world.animated.push(beacon);
+ if(hasStatues)partnerStatues(group,0,roofY,-.2);
+ const nz=-(w*.5+2.6);
+ for(const sx of [-1,1])part(new THREE.BoxGeometry(.1,1.3,.1),trim,sx*w*.3,.65,nz);
+ part(new THREE.BoxGeometry(w*.8,.62,.07),signPlate,0,1.05,nz);
+ const name=floorSign(spec.he,'#2e2a26',w);name.fontSize=.5;name.position.set(0,1.06,nz-.06);name.rotation.y=Math.PI;group.add(name);
 }
 // Pilot identities rebuilt above ground at the original pilot footprint: entrance plaza with the glass skylight cluster, the transit street segment with planters and benches, the cafe corner, the atelier pavilion, and the rehomed personal gallery wall.
 export const PILOT_GALLERY=[{file:'cat-suitcase.jpg',ratio:1427/805},{file:'couple-palms.jpg',ratio:928/1238},{file:'family-overhead.jpg',ratio:1238/928},{file:'cat-window.jpg',ratio:805/1427},{file:'cat-aircon.jpg',ratio:805/1427}];
@@ -139,4 +149,4 @@ export function pilotQuarter(world:World,ground:(x:number,z:number)=>number){
   new THREE.TextureLoader().load(import.meta.env.BASE_URL+'personal-gallery/'+photo.file,t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,world.renderer.capabilities.getMaxAnisotropy());mat.map=t;mat.needsUpdate=true;});
  });
  const plaza=sign('כיכר הכניסה',-26,ground(-26,5.6)+1.5,5.6,true,'#f4e6cc',.4);plaza.rotation.y=Math.PI;
-                                                                                                                                                                                            }
+ }
