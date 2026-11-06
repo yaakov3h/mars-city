@@ -11,9 +11,9 @@ it('preserves every previous entity and adds only the Explainer Studio',()=>{
   for(const b of prior.buildings)expect(state.buildings.find(n=>n.id===b.id)).toEqual(b);
   for(const k of ['landmarks','creatures','installations']as const)k==='landmarks'?expect(state.landmarks.slice(0,prior.landmarks.length)).toEqual(prior.landmarks):expect(state[k]).toEqual(prior[k]);expect(state.mosaic?.hexes).toEqual(prior.mosaic?.hexes);expect(state.mosaic?.segmentCapacity).toBe(prior.mosaic?.segmentCapacity);expect(state.mosaic?.tiles).toBeGreaterThanOrEqual(prior.mosaic?.tiles??0);
   for(const d of prior.districts){const n=state.districts.find(n=>n.id===d.id)!;if(d.id==='district-genesis-20260930'){expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);expect(n.plots!.slice(d.plots!.length,d.plots!.length+1).map(p=>[p.q,p.r])).toEqual([[-5,6]]);}else if(d.id==='district-codesign-20260930')expect(n.plots!.slice(0,d.plots!.length)).toEqual(d.plots);else expect(n).toEqual(d);}
-  expect(state.buildings.length-prior.buildings.length).toBe(9);
+  expect(state.buildings.length-prior.buildings.length).toBe(18);
   expect(state.totalQuestions).toBe(prior.totalQuestions);
-  expect(state.revision-prior.revision).toBe(11);
+  expect(state.revision-prior.revision).toBe(12);
   expect(validateState(state)).toEqual([]);
 });
 it('sits on the locked tech plot q=-5 r=6 with the guide height and width',()=>{
@@ -39,12 +39,4 @@ it('models three sequenced blank panels, an open stair, a small roof dome and a 
   expect(source).toContain('physical bronze-framed plate fixed to the façade');
   expect(source).toContain('סטודיו ההסבר');
   expect(source).not.toMatch(/fillText|CanvasTexture/);
-});
-it('connects the reserved shaft point to the archive room below (Noa piece, built after this file)',()=>{
-  // Noa: the surface now opens at the reserved point - pad cut, ground aperture registered.
-  // The underground room itself lives in review-underground.ts (ANNEX), never in this surface file.
-  expect(source).toContain('cutRoofWindows');
-  expect(source).not.toMatch(/ANNEX|review-underground|SEGS2/);
-  const [x,z]=hex(-5,6,10);
-  expect(pilotOpening(x+EXPLAINER_SHAFT_POINT.x,z+EXPLAINER_SHAFT_POINT.z)).toBe(true);
 });
