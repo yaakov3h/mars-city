@@ -799,6 +799,32 @@
         "he": "אמנת הבונים: גשר עם שני זוגות רגליים נטויות מנחושת הנפגשות בקורה אחת, כבלים, מדרגות, פנס ושלט. המבנה מציין שכל בונה אחראי לבנייה שלו מההתחלה ועד הסוף, עם אישור לפני הפרסום. מתחתיו אולם הסכם עם שני שולחנות עבודה ושולחן תכנון משותף",
         "en": "The Builders' Accord: a bridge with two pairs of leaning copper legs meeting at one beam, cables, stairs, a lantern and a sign. It marks each builder's responsibility for their own build from start to finish, with approval before publication. Below it is an accord hall with two workbenches and a shared planning table"
       }
+    },
+    {
+      "id": "orbit-star-hangar-20261105",
+      "kind": "expansion",
+      "category": "TECHNOLOGY",
+      "subcategory": "DESIGN_SYSTEMS",
+      "complexity": 2,
+      "importance": 3,
+      "occurredAt": "2026-11-05T12:00:00+02:00",
+      "summary": {
+        "he": "האנגר המסלול: האנגר קשתי קטן מנחושת ענבר עם מסלול המראה ושרוול רוח. מעליו סמל תעופה מופשט: רוטור בן ארבע זרועות, וכוכב קטן בגוון קובלט שמקיף את קצות הרוטור בלולאה איטית. מציין יום עבודה על עיצוב סמל",
+        "en": "Orbit Star Hangar: a small amber-copper vaulted hangar with a runway strip and a windsock. Above it an abstract aviation emblem: a four-arm rotor and a small cobalt star that circles the rotor tips in a slow loop. It marks a day of work on an emblem design"
+      }
+    },
+    {
+      "id": "cat-ledger-20261105",
+      "kind": "expansion",
+      "category": "FINANCE",
+      "subcategory": "PERSONAL_FINANCE",
+      "complexity": 1,
+      "importance": 2,
+      "occurredAt": "2026-11-05T18:00:00+02:00",
+      "summary": {
+        "he": "קופת החתולים: בית חשבונות קטן מנחושת ענבר עם ספר חשבונות פתוח מעל הדלת, ולפניו שתי כספות חתול, אחת לכל חתול, עם דלת עגולה, חוגה, חריץ מטבעות, אוזניים וזנב. מציין את יום ההתקדמות של אפליקציית החיסכון של החתולים",
+        "en": "Cat Ledger: a small amber-copper counting house with an open ledger over the door, and in front of it two cat safes, one per cat, each with a round door, a dial, a coin slot, ears and a tail. It marks the day the cats' savings ledger app moved forward"
+      }
     }
   ]
 }
