@@ -840,29 +840,29 @@
    }
   },
   {
-   "id": "orbit-star-hangar-20261105",
+   "id": "orbit-tower-20261107",
    "kind": "expansion",
    "category": "TECHNOLOGY",
    "subcategory": "DESIGN_SYSTEMS",
-   "complexity": 2,
-   "importance": 3,
-   "occurredAt": "2026-11-07T00:40:00+02:00",
+   "complexity": 4,
+   "importance": 4,
+   "occurredAt": "2026-11-07T01:30:00+02:00",
    "summary": {
-    "he": "האנגר המסלול: האנגר קשתי קטן מנחושת ענבר עם מסלול המראה ושרוול רוח. מעליו סמל מופשט: רוטור בן ארבע זרועות, וכוכב קטן בגוון קובלט שמקיף את קצות הרוטור בלולאה איטית. מציין יום עבודה על עיצוב סמל",
-    "en": "Orbit Star Hangar: a small amber-copper vaulted hangar with a runway strip and a windsock. Above it an abstract emblem: a four-arm rotor and a small cobalt star that circles the rotor tips in a slow loop. It marks a day of work on an emblem design"
+    "he": "מגדל המסלול: מגדל בסגנון ניו-יורק עם נסיגות מדורגות, עמודי זעפרן אנכיים וחלונות מוארים, שמונה קומות על הרחבה המשושה. בקומת הכתר מדליון סמל בכל ארבע הפאות, מעליו שלוש מדרגות שמש מנחושת וצריח פליז, ובראשו כוכב בעל פאות שמסתובב לאט. מציין יום עבודה על עיצוב סמל",
+    "en": "Orbit Tower: a New-York style stepped tower with saffron piers, navy window bays and lit windows, eight storeys on its hex. Its crown storey carries an emblem medallion on all four faces, topped by three stepped sunburst tiers, a brass spire and a faceted star that turns slowly. It marks a day of work on an emblem design"
    }
   },
   {
-   "id": "cat-ledger-20261105",
+   "id": "cat-treasury-20261107",
    "kind": "expansion",
    "category": "FINANCE",
    "subcategory": "PERSONAL_FINANCE",
-   "complexity": 1,
-   "importance": 2,
-   "occurredAt": "2026-11-07T00:41:00+02:00",
+   "complexity": 4,
+   "importance": 3,
+   "occurredAt": "2026-11-07T01:30:01+02:00",
    "summary": {
-    "he": "קופת החתולים: בית חשבונות קטן מנחושת ענבר עם ספר חשבונות פתוח מעל הדלת, ולפניו שתי כספות חתול, אחת לכל חתול, עם דלת עגולה, חוגה, חריץ מטבעות, אוזניים וזנב. מציין את יום ההתקדמות של אפליקציית החיסכון של החתולים",
-    "en": "Cat Ledger: a small amber-copper counting house with an open ledger over the door, and in front of it two cat safes, one per cat, each with a round door, a dial, a coin slot, ears and a tail. It marks the day the cats' savings ledger app moved forward"
+    "he": "קופת החתולים: אולם אוצר גדול בן שלוש קומות עם שישה עמודים בגוון טורקיז, גמלון ועליו סמל חתול מוזהב, וכיפה מצולעת שבראשה חתול זהב קטן יושב. לפני המדרגות עומדות שתי כספות החתול כמו פסלי שומרים, אחת לכל חתול, עם דלת עגולה, חוגה, חריץ מטבעות, אוזניים וזנב. מציין את יום ההתקדמות של אפליקציית החיסכון של החתולים",
+    "en": "Cat Treasury: a grand three-storey treasury hall with six teal columns, a pediment carrying a golden cat emblem, and a ribbed dome crowned by a small golden sitting cat. In front of the steps the two cat safes stand like guardian statues, one per cat, each with a round door, a dial, a coin slot, ears and a tail. It marks the day the cats' savings ledger app moved forward"
    }
   }
  ]

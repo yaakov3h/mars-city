@@ -3,7 +3,7 @@
  "mode": "live",
  "revision": 61,
  "foundedAt": "2026-09-30T01:22:49+03:00",
- "lastUpdated": "2026-11-07T00:40:00+02:00",
+ "lastUpdated": "2026-11-07T01:30:00+02:00",
  "totalQuestions": 40,
  "districts": [
   {
@@ -1621,11 +1621,11 @@
    "lastUpdated": "2026-11-06T18:30:00+02:00"
   },
   {
-   "id": "b-orbit-star-hangar-20261105",
+   "id": "b-orbit-tower-20261107",
    "districtId": "district-genesis-20260930",
    "name": {
-    "he": "האנגר המסלול",
-    "en": "Orbit Star Hangar"
+    "he": "מגדל המסלול",
+    "en": "Orbit Tower"
    },
    "subcategory": "DESIGN_SYSTEMS",
    "q": 0,
@@ -1634,20 +1634,20 @@
     "q": 3,
     "r": -4
    },
-   "height": 7,
-   "width": 1.7,
-   "complexity": 2,
+   "height": 28,
+   "width": 10,
+   "complexity": 4,
    "activity": 1,
    "questionCount": 0,
-   "createdAt": "2026-11-07T00:40:00+02:00",
-   "lastUpdated": "2026-11-07T00:40:00+02:00"
+   "createdAt": "2026-11-07T01:30:00+02:00",
+   "lastUpdated": "2026-11-07T01:30:00+02:00"
   },
   {
-   "id": "b-cat-ledger-20261105",
+   "id": "b-cat-treasury-20261107",
    "districtId": "district-genesis-20260930",
    "name": {
     "he": "קופת החתולים",
-    "en": "Cat Ledger"
+    "en": "Cat Treasury"
    },
    "subcategory": "PERSONAL_FINANCE",
    "q": 0,
@@ -1656,13 +1656,13 @@
     "q": 2,
     "r": -3
    },
-   "height": 5,
-   "width": 1.5,
-   "complexity": 1,
+   "height": 13,
+   "width": 12,
+   "complexity": 4,
    "activity": 1,
    "questionCount": 0,
-   "createdAt": "2026-11-07T00:40:01+02:00",
-   "lastUpdated": "2026-11-07T00:40:01+02:00"
+   "createdAt": "2026-11-07T01:30:01+02:00",
+   "lastUpdated": "2026-11-07T01:30:01+02:00"
   }
  ],
  "creatures": [],
