@@ -1,12 +1,11 @@
 import * as THREE from 'three';
-import {cutRoofWindows} from './underground';
 import {detailedSurface,type World} from './world';
 type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 function kit(part:Part,group:THREE.Group,world:World){
  const material=(color:string,metal=false)=>{const m=detailedSurface(metal?'metal':'stone');return new THREE.MeshStandardMaterial({color,map:m.color,normalMap:m.normal,roughnessMap:m.rough,normalScale:new THREE.Vector2(.12,.12),metalness:metal?.4:.08,roughness:metal?.6:.85});};
  const stone=material('#cbb28c'),copper=material('#a87955',true),dark=material('#343334'),glass=new THREE.MeshPhysicalMaterial({color:'#cfe1d6',transparent:true,opacity:.2,roughness:.1,side:THREE.DoubleSide,depthWrite:false});
  const box=(w:number,h:number,d:number,x:number,y:number,z:number,m:THREE.Material=stone)=>part(new THREE.BoxGeometry(w,h,d),m,x,y,z);
- const base=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);cutRoofWindows(base.geometry,[{x:0,z:-5.4,radius:1.4}]);
+ const base=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);
  const garden=(x:number,z:number,w:number,d:number)=>{box(w,2.7,d,x,1.8,z,glass);box(w+.1,.12,d+.1,x,3.17,z,copper);for(let k=0;k<3;k++){const px=x+(k-1)*w*.26;box(.65,.25,.65,px,.6,z,dark);world.catalogTree(group,px,.74,z,k,'oct14-garden-'+x+'-'+k,.85);}for(const sx of [-1,1])for(const sz of [-1,1])box(.07,2.8,.07,x+sx*w/2,1.8,z+sz*d/2,copper);};
  const lift=()=>{box(2.6,3.1,2.6,0,2,-5.4,glass);for(const x of [-1.3,1.3])box(.09,3.2,.09,x,2,-5.4,copper);};
  return {box,garden,lift,stone,copper,dark,glass};

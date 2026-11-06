@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {Text} from 'troika-three-text';
 import {detailedSurface,type World} from './world';
-import {cutRoofWindows} from './underground';
 type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 // Knowledge Tree (עץ הידע): an artificial tree of copper and basalt. One trunk, six jointed branches at different
 // heights, and a lit lantern at the end of each branch: every lantern is one field of expertise held by one person.
@@ -19,8 +18,7 @@ export function knowledgeTree(part:Part,g:THREE.Group,w:World){
  const P=.35;
  // Shared hex pad with the shaft point cut open for the lift.
  const pad=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);
- cutRoofWindows(pad.geometry,[{x:KNOWLEDGE_SHAFT_POINT.x,z:KNOWLEDGE_SHAFT_POINT.z,radius:1.4}]);
- // Round stone plinth and the shared table around the trunk: six seats, one per lantern.
+  // Round stone plinth and the shared table around the trunk: six seats, one per lantern.
  part(new THREE.CylinderGeometry(4.2,4.45,.4,36),stone,0,P+.2,0);
  part(new THREE.CylinderGeometry(2.6,2.6,.16,36),dark,0,P+1.05,0);part(new THREE.CylinderGeometry(2.45,2.45,.06,36),stone,0,P+1.16,0);
  part(new THREE.CylinderGeometry(.9,1.2,.9,16),bark,0,P+.65,0);
@@ -47,12 +45,7 @@ export function knowledgeTree(part:Part,g:THREE.Group,w:World){
  const t=new Text();t.text='עץ הידע';t.direction='rtl';t.font=import.meta.env.BASE_URL+'fonts/sign-hebrew.ttf';t.fontSize=.34;t.anchorX='center';t.anchorY='middle';t.color='#ffd899';t.position.set(0,P+.5,FZ+.35);t.userData.noMerge=true;g.add(t);t.sync();
  // Steps from the plinth to the pad toward the street (+z).
  box(2.6,.18,.8,0,P+.1,4.7,stone);
- // Glazed lift head at the shaft point: open glass shaft, brass frame, amber marker light on top.
- const{x:EX,z:EZ}=KNOWLEDGE_SHAFT_POINT;
- for(const dz of [-.74,.74])box(1.6,.1,.14,EX,.42,EZ+dz,amber);
- for(const dx of [-.74,.74])box(.14,.1,1.34,EX+dx,.42,EZ,amber);
- box(1.2,1.7,1.2,EX,1.35,EZ,glass);for(const dx of [-.6,.6])for(const dz of [-.6,.6])box(.07,1.8,.07,EX+dx,1.35,EZ+dz,copper);
- box(1.36,.16,1.36,EX,2.28,EZ,copper);part(new THREE.SphereGeometry(.1,10,8),amber,EX,2.46,EZ);
+
  // The only plants live under glass: a small glazed planter beside the table.
  part(new THREE.CylinderGeometry(1.05,1.15,.3,20),copper,-5.2,.45,3.6);part(new THREE.SphereGeometry(.95,20,10,0,Math.PI*2,0,Math.PI/2),glass,-5.2,.6,3.6);
  for(let i=0;i<3;i++){const a=i*2.094;w.catalogTree(g,-5.2+Math.cos(a)*.4,.62,3.6+Math.sin(a)*.4,i,'knowledge-planter-'+i,.3);}

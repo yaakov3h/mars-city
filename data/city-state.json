@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 57,
+  "revision": 58,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-11-06T09:33:00+02:00",
+  "lastUpdated": "2026-11-06T18:00:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -319,6 +319,62 @@
           "q": -4,
           "r": 5,
           "foundedAt": "2026-10-13T21:14:14+03:00"
+        }
+      ]
+    },
+    {
+      "id": "district-motif-quarter-20261106",
+      "category": "OTHER",
+      "q": 1,
+      "r": 7,
+      "demand": 9,
+      "questionCount": 0,
+      "foundedAt": "2026-11-06T18:00:00+02:00",
+      "plots": [
+        {
+          "q": 0,
+          "r": 6,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 1,
+          "r": 6,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 2,
+          "r": 6,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 0,
+          "r": 7,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 1,
+          "r": 7,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 2,
+          "r": 7,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 0,
+          "r": 8,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 1,
+          "r": 8,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
+        },
+        {
+          "q": 2,
+          "r": 8,
+          "foundedAt": "2026-11-06T18:00:00+02:00"
         }
       ]
     }
@@ -1329,6 +1385,204 @@
       "questionCount": 0,
       "createdAt": "2026-11-04T19:30:00+02:00",
       "lastUpdated": "2026-11-04T19:30:00+02:00"
+    },
+    {
+      "id": "b-motif-knowledge-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית ידע ולמידה",
+        "en": "House of Knowledge & Learning"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 0,
+        "r": 6
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-screen-sound-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית מסך וצליל",
+        "en": "House of Screen & Sound"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": 6
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-memory-story-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית זיכרון וסיפור",
+        "en": "House of Memory & Story"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 2,
+        "r": 6
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-journey-horizon-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית מסע ואופק",
+        "en": "House of Journey & Horizon"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 0,
+        "r": 7
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-workshops-tools-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית סדנאות וכלים",
+        "en": "House of Workshops & Tools"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": 7
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-city-community-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית עיר וקהילה",
+        "en": "House of City & Community"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 2,
+        "r": 7
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-strategy-work-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית אסטרטגיה ועבודה",
+        "en": "House of Strategy & Work"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 0,
+        "r": 8
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-hearts-symbols-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית ליבות וסמלים",
+        "en": "House of Hearts & Symbols"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 1,
+        "r": 8
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
+    },
+    {
+      "id": "b-motif-science-planning-20261106",
+      "districtId": "district-motif-quarter-20261106",
+      "name": {
+        "he": "בית מדע ותכנון",
+        "en": "House of Science & Planning"
+      },
+      "subcategory": "MOTIF_QUARTER",
+      "q": 0,
+      "r": 0,
+      "plot": {
+        "q": 2,
+        "r": 8
+      },
+      "height": 11.2,
+      "width": 7.2,
+      "complexity": 4,
+      "activity": 1,
+      "questionCount": 0,
+      "createdAt": "2026-11-06T18:00:00+02:00",
+      "lastUpdated": "2026-11-06T18:00:00+02:00"
     }
   ],
   "creatures": [],

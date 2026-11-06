@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import {Text} from 'troika-three-text';
-import {cutRoofWindows} from './underground';
 import {detailedSurface,type World} from './world';
 type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 function kit(part:Part,g:THREE.Group,w:World){
@@ -9,7 +8,7 @@ function kit(part:Part,g:THREE.Group,w:World){
  const box=(a:number,b:number,c:number,x:number,y:number,z:number,m:THREE.Material=stone)=>part(new THREE.BoxGeometry(a,b,c),m,x,y,z);
  const rod=(a:THREE.Vector3,b:THREE.Vector3,r=.065,m:THREE.Material=copper)=>{const d=b.clone().sub(a),o=part(new THREE.CylinderGeometry(r,r,d.length(),8),m,...a.clone().add(b).multiplyScalar(.5).toArray() as [number,number,number]);o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());return o;};
  const v=(x:number,y:number,z:number)=>new THREE.Vector3(x,y,z);
- const base=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);cutRoofWindows(base.geometry,[{x:0,z:-5.4,radius:1.4}]);
+ const base=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);
  const lift=()=>{box(2.6,3,2.6,0,2,-5.4,glass);for(const x of [-1.3,1.3])box(.08,3.2,.08,x,2,-5.4,copper);};
  const garden=(x:number,z:number,ww:number,dd:number,y=.5)=>{box(ww,2.7,dd,x,y+1.35,z,glass);box(ww+.1,.1,dd+.1,x,y+2.73,z,copper);for(let i=0;i<3;i++){const xx=x+(i-1)*ww*.27;box(.6,.2,.6,xx,y+.1,z,dark);w.catalogTree(g,xx,y+.2,z,i,'oct19-garden-'+x+'-'+i,.8);}for(const dx of [-ww/2,ww/2])for(const dz of [-dd/2,dd/2])rod(v(x+dx,y,z+dz),v(x+dx,y+2.7,z+dz),.045);};
  return {stone,copper,dark,glass,box,rod,v,lift,garden};
