@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "mode": "live",
-  "revision": 56,
+  "revision": 57,
   "foundedAt": "2026-09-30T01:22:49+03:00",
-  "lastUpdated": "2026-11-04T19:30:00+02:00",
+  "lastUpdated": "2026-11-06T09:33:00+02:00",
   "totalQuestions": 40,
   "districts": [
     {
@@ -1383,7 +1383,7 @@
     }
   ],
   "mosaic": {
-    "tiles": 3,
+    "tiles": 4,
     "segmentCapacity": 7,
     "hexes": [
       {
