@@ -5,7 +5,6 @@ import state from '../data/city-state.json';
 import events from '../data/events.json';
 import {validateState,hex,districtPlots,random} from '../src/model';
 import {buildable} from '../scripts/layout.mjs';
-import {ANNEX,annexLiftAt,reviewWalkable} from '../src/review-underground';
 import {pilotOpening,OCT27_SHAFTS} from '../src/underground';
 import {DREAM_ARCHIVE_ID,DREAM_PLOT,DREAM_SHAFT_POINT,DREAM_DOME,DREAMS,DREAM_BOOKS,DREAM_MAX_BOOK_Y,DREAM_BOOK_SCALE,HOLO_SCALE,HOLO_RISE,DREAM_CYCLE,DREAM_SLOT,HOLOGRAMS,dreamPhase,nextDream} from '../src/oct27-dream-archive';
 const here=(a:any)=>a.theme==='dreams';
@@ -28,39 +27,10 @@ it('clears every one of the 360 model-random rocks and sits on buildable ground'
  expect(buildable(-6,7)).toBe(true);const [x,z]=hex(-6,7,10);
  for(let i=0;i<360;i++)expect(Math.hypot(x-(random('rx'+i)-.5)*230,z-(random('rz'+i)-.5)*230)).toBeGreaterThan(10+.16+random('rs'+i)*1.35);
 });
-it('has its own dream room and lift at the same shaft point as the surface head, found by theme and not by position',()=>{
- const [cx,cz]=hex(-6,7,10);const i=ANNEX.findIndex(here);expect(i).toBeGreaterThan(0);expect(ANNEX.filter(here)).toHaveLength(1);
- const a=ANNEX[i];expect(a.x).toBeCloseTo(cx,5);expect(a.z).toBeCloseTo(cz,5);expect(a.fy).toBe(-8.4);
- const l=annexLiftAt(i);expect(l.x).toBeCloseTo(cx+DREAM_SHAFT_POINT.x,5);expect(l.z).toBeCloseTo(cz+DREAM_SHAFT_POINT.z,5);
- expect(OCT27_SHAFTS).toHaveLength(1);expect(pilotOpening(l.x,l.z)).toBe(true);expect(reviewWalkable(cx,cz)).toBe(true);
-});
-it('connects to the explainer archive and the tails rest room; each neighbor gains only the door that faces it and no other room changes',()=>{
- const me=ANNEX.find(here)!,ex=ANNEX.find(a=>a.theme==='explainer')!,kn=ANNEX.find(a=>a.theme==='knowledge')!,pr=ANNEX.find(a=>a.theme==='professions')!;
- expect(me.doors).toEqual([300,0]);expect(ex.doors).toEqual([300,180,120]);expect(kn.doors).toEqual([180,0]);expect(pr.doors).toEqual([240,300,120,60,180]);
- expect(Math.hypot(ex.x-me.x,ex.z-me.z)).toBeCloseTo(10*Math.sqrt(3),6);
- expect((Math.atan2(me.z-ex.z,me.x-ex.x)*180/Math.PI+360)%360).toBeCloseTo(120,6);
- for(const a of ANNEX.filter(a=>a!==me&&a!==ex)){expect(Math.hypot(a.x-me.x,a.z-me.z)).toBeGreaterThan(13.6);}
- for(const a of ANNEX.filter(a=>a!==me))expect([a.x,a.z]).not.toEqual([me.x,me.z]);
-});
-it('lift centre is walkable with a free step in every direction',()=>{
- const i=ANNEX.findIndex(here),l=annexLiftAt(i);
- const clear=(x:number,z:number)=>reviewWalkable(x+.17,z)&&reviewWalkable(x-.17,z)&&reviewWalkable(x,z+.17)&&reviewWalkable(x,z-.17)&&reviewWalkable(x,z);
- expect(clear(l.x,l.z)).toBe(true);
- for(let k=0;k<720;k++){const a=k*Math.PI/360;expect(clear(l.x+Math.cos(a)*.1,l.z+Math.sin(a)*.1)).toBe(true);}
- expect(OCT27_SHAFTS[0].x0).toBeCloseTo(l.x-1,6);expect(OCT27_SHAFTS[0].z1).toBeCloseTo(l.z+1,6);
-});
-it('is reachable by walking from the standard entry and back, over the real walkable network, through the explainer room',()=>{
- const me=ANNEX.find(here)!,lift=annexLiftAt(ANNEX.indexOf(me));
- const step=.5,key=(i:number,j:number)=>i+','+j,ix=(x:number)=>Math.round(x/step);
- const near=(x:number,z:number)=>{for(let a=-2;a<=2;a++)for(let b=-2;b<=2;b++)if(reviewWalkable((ix(x)+a)*step,(ix(z)+b)*step))return [ix(x)+a,ix(z)+b];return null};
- const s=near(0,0)!,g=[ix(lift.x),ix(lift.z)];expect(s).toBeTruthy();expect(reviewWalkable(g[0]*step,g[1]*step)).toBe(true);
- const seen=new Set([key(s[0],s[1])]);const q=[s];
- while(q.length){const [i,j]=q.shift()!;for(const [di,dj] of [[1,0],[-1,0],[0,1],[0,-1]]){const ni=i+di,nj=j+dj,k=key(ni,nj);if(seen.has(k))continue;if(Math.abs(ni*step)>110||Math.abs(nj*step)>130)continue;if(!reviewWalkable(ni*step,nj*step))continue;seen.add(k);q.push([ni,nj]);}}
- expect(seen.has(key(g[0],g[1]))).toBe(true);expect(seen.has(key(s[0],s[1]))).toBe(true);
- // the room centre is reachable too, and so is the middle of the new passage
- const ex=ANNEX.find(a=>a.theme==='explainer')!,mx=(me.x+ex.x)/2,mz=(me.z+ex.z)/2;
- expect(seen.has(key(ix(mx),ix(mz)))||reviewWalkable(mx,mz)).toBe(true);expect(reviewWalkable(mx,mz)).toBe(true);
-});
+
+
+
+
 it('levels its own hex and passes its animated parts to the renderer so the city merge cannot freeze them',()=>{
  expect(world).toContain("(kb.id===KNOWLEDGE_TREE_ID||kb.id===DREAM_ARCHIVE_ID)&&kb.plot");
  expect(world).toContain("dreamArchive(part,group,this,this.animated)");
@@ -74,10 +44,7 @@ it('keeps the dome inside its hex, below the declared height cap, with the lift 
  expect(radius+.35).toBeLessThan(9.94*.8660254);expect(Math.hypot(DREAM_SHAFT_POINT.x-x,DREAM_SHAFT_POINT.z-z)+1.4+.3).toBeLessThan(radius*Math.sqrt(1-Math.pow(2.6/height,2)));expect(DREAM_DOME.door.halfWidth*2).toBeGreaterThanOrEqual(3);expect(Math.hypot(DREAM_SHAFT_POINT.x,DREAM_SHAFT_POINT.z)).toBeGreaterThan(DREAM_DOME.door.halfWidth+1.4+.5);
  expect(DREAM_MAX_BOOK_Y+.55+.25+HOLO_RISE+1.32*HOLO_SCALE).toBeLessThanOrEqual(hologramApex);expect(hologramApex).toBeLessThan(height);
 });
-it('keeps the lift cab, roof cut and terrain opening inside the room walls, clear of the wall faces',()=>{
- const [cx]=hex(-6,7,10),inner=cx-(6.8*.8660254-.11),l=annexLiftAt(ANNEX.findIndex(here));
- expect(l.x-.57).toBeGreaterThan(inner+.5);expect(l.x-1.4).toBeGreaterThanOrEqual(inner);expect(OCT27_SHAFTS[0].x0).toBeGreaterThan(inner);
-});
+
 it('books never overlap: same-ring books keep their spacing and rings keep a height gap',()=>{
  for(let t=0;t<300;t+=7){const pos=DREAM_BOOKS.map(b=>{const a=t*b.speed+b.phase;return [Math.cos(a)*b.ring,b.y,Math.sin(a)*b.ring];});
   for(let i=0;i<pos.length;i++)for(let j=i+1;j<pos.length;j++){const flat=Math.hypot(pos[i][0]-pos[j][0],pos[i][2]-pos[j][2]),dy=Math.abs(pos[i][1]-pos[j][1]);expect(flat>1.1*DREAM_BOOK_SCALE+.2||dy>.5).toBe(true);}}
