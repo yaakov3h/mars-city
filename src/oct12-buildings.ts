@@ -1,4 +1,3 @@
-import {cutRoofWindows} from './underground';
 import * as THREE from 'three';
 type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 const stone=new THREE.MeshStandardMaterial({color:'#cbb28c',roughness:.83}),copper=new THREE.MeshStandardMaterial({color:'#a87955',metalness:.42,roughness:.58}),dark=new THREE.MeshStandardMaterial({color:'#343334',roughness:.85}),cream=new THREE.MeshStandardMaterial({color:'#e5d0a3',roughness:.77}),glass=new THREE.MeshPhysicalMaterial({color:'#cfe1d6',transparent:true,opacity:.19,roughness:.1,side:THREE.DoubleSide,depthWrite:false}),teal=new THREE.MeshStandardMaterial({color:'#668e93',roughness:.68,metalness:.2}),green=new THREE.MeshStandardMaterial({color:'#73916b',roughness:.95});
@@ -9,7 +8,7 @@ function elements(part:Part){
  return {box,garden,lift};
 }
 export function viewHouse(part:Part){
- const{box,garden,lift}=elements(part);const base=part(new THREE.CylinderGeometry(8,8.2,.3,6),stone,0,.2,0);cutRoofWindows(base.geometry,[{x:0,z:-5.4,radius:1.4}]);
+ const{box,garden,lift}=elements(part);const base=part(new THREE.CylinderGeometry(8,8.2,.3,6),stone,0,.2,0);
  // Two stepped solid wings frame the recessed glass information hall.
  for(const [x,z,w,d,h] of [[-3.8,-.4,3.1,6.7,6.8],[3.6,-1.1,3.5,5.3,4.7]]){
   box(w,h,d,x,.5+h/2,z);box(w+.22,.18,d+.22,x,.5+h,z,copper);
@@ -24,7 +23,7 @@ export function viewHouse(part:Part){
  for(const x of [-3.5,3.5]){box(2,.15,.65,x,.9,4.2,cream);for(const dx of [-.6,.6])box(.12,.55,.4,x+dx,.6,4.2,copper);}
 }
 export function spatialLab(part:Part){
- const{box,garden,lift}=elements(part);const base=part(new THREE.CylinderGeometry(8,8.2,.3,6),stone,0,.2,0);cutRoofWindows(base.geometry,[{x:0,z:-5.4,radius:1.4}]);
+ const{box,garden,lift}=elements(part);const base=part(new THREE.CylinderGeometry(8,8.2,.3,6),stone,0,.2,0);
  // Offset sloped wings around a transparent test chamber, not six repeated cells.
  for(const [x,z,w,d,h,angle] of [[-3.9,-1.1,2.8,5.6,6.6,.23],[3.7,-.7,3.2,4.4,4.5,-.2]]){
   const wall=box(w,h,d,x,.5+h/2,z);wall.rotation.y=angle;
