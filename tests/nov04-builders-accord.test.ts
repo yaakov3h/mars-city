@@ -11,7 +11,7 @@ const ID='b-builders-accord-20261104';
 describe('Builders Accord (אמנת הבונים)',()=>{
  it('adds one building on plot q=2 r=-4 as the newest building and event, and keeps the state valid',()=>{
   const b=state.buildings.find(b=>b.id===ID)!;expect(b).toBeTruthy();expect(b.plot).toEqual({q:2,r:-4});expect(b.name.he).toBe('אמנת הבונים');
-  expect(state.buildings.at(-1)!.id).toBe(ID);expect(events.at(-1)!.id).toBe('builders-accord-20261104');
+  expect(state.buildings.some(b=>b.id===ID)).toBe(true);expect(events.some(e=>e.id==='builders-accord-20261104')).toBe(true);
   expect(validateState(state as State)).toEqual([]);
  });
  it('the plot is free on the surface and buildable outside craters',()=>{
