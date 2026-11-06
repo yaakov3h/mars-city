@@ -799,6 +799,19 @@
         "he": "אמנת הבונים: גשר עם שני זוגות רגליים נטויות מנחושת הנפגשות בקורה אחת, כבלים, מדרגות, פנס ושלט. המבנה מציין שכל בונה אחראי לבנייה שלו מההתחלה ועד הסוף, עם אישור לפני הפרסום. מתחתיו אולם הסכם עם שני שולחנות עבודה ושולחן תכנון משותף",
         "en": "The Builders' Accord: a bridge with two pairs of leaning copper legs meeting at one beam, cables, stairs, a lantern and a sign. It marks each builder's responsibility for their own build from start to finish, with approval before publication. Below it is an accord hall with two workbenches and a shared planning table"
       }
+    },
+    {
+      "id": "motif-quarter-20261106",
+      "kind": "expansion",
+      "category": "OTHER",
+      "subcategory": "MOTIF_QUARTER",
+      "complexity": 4,
+      "importance": 5,
+      "occurredAt": "2026-11-06T18:00:00+02:00",
+      "summary": {
+        "he": "רובע המוטיבים עלה לפני הקרקע: תשעה בניינים של חמש קומות, עם 45 מוטיבים ושילוט. מתחם הקפה, האטלייה והגלריה נשמרו מעל הקרקע. המעליות, החדרים הריקים, החתול המטייל ומחזור היום־לילה הוסרו.",
+        "en": "The Motif Quarter rose above ground: nine five-floor buildings with 45 motifs and signage. The cafe, atelier and gallery complex was preserved above ground. The lifts, the empty rooms, the wandering cat and the day-night cycle were removed."
+      }
     }
   ]
 }
