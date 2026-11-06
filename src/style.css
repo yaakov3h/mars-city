@@ -70,3 +70,7 @@ button{touch-action:manipulation}
 .flight-credit:hover{color:var(--text)}
 .flight-credit .fc-src{color:#cf9e82}
 @media(max-width:760px){.flight-credit{font-size:8px}}
+#info-toggle{display:inline-flex;align-items:center;gap:7px;border-radius:20px!important}
+#info-toggle .info-dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:#7a8a92}
+#info-toggle[aria-pressed="true"]{background:#1d3a2a!important;border-color:#5fae7a!important;color:#cdf0d8!important}
+#info-toggle[aria-pressed="true"] .info-dot{background:#5fd68a;box-shadow:0 0 7px #5fd68a}
