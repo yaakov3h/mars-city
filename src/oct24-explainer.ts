@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {Text} from 'troika-three-text';
 import {detailedSurface,type World} from './world';
-import {cutRoofWindows} from './underground';
 type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 // Explainer Studio (סטודיו ההסבר), hex q=-5 r=6: a small studio where complex things are explained step by step.
 // Alon built the surface; Noa built the archive room and its elevator below ground (her part).
@@ -16,7 +15,6 @@ export function explainerStudio(part:Part,g:THREE.Group,w:World){
  const B=.35,H=6.7,W=8,D=5.4,Z0=-.6,FRONT=Z0+D/2,ROOF=B+H;
  // Hex pad shared by every bespoke building of the colony. Noa: cut open at the reserved shaft point for her lift.
  const pad=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);
- cutRoofWindows(pad.geometry,[{x:EXPLAINER_SHAFT_POINT.x,z:EXPLAINER_SHAFT_POINT.z,radius:1.4}]);
  // The studio block: one calm stone volume with a copper cornice and a thin plinth.
  box(W,H,D,0,B+H/2,Z0,pale);
  box(W+.3,.22,D+.3,0,B+.11,Z0,stone);
@@ -64,13 +62,7 @@ export function explainerStudio(part:Part,g:THREE.Group,w:World){
  for(let i=0;i<3;i++){const a=i*2.094+.4;w.catalogTree(g,DX+Math.cos(a)*.65,ROOF+.56,DZ+Math.sin(a)*.65,i,'explainer-dome-'+i,.42);}
  // Roof hatch where the stair arrives.
  box(1.2,.5,1,x2-.2,ROOF+.43,LZ+1.4,copper);
- // The elevator head at the reserved shaft point: Alon's hatch-banded design, opened by Noa -
- // the sealing plate is gone, the amber bands became the rim of the open lift, his marker light stays on top.
- const{x:EX,z:EZ}=EXPLAINER_SHAFT_POINT;
- for(const dz of [-.74,.74])box(1.6,.1,.14,EX,.42,EZ+dz,amber);
- for(const dx of [-.74,.74])box(.14,.1,1.34,EX+dx,.42,EZ,amber);
- box(1.2,1.7,1.2,EX,1.35,EZ,glass);for(const dx of [-.6,.6])for(const dz of [-.6,.6])box(.07,1.8,.07,EX+dx,1.35,EZ+dz,copper);
- box(1.36,.16,1.36,EX,2.28,EZ,copper);part(new THREE.SphereGeometry(.1,10,8),amber,EX,2.46,EZ);
+
 }
 
 // Noa's underground piece: ארכיון הצעדים - the Archive of Steps below the studio (registered in the underground city as theme 'explainer').
