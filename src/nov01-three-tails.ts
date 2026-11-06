@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import {Text} from 'troika-three-text';
 import {detailedSurface,type World} from './world';
-import {cutRoofWindows} from './underground';
 // Three Tails (שלושת הזנבות): three curling bronze tail towers on one shared stone pad, each tipped with a glowing
 // turquoise orb. Below is a small underground rest room with three soft nests and a glass lift. Everything here is
 // invented scenery; nothing comes from a real chat or from any person.
@@ -35,7 +34,6 @@ export function threeTails(part:Part,g:THREE.Group,_w:World,animated:THREE.Objec
  const P=.35;
  // Shared hex pad with the shaft point cut open for the lift.
  const pad=part(new THREE.CylinderGeometry(8.3,8.5,.3,6),stone,0,.2,0);
- cutRoofWindows(pad.geometry,[{x:TAILS_SHAFT_POINT.x,z:TAILS_SHAFT_POINT.z,radius:1.4}]);
  // Central plinth with three small turquoise inlays marking the tail directions.
  part(new THREE.CylinderGeometry(1.5,1.7,.25,24),stone,0,P+.12,0);
  for(const t of TAILS){const b=tailBase(t.angle);part(new THREE.SphereGeometry(.12,10,8),glow,Math.cos(t.angle*Math.PI/180)*1.0,P+.3,Math.sin(t.angle*Math.PI/180)*1.0);void b;}
@@ -56,12 +54,7 @@ export function threeTails(part:Part,g:THREE.Group,_w:World,animated:THREE.Objec
  // Name strip: a bronze-framed plate fixed to a low stone block at the pad edge, never floating.
  const FZ=6.2;box(3,.9,.5,0,P+.45,FZ,stone);box(2.5,.55,.1,0,P+.5,FZ+.28,dark);box(2.66,.05,.12,0,P+.8,FZ+.28,brass);box(2.66,.05,.12,0,P+.2,FZ+.28,brass);
  const t=new Text();t.text='שלושת הזנבות';t.direction='rtl';t.font=import.meta.env.BASE_URL+'fonts/sign-hebrew.ttf';t.fontSize=.34;t.anchorX='center';t.anchorY='middle';t.color='#ffd899';t.position.set(0,P+.5,FZ+.35);t.userData.noMerge=true;g.add(t);t.sync();
- // Glazed lift head at the shaft point: open glass shaft, brass frame, turquoise marker light on top.
- const{x:EX,z:EZ}=TAILS_SHAFT_POINT;
- for(const dz of [-.74,.74])box(1.6,.1,.14,EX,.42,EZ+dz,glow);
- for(const dx of [-.74,.74])box(.14,.1,1.34,EX+dx,.42,EZ,glow);
- box(1.2,1.7,1.2,EX,1.35,EZ,liftGlass);for(const dx of [-.6,.6])for(const dz of [-.6,.6])box(.07,1.8,.07,EX+dx,1.35,EZ+dz,bronze);
- box(1.36,.16,1.36,EX,2.28,EZ,bronze);part(new THREE.SphereGeometry(.1,10,8),glow,EX,2.46,EZ);
+
 }
 type Part=(g:THREE.BufferGeometry,m:THREE.Material,x?:number,y?:number,z?:number)=>THREE.Mesh;
 // Underground rest room: a round rug and three soft nest pods, each a low ring with a cushion and a small night light.
