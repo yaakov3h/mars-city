@@ -17,7 +17,7 @@ describe('Orbit Tower and Cat Treasury (7.11 build, rebuilt bigger)',()=>{
  it('adds the two buildings and events, each on its own plot, and keeps the state valid',()=>{
   const a=state.buildings.find(b=>b.id===ORBIT_TOWER_ID)!,c=state.buildings.find(b=>b.id===CAT_TREASURY_ID)!;
   expect(a.plot).toEqual(ORBIT_TOWER_PLOT);expect(c.plot).toEqual(CAT_TREASURY_PLOT);expect(a.name.he).toBe('מגדל המסלול');expect(c.name.he).toBe('קופת החתולים');
-  expect(state.buildings.slice(-2).map(b=>b.id)).toEqual([ORBIT_TOWER_ID,CAT_TREASURY_ID]);expect(events.slice(-2).map(e=>e.id)).toEqual(['orbit-tower-20261107','cat-treasury-20261107']);
+  expect(state.buildings.slice(-3,-1).map(b=>b.id)).toEqual([ORBIT_TOWER_ID,CAT_TREASURY_ID]);expect(events.slice(-3,-1).map(e=>e.id)).toEqual(['orbit-tower-20261107','cat-treasury-20261107']);
   expect(validateState(state as State)).toEqual([]);
  });
  it('both plots are free on the surface (no district, landmark, installation or mosaic hex) and buildable outside craters',()=>{
