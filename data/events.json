@@ -864,6 +864,19 @@
     "he": "קופת החתולים: אולם אוצר גדול בן שלוש קומות עם שישה עמודים בגוון טורקיז, גמלון ועליו סמל חתול מוזהב, וכיפה מצולעת שבראשה חתול זהב קטן יושב. לפני המדרגות עומדות שתי כספות החתול כמו פסלי שומרים, אחת לכל חתול, עם דלת עגולה, חוגה, חריץ מטבעות, אוזניים וזנב. מציין את יום ההתקדמות של אפליקציית החיסכון של החתולים",
     "en": "Cat Treasury: a grand three-storey treasury hall with six teal columns, a pediment carrying a golden cat emblem, and a ribbed dome crowned by a small golden sitting cat. In front of the steps the two cat safes stand like guardian statues, one per cat, each with a round door, a dial, a coin slot, ears and a tail. It marks the day the cats' savings ledger app moved forward"
    }
+  },
+  {
+   "id": "connection-gate-20261110",
+   "kind": "expansion",
+   "category": "FAMILY",
+   "subcategory": "FAMILY_CONNECTION",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-11-10T17:45:00+02:00",
+   "summary": {
+    "he": "שער הקשר: שני שבילי אור צבעוניים עולים משני צדי המשושה ונפגשים במעלה, בקשת אחת בגובה 27 מטר. שני השבילים נושאים את אותם הצבעים באותם הגבהים, ובנקודת המפגש לב זוהר עם טבעת נחושת מסתובבת ונקודת אור טורקיז בראש. למטה, מתחת לכתר, מנורה חמה ושני ספסלים פונים זה לזה. מציין את יום החיבור המשפחתי הראשון ברשת הקשרים. הכל מעל הקרקע",
+    "en": "The Connection Gate: two colourful ribbons of light rise from opposite sides of the hex and meet high above it in a single 27-metre arch. Both paths carry the same colours at the same heights, and at the meeting point a glowing orb with a slow-turning copper ring and a turquoise light point at the top. Below the crown, a warm lamp and two benches face each other. It marks the day of the first family link in the trusted network. Fully above ground"
+   }
   }
  ]
 }
