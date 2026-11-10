@@ -13,9 +13,9 @@ it('preserves every previous entity and adds only the joint monument landmark',(
   for(const k of ['creatures','installations']as const)expect(state[k]).toEqual(prior[k]);
   expect(state.landmarks.slice(0,prior.landmarks.length)).toEqual(prior.landmarks);
   expect(state.landmarks.slice(prior.landmarks.length).map(l=>l.id)).toEqual([JOINT_MONUMENT_ID,'l-birthday-monolith-20261106']);
-  expect(state.buildings.length).toBe(prior.buildings.length+20);
+  expect(state.buildings.length).toBe(prior.buildings.length+21);
   expect(state.totalQuestions).toBe(prior.totalQuestions);
-  expect(state.revision-prior.revision).toBe(14);
+  expect(state.revision-prior.revision).toBe(15);
   expect(validateState(state)).toEqual([]);
 });
 it('stands on the free, rock-clear plot q=-4 r=6, mirroring the Genesis Core data shape',()=>{
