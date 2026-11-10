@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
  "mode": "live",
- "revision": 62,
+ "revision": 63,
  "foundedAt": "2026-09-30T01:22:49+03:00",
- "lastUpdated": "2026-11-07T01:30:00+02:00",
+ "lastUpdated": "2026-11-11T00:30:00+02:00",
  "totalQuestions": 40,
  "districts": [
   {
@@ -405,6 +405,22 @@
      "q": 4,
      "r": 0,
      "foundedAt": "2026-11-10T17:45:00+02:00"
+    }
+   ]
+  },
+  {
+   "id": "district-birthday-tower-20261111",
+   "category": "FAMILY",
+   "q": 4,
+   "r": -1,
+   "demand": 1,
+   "questionCount": 0,
+   "foundedAt": "2026-11-11T00:30:00+02:00",
+   "plots": [
+    {
+     "q": 4,
+     "r": -1,
+     "foundedAt": "2026-11-11T00:30:00+02:00"
     }
    ]
   }
@@ -1701,6 +1717,28 @@
    "questionCount": 0,
    "createdAt": "2026-11-10T17:45:00+02:00",
    "lastUpdated": "2026-11-10T17:45:00+02:00"
+  },
+  {
+   "id": "b-birthday-tower-20261111",
+   "districtId": "district-birthday-tower-20261111",
+   "name": {
+    "he": "מגדל יום ההולדת",
+    "en": "The Birthday Tower"
+   },
+   "subcategory": "BIRTHDAY",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 4,
+    "r": -1
+   },
+   "height": 27,
+   "width": 5,
+   "complexity": 2,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-11T00:30:00+02:00",
+   "lastUpdated": "2026-11-11T00:30:00+02:00"
   }
  ],
  "creatures": [],
