@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "mode": "live",
- "revision": 61,
+ "revision": 62,
  "foundedAt": "2026-09-30T01:22:49+03:00",
  "lastUpdated": "2026-11-07T01:30:00+02:00",
  "totalQuestions": 40,
@@ -389,6 +389,22 @@
      "q": 2,
      "r": 8,
      "foundedAt": "2026-11-06T18:00:00+02:00"
+    }
+   ]
+  },
+  {
+   "id": "district-connection-gate-20261110",
+   "category": "FAMILY",
+   "q": 4,
+   "r": 0,
+   "demand": 1,
+   "questionCount": 0,
+   "foundedAt": "2026-11-10T17:45:00+02:00",
+   "plots": [
+    {
+     "q": 4,
+     "r": 0,
+     "foundedAt": "2026-11-10T17:45:00+02:00"
     }
    ]
   }
@@ -1663,6 +1679,28 @@
    "questionCount": 0,
    "createdAt": "2026-11-07T01:30:01+02:00",
    "lastUpdated": "2026-11-07T01:30:01+02:00"
+  },
+  {
+   "id": "b-connection-gate-20261110",
+   "districtId": "district-connection-gate-20261110",
+   "name": {
+    "he": "שער הקשר",
+    "en": "The Connection Gate"
+   },
+   "subcategory": "FAMILY_CONNECTION",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 4,
+    "r": 0
+   },
+   "height": 27,
+   "width": 8,
+   "complexity": 2,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-10T17:45:00+02:00",
+   "lastUpdated": "2026-11-10T17:45:00+02:00"
   }
  ],
  "creatures": [],
