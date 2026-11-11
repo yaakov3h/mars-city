@@ -877,6 +877,19 @@
     "he": "שער הקשר: שני שבילי אור צבעוניים עולים משני צדי המשושה ונפגשים במעלה, בקשת אחת בגובה 27 מטר. שני השבילים נושאים את אותם הצבעים באותם הגבהים, ובנקודת המפגש לב זוהר עם טבעת נחושת מסתובבת ונקודת אור טורקיז בראש. למטה, מתחת לכתר, מנורה חמה ושני ספסלים פונים זה לזה. מציין את יום החיבור המשפחתי הראשון ברשת הקשרים. הכל מעל הקרקע",
     "en": "The Connection Gate: two colourful ribbons of light rise from opposite sides of the hex and meet high above it in a single 27-metre arch. Both paths carry the same colours at the same heights, and at the meeting point a glowing orb with a slow-turning copper ring and a turquoise light point at the top. Below the crown, a warm lamp and two benches face each other. It marks the day of the first family link in the trusted network. Fully above ground"
    }
+  },
+  {
+   "id": "birthday-tower-20261111",
+   "kind": "concept_milestone",
+   "category": "FAMILY",
+   "subcategory": "BIRTHDAY",
+   "complexity": 2,
+   "importance": 3,
+   "occurredAt": "2026-11-11T00:30:00+02:00",
+   "summary": {
+    "he": "מגדל יום ההולדת: מגדל אמייל גבוה ודק מארבעה חלקים שהולכים ומצטמצמים כלפי מעלה - אלמוגי, זעפרן, טורקיז וטרקוטה - ועל כל חלק כרכוב קרם כמו ציפוי של עוגה. בראשו נר עם להבה חמה, טבעת בלונים צבעוניים וטבעת קונפטי שמסתובבת לאט. על החזית הפונה למרכז העיר שלט: 'יום הולדת שמח יעקב · 6.11'. הוא ניצב ליד מונולית יום ההולדת, וביחד הם פינת יום הולדת קטנה ממזרח למרכז העיר. הכל מעל הקרקע, באור היום התמידי של העיר",
+    "en": "The Birthday Tower: a tall, slim enamel tower of four sections that step inward as they climb - coral, saffron, teal and terracotta - each topped by a cream cornice like cake frosting. A candle with a warm flame crowns it, circled by a ring of colourful balloons and a slowly turning ring of confetti. The city-facing side carries the sign 'יום הולדת שמח יעקב · 6.11' (Happy birthday Yaakov · 6.11). It stands beside the Birthday Monolith, and together they make a small birthday corner east of the city core. Fully above ground, in the city's permanent daylight"
+   }
   }
  ]
 }
