@@ -890,6 +890,19 @@
     "he": "מגדל יום ההולדת: מגדל אמייל גבוה ודק מארבעה חלקים שהולכים ומצטמצמים כלפי מעלה - אלמוגי, זעפרן, טורקיז וטרקוטה - ועל כל חלק כרכוב קרם כמו ציפוי של עוגה. בראשו נר עם להבה חמה, טבעת בלונים צבעוניים וטבעת קונפטי שמסתובבת לאט. על החזית הפונה למרכז העיר שלט: 'יום הולדת שמח יעקב · 6.11'. הוא ניצב ליד מונולית יום ההולדת, וביחד הם פינת יום הולדת קטנה ממזרח למרכז העיר. הכל מעל הקרקע, באור היום התמידי של העיר",
     "en": "The Birthday Tower: a tall, slim enamel tower of four sections that step inward as they climb - coral, saffron, teal and terracotta - each topped by a cream cornice like cake frosting. A candle with a warm flame crowns it, circled by a ring of colourful balloons and a slowly turning ring of confetti. The city-facing side carries the sign 'יום הולדת שמח יעקב · 6.11' (Happy birthday Yaakov · 6.11). It stands beside the Birthday Monolith, and together they make a small birthday corner east of the city core. Fully above ground, in the city's permanent daylight"
    }
+  },
+  {
+   "id": "oxygen-cafe-20261118",
+   "kind": "concept_milestone",
+   "category": "ENTERTAINMENT",
+   "subcategory": "CAFE",
+   "complexity": 2,
+   "importance": 2,
+   "occurredAt": "2026-11-18T20:00:00+02:00",
+   "summary": {
+    "he": "קפה חמצן: בית קפה קטן בתוך כיפת זכוכית גאודזית בקצה המזרחי של העיר, ליד שער הקשר ומגדל יום ההולדת, והזכוכית הפתוחה פונה אל הנוף האדום. בפנים שולחנות זעירים וכיסא מפקד שחתול השתלט עליו, ועל גג המטבח ספל קפה גדול עם קיטור. ליד הכניסה רובוט שליחויות תקוע בחול, ועל המגש שלו קפה קר שלא נשפך. על הדלת שלט: 'נגמר החלב. החמצן בינתיים בסדר.' הכל מעל הקרקע, באור היום התמידי של העיר",
+    "en": "The Oxygen Cafe: a small cafe in a geodesic glass dome at the city's eastern edge, beside the Connection Gate and the Birthday Tower, its open glass facing the red landscape. Inside are tiny tables and a commander's chair that a cat has taken over, and a big steaming coffee cup on the kitchen roof. By the entrance a delivery robot is stuck in the sand, the iced coffee on its tray unspilled. The door sign reads 'נגמר החלב. החמצן בינתיים בסדר.' (Out of milk. The oxygen is fine meanwhile). Fully above ground, in the city's permanent daylight"
+   }
   }
  ]
 }
