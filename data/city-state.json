@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
  "mode": "live",
- "revision": 63,
+ "revision": 64,
  "foundedAt": "2026-09-30T01:22:49+03:00",
- "lastUpdated": "2026-11-11T00:30:00+02:00",
+ "lastUpdated": "2026-11-18T20:00:00+02:00",
  "totalQuestions": 40,
  "districts": [
   {
@@ -421,6 +421,22 @@
      "q": 4,
      "r": -1,
      "foundedAt": "2026-11-11T00:30:00+02:00"
+    }
+   ]
+  },
+  {
+   "id": "district-oxygen-cafe-20261118",
+   "category": "ENTERTAINMENT",
+   "q": 5,
+   "r": -1,
+   "demand": 1,
+   "questionCount": 0,
+   "foundedAt": "2026-11-18T20:00:00+02:00",
+   "plots": [
+    {
+     "q": 5,
+     "r": -1,
+     "foundedAt": "2026-11-18T20:00:00+02:00"
     }
    ]
   }
@@ -1739,6 +1755,28 @@
    "questionCount": 0,
    "createdAt": "2026-11-11T00:30:00+02:00",
    "lastUpdated": "2026-11-11T00:30:00+02:00"
+  },
+  {
+   "id": "b-oxygen-cafe-20261118",
+   "districtId": "district-oxygen-cafe-20261118",
+   "name": {
+    "he": "קפה חמצן",
+    "en": "The Oxygen Cafe"
+   },
+   "subcategory": "CAFE",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 5,
+    "r": -1
+   },
+   "height": 7,
+   "width": 5,
+   "complexity": 2,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-18T20:00:00+02:00",
+   "lastUpdated": "2026-11-18T20:00:00+02:00"
   }
  ],
  "creatures": [],
