@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
  "mode": "live",
- "revision": 64,
+ "revision": 65,
  "foundedAt": "2026-09-30T01:22:49+03:00",
- "lastUpdated": "2026-11-18T20:00:00+02:00",
+ "lastUpdated": "2026-11-19T23:15:00+02:00",
  "totalQuestions": 40,
  "districts": [
   {
@@ -437,6 +437,22 @@
      "q": 5,
      "r": -1,
      "foundedAt": "2026-11-18T20:00:00+02:00"
+    }
+   ]
+  },
+  {
+   "id": "district-story-stars-20261119",
+   "category": "CREATIVE",
+   "q": 5,
+   "r": 0,
+   "demand": 1,
+   "questionCount": 0,
+   "foundedAt": "2026-11-19T23:15:00+02:00",
+   "plots": [
+    {
+     "q": 5,
+     "r": 0,
+     "foundedAt": "2026-11-19T23:15:00+02:00"
     }
    ]
   }
@@ -1777,6 +1793,28 @@
    "questionCount": 0,
    "createdAt": "2026-11-18T20:00:00+02:00",
    "lastUpdated": "2026-11-18T20:00:00+02:00"
+  },
+  {
+   "id": "b-story-stars-20261119",
+   "districtId": "district-story-stars-20261119",
+   "name": {
+    "he": "כוכבי הסיפורים",
+    "en": "The Story Stars"
+   },
+   "subcategory": "STORIES",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 5,
+    "r": 0
+   },
+   "height": 7,
+   "width": 5,
+   "complexity": 3,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-19T23:15:00+02:00",
+   "lastUpdated": "2026-11-19T23:15:00+02:00"
   }
  ],
  "creatures": [],

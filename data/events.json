@@ -903,6 +903,19 @@
     "he": "קפה חמצן: בית קפה קטן בתוך כיפת זכוכית גאודזית בקצה המזרחי של העיר, ליד שער הקשר ומגדל יום ההולדת, והזכוכית הפתוחה פונה אל הנוף האדום. בפנים שולחנות זעירים וכיסא מפקד שחתול השתלט עליו, ועל גג המטבח ספל קפה גדול עם קיטור. ליד הכניסה רובוט שליחויות תקוע בחול, ועל המגש שלו קפה קר שלא נשפך. על הדלת שלט: 'נגמר החלב. החמצן בינתיים בסדר.' הכל מעל הקרקע, באור היום התמידי של העיר",
     "en": "The Oxygen Cafe: a small cafe in a geodesic glass dome at the city's eastern edge, beside the Connection Gate and the Birthday Tower, its open glass facing the red landscape. Inside are tiny tables and a commander's chair that a cat has taken over, and a big steaming coffee cup on the kitchen roof. By the entrance a delivery robot is stuck in the sand, the iced coffee on its tray unspilled. The door sign reads 'נגמר החלב. החמצן בינתיים בסדר.' (Out of milk. The oxygen is fine meanwhile). Fully above ground, in the city's permanent daylight"
    }
+  },
+  {
+   "id": "story-stars-20261119",
+   "kind": "concept_milestone",
+   "category": "CREATIVE",
+   "subcategory": "STORIES",
+   "complexity": 3,
+   "importance": 2,
+   "occurredAt": "2026-11-19T23:15:00+02:00",
+   "summary": {
+    "he": "כוכבי הסיפורים: רוטונדה פתוחה שעמודיה ערימות של ספרים ענקיים צבעוניים, תחת חופת אינדיגו מנוקדת אורות זעירים כמו פיסת שמי לילה באמצע היום. מתחת לחופה מובייל איטי נושא שלוש קבוצות כוכבים של ספרים זוהרים - סירת ירח, מפתח ושועל - מחוברות בקווי אור דקים. נגיעה בספר-כוכב פותחת אותו כמו פרח ושולחת גל אור לאורך הקבוצה, ועלי אור צפים מטה אל מעגל הקריאה עם הספסלים שבמרכז. סיפורים ורעיונות שמחכים לקבל צורה. שביל מואר מחבר אל רחבת קפה החמצן. הכל מעל הקרקע, באור היום התמידי של העיר",
+    "en": "The Story Stars: an open rotunda whose columns are stacks of giant colourful books, under a shallow indigo canopy dotted with tiny lights like a piece of night sky in the permanent daylight. A slow mobile carries three constellations of glowing books - a moon-boat, a key and a fox - linked by thin light lines. A touch on a book-star opens it like a flower and sends a wave of light along its constellation, while light petals drift down to the reading circle of benches at the centre. Stories and ideas waiting to take form. A lit path connects to the Oxygen Cafe plaza. Fully above ground, in the city's permanent daylight"
+   }
   }
  ]
 }
