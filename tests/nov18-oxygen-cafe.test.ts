@@ -36,7 +36,7 @@ it('is its own module, fully above ground, and world.ts only imports, dispatches
  expect(cafe).not.toMatch(/underground|lift|shaft|elevator|cutRoofWindows|מעלית/i);
  expect(world).toContain("import {oxygenCafe,OXYGEN_CAFE_ID} from './nov18-oxygen-cafe'");
  expect(world).toContain('if(b.id===OXYGEN_CAFE_ID){oxygenCafe(part,group,this);return group;}');
- expect(world).toContain('kb.id===BIRTHDAY_TOWER_ID||kb.id===OXYGEN_CAFE_ID||kb.id===STORY_STARS_ID)&&kb.plot');
+ expect(world).toContain('kb.id===BIRTHDAY_TOWER_ID||kb.id===OXYGEN_CAFE_ID||kb.id===STORY_STARS_ID||kb.id===SHELF_TOWER_ID)&&kb.plot');
  expect(world.match(/OXYGEN_CAFE_ID/g)!.length).toBe(4);
 });
 it('keeps the cafe identity: geodesic glass dome, commander chair with the cat, stuck robot with iced coffee, roof cup, door sign',()=>{
@@ -61,6 +61,6 @@ it('ledger entry describes the above-ground cafe in the family corner, sign incl
  expect(ev.occurredAt).toBe(state.buildings.find(here)!.createdAt);
  expect(ev.summary.he).toContain('קפה חמצן');expect(ev.summary.he).toContain('מעל הקרקע');expect(ev.summary.he).toContain('שער הקשר');
  expect(ev.summary.en).toContain('above ground');expect(ev.summary.he).toContain(OXYGEN_CAFE_SIGN);
- expect(state.revision).toBe(65);
- expect(state.buildings.at(-2)!.id).toBe(OXYGEN_CAFE_ID);expect(events.events.at(-2)!.id).toBe('oxygen-cafe-20261118');
+ expect(state.revision).toBe(66);
+ expect(state.buildings.at(-3)!.id).toBe(OXYGEN_CAFE_ID);expect(events.events.at(-3)!.id).toBe('oxygen-cafe-20261118');
 });
