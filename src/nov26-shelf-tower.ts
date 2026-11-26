@@ -145,4 +145,4 @@ export function shelfTower(part:Part,group:THREE.Group,world:World){
  driver(world,group,t=>{const m=scr.material as THREE.MeshBasicMaterial;m.color.setScalar(.8+.14*Math.sin(t*37)+.06*Math.sin(t*11.3)+(Math.sin(t*2.1)>.97?.12:0));tvTex.offset.y=(Math.sin(t*.7)>.985?.02:0);
   tex.forEach((tx,i)=>{tx.offset.x=(t*(.035+i*.012)*(i===1?-1:1))%1})});
  focus(group,0,TOP/2+2,0,W+2,TOP+6,D+4);
-     }
+}
