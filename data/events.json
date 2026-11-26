@@ -929,6 +929,19 @@
     "he": "מגדל המדף: שדרוג לעולם כוכבי הסיפורים. ספרייה ומדיה בצורת מדף ספרים תלת-ממדי ענק, עם חמש מדפים של ספרים צבעוניים, טלוויזיה ישנה עם מסך מהבהב קלות על הגג, ופסי מידע זוהרים בסגנון טיימס סקוור מסביב לבסיס. הוא עומד לצד רוטונדת כוכבי הסיפורים ומחובר אליה בשביל. הכל מעל הקרקע, באור היום התמידי של העיר",
     "en": "The Shelf Tower: an upgrade to the Story Stars world. A library and media building shaped like a giant 3D bookshelf, with five bays of colourful books, a vintage television with a gently flickering screen on its roof, and glowing Times Square style info tickers around its base. It stands beside the Story Stars rotunda, linked by a path. Fully above ground, in the city's permanent daylight"
    }
+  },
+  {
+   "id": "granny-house-20261126",
+   "kind": "concept_milestone",
+   "category": "CREATIVE",
+   "subcategory": "EMBROIDERY",
+   "complexity": 3,
+   "importance": 2,
+   "occurredAt": "2026-11-26T21:00:00+02:00",
+   "summary": {
+    "he": "בית סבתא: בית ענק וקיטשי בסגנון בית של סבתא, עם קירות של טפטים בדוגמאות שונות של מטוסים, וילונות תחרה, גג מרוצף בצבעי ורוד וטורקיז וחישוקי רקמה ענקיים. הוא עומד בעולם כוכבי הסיפורים, לצד מגדל המדף, ומחובר אליו בשביל. הכל מעל הקרקע, באור היום התמידי של העיר",
+    "en": "The Granny House: a huge kitsch house in the style of a grandmother's home, with wallpaper walls in many aircraft patterns, lace curtains, a pink and teal tiled roof and giant embroidery hoops. It stands in the Story Stars world beside the Shelf Tower, linked by a path. Fully above ground, in the city's permanent daylight"
+   }
   }
  ]
 }
