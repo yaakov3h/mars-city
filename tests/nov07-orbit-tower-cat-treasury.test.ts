@@ -17,7 +17,7 @@ describe('Orbit Tower and Cat Treasury (7.11 build, rebuilt bigger)',()=>{
  it('adds the two buildings and events, each on its own plot, and keeps the state valid',()=>{
   const a=state.buildings.find(b=>b.id===ORBIT_TOWER_ID)!,c=state.buildings.find(b=>b.id===CAT_TREASURY_ID)!;
   expect(a.plot).toEqual(ORBIT_TOWER_PLOT);expect(c.plot).toEqual(CAT_TREASURY_PLOT);expect(a.name.he).toBe('מגדל המסלול');expect(c.name.he).toBe('קופת החתולים');
-  expect(state.buildings.slice(-7,-5).map(b=>b.id)).toEqual([ORBIT_TOWER_ID,CAT_TREASURY_ID]);expect(events.slice(-7,-5).map(e=>e.id)).toEqual(['orbit-tower-20261107','cat-treasury-20261107']);
+  expect(state.buildings.slice(-8,-6).map(b=>b.id)).toEqual([ORBIT_TOWER_ID,CAT_TREASURY_ID]);expect(events.slice(-8,-6).map(e=>e.id)).toEqual(['orbit-tower-20261107','cat-treasury-20261107']);
   expect(validateState(state as State)).toEqual([]);
  });
  it('both plots are free on the surface (no district, landmark, installation or mosaic hex) and buildable outside craters',()=>{
@@ -52,7 +52,7 @@ describe('Orbit Tower and Cat Treasury (7.11 build, rebuilt bigger)',()=>{
   for(const word of ['ConeGeometry','dial','TorusGeometry','#ffad4d','קופת החתולים','catEmblem'])expect(treasury).toContain(word);
  });
  it('public text stays abstract: no people, task numbers or links in the code, the art or the events',()=>{
-  const data=JSON.stringify(events.slice(-7,-5))+JSON.stringify(state.buildings.slice(-7,-5));
+  const data=JSON.stringify(events.slice(-8,-6))+JSON.stringify(state.buildings.slice(-8,-6));
   expect(mine+art+data).not.toMatch(/יעקב|נועה|אלון|Yaakov|Noa|Alon|https?:\/\/(?!www\.w3\.org)/);expect(data).not.toMatch(/#\d/);
  });
  it('follows the converted city: fully above ground, no lift/shaft wells/underground, Mars enamel colours',()=>{
