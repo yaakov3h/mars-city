@@ -916,6 +916,19 @@
     "he": "כוכבי הסיפורים: רוטונדה פתוחה שעמודיה ערימות של ספרים ענקיים צבעוניים, תחת חופת אינדיגו מנוקדת אורות זעירים כמו פיסת שמי לילה באמצע היום. מתחת לחופה מובייל איטי נושא שלוש קבוצות כוכבים של ספרים זוהרים - סירת ירח, מפתח ושועל - מחוברות בקווי אור דקים. נגיעה בספר-כוכב פותחת אותו כמו פרח ושולחת גל אור לאורך הקבוצה, ועלי אור צפים מטה אל מעגל הקריאה עם הספסלים שבמרכז. סיפורים ורעיונות שמחכים לקבל צורה. שביל מואר מחבר אל רחבת קפה החמצן. הכל מעל הקרקע, באור היום התמידי של העיר",
     "en": "The Story Stars: an open rotunda whose columns are stacks of giant colourful books, under a shallow indigo canopy dotted with tiny lights like a piece of night sky in the permanent daylight. A slow mobile carries three constellations of glowing books - a moon-boat, a key and a fox - linked by thin light lines. A touch on a book-star opens it like a flower and sends a wave of light along its constellation, while light petals drift down to the reading circle of benches at the centre. Stories and ideas waiting to take form. A lit path connects to the Oxygen Cafe plaza. Fully above ground, in the city's permanent daylight"
    }
+  },
+  {
+   "id": "shelf-tower-20261126",
+   "kind": "concept_milestone",
+   "category": "CREATIVE",
+   "subcategory": "MEDIA_LIBRARY",
+   "complexity": 3,
+   "importance": 2,
+   "occurredAt": "2026-11-26T20:00:00+02:00",
+   "summary": {
+    "he": "מגדל המדף: שדרוג לעולם כוכבי הסיפורים. ספרייה ומדיה בצורת מדף ספרים תלת-ממדי ענק, עם חמש מדפים של ספרים צבעוניים, טלוויזיה ישנה עם מסך מהבהב קלות על הגג, ופסי מידע זוהרים בסגנון טיימס סקוור מסביב לבסיס. הוא עומד לצד רוטונדת כוכבי הסיפורים ומחובר אליה בשביל. הכל מעל הקרקע, באור היום התמידי של העיר",
+    "en": "The Shelf Tower: an upgrade to the Story Stars world. A library and media building shaped like a giant 3D bookshelf, with five bays of colourful books, a vintage television with a gently flickering screen on its roof, and glowing Times Square style info tickers around its base. It stands beside the Story Stars rotunda, linked by a path. Fully above ground, in the city's permanent daylight"
+   }
   }
  ]
 }
