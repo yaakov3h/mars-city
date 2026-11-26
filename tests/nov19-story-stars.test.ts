@@ -37,7 +37,7 @@ it('is its own module, fully above ground, and world.ts only imports, dispatches
  expect(stars).not.toMatch(/underground|lift|shaft|elevator|cutRoofWindows|מעלית/i);
  expect(world).toContain("import {storyStars,STORY_STARS_ID} from './nov19-story-stars'");
  expect(world).toContain('if(b.id===STORY_STARS_ID){storyStars(part,group,this);return group;}');
- expect(world).toContain('kb.id===OXYGEN_CAFE_ID||kb.id===STORY_STARS_ID)&&kb.plot');
+ expect(world).toContain('kb.id===OXYGEN_CAFE_ID||kb.id===STORY_STARS_ID||kb.id===SHELF_TOWER_ID)&&kb.plot');
  expect(world).toContain('if(found.object.userData.storyBloom)found.object.userData.storyBloom();');
  expect(world.match(/STORY_STARS_ID/g)!.length).toBe(4);
 });
@@ -64,6 +64,6 @@ it('ledger entry describes the above-ground rotunda beside the cafe, abstract an
  expect(ev.summary.he).toContain('כוכבי הסיפורים');expect(ev.summary.he).toContain('מעל הקרקע');expect(ev.summary.he).toContain('קפה החמצן');
  expect(ev.summary.he).toContain('מחכים לקבל צורה');
  expect(ev.summary.en).toContain('above ground');expect(ev.summary.en).toContain('waiting to take form');
- expect(state.revision).toBe(65);
- expect(state.buildings.at(-1)!.id).toBe(STORY_STARS_ID);expect(events.events.at(-1)!.id).toBe('story-stars-20261119');
+ expect(state.revision).toBe(66);
+ expect(state.buildings.at(-2)!.id).toBe(STORY_STARS_ID);expect(events.events.at(-2)!.id).toBe('story-stars-20261119');
 });
