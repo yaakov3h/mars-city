@@ -35,7 +35,7 @@ it('is its own module, fully above ground, and world.ts only imports, dispatches
  expect(tower).not.toMatch(/underground|lift|shaft|elevator|cutRoofWindows|מעלית/i);
  expect(world).toContain("import {birthdayTower,BIRTHDAY_TOWER_ID} from './nov11-birthday-tower'");
  expect(world).toContain('if(b.id===BIRTHDAY_TOWER_ID){birthdayTower(part,group,this);return group;}');
- expect(world).toContain('kb.id===CONNECTION_GATE_ID||kb.id===BIRTHDAY_TOWER_ID||kb.id===OXYGEN_CAFE_ID||kb.id===STORY_STARS_ID)&&kb.plot');
+ expect(world).toContain('kb.id===CONNECTION_GATE_ID||kb.id===BIRTHDAY_TOWER_ID||kb.id===OXYGEN_CAFE_ID||kb.id===STORY_STARS_ID||kb.id===SHELF_TOWER_ID)&&kb.plot');
  expect(world.match(/BIRTHDAY_TOWER_ID/g)!.length).toBe(4);
 });
 it('keeps the tower identity: four Mars-enamel sections, frosting cornices, candle and flame, balloon ring, confetti ring, greeting sign',()=>{
@@ -61,6 +61,6 @@ it('ledger entry describes the above-ground birthday tower beside the monolith, 
  expect(ev.summary.he).toContain('מגדל יום ההולדת');expect(ev.summary.he).toContain('מעל הקרקע');expect(ev.summary.he).toContain('מונולית יום ההולדת');
  expect(ev.summary.en).toContain('above ground');expect(ev.summary.he).toContain(BIRTHDAY_TOWER_GREETING);
  expect(ev.summary.he+ev.summary.en).not.toMatch(/\bגיל\b|years old|\b\d{2}(th| שנה)/);
- expect(state.revision).toBe(65);
- expect(state.buildings.at(-3)!.id).toBe(BIRTHDAY_TOWER_ID);expect(events.events.at(-3)!.id).toBe('birthday-tower-20261111');
+ expect(state.revision).toBe(66);
+ expect(state.buildings.at(-4)!.id).toBe(BIRTHDAY_TOWER_ID);expect(events.events.at(-4)!.id).toBe('birthday-tower-20261111');
 });
