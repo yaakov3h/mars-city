@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
  "mode": "live",
- "revision": 66,
+ "revision": 67,
  "foundedAt": "2026-09-30T01:22:49+03:00",
- "lastUpdated": "2026-11-26T20:00:00+02:00",
+ "lastUpdated": "2026-11-26T21:00:00+02:00",
  "totalQuestions": 40,
  "districts": [
   {
@@ -458,6 +458,11 @@
      "q": 5,
      "r": 1,
      "foundedAt": "2026-11-26T20:00:00+02:00"
+    },
+    {
+     "q": 6,
+     "r": 0,
+     "foundedAt": "2026-11-26T21:00:00+02:00"
     }
    ]
   }
@@ -1842,6 +1847,28 @@
    "questionCount": 0,
    "createdAt": "2026-11-26T20:00:00+02:00",
    "lastUpdated": "2026-11-26T20:00:00+02:00"
+  },
+  {
+   "id": "b-granny-house-20261126",
+   "districtId": "district-story-stars-20261119",
+   "name": {
+    "he": "בית סבתא",
+    "en": "The Granny House"
+   },
+   "subcategory": "EMBROIDERY",
+   "q": 0,
+   "r": 0,
+   "plot": {
+    "q": 6,
+    "r": 0
+   },
+   "height": 14,
+   "width": 5,
+   "complexity": 3,
+   "activity": 1,
+   "questionCount": 0,
+   "createdAt": "2026-11-26T21:00:00+02:00",
+   "lastUpdated": "2026-11-26T21:00:00+02:00"
   }
  ],
  "creatures": [],

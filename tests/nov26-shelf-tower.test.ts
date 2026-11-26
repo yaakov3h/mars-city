@@ -22,7 +22,7 @@ it('places the Shelf Tower on its own free plot as part of the Story Stars distr
  expect(others.has(mine)).toBe(false);
  for(const held of ['-3,6','0,2','0,-5','0,-4'])expect(mine).not.toBe(held);
  const sd=state.districts.find(d=>d.id==='district-story-stars-20261119')!;
- expect(sd.plots!.map(p=>k(p))).toEqual(['5,0','5,1']);
+ expect(sd.plots!.map(p=>k(p))).toEqual(['5,0','5,1','6,0']);
  expect(state.districts.filter(d=>d.id.includes('story-stars'))).toHaveLength(1);
 });
 it('sits on buildable ground and clears the model-random rocks',()=>{
@@ -33,7 +33,7 @@ it('is its own module, fully above ground, and world.ts only imports, dispatches
  expect(tower).not.toMatch(/underground|lift|shaft|elevator|cutRoofWindows|מעלית/i);
  expect(world).toContain("shelfTower");
  expect(world).toContain('if(b.id===SHELF_TOWER_ID){shelfTower(part,group,this);return group;}');
- expect(world).toContain('kb.id===STORY_STARS_ID||kb.id===SHELF_TOWER_ID)&&kb.plot');
+ expect(world).toContain('kb.id===STORY_STARS_ID||kb.id===SHELF_TOWER_ID||kb.id===GRANNY_HOUSE_ID)&&kb.plot');
  expect(SHELF_TOWER_NAME).toBe('מגדל המדף');
 });
 it('keeps the identity: bookshelf bays, vintage TV with flicker, LED tickers',()=>{
@@ -50,7 +50,7 @@ it('ledger entry is one upgrade of the Story Stars world, above ground, abstract
  expect(ev.occurredAt).toBe(state.buildings.find(here)!.createdAt);
  expect(ev.summary.he).toContain('מגדל המדף');expect(ev.summary.he).toContain('מעל הקרקע');
  expect(ev.summary.en).toContain('above ground');expect(ev.summary.en).toContain('upgrade');
- expect(events.events.filter(e=>e.summary.en.includes('Shelf Tower'))).toHaveLength(1);
- expect(state.revision).toBe(66);
- expect(state.buildings.at(-1)!.id).toBe(SHELF_TOWER_ID);expect(events.events.at(-1)!.id).toBe('shelf-tower-20261126');
+ expect(events.events.filter(e=>e.id==='shelf-tower-20261126')).toHaveLength(1);
+ expect(state.revision).toBe(67);
+ expect(state.buildings.at(-2)!.id).toBe(SHELF_TOWER_ID);expect(events.events.at(-2)!.id).toBe('shelf-tower-20261126');
 });
